@@ -5,16 +5,6 @@
   "variables": {
     "d4t": {
       "nav": [
-        {
-          "url": "https://markdown.gm7.org/",
-          "target": "_blank",
-          "name": "markdown在线"
-        },
-        {
-          "url": "https://rshell.gm7.org/",
-          "target": "_blank",
-          "name": "Reverse Shell Generator"
-        }
       ]
     }
   },

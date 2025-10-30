@@ -1,0 +1,53 @@
+name: Deploy GitBook Library
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 10
+
+      - name: Install GitBook CLI
+        run: npm install -g gitbook-cli
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Prepare books and homepage
+        run: |
+          mkdir -p public
+          bash ./scripts/gen_books_home_and_nav.sh
+
+      - name: Build all book* folders
+        run: |
+          for dir in book*/; do
+            if [ -f "$dir/README.md" ] && [ -f "$dir/SUMMARY.md" ]; then
+              echo "Building $dir ..."
+              cd $dir
+              gitbook install
+              gitbook build
+              cd ..
+              mkdir -p public/${dir%/}
+              cp -r $dir/_book/* public/${dir%/}/
+            else
+              echo "Skipping $dir (missing README.md or SUMMARY.md)"
+            fi
+          done
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
