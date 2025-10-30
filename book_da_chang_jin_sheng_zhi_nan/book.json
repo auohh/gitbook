@@ -1,4 +1,49 @@
 {
   "title": "大厂晋升指南",
-  "language": "zh"
+  "author": "zzturn",
+  "language": "zh-hans",
+  "variables": {
+    "d4t": {
+      "nav": [
+      ]
+    }
+  },
+  "plugins": [
+    "theme-d4t",
+    "hide-element",
+    "code",
+    "prism",
+    "prism-themes",
+    "-lunr",
+    "-search",
+    "-sharing",
+    "search-pro-fixed",
+    "-highlight",
+    "back-to-top-button",
+    "mermaid-gb3",
+    "expandable-chapters-small",
+    "toolbar",
+    "splitter"
+  ],
+  "pluginsConfig": {
+    "hide-element": {
+      "elements": [
+        ".logo",
+        ".gitbook-link"
+      ]
+    },
+    "prism": {
+      "css": [
+        "prism-themes/themes/prism-coldark-cold.css"
+      ]
+    },
+    "d4t": {
+      "search-placeholder": "请输入关键字搜索",
+      "logo": "/README.assets/logo.svg",
+      "favicon": "/README.assets/favicon.ico"
+    }
+  },
+  "theme-default": {
+    "showLevel": true
+  }
 }
