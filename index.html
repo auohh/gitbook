@@ -1,13 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>GitBook Library</title>
+  <title>书库导航</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: #f7f7f9; margin: 0; padding: 0;}
+    .container { max-width: 800px; margin: 40px auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 32px; }
+    h1 { text-align: center; color: #333; letter-spacing: 2px;}
+    ul { list-style: none; padding: 0;}
+    li { margin: 20px 0; }
+    a.book-link { 
+      display: block; 
+      padding: 20px 24px; 
+      background: linear-gradient(90deg,#f3e7e9 0,#e3eeff 100%);
+      border-radius: 10px; 
+      font-size: 1.2em; 
+      color: #2d3a4b; 
+      text-decoration: none; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    a.book-link:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      transform: translateY(-2px) scale(1.02);
+      color: #1e6bb8;
+    }
+    .footer { text-align: center; margin-top: 32px; color: #999; font-size: 0.95em;}
+  </style>
 </head>
 <body>
-  <h1>GitBook Library</h1>
-  <ul>
-    <li><a href="book_10x_cheng_xu_yuan_gong_zuo_fa/">book_10x_cheng_xu_yuan_gong_zuo_fa</a></li><li><a href="book_da_chang_jin_sheng_zhi_nan/">book_da_chang_jin_sheng_zhi_nan</a></li><li><a href="book_ddd_shi_zhan_ke/">book_ddd_shi_zhan_ke</a></li>
-  </ul>
+  <div class="container">
+    <h1>📚 我的书库导航</h1>
+    <ul>
+      <li><a class="book-link" href="book_10x_cheng_xu_yuan_gong_zuo_fa/">10x程序员工作法</a></li>
+      <li><a class="book-link" href="book_ddd_shi_zhan_ke/">DDD实战课</a></li>
+      <li><a class="book-link" href="book_da_chang_jin_sheng_zhi_nan/">大厂晋升指南</a></li>
+    </ul>
+  </div>
 </body>
 </html>
