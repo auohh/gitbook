@@ -1,11 +1,10 @@
 {
-  "title": "10x程序员工作法",
+  "title": "DDD实战课",
   "author": "zzturn",
   "language": "zh-hans",
   "variables": {
     "d4t": {
-      "nav": [
-      ]
+      "nav": []
     }
   },
   "plugins": [
