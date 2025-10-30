@@ -1,33 +1,58 @@
 
 <!DOCTYPE HTML>
-<html lang="zh" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>基于DDD的微服务设计实例代码详解 · DDD实战课</title>
+        <title>基于DDD的微服务设计实例代码详解 · 10x程序员工作法</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="zzturn">
         
         
-        
+    
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-coldark-cold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-d4t/style.css">
+                
+            
         
 
     
@@ -44,6 +69,9 @@
         
     
         
+    
+
+
     
 
         
@@ -67,16 +95,36 @@
     <body>
         
 <div class="book">
-    <div class="book-summary">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/"><div class="logo"></div></a>
+        <span class="title"></span>
+
+        <!-- Search -->
         
-            
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="輸入並搜尋" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="../book_10x_cheng_xu_yuan_gong_zuo_fa/" target="_self">10x程序员工作法</a>
+            </li><li>
+                <a href="../book_da_chang_jin_sheng_zhi_nan/" target="_self">大厂晋升指南</a>
+            </li><li>
+                <a href="https://github.com/auohh/" target="_blank">Github</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <div class="sidebar-nav-space"></div>
+        
+        
+        <nav role="navigation">
             
-                <nav role="navigation">
-                
 
 
 <ul class="summary">
@@ -496,22 +544,30 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            本書使用 GitBook 釋出
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
 
 
-                </nav>
-            
+        </nav>
         
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <div class="book-anchor-title">ON THIS PAGE</div>
+        <div class="book-anchor-body">
+
+        </div>
     </div>
 
     <div class="book-body">
         
-            <div class="body-inner">
-                
-                    
+        <div class="body-inner">
+            
+            
 
 <div class="book-header" role="navigation">
     
@@ -526,15 +582,15 @@
 
 
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
 <div id="book-search-results">
     <div class="search-noresults">
     
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="&#x57FA;&#x4E8E;ddd&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x8BBE;&#x8BA1;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#x8BE6;&#x89E3;">&#x57FA;&#x4E8E;DDD&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x8BBE;&#x8BA1;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#x8BE6;&#x89E3;</h1>
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="&#x57FA;&#x4E8E;ddd&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x8BBE;&#x8BA1;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#x8BE6;&#x89E3;">&#x57FA;&#x4E8E;DDD&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x8BBE;&#x8BA1;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#x8BE6;&#x89E3;</h1>
 <blockquote>
 <p>&#x4F60;&#x597D;&#xFF0C;&#x6211;&#x662F;&#x6B27;&#x521B;&#x65B0;&#x3002;&#x597D;&#x4E45;&#x4E0D;&#x89C1;&#xFF0C;&#x4ECA;&#x5929;&#x6211;&#x5E26;&#x7740;&#x4F60;&#x671F;&#x5F85;&#x7684;&#x6848;&#x4F8B;&#x6765;&#x4E86;&#x3002;</p>
 </blockquote>
@@ -553,7 +609,7 @@
 <p>&#x805A;&#x5408;&#x6839;leave&#x4E2D;&#x6709;&#x5C5E;&#x6027;&#x3001;&#x503C;&#x5BF9;&#x8C61;&#x3001;&#x5173;&#x8054;&#x5B9E;&#x4F53;&#x548C;&#x81EA;&#x8EAB;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x3002;Leave&#x5B9E;&#x4F53;&#x91C7;&#x7528;&#x5145;&#x8840;&#x6A21;&#x578B;&#xFF0C;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#xFF0C;&#x5177;&#x4F53;&#x5C31;&#x662F;&#x805A;&#x5408;&#x6839;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x7684;getDuration&#x548C;addHistoryApprovalInfo&#x7B49;&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x805A;&#x5408;&#x6839;&#x5F15;&#x7528;&#x5B9E;&#x4F53;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x805A;&#x5408;&#x5185;&#x7684;&#x591A;&#x4E2A;&#x5B9E;&#x4F53;&#xFF0C;&#x5728;&#x805A;&#x5408;&#x6839;&#x5B9E;&#x4F53;&#x7C7B;&#x65B9;&#x6CD5;&#x4E2D;&#x5B8C;&#x6210;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#xFF0C;&#x8FD9;&#x79CD;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x805A;&#x5408;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x91CC;&#x5B9E;&#x73B0;&#x3002;&#x4F46;&#x4E3A;&#x4E86;&#x804C;&#x8D23;&#x548C;&#x8FB9;&#x754C;&#x6E05;&#x6670;&#xFF0C;&#x6211;&#x5EFA;&#x8BAE;&#x805A;&#x5408;&#x8981;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x5728;&#x5B9E;&#x4F53;&#x7C7B;&#x65B9;&#x6CD5;&#x4E2D;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x6D89;&#x53CA;&#x591A;&#x4E2A;&#x5B9E;&#x4F53;&#x7EC4;&#x5408;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x7684;&#x4E1A;&#x52A1;&#x80FD;&#x529B;&#x7531;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5B8C;&#x6210;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x662F;&#x805A;&#x5408;&#x6839;leave&#x7684;&#x5B9E;&#x4F53;&#x7C7B;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x5C5E;&#x6027;&#x3001;&#x5BF9;&#x5B9E;&#x4F53;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x4EE5;&#x53CA;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x548C;&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code>public class Leave {
+<pre class="language-"><code>public class Leave {
     String id;
     Applicant applicant;
     Approver approver;
@@ -564,7 +620,7 @@
     long duration;
     int leaderMaxLevel; //&#x5BA1;&#x6279;&#x9886;&#x5BFC;&#x7684;&#x6700;&#x9AD8;&#x7EA7;&#x522B;
     ApprovalInfo currentApprovalInfo;
-    List&lt;ApprovalInfo&gt; historyApprovalInfos; 
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfos; 
 
     public long getDuration() {
         return endTime.getTime() - startTime.getTime();
@@ -587,7 +643,7 @@
 }
 </code></pre><h3 id="2-&#x5B9E;&#x4F53;">2. &#x5B9E;&#x4F53;</h3>
 <p>&#x5BA1;&#x6279;&#x610F;&#x89C1;&#x5B9E;&#x4F53;ApprovalInfo&#x88AB;leave&#x805A;&#x5408;&#x6839;&#x5F15;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x5BA1;&#x6279;&#x610F;&#x89C1;&#xFF0C;&#x5B83;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;approver&#x7B49;&#xFF0C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#x3002;</p>
-<pre><code>public class ApprovalInfo {
+<pre class="language-"><code>public class ApprovalInfo {
     String approvalInfoId;
     Approver approver;
     ApprovalType approvalType;
@@ -598,7 +654,7 @@
 <p>&#x5728;Leave&#x805A;&#x5408;&#x6709;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x503C;&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5BA1;&#x6279;&#x4EBA;&#x503C;&#x5BF9;&#x8C61;Approver&#x3002;&#x8FD9;&#x7C7B;&#x503C;&#x5BF9;&#x8C61;&#x9664;&#x4E86;&#x5C5E;&#x6027;&#x96C6;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6709;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x548C;&#x8F6C;&#x6362;&#x670D;&#x52A1;&#x3002;Approver&#x6570;&#x636E;&#x6765;&#x6E90;&#x4E8E;person&#x805A;&#x5408;&#xFF0C;&#x4ECE;person&#x805A;&#x5408;&#x83B7;&#x53D6;&#x5BA1;&#x6279;&#x4EBA;&#x8FD4;&#x56DE;&#x540E;&#xFF0C;&#x4ECE;person&#x5B9E;&#x4F53;&#x83B7;&#x53D6;personID&#x3001;personName&#x548C;level&#x7B49;&#x5C5E;&#x6027;&#xFF0C;&#x91CD;&#x65B0;&#x7EC4;&#x5408;&#x4E3A;approver&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x548C;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x3002;</p>
 <p>Approver&#x503C;&#x5BF9;&#x8C61;&#x540C;&#x65F6;&#x88AB;&#x805A;&#x5408;&#x6839;leave&#x548C;&#x5B9E;&#x4F53;approvalInfo&#x5F15;&#x7528;&#x3002;&#x8FD9;&#x7C7B;&#x503C;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x6765;&#x6E90;&#x4E8E;&#x5176;&#x5B83;&#x805A;&#x5408;&#xFF0C;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;&#xFF0C;&#x53EF;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#x3002;&#x5C06;&#x8FD9;&#x79CD;&#x5BF9;&#x8C61;&#x8BBE;&#x8BA1;&#x4E3A;&#x503C;&#x5BF9;&#x8C61;&#x800C;&#x4E0D;&#x662F;&#x5B9E;&#x4F53;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#xFF0C;&#x964D;&#x4F4E;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F53;&#x5173;&#x8054;&#x7684;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4E00;&#x822C;&#x5EFA;&#x8BAE;&#x4F18;&#x5148;&#x8BBE;&#x8BA1;&#x4E3A;&#x503C;&#x5BF9;&#x8C61;&#x3002;</p>
-<pre><code>public class Approver {
+<pre class="language-"><code>public class Approver {
     String personId;
     String personName;
     int level; //&#x7BA1;&#x7406;&#x7EA7;&#x522B;
@@ -612,7 +668,7 @@
     }
 }
 </code></pre><p>&#x4E0B;&#x9762;&#x662F;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x5BF9;&#x8C61;Status&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
-<pre><code>public enum Status {
+<pre class="language-"><code>public enum Status {
     APPROVING, APPROVED, REJECTED
 }
 </code></pre><p>&#x8FD9;&#x91CC;&#x4F60;&#x8981;&#x8BB0;&#x4F4F;&#x4E00;&#x70B9;&#xFF0C;&#x7531;&#x4E8E;&#x503C;&#x5BF9;&#x8C61;&#x53EA;&#x505A;&#x6574;&#x4F53;&#x66FF;&#x6362;&#x3001;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5728;&#x503C;&#x5BF9;&#x8C61;&#x4E2D;&#x57FA;&#x672C;&#x4E0D;&#x4F1A;&#x6709;&#x4FEE;&#x6539;&#x6216;&#x65B0;&#x589E;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
@@ -620,7 +676,7 @@
 <p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x7531;&#x591A;&#x4E2A;&#x5B9E;&#x4F53;&#x5BF9;&#x8C61;&#x53C2;&#x4E0E;&#x5B8C;&#x6210;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5C06;&#x8FD9;&#x90E8;&#x5206;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x653E;&#x5728;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x4E2D;&#x5B9E;&#x73B0;&#x3002;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x4E0E;&#x5B9E;&#x4F53;&#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;&#x662F;&#xFF1A;&#x5B9E;&#x4F53;&#x65B9;&#x6CD5;&#x5B8C;&#x6210;&#x5355;&#x4E00;&#x5B9E;&#x4F53;&#x81EA;&#x8EAB;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x662F;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#x7684;&#x539F;&#x5B50;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x800C;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5219;&#x662F;&#x591A;&#x4E2A;&#x5B9E;&#x4F53;&#x7EC4;&#x5408;&#x51FA;&#x7684;&#x76F8;&#x5BF9;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;&#x4E24;&#x8005;&#x90FD;&#x5728;&#x9886;&#x57DF;&#x5C42;&#xFF0C;&#x5B9E;&#x73B0;&#x9886;&#x57DF;&#x6A21;&#x578B;&#x7684;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x80FD;&#x529B;&#x3002;</p>
 <p>&#x4E00;&#x4E2A;&#x805A;&#x5408;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x7C7B;&#xFF0C;&#x7BA1;&#x7406;&#x805A;&#x5408;&#x5185;&#x6240;&#x6709;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x3002;</p>
 <p>&#x8BF7;&#x5047;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x7C7B;&#x662F;LeaveDomainService&#x3002;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x4E2D;&#x4F1A;&#x7528;&#x5230;&#x5F88;&#x591A;&#x7684;DDD&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x590D;&#x6742;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x7528;&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x9886;&#x57DF;&#x5C42;&#x4E0E;&#x57FA;&#x7840;&#x5C42;&#x7684;&#x4F9D;&#x8D56;&#x5012;&#x7F6E;&#x548C;&#x7528;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7684;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x7B49;&#x3002;</p>
-<pre><code>public class LeaveDomainService {
+<pre class="language-"><code>public class LeaveDomainService {
 
     @Autowired
     EventPublisher eventPublisher;
@@ -674,20 +730,20 @@
     return leaveFactory.getLeave(leavePO);
     }
 
-    public List&lt;Leave&gt; queryLeaveInfosByApplicant(String applicantId) {
-        List&lt;LeavePO&gt; leavePOList = leaveRepositoryInterface.queryByApplicantId(applicantId);
+    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> queryLeaveInfosByApplicant(String applicantId) {
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList = leaveRepositoryInterface.queryByApplicantId(applicantId);
     return leavePOList.stream().map(leavePO -&gt; leaveFactory.getLeave(leavePO)).collect(Collectors.toList());
     }
 
-    public List&lt;Leave&gt; queryLeaveInfosByApprover(String approverId) {
-    List&lt;LeavePO&gt; leavePOList = leaveRepositoryInterface.queryByApproverId(approverId);
+    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> queryLeaveInfosByApprover(String approverId) {
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList = leaveRepositoryInterface.queryByApproverId(approverId);
     return leavePOList.stream().map(leavePO -&gt; leaveFactory.getLeave(leavePO)).collect(Collectors.toList());
     }
 }
 </code></pre><p><strong>&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x65F6;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
 <p>&#x5728;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x6216;&#x5B9E;&#x4F53;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x8C03;&#x7528;&#x5176;&#x5B83;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x6216;&#x5F15;&#x7528;&#x5176;&#x5B83;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#x6216;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x79CD;&#x64CD;&#x4F5C;&#x4F1A;&#x589E;&#x52A0;&#x805A;&#x5408;&#x7684;&#x8026;&#x5408;&#x5EA6;&#x3002;&#x5728;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x6F14;&#x8FDB;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x805A;&#x5408;&#x62C6;&#x5206;&#x548C;&#x91CD;&#x7EC4;&#xFF0C;&#x8FD9;&#x79CD;&#x8DE8;&#x805A;&#x5408;&#x7684;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x548C;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#xFF0C;&#x4F1A;&#x53D8;&#x6210;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5BFC;&#x81F4;&#x8FD9;&#x79CD;&#x8DE8;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x548C;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x5931;&#x6548;&#xFF0C;&#x5728;&#x805A;&#x5408;&#x5206;&#x62C6;&#x65F6;&#x4F1A;&#x589E;&#x52A0;&#x4F60;&#x4EE3;&#x7801;&#x89E3;&#x8026;&#x548C;&#x91CD;&#x6784;&#x7684;&#x5DE5;&#x4F5C;&#x91CF;&#x3002;</p>
 <p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x6BB5;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x91CC;Approver&#x662F;leave&#x805A;&#x5408;&#x7684;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x4F5C;&#x4E3A;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x5230;person&#x805A;&#x5408;&#x7684;findNextApprover&#x9886;&#x57DF;&#x670D;&#x52A1;&#x3002;&#x5982;&#x679C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x5185;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x7684;&#x3002;&#x4F46;&#x5728;&#x67B6;&#x6784;&#x6F14;&#x8FDB;&#x65F6;&#xFF0C;&#x5982;&#x679C;person&#x548C;leave&#x4E24;&#x4E2A;&#x805A;&#x5408;&#x88AB;&#x5206;&#x62C6;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;leave&#x4E2D;&#x7684;Approver&#x5BF9;&#x8C61;&#x4EE5;&#x53CA;&#x5B83;&#x7684;getPersonId()&#x548C;fromPersonPO&#x65B9;&#x6CD5;&#x5728;person&#x805A;&#x5408;&#x4E2D;&#x5C31;&#x4F1A;&#x5931;&#x6548;&#xFF0C;&#x8FD9;&#x65F6;&#x4F60;&#x5C31;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4EE3;&#x7801;&#x91CD;&#x6784;&#x4E86;&#x3002;</p>
-<pre><code>public class PersonDomainService {
+<pre class="language-"><code>public class PersonDomainService {
 
    public Approver findNextApprover(Approver currentApprover, int leaderMaxLevel) {
    PersonPO leaderPO = personRepository.findLeaderByPersonId(currentApprover.getPersonId());
@@ -699,7 +755,7 @@
    }
 }
 </code></pre><p>&#x90A3;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5462;&#xFF1F;&#x5728;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7EC4;&#x5408;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ID&#x6216;&#x8005;&#x53C2;&#x6570;&#x6765;&#x4F20;&#x6570;&#xFF0C;&#x5982;&#x5355;&#x4E00;&#x53C2;&#x6570;currentApproverId&#x3002;&#x8FD9;&#x6837;&#x805A;&#x5408;&#x4E4B;&#x95F4;&#x5C31;&#x89E3;&#x8026;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4E0D;&#x4F9D;&#x8D56;&#x5176;&#x5B83;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#xFF0C;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;</p>
-<pre><code>public class PersonDomainService {
+<pre class="language-"><code>public class PersonDomainService {
 
    public Person findNextApprover(String currentApproverId, int leaderMaxLevel) {
    PersonPO leaderPO = personRepository.findLeaderByPersonId(currentApproverId);
@@ -714,7 +770,7 @@
 <p>&#x5728;&#x521B;&#x5EFA;&#x8BF7;&#x5047;&#x5355;&#x548C;&#x8BF7;&#x5047;&#x5BA1;&#x6279;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x4EA7;&#x751F;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x3002;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x805A;&#x5408;&#x5185;&#x7684;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x653E;&#x5728;&#x805A;&#x5408;&#x7684;event&#x76EE;&#x5F55;&#x4E2D;&#x3002;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;&#x5728;&#x805A;&#x5408;&#x4ED3;&#x50A8;&#x5185;&#x5B8C;&#x6210;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x4F46;&#x662F;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E0D;&#x53D7;&#x805A;&#x5408;&#x6839;&#x7BA1;&#x7406;&#x3002;</p>
 <h3 id="1-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x57FA;&#x7C7B;domainevent">1. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x57FA;&#x7C7B;DomainEvent</h3>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x7EDF;&#x4E00;&#x7684;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x57FA;&#x7C7B;DomainEvent&#x3002;&#x57FA;&#x7C7B;&#x5305;&#x542B;&#xFF1A;&#x4E8B;&#x4EF6;ID&#x3001;&#x65F6;&#x95F4;&#x6233;&#x3001;&#x4E8B;&#x4EF6;&#x6E90;&#x4EE5;&#x53CA;&#x4E8B;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x3002;</p>
-<pre><code>public class DomainEvent {
+<pre class="language-"><code>public class DomainEvent {
     String id;
     Date timestamp;
     String source;
@@ -722,7 +778,7 @@
 }
 </code></pre><h3 id="2-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;">2. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;</h3>
 <p>&#x8BF7;&#x5047;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;LeaveEvent&#x7EE7;&#x627F;&#x57FA;&#x7C7B;DomainEvent&#x3002;&#x53EF;&#x6839;&#x636E;&#x9700;&#x8981;&#x6269;&#x5C55;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;leaveEventType&#x3002;data&#x5B57;&#x6BB5;&#x4E2D;&#x5B58;&#x50A8;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;XML&#x6216;Json&#x7B49;&#x683C;&#x5F0F;&#x3002;</p>
-<pre><code>public class LeaveEvent extends DomainEvent {
+<pre class="language-"><code>public class LeaveEvent extends DomainEvent {
     LeaveEventType leaveEventType;
     public static LeaveEvent create(LeaveEventType eventType, Leave leave){
        LeaveEvent event = new LeaveEvent();
@@ -737,18 +793,18 @@
 <p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x903B;&#x8F91;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x6267;&#x884C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x4EA7;&#x751F;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x3002;</p>
 <p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
-<pre><code>leaveRepositoryInterface.save(leaveFactory.createLeavePO(leave));
+<pre class="language-"><code>leaveRepositoryInterface.save(leaveFactory.createLeavePO(leave));
 </code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
-<pre><code>leaveRepositoryInterface.saveEvent(leaveFactory.createLeaveEventPO(event));
+<pre class="language-"><code>leaveRepositoryInterface.saveEvent(leaveFactory.createLeaveEventPO(event));
 </code></pre><p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x53D1;&#x5E03;&#x3002;</p>
-<pre><code>eventPublisher.publish(event);
+<pre class="language-"><code>eventPublisher.publish(event);
 </code></pre><p>&#x4EE5;&#x4E0A;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#x8BE6;&#x89C1;LeaveDomainService&#x4E2D;submitApproval&#x9886;&#x57DF;&#x670D;&#x52A1;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x8BF7;&#x5047;&#x63D0;&#x4EA4;&#x5BA1;&#x6279;&#x4E8B;&#x4EF6;&#x7684;&#x5B8C;&#x6574;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
 <h3 id="4-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;">4. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;</h3>
 <p>&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x4E8B;&#x4EF6;&#x53D1;&#x5E03;&#x65B9;&#x4E0E;&#x4E8B;&#x4EF6;&#x8BA2;&#x9605;&#x65B9;&#x6570;&#x636E;&#x7684;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x548C;&#x6570;&#x636E;&#x5BA1;&#x8BA1;&#xFF0C;&#x6709;&#x4E9B;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x9700;&#x8981;&#x5EFA;&#x7ACB;&#x6570;&#x636E;&#x5BF9;&#x8D26;&#x673A;&#x5236;&#x3002;&#x6570;&#x636E;&#x5BF9;&#x8D26;&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x5BF9;&#x6E90;&#x7AEF;&#x548C;&#x76EE;&#x7684;&#x7AEF;&#x7684;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x6BD4;&#x5BF9;&#xFF0C;&#x4ECE;&#x800C;&#x53D1;&#x73B0;&#x5F02;&#x5E38;&#x6570;&#x636E;&#x5E76;&#x8FDB;&#x4E00;&#x6B65;&#x5904;&#x7406;&#xFF0C;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x3002;</p>
 <p>&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x5BF9;&#x8D26;&#x7684;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8BBE;&#x8BA1;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;PO&#xFF0C;&#x5B8C;&#x6210;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x5982;LeaveEvent&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;LeaveEventPO&#x3002;&#x518D;&#x901A;&#x8FC7;&#x805A;&#x5408;&#x7684;&#x4ED3;&#x50A8;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#xFF1A;</p>
-<pre><code>leaveRepositoryInterface.saveEvent(leaveFactory.createLeaveEventPO(event))&#x3002;
+<pre class="language-"><code>leaveRepositoryInterface.saveEvent(leaveFactory.createLeaveEventPO(event))&#x3002;
 </code></pre><p>&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;LeaveEventPO&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>public class LeaveEventPO {
+<pre class="language-"><code>public class LeaveEventPO {
     @Id
     @GenericGenerator(name = &quot;idGenerator&quot;, strategy = &quot;uuid&quot;) 
     @GeneratedValue(generator = &quot;idGenerator&quot;)
@@ -765,7 +821,7 @@
 <p>Leave&#x805A;&#x5408;&#x6839;&#x7684;DO&#x5B9E;&#x4F53;&#x9664;&#x4E86;&#x81EA;&#x8EAB;&#x7684;&#x5C5E;&#x6027;&#x5916;&#xFF0C;&#x8FD8;&#x4F1A;&#x6839;&#x636E;&#x9886;&#x57DF;&#x6A21;&#x578B;&#x5F15;&#x7528;&#x591A;&#x4E2A;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;Applicant&#x548C;Approver&#x7B49;&#xFF0C;&#x5B83;&#x4EEC;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#xFF1A;personId&#x3001;personName&#x548C;personType&#x7B49;&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x5728;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;PO&#x8BBE;&#x8BA1;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x4E9B;&#x503C;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5D4C;&#x5165;PO&#x5C5E;&#x6027;&#x4E2D;&#xFF0C;&#x6216;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x7EC4;&#x5408;&#x5C5E;&#x6027;&#x5B57;&#x6BB5;&#xFF0C;&#x4EE5;Json&#x4E32;&#x7684;&#x65B9;&#x5F0F;&#x5B58;&#x50A8;&#x5728;PO&#x4E2D;&#x3002;</p>
 <p>&#x4EE5;&#x4E0B;&#x662F;leave&#x7684;DO&#x7684;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code>public class Leave {
+<pre class="language-"><code>public class Leave {
     String id;
     Applicant applicant;
     Approver approver;
@@ -776,7 +832,7 @@
     long duration;
     int leaderMaxLevel;
     ApprovalInfo currentApprovalInfo;
-    List&lt;ApprovalInfo&gt; historyApprovalInfos;
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfos;
 }
 
 public class Applicant {
@@ -792,7 +848,7 @@ public class Approver {
 }
 </code></pre><p>&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x6570;&#x636E;&#x5E93;&#x8868;&#x6570;&#x91CF;&#x4EE5;&#x53CA;&#x8868;&#x4E0E;&#x8868;&#x7684;&#x590D;&#x6742;&#x5173;&#x8054;&#x5173;&#x7CFB;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;leave&#x5B9E;&#x4F53;&#x548C;&#x591A;&#x4E2A;&#x503C;&#x5BF9;&#x8C61;&#x653E;&#x5728;&#x4E00;&#x4E2A;LeavePO&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4EE5;&#x5C5E;&#x6027;&#x5D4C;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;Applicant&#x503C;&#x5BF9;&#x8C61;&#x5728;LeavePO&#x4E2D;&#x4F1A;&#x5C55;&#x5F00;&#x4E3A;&#xFF1A;applicantId&#x3001;applicantName&#x548C;applicantType&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x4EE5;&#x4E0B;&#x4E3A;&#x91C7;&#x7528;&#x5C5E;&#x6027;&#x5D4C;&#x5165;&#x65B9;&#x5F0F;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;LeavePO&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
-<pre><code>public class LeavePO {
+<pre class="language-"><code>public class LeavePO {
     @Id
     @GenericGenerator(name=&quot;idGenerator&quot;, strategy=&quot;uuid&quot;) 
     @GeneratedValue(generator=&quot;idGenerator&quot;)
@@ -811,23 +867,23 @@ public class Approver {
     Date endTime;
     long duration;
     @Transient
-    List&lt;ApprovalInfoPO&gt; historyApprovalInfoPOList;
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoPOList;
 }
 </code></pre><h3 id="2-&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;">2. &#x4ED3;&#x50A8;&#x6A21;&#x5F0F;</h3>
 <p>&#x4E3A;&#x4E86;&#x89E3;&#x8026;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x548C;&#x57FA;&#x7840;&#x8D44;&#x6E90;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x57FA;&#x7840;&#x5C42;&#x548C;&#x9886;&#x57DF;&#x5C42;&#x4E4B;&#x95F4;&#x589E;&#x52A0;&#x4E00;&#x5C42;&#x4ED3;&#x50A8;&#x670D;&#x52A1;&#xFF0C;&#x5B9E;&#x73B0;&#x4F9D;&#x8D56;&#x5012;&#x7F6E;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x4E00;&#x5C42;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x548C;&#x57FA;&#x7840;&#x5C42;&#x8D44;&#x6E90;&#x7684;&#x4F9D;&#x8D56;&#x5206;&#x79BB;&#x3002;&#x5728;&#x53D8;&#x66F4;&#x57FA;&#x7840;&#x5C42;&#x6570;&#x636E;&#x5E93;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EA;&#x8981;&#x66FF;&#x6362;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x4E0A;&#x5C42;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E0D;&#x4F1A;&#x53D7;&#x57FA;&#x7840;&#x8D44;&#x6E90;&#x53D8;&#x66F4;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x4F9D;&#x8D56;&#x5012;&#x7F6E;&#x3002;</p>
 <p>&#x4E00;&#x4E2A;&#x805A;&#x5408;&#x4E00;&#x4E2A;&#x4ED3;&#x50A8;&#xFF0C;&#x5B9E;&#x73B0;&#x805A;&#x5408;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316;&#x3002;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x901A;&#x8FC7;&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#x6765;&#x8BBF;&#x95EE;&#x57FA;&#x7840;&#x8D44;&#x6E90;&#xFF0C;&#x7531;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x548C;&#x521D;&#x59CB;&#x5316;&#x3002;&#x4ED3;&#x50A8;&#x4E00;&#x822C;&#x5305;&#x542B;&#xFF1A;&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#x548C;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x3002;</p>
 <p><strong>2.1&#x4ED3;&#x50A8;&#x63A5;&#x53E3;</strong></p>
 <p>&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#x9762;&#x5411;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;&#x3002;</p>
-<pre><code>public interface LeaveRepositoryInterface {
+<pre class="language-"><code>public interface LeaveRepositoryInterface {
    void save(LeavePO leavePO);
    void saveEvent(LeaveEventPO leaveEventPO);
    LeavePO findById(String id);
-   List&lt;LeavePO&gt; queryByApplicantId(String applicantId);
-   List&lt;LeavePO&gt; queryByApproverId(String approverId);
+   List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApplicantId(String applicantId);
+   List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApproverId(String approverId);
 }
 </code></pre><p><strong>2.2&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;</strong></p>
 <p>&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x548C;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x3002;</p>
-<pre><code>@Repository
+<pre class="language-"><code>@Repository
 public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
 
     @Autowired
@@ -853,41 +909,41 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
     }
 
     @Override
-    public List&lt;LeavePO&gt; queryByApplicantId(String applicantId) {
-        List&lt;LeavePO&gt; leavePOList = leaveDao.queryByApplicantId(applicantId);
+    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApplicantId(String applicantId) {
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList = leaveDao.queryByApplicantId(applicantId);
         leavePOList.stream()
                 .forEach(leavePO -&gt; {
-                    List&lt;ApprovalInfoPO&gt; approvalInfoPOList = approvalInfoDao.queryByLeaveId(leavePO.getId());
+                    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> approvalInfoPOList = approvalInfoDao.queryByLeaveId(leavePO.getId());
                     leavePO.setHistoryApprovalInfoPOList(approvalInfoPOList);
                 });
         return leavePOList;
     }
 
     @Override
-    public List&lt;LeavePO&gt; queryByApproverId(String approverId) {
-        List&lt;LeavePO&gt; leavePOList = leaveDao.queryByApproverId(approverId);
+    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApproverId(String approverId) {
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList = leaveDao.queryByApproverId(approverId);
         leavePOList.stream()
                 .forEach(leavePO -&gt; {
-                    List&lt;ApprovalInfoPO&gt; approvalInfoPOList = approvalInfoDao.queryByLeaveId(leavePO.getId());
+                    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> approvalInfoPOList = approvalInfoDao.queryByLeaveId(leavePO.getId());
                     leavePO.setHistoryApprovalInfoPOList(approvalInfoPOList);
                 });
         return leavePOList;
     }
 }
 </code></pre><p>&#x8FD9;&#x91CC;&#x6301;&#x4E45;&#x5316;&#x7EC4;&#x4EF6;&#x91C7;&#x7528;&#x4E86;Jpa&#x3002;</p>
-<pre><code>public interface LeaveDao extends JpaRepository&lt;LeavePO, String&gt; {
-    List&lt;LeavePO&gt; queryByApplicantId(String applicantId);
-    List&lt;LeavePO&gt; queryByApproverId(String approverId);
+<pre class="language-"><code>public interface LeaveDao extends JpaRepository<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO,</span> <span class="token attr-name">String</span><span class="token punctuation">&gt;</span></span> {
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApplicantId(String applicantId);
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApproverId(String approverId);
 }
 </code></pre><p><strong>2.3&#x4ED3;&#x50A8;&#x6267;&#x884C;&#x903B;&#x8F91;</strong></p>
 <p>&#x4EE5;&#x521B;&#x5EFA;&#x8BF7;&#x5047;&#x5355;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ED3;&#x50A8;&#x7684;&#x6267;&#x884C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#x3002;</p>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4ED3;&#x50A8;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x5C06;&#x805A;&#x5408;&#x5185;DO&#x4F1A;&#x8F6C;&#x6362;&#x4E3A;PO&#xFF0C;&#x8FD9;&#x79CD;&#x8F6C;&#x6362;&#x5728;&#x5DE5;&#x5382;&#x670D;&#x52A1;&#x4E2D;&#x5B8C;&#x6210;&#xFF1A;</p>
-<pre><code>leaveFactory.createLeavePO(leave)&#x3002;
+<pre class="language-"><code>leaveFactory.createLeavePO(leave)&#x3002;
 </code></pre><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x540E;&#xFF0C;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#xFF1A;</p>
-<pre><code>leaveRepositoryInterface.save&#x3002;
+<pre class="language-"><code>leaveRepositoryInterface.save&#x3002;
 </code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x7531;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5B8C;&#x6210;PO&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
 <p>&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>public void createLeave(Leave leave, int leaderMaxLevel, Approver approver) {
+<pre class="language-"><code>public void createLeave(Leave leave, int leaderMaxLevel, Approver approver) {
   leave.setLeaderMaxLevel(leaderMaxLevel);
   leave.setApprover(approver);
   leave.create();
@@ -902,7 +958,7 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
 <li>DO&#x7684;&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5316;&#xFF1A;&#x5C06;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x7684;DO&#x5BF9;&#x8C61;&#x4E00;&#x6B21;&#x8F6C;&#x6362;&#x4E3A;PO&#x5BF9;&#x8C61;&#xFF0C;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x3002;</li>
 </ul>
 <p>&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x662F;leave&#x805A;&#x5408;&#x7684;&#x5DE5;&#x5382;&#x7C7B;LeaveFactory&#x3002;&#x5176;&#x4E2D;createLeavePO&#xFF08;leave&#xFF09;&#x65B9;&#x6CD5;&#x7EC4;&#x7EC7;leave&#x805A;&#x5408;&#x7684;DO&#x5BF9;&#x8C61;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#x5B8C;&#x6210;leavePO&#x5BF9;&#x8C61;&#x7684;&#x6784;&#x5EFA;&#x3002;getLeave&#xFF08;leave&#xFF09;&#x901A;&#x8FC7;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;PO&#x6784;&#x5EFA;&#x805A;&#x5408;&#x7684;DO&#x5BF9;&#x8C61;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5B8C;&#x6210;leave&#x805A;&#x5408;DO&#x5B9E;&#x4F53;&#x7684;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
-<pre><code>public class LeaveFactory {
+<pre class="language-"><code>public class LeaveFactory {
 
    public LeavePO createLeavePO(Leave leave) {
    LeavePO leavePO = new LeavePO();
@@ -913,7 +969,7 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
    leavePO.setApproverName(leave.getApprover().getPersonName());
    leavePO.setStartTime(leave.getStartTime());
    leavePO.setStatus(leave.getStatus());
-   List&lt;ApprovalInfoPO&gt; historyApprovalInfoPOList = approvalInfoPOListFromDO(leave);
+   List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoPOList = approvalInfoPOListFromDO(leave);
    leavePO.setHistoryApprovalInfoPOList(historyApprovalInfoPOList);
    return leavePO;
 }
@@ -933,7 +989,7 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
    leave.setApprover(approver);
    leave.setStartTime(leavePO.getStartTime());
    leave.setStatus(leavePO.getStatus());
-   List&lt;ApprovalInfo&gt; approvalInfos = getApprovalInfos(leavePO.getHistoryApprovalInfoPOList());
+   List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfo</span><span class="token punctuation">&gt;</span></span> approvalInfos = getApprovalInfos(leavePO.getHistoryApprovalInfoPOList());
    leave.setHistoryApprovalInfos(approvalInfos);
    return leave;
    }
@@ -949,7 +1005,7 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
 <p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x8BF7;&#x5047;&#x6570;&#x636E;&#x548C;&#x4ECE;rule&#x548C;person&#x805A;&#x5408;&#x83B7;&#x53D6;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x521B;&#x5EFA;&#x8BF7;&#x5047;&#x5355;&#x3002;&#x8FD9;&#x4E00;&#x6B65;&#x901A;&#x8FC7;leaveDomainService&#x7C7B;&#x7684;createLeave&#x9886;&#x57DF;&#x670D;&#x52A1;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
 <p>&#x7531;&#x4E8E;&#x9886;&#x57DF;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x5DF2;&#x7ECF;&#x5F88;&#x597D;&#x5730;&#x6C89;&#x6DC0;&#x5230;&#x4E86;&#x9886;&#x57DF;&#x5C42;&#x4E2D;&#xFF0C;&#x9886;&#x57DF;&#x5C42;&#x7684;&#x8FD9;&#x4E9B;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x53EF;&#x4EE5;&#x9AD8;&#x5EA6;&#x590D;&#x7528;&#x3002;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x53EA;&#x9700;&#x8981;&#x7075;&#x6D3B;&#x5730;&#x7EC4;&#x5408;&#x548C;&#x7F16;&#x6392;&#x8FD9;&#x4E9B;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x9002;&#x914D;&#x524D;&#x7AEF;&#x4E1A;&#x52A1;&#x7684;&#x53D8;&#x5316;&#x3002;&#x56E0;&#x6B64;&#x5E94;&#x7528;&#x5C42;&#x4E0D;&#x4F1A;&#x79EF;&#x7D2F;&#x592A;&#x591A;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x8584;&#xFF0C;&#x4EE3;&#x7801;&#x7EF4;&#x62A4;&#x8D77;&#x6765;&#x4E5F;&#x4F1A;&#x5BB9;&#x6613;&#x5F97;&#x591A;&#x3002;</p>
 <p>&#x4EE5;&#x4E0B;&#x662F;leave&#x805A;&#x5408;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7C7B;&#x3002;&#x4EE3;&#x7801;&#x662F;&#x4E0D;&#x662F;&#x975E;&#x5E38;&#x5F97;&#x5C11;&#xFF1F;</p>
-<pre><code>public class LeaveApplicationService{
+<pre class="language-"><code>public class LeaveApplicationService{
 
     @Autowired
     LeaveDomainService leaveDomainService;
@@ -980,18 +1036,18 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
         return leaveDomainService.getLeaveInfo(leaveId);
     }
 
-    public List&lt;Leave&gt; queryLeaveInfosByApplicant(String applicantId){
+    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> queryLeaveInfosByApplicant(String applicantId){
     return leaveDomainService.queryLeaveInfosByApplicant(applicantId);
     }
 
-    public List&lt;Leave&gt; queryLeaveInfosByApprover(String approverId){
+    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> queryLeaveInfosByApprover(String approverId){
     return leaveDomainService.queryLeaveInfosByApprover(approverId);
     }
 }
 </code></pre><p><strong>&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
 <p>&#x4E3A;&#x4E86;&#x805A;&#x5408;&#x89E3;&#x8026;&#x548C;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x6F14;&#x8FDB;&#xFF0C;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5728;&#x5BF9;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x7F16;&#x6392;&#x65F6;&#xFF0C;&#x5E94;&#x907F;&#x514D;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x4E2D;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x4E00;&#x65E6;&#x805A;&#x5408;&#x62C6;&#x5206;&#x548C;&#x91CD;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E9B;&#x8DE8;&#x805A;&#x5408;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x5931;&#x6548;&#x3002;</p>
 <p>&#x5728;LeaveApplicationService&#x4E2D;&#xFF0C;leave&#x5B9E;&#x4F53;&#x548C;Applicant&#x503C;&#x5BF9;&#x8C61;&#x5206;&#x522B;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x88AB;rule&#x805A;&#x5408;&#x548C;person&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x589E;&#x52A0;&#x805A;&#x5408;&#x7684;&#x8026;&#x5408;&#x5EA6;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
-<pre><code>public class LeaveApplicationService{
+<pre class="language-"><code>public class LeaveApplicationService{
 
   public void createLeaveInfo(Leave leave){
   //get approval leader max level by rule
@@ -1005,7 +1061,7 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
   }
 }
 </code></pre><p>&#x90A3;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x805A;&#x5408;&#x7684;&#x89E3;&#x8026;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8DE8;&#x805A;&#x5408;&#x8C03;&#x7528;&#x65F6;&#x7684;&#x5BF9;&#x8C61;&#x4F20;&#x503C;&#x8C03;&#x6574;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;&#x4E00;&#x8D77;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x8C03;&#x6574;&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;getLeaderMaxLevel&#x7531;leave&#x5BF9;&#x8C61;&#x4F20;&#x503C;&#x8C03;&#x6574;&#x4E3A;personType&#xFF0C;leaveType&#x548C;duration&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;findFirstApprover&#x4E2D;Applicant&#x503C;&#x5BF9;&#x8C61;&#x8C03;&#x6574;&#x4E3A;personId&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;</p>
-<pre><code>public class LeaveApplicationService{
+<pre class="language-"><code>public class LeaveApplicationService{
 
   public void createLeaveInfo(Leave leave){
   //get approval leader max level by rule
@@ -1021,7 +1077,7 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
 <p>&#x6211;&#x4EEC;&#x4EE5;&#x5E94;&#x7528;&#x670D;&#x52A1;createLeaveInfo&#x4E3A;&#x4F8B;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x770B;&#x770B;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x505A;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x8C03;&#x6574;&#xFF1F;</p>
 <h3 id="1-&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x524D;">1. &#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x524D;</h3>
 <p>createLeaveInfo&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>public void createLeaveInfo(Leave leave){
+<pre class="language-"><code>public void createLeaveInfo(Leave leave){
 
     //get approval leader max level by rule
     int leaderMaxLevel = approvalRuleDomainService.getLeaderMaxLevel(leave.getApplicant().getPersonType(), leave.getType().toString(), leave.getDuration());
@@ -1031,17 +1087,17 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
 }
 </code></pre><h3 id="2-&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x540E;">2. &#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x540E;</h3>
 <p>leave&#x548C;person&#x4E24;&#x4E2A;&#x805A;&#x5408;&#x968F;&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x540E;&#xFF0C;createLeaveInfo&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4E2D;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C06;&#x4F1A;&#x53D8;&#x6210;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x3002;</p>
-<pre><code>Person approver = personDomainService.findFirstApprover(leave.getApplicant().getPersonId(), leaderMaxLevel);
+<pre class="language-"><code>Person approver = personDomainService.findFirstApprover(leave.getApplicant().getPersonId(), leaderMaxLevel);
 </code></pre><p>&#x7531;&#x4E8E;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x8C03;&#x7528;&#x662F;&#x5728;&#x5E94;&#x7528;&#x5C42;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x8C03;&#x6574;createLeaveInfo&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;&#x5C06;&#x539F;&#x6765;&#x5FAE;&#x670D;&#x52A1;&#x5185;&#x7684;&#x670D;&#x52A1;&#x8C03;&#x7528;personDomainService.findFirstApprover&#x4FEE;&#x6539;&#x4E3A;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x670D;&#x52A1;&#x8C03;&#x7528;&#xFF1A;personFeignService. findFirstApprover&#x3002;</p>
 <p>&#x540C;&#x65F6;&#x65B0;&#x589E;ApproverAssembler&#x7EC4;&#x88C5;&#x5668;&#x548C;PersonResponse&#x7684;DTO&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C06;person&#x5FAE;&#x670D;&#x52A1;&#x8FD4;&#x56DE;&#x7684;person DTO&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;approver&#x503C;&#x5BF9;&#x8C61;&#x3002;</p>
-<pre><code>// PersonResponse&#x4E3A;&#x8C03;&#x7528;&#x5FAE;&#x670D;&#x52A1;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7684;&#x5C01;&#x88C5;
+<pre class="language-"><code>// PersonResponse&#x4E3A;&#x8C03;&#x7528;&#x5FAE;&#x670D;&#x52A1;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7684;&#x5C01;&#x88C5;
 //&#x901A;&#x8FC7;personFeignService&#x8C03;&#x7528;Person&#x5FAE;&#x670D;&#x52A1;&#x7528;&#x6237;&#x63A5;&#x53E3;&#x5C42;&#x7684;findFirstApprover facade&#x63A5;&#x53E3;
 PersonResponse approverResponse = personFeignService. findFirstApprover(leave.getApplicant().getPersonId(), leaderMaxLevel);
 Approver approver = ApproverAssembler.toDO(approverResponse);
 </code></pre><p>&#x5728;&#x539F;&#x6765;&#x7684;person&#x805A;&#x5408;&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;findFirstApprover&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5DF2;&#x7ECF;&#x9010;&#x5C42;&#x5C01;&#x88C5;&#x4E3A;&#x7528;&#x6237;&#x63A5;&#x53E3;&#x5C42;&#x7684;Facade&#x63A5;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;person&#x5FAE;&#x670D;&#x52A1;&#x4E0D;&#x9700;&#x8981;&#x505A;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#x8C03;&#x6574;&#xFF0C;&#x53EA;&#x9700;&#x5C06;PersonApi&#x7684;findFirstApprover Facade&#x670D;&#x52A1;&#xFF0C;&#x53D1;&#x5E03;&#x5230;API&#x7F51;&#x5173;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x62C6;&#x5206;&#x524D;person&#x805A;&#x5408;&#x7684;findFirstApprover&#x9886;&#x57DF;&#x670D;&#x52A1;&#xFF0C;&#x6CA1;&#x6709;&#x88AB;&#x5C01;&#x88C5;&#x4E3A;Facade&#x63A5;&#x53E3;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5728;person&#x5FAE;&#x670D;&#x52A1;&#x4E2D;&#x6309;&#x7167;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x8C03;&#x6574;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5C06;person&#x805A;&#x5408;PersonDomainService&#x7C7B;&#x4E2D;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;findFirstApprover&#x5C01;&#x88C5;&#x4E3A;&#x5E94;&#x7528;&#x670D;&#x52A1;findFirstApprover&#x3002;</p>
-<pre><code>@Service
+<pre class="language-"><code>@Service
 public class PersonApplicationService {
 
   @Autowired
@@ -1052,7 +1108,7 @@ public class PersonApplicationService {
   }
 }
 </code></pre><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5C06;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5C01;&#x88C5;&#x4E3A;Facade&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x53D1;&#x5E03;&#x5230;API&#x7F51;&#x5173;&#x3002;</p>
-<pre><code>@RestController
+<pre class="language-"><code>@RestController
 @RequestMapping(&quot;/person&quot;)
 @Slf4j
 public class PersonApi {
@@ -1069,7 +1125,7 @@ public class PersonApi {
 <p>&#x5F53;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x63A5;&#x6536;&#x5230;&#x524D;&#x7AEF;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x7EC4;&#x88C5;&#x5668;&#x4F1A;&#x5C06;DTO&#x8F6C;&#x6362;&#x4E3A;DO&#x3002;&#x5F53;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5411;&#x524D;&#x7AEF;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x7EC4;&#x88C5;&#x5668;&#x4F1A;&#x5C06;DO&#x8F6C;&#x6362;&#x4E3A;DTO&#x3002;</p>
 <h3 id="1-facade&#x63A5;&#x53E3;">1. facade&#x63A5;&#x53E3;</h3>
 <p>facade&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x95E8;&#x9762;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x95E8;&#x9762;&#x63A5;&#x53E3;&#x52A0;&#x4E00;&#x4E2A;&#x95E8;&#x9762;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#x3002;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x524D;&#x7AEF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#xFF0C;&#x7531;&#x4E8E;&#x8BF7;&#x5047;&#x5FAE;&#x670D;&#x52A1;&#x524D;&#x7AEF;&#x529F;&#x80FD;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x76F4;&#x63A5;&#x7528;&#x4E00;&#x4E2A;&#x95E8;&#x9762;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
-<pre><code>public class LeaveApi {   
+<pre class="language-"><code>public class LeaveApi {   
   @PostMapping
   public Response createLeaveInfo(LeaveDTO leaveDTO){
           Leave leave = LeaveAssembler.toDO(leaveDTO);
@@ -1079,8 +1135,8 @@ public class PersonApi {
 
   @PostMapping(&quot;/query/applicant/{applicantId}&quot;)
   public Response queryByApplicant(@PathVariable String applicantId){
-  List&lt;Leave&gt; leaveList = leaveApplicationService.queryLeaveInfosByApplicant(applicantId);
-  List&lt;LeaveDTO&gt; leaveDTOList = leaveList.stream().map(leave -&gt; LeaveAssembler.toDTO(leave)).collect(Collectors.toList());
+  List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> leaveList = leaveApplicationService.queryLeaveInfosByApplicant(applicantId);
+  List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeaveDTO</span><span class="token punctuation">&gt;</span></span> leaveDTOList = leaveList.stream().map(leave -&gt; LeaveAssembler.toDTO(leave)).collect(Collectors.toList());
           return Response.ok(leaveDTOList);
   }
 
@@ -1088,7 +1144,7 @@ public class PersonApi {
 }
 </code></pre><h3 id="2-dto&#x6570;&#x636E;&#x7EC4;&#x88C5;">2. DTO&#x6570;&#x636E;&#x7EC4;&#x88C5;</h3>
 <p>&#x7EC4;&#x88C5;&#x7C7B;&#xFF08;Assembler&#xFF09;&#xFF1A;&#x8D1F;&#x8D23;&#x5C06;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x8FD4;&#x56DE;&#x7684;&#x591A;&#x4E2A;DO&#x5BF9;&#x8C61;&#x7EC4;&#x88C5;&#x4E3A;&#x524D;&#x7AEF;DTO&#x5BF9;&#x8C61;&#xFF0C;&#x6216;&#x5C06;&#x524D;&#x7AEF;&#x8BF7;&#x6C42;&#x7684;DTO&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x591A;&#x4E2A;DO&#x5BF9;&#x8C61;&#xFF0C;&#x4F9B;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F7F;&#x7528;&#x3002;&#x7EC4;&#x88C5;&#x7C7B;&#x4E2D;&#x4E0D;&#x5E94;&#x6709;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x3001;&#x5B57;&#x6BB5;&#x6620;&#x5C04;&#x7B49;&#x3002;Assembler&#x5F80;&#x5F80;&#x4E0E;DTO&#x540C;&#x65F6;&#x5B58;&#x5728;&#x3002;LeaveAssembler&#x5B8C;&#x6210;&#x8BF7;&#x5047;DO&#x548C;DTO&#x6570;&#x636E;&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x3002;</p>
-<pre><code>public class LeaveAssembler {
+<pre class="language-"><code>public class LeaveAssembler {
 
     public static LeaveDTO toDTO(Leave leave){
         LeaveDTO dto = new LeaveDTO();
@@ -1098,7 +1154,7 @@ public class PersonApi {
         dto.setStartTime(DateUtil.formatDateTime(leave.getStartTime()));
         dto.setEndTime(DateUtil.formatDateTime(leave.getEndTime()));
         dto.setCurrentApprovalInfoDTO(ApprovalInfoAssembler.toDTO(leave.getCurrentApprovalInfo()));
-        List&lt;ApprovalInfoDTO&gt; historyApprovalInfoDTOList = leave.getHistoryApprovalInfos()
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoDTO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList = leave.getHistoryApprovalInfos()
                 .stream()
                 .map(historyApprovalInfo -&gt; ApprovalInfoAssembler.toDTO(leave.getCurrentApprovalInfo()))
                 .collect(Collectors.toList());
@@ -1113,7 +1169,7 @@ public class PersonApi {
         leave.setApplicant(ApplicantAssembler.toDO(dto.getApplicantDTO()));
         leave.setApprover(ApproverAssembler.toDO(dto.getApproverDTO()));
         leave.setCurrentApprovalInfo(ApprovalInfoAssembler.toDO(dto.getCurrentApprovalInfoDTO()));
-        List&lt;ApprovalInfo&gt; historyApprovalInfoDTOList = dto.getHistoryApprovalInfoDTOList()
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList = dto.getHistoryApprovalInfoDTOList()
                 .stream()
                 .map(historyApprovalInfoDTO -&gt; ApprovalInfoAssembler.toDO(historyApprovalInfoDTO))
                 .collect(Collectors.toList());
@@ -1123,14 +1179,14 @@ public class PersonApi {
 }
 </code></pre><p>DTO&#x7C7B;&#xFF1A;&#x5305;&#x62EC;requestDTO&#x548C;responseDTO&#x4E24;&#x90E8;&#x5206;&#x3002;</p>
 <p>DTO&#x5E94;&#x5C3D;&#x91CF;&#x6839;&#x636E;&#x524D;&#x7AEF;&#x5C55;&#x793A;&#x6570;&#x636E;&#x7684;&#x9700;&#x6C42;&#x6765;&#x5B9A;&#x4E49;&#xFF0C;&#x907F;&#x514D;&#x8FC7;&#x591A;&#x5730;&#x66B4;&#x9732;&#x540E;&#x7AEF;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;&#x5C24;&#x5176;&#x5BF9;&#x4E8E;&#x591A;&#x6E20;&#x9053;&#x573A;&#x666F;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6E20;&#x9053;&#x5C5E;&#x6027;&#x548C;&#x8981;&#x6C42;&#xFF0C;&#x4E3A;&#x6BCF;&#x4E2A;&#x6E20;&#x9053;&#x524D;&#x7AEF;&#x5E94;&#x7528;&#x5B9A;&#x4E49;&#x4E2A;&#x6027;&#x5316;&#x7684;DTO&#x3002;&#x7531;&#x4E8E;&#x8BF7;&#x5047;&#x5FAE;&#x670D;&#x52A1;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;leaveDTO&#x4EE3;&#x7801;&#x505A;&#x4E2A;&#x793A;&#x4F8B;&#x3002;</p>
-<pre><code>@Data
+<pre class="language-"><code>@Data
 public class LeaveDTO {
     String leaveId;
     ApplicantDTO applicantDTO;
     ApproverDTO approverDTO;
     String leaveType;
     ApprovalInfoDTO currentApprovalInfoDTO;
-    List&lt;ApprovalInfoDTO&gt; historyApprovalInfoDTOList;
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoDTO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList;
     String startTime;
     String endTime;
     long duration;
@@ -1143,9 +1199,9 @@ public class LeaveDTO {
 <p>&#x6700;&#x540E;&#x6211;&#x60F3;&#x8BF4;&#xFF0C;DDD&#x77E5;&#x8BC6;&#x4F53;&#x7CFB;&#x867D;&#x5927;&#xFF0C;&#x4F46;&#x4F60;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4F01;&#x4E1A;&#x7684;&#x9879;&#x76EE;&#x573A;&#x666F;&#x548C;&#x6210;&#x672C;&#x8981;&#x6C42;&#xFF0C;&#x9010;&#x6B65;&#x5F15;&#x5165;&#x9002;&#x5408;&#x81EA;&#x5DF1;&#x7684;DDD&#x65B9;&#x6CD5;&#x548C;&#x6280;&#x672F;&#xFF0C;&#x5EFA;&#x7ACB;&#x9002;&#x5408;&#x81EA;&#x5DF1;&#x7684;DDD&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x548C;&#x65B9;&#x6CD5;&#x4F53;&#x7CFB;&#x3002;</p>
 <p>&#x8FD9;&#x4E00;&#x671F;&#x7684;&#x52A0;&#x9910;&#x5230;&#x8FD9;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x5E0C;&#x671B;&#x4F60;&#x80FD;&#x5BF9;&#x7167;&#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x8BA4;&#x771F;&#x9605;&#x8BFB;&#x4ECA;&#x5929;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6709;&#x4EC0;&#x4E48;&#x7591;&#x95EE;&#xFF0C;&#x6B22;&#x8FCE;&#x5728;&#x7559;&#x8A00;&#x533A;&#x4E0E;&#x6211;&#x4EA4;&#x6D41;&#xFF01;</p>
 
-                                
-                                </section>
-                            
+                        
+                    </section>
+                    
     </div>
     <div class="search-results">
         <div class="has-results">
@@ -1162,62 +1218,84 @@ public class LeaveDTO {
     </div>
 </div>
 
-                        </div>
-                    </div>
-                
+                </div>
             </div>
+            
+        </div>
 
-            
-                
-                <a href="172730.html" class="navigation navigation-prev " aria-label="Previous page: 结束语 | 所谓高手，就是跨过坑和大海！">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="307617.html" class="navigation navigation-next " aria-label="Next page: 抽奖｜《DDD实战课》沉淀成书了，感谢有你！">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
+        
+        
+        <a href="172730.html" class="navigation navigation-prev " aria-label="Previous page: 结束语 | 所谓高手，就是跨过坑和大海！">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="307617.html" class="navigation navigation-next " aria-label="Next page: 抽奖｜《DDD实战课》沉淀成书了，感谢有你！">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
         
     </div>
-
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基于DDD的微服务设计实例代码详解","level":"7.1","depth":1,"next":{"title":"抽奖｜《DDD实战课》沉淀成书了，感谢有你！","level":"7.2","depth":1,"path":"docs/307617.md","ref":"./docs/307617.md","articles":[]},"previous":{"title":"结束语 | 所谓高手，就是跨过坑和大海！","level":"6.1","depth":1,"path":"docs/172730.md","ref":"./docs/172730.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"DDD实战课","language":"zh","gitbook":"*"},"file":{"path":"docs/185174.md","mtime":"2025-10-30T15:39:20.763Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-30T15:40:20.318Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基于DDD的微服务设计实例代码详解","level":"7.1","depth":1,"next":{"title":"抽奖｜《DDD实战课》沉淀成书了，感谢有你！","level":"7.2","depth":1,"path":"docs/307617.md","ref":"./docs/307617.md","articles":[]},"previous":{"title":"结束语 | 所谓高手，就是跨过坑和大海！","level":"6.1","depth":1,"path":"docs/172730.md","ref":"./docs/172730.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-d4t","hide-element","code","prism","prism-themes","-lunr","-search","-sharing","search-pro-fixed","-highlight","back-to-top-button","mermaid-gb3","expandable-chapters-small","toolbar","splitter"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"theme-d4t":{},"prism":{"css":["prism-themes/themes/prism-coldark-cold.css"]},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/README.assets/logo.svg","favicon":"/README.assets/favicon.ico"},"splitter":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".logo",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"back-to-top-button":{},"prism-themes":{},"expandable-chapters-small":{},"toolbar":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","author":"zzturn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"10x程序员工作法","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"docs/185174.md","mtime":"2025-10-30T15:46:49.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-30T15:48:15.005Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
+        
+        <script src="../gitbook/gitbook-plugin-theme-d4t/script.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>
