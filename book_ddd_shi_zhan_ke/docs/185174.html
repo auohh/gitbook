@@ -611,347 +611,369 @@
 <p>&#x805A;&#x5408;&#x6839;leave&#x4E2D;&#x6709;&#x5C5E;&#x6027;&#x3001;&#x503C;&#x5BF9;&#x8C61;&#x3001;&#x5173;&#x8054;&#x5B9E;&#x4F53;&#x548C;&#x81EA;&#x8EAB;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x3002;Leave&#x5B9E;&#x4F53;&#x91C7;&#x7528;&#x5145;&#x8840;&#x6A21;&#x578B;&#xFF0C;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#xFF0C;&#x5177;&#x4F53;&#x5C31;&#x662F;&#x805A;&#x5408;&#x6839;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x7684;getDuration&#x548C;addHistoryApprovalInfo&#x7B49;&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x805A;&#x5408;&#x6839;&#x5F15;&#x7528;&#x5B9E;&#x4F53;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x805A;&#x5408;&#x5185;&#x7684;&#x591A;&#x4E2A;&#x5B9E;&#x4F53;&#xFF0C;&#x5728;&#x805A;&#x5408;&#x6839;&#x5B9E;&#x4F53;&#x7C7B;&#x65B9;&#x6CD5;&#x4E2D;&#x5B8C;&#x6210;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#xFF0C;&#x8FD9;&#x79CD;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x805A;&#x5408;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x91CC;&#x5B9E;&#x73B0;&#x3002;&#x4F46;&#x4E3A;&#x4E86;&#x804C;&#x8D23;&#x548C;&#x8FB9;&#x754C;&#x6E05;&#x6670;&#xFF0C;&#x6211;&#x5EFA;&#x8BAE;&#x805A;&#x5408;&#x8981;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x5728;&#x5B9E;&#x4F53;&#x7C7B;&#x65B9;&#x6CD5;&#x4E2D;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x6D89;&#x53CA;&#x591A;&#x4E2A;&#x5B9E;&#x4F53;&#x7EC4;&#x5408;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x7684;&#x4E1A;&#x52A1;&#x80FD;&#x529B;&#x7531;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5B8C;&#x6210;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x662F;&#x805A;&#x5408;&#x6839;leave&#x7684;&#x5B9E;&#x4F53;&#x7C7B;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x5C5E;&#x6027;&#x3001;&#x5BF9;&#x5B9E;&#x4F53;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x4EE5;&#x53CA;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x548C;&#x65B9;&#x6CD5;&#x3002;</p>
-<pre class="language-"><code>public class Leave {
-    String id;
-    Applicant applicant;
-    Approver approver;
-    LeaveType type;
-    Status status;
-    Date startTime;
-    Date endTime;
-    long duration;
-    int leaderMaxLevel; //&#x5BA1;&#x6279;&#x9886;&#x5BFC;&#x7684;&#x6700;&#x9AD8;&#x7EA7;&#x522B;
-    ApprovalInfo currentApprovalInfo;
-    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfos; 
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Leave</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> id<span class="token punctuation">;</span>
+    <span class="token class-name">Applicant</span> applicant<span class="token punctuation">;</span>
+    <span class="token class-name">Approver</span> approver<span class="token punctuation">;</span>
+    <span class="token class-name">LeaveType</span> type<span class="token punctuation">;</span>
+    <span class="token class-name">Status</span> status<span class="token punctuation">;</span>
+    <span class="token class-name">Date</span> startTime<span class="token punctuation">;</span>
+    <span class="token class-name">Date</span> endTime<span class="token punctuation">;</span>
+    <span class="token keyword">long</span> duration<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> leaderMaxLevel<span class="token punctuation">;</span> <span class="token comment">//&#x5BA1;&#x6279;&#x9886;&#x5BFC;&#x7684;&#x6700;&#x9AD8;&#x7EA7;&#x522B;</span>
+    <span class="token class-name">ApprovalInfo</span> currentApprovalInfo<span class="token punctuation">;</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfos<span class="token punctuation">;</span> 
 
-    public long getDuration() {
-        return endTime.getTime() - startTime.getTime();
-    }
+    <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getDuration</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> endTime<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> startTime<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public Leave addHistoryApprovalInfo(ApprovalInfo approvalInfo) {
-        if (null == historyApprovalInfos)
-            historyApprovalInfos = new ArrayList&lt;&gt;();
-        this.historyApprovalInfos.add(approvalInfo);
-        return this;
-    } 
+    <span class="token keyword">public</span> <span class="token class-name">Leave</span> <span class="token function">addHistoryApprovalInfo</span><span class="token punctuation">(</span><span class="token class-name">ApprovalInfo</span> approvalInfo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">null</span> <span class="token operator">==</span> historyApprovalInfos<span class="token punctuation">)</span>
+            historyApprovalInfos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>historyApprovalInfos<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>approvalInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> 
 
-    public Leave create(){
-        this.setStatus(Status.APPROVING);
-        this.setStartTime(new Date());
-        return this;
-}
+    <span class="token keyword">public</span> <span class="token class-name">Leave</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token class-name">Status</span><span class="token punctuation">.</span><span class="token constant">APPROVING</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setStartTime</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-//&#x5176;&#x5B83;&#x65B9;&#x6CD5;
-}
-</code></pre><h3 id="2-&#x5B9E;&#x4F53;">2. &#x5B9E;&#x4F53;</h3>
+<span class="token comment">//&#x5176;&#x5B83;&#x65B9;&#x6CD5;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-&#x5B9E;&#x4F53;">2. &#x5B9E;&#x4F53;</h3>
 <p>&#x5BA1;&#x6279;&#x610F;&#x89C1;&#x5B9E;&#x4F53;ApprovalInfo&#x88AB;leave&#x805A;&#x5408;&#x6839;&#x5F15;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x5BA1;&#x6279;&#x610F;&#x89C1;&#xFF0C;&#x5B83;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;approver&#x7B49;&#xFF0C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#x3002;</p>
-<pre class="language-"><code>public class ApprovalInfo {
-    String approvalInfoId;
-    Approver approver;
-    ApprovalType approvalType;
-    String msg;
-    long time;
-}
-</code></pre><h3 id="3-&#x503C;&#x5BF9;&#x8C61;">3. &#x503C;&#x5BF9;&#x8C61;</h3>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApprovalInfo</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> approvalInfoId<span class="token punctuation">;</span>
+    <span class="token class-name">Approver</span> approver<span class="token punctuation">;</span>
+    <span class="token class-name">ApprovalType</span> approvalType<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> msg<span class="token punctuation">;</span>
+    <span class="token keyword">long</span> time<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="3-&#x503C;&#x5BF9;&#x8C61;">3. &#x503C;&#x5BF9;&#x8C61;</h3>
 <p>&#x5728;Leave&#x805A;&#x5408;&#x6709;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x503C;&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5BA1;&#x6279;&#x4EBA;&#x503C;&#x5BF9;&#x8C61;Approver&#x3002;&#x8FD9;&#x7C7B;&#x503C;&#x5BF9;&#x8C61;&#x9664;&#x4E86;&#x5C5E;&#x6027;&#x96C6;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6709;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x548C;&#x8F6C;&#x6362;&#x670D;&#x52A1;&#x3002;Approver&#x6570;&#x636E;&#x6765;&#x6E90;&#x4E8E;person&#x805A;&#x5408;&#xFF0C;&#x4ECE;person&#x805A;&#x5408;&#x83B7;&#x53D6;&#x5BA1;&#x6279;&#x4EBA;&#x8FD4;&#x56DE;&#x540E;&#xFF0C;&#x4ECE;person&#x5B9E;&#x4F53;&#x83B7;&#x53D6;personID&#x3001;personName&#x548C;level&#x7B49;&#x5C5E;&#x6027;&#xFF0C;&#x91CD;&#x65B0;&#x7EC4;&#x5408;&#x4E3A;approver&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x548C;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x3002;</p>
 <p>Approver&#x503C;&#x5BF9;&#x8C61;&#x540C;&#x65F6;&#x88AB;&#x805A;&#x5408;&#x6839;leave&#x548C;&#x5B9E;&#x4F53;approvalInfo&#x5F15;&#x7528;&#x3002;&#x8FD9;&#x7C7B;&#x503C;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x6765;&#x6E90;&#x4E8E;&#x5176;&#x5B83;&#x805A;&#x5408;&#xFF0C;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;&#xFF0C;&#x53EF;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#x3002;&#x5C06;&#x8FD9;&#x79CD;&#x5BF9;&#x8C61;&#x8BBE;&#x8BA1;&#x4E3A;&#x503C;&#x5BF9;&#x8C61;&#x800C;&#x4E0D;&#x662F;&#x5B9E;&#x4F53;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#xFF0C;&#x964D;&#x4F4E;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F53;&#x5173;&#x8054;&#x7684;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4E00;&#x822C;&#x5EFA;&#x8BAE;&#x4F18;&#x5148;&#x8BBE;&#x8BA1;&#x4E3A;&#x503C;&#x5BF9;&#x8C61;&#x3002;</p>
-<pre class="language-"><code>public class Approver {
-    String personId;
-    String personName;
-    int level; //&#x7BA1;&#x7406;&#x7EA7;&#x522B;
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Approver</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> personId<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> personName<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> level<span class="token punctuation">;</span> <span class="token comment">//&#x7BA1;&#x7406;&#x7EA7;&#x522B;</span>
 
-    public static Approver fromPerson(Person person){
-        Approver approver = new Approver();
-        approver.setPersonId(person.getPersonId());
-        approver.setPersonName(person.getPersonName());
-        approver.setLevel(person.getRoleLevel());
-        return approver;
-    }
-}
-</code></pre><p>&#x4E0B;&#x9762;&#x662F;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x5BF9;&#x8C61;Status&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
-<pre class="language-"><code>public enum Status {
-    APPROVING, APPROVED, REJECTED
-}
-</code></pre><p>&#x8FD9;&#x91CC;&#x4F60;&#x8981;&#x8BB0;&#x4F4F;&#x4E00;&#x70B9;&#xFF0C;&#x7531;&#x4E8E;&#x503C;&#x5BF9;&#x8C61;&#x53EA;&#x505A;&#x6574;&#x4F53;&#x66FF;&#x6362;&#x3001;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5728;&#x503C;&#x5BF9;&#x8C61;&#x4E2D;&#x57FA;&#x672C;&#x4E0D;&#x4F1A;&#x6709;&#x4FEE;&#x6539;&#x6216;&#x65B0;&#x589E;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Approver</span> <span class="token function">fromPerson</span><span class="token punctuation">(</span><span class="token class-name">Person</span> person<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Approver</span> approver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Approver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        approver<span class="token punctuation">.</span><span class="token function">setPersonId</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        approver<span class="token punctuation">.</span><span class="token function">setPersonName</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">getPersonName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        approver<span class="token punctuation">.</span><span class="token function">setLevel</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">getRoleLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> approver<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x5BF9;&#x8C61;Status&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">Status</span> <span class="token punctuation">{</span>
+    <span class="token constant">APPROVING</span><span class="token punctuation">,</span> <span class="token constant">APPROVED</span><span class="token punctuation">,</span> <span class="token constant">REJECTED</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x4F60;&#x8981;&#x8BB0;&#x4F4F;&#x4E00;&#x70B9;&#xFF0C;&#x7531;&#x4E8E;&#x503C;&#x5BF9;&#x8C61;&#x53EA;&#x505A;&#x6574;&#x4F53;&#x66FF;&#x6362;&#x3001;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5728;&#x503C;&#x5BF9;&#x8C61;&#x4E2D;&#x57FA;&#x672C;&#x4E0D;&#x4F1A;&#x6709;&#x4FEE;&#x6539;&#x6216;&#x65B0;&#x589E;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
 <h3 id="4-&#x9886;&#x57DF;&#x670D;&#x52A1;">4. &#x9886;&#x57DF;&#x670D;&#x52A1;</h3>
 <p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x4E1A;&#x52A1;&#x884C;&#x4E3A;&#x7531;&#x591A;&#x4E2A;&#x5B9E;&#x4F53;&#x5BF9;&#x8C61;&#x53C2;&#x4E0E;&#x5B8C;&#x6210;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5C06;&#x8FD9;&#x90E8;&#x5206;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x653E;&#x5728;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x4E2D;&#x5B9E;&#x73B0;&#x3002;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x4E0E;&#x5B9E;&#x4F53;&#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;&#x662F;&#xFF1A;&#x5B9E;&#x4F53;&#x65B9;&#x6CD5;&#x5B8C;&#x6210;&#x5355;&#x4E00;&#x5B9E;&#x4F53;&#x81EA;&#x8EAB;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x662F;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#x7684;&#x539F;&#x5B50;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x800C;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5219;&#x662F;&#x591A;&#x4E2A;&#x5B9E;&#x4F53;&#x7EC4;&#x5408;&#x51FA;&#x7684;&#x76F8;&#x5BF9;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;&#x4E24;&#x8005;&#x90FD;&#x5728;&#x9886;&#x57DF;&#x5C42;&#xFF0C;&#x5B9E;&#x73B0;&#x9886;&#x57DF;&#x6A21;&#x578B;&#x7684;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x80FD;&#x529B;&#x3002;</p>
 <p>&#x4E00;&#x4E2A;&#x805A;&#x5408;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x7C7B;&#xFF0C;&#x7BA1;&#x7406;&#x805A;&#x5408;&#x5185;&#x6240;&#x6709;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x3002;</p>
 <p>&#x8BF7;&#x5047;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x7C7B;&#x662F;LeaveDomainService&#x3002;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x4E2D;&#x4F1A;&#x7528;&#x5230;&#x5F88;&#x591A;&#x7684;DDD&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x590D;&#x6742;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x7528;&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x9886;&#x57DF;&#x5C42;&#x4E0E;&#x57FA;&#x7840;&#x5C42;&#x7684;&#x4F9D;&#x8D56;&#x5012;&#x7F6E;&#x548C;&#x7528;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7684;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x7B49;&#x3002;</p>
-<pre class="language-"><code>public class LeaveDomainService {
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveDomainService</span> <span class="token punctuation">{</span>
 
-    @Autowired
-    EventPublisher eventPublisher;
-    @Autowired
-    LeaveRepositoryInterface leaveRepositoryInterface;
-    @Autowired
-    LeaveFactory leaveFactory;
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">EventPublisher</span> eventPublisher<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">LeaveRepositoryInterface</span> leaveRepositoryInterface<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">LeaveFactory</span> leaveFactory<span class="token punctuation">;</span>
 
-    @Transactional
-    public void createLeave(Leave leave, int leaderMaxLevel, Approver approver) {
-            leave.setLeaderMaxLevel(leaderMaxLevel);
-            leave.setApprover(approver);
-            leave.create();
-    leaveRepositoryInterface.save(leaveFactory.createLeavePO(leave));
-    LeaveEvent event = LeaveEvent.create(LeaveEventType.CREATE_EVENT, leave);
-    leaveRepositoryInterface.saveEvent(leaveFactory.createLeaveEventPO(event));
-    eventPublisher.publish(event);
-    }
+    <span class="token annotation punctuation">@Transactional</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">createLeave</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">,</span> <span class="token keyword">int</span> leaderMaxLevel<span class="token punctuation">,</span> <span class="token class-name">Approver</span> approver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            leave<span class="token punctuation">.</span><span class="token function">setLeaderMaxLevel</span><span class="token punctuation">(</span>leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            leave<span class="token punctuation">.</span><span class="token function">setApprover</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            leave<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeavePO</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">LeaveEvent</span> event <span class="token operator">=</span> <span class="token class-name">LeaveEvent</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">LeaveEventType</span><span class="token punctuation">.</span><span class="token constant">CREATE_EVENT</span><span class="token punctuation">,</span> leave<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">saveEvent</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeaveEventPO</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    eventPublisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Transactional
-    public void updateLeaveInfo(Leave leave) {
-    LeavePO po = leaveRepositoryInterface.findById(leave.getId());
-        if (null == po) {
-                throw new RuntimeException(&quot;leave does not exist&quot;);
-         }
-     leaveRepositoryInterface.save(leaveFactory.createLeavePO(leave));
-    }
+    <span class="token annotation punctuation">@Transactional</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">updateLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">LeavePO</span> po <span class="token operator">=</span> leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">null</span> <span class="token operator">==</span> po<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">&quot;leave does not exist&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+     leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeavePO</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Transactional
-    public void submitApproval(Leave leave, Approver approver) {
-       LeaveEvent event;
-       if (ApprovalType.REJECT == leave.getCurrentApprovalInfo().getApprovalType()) {
-       leave.reject(approver);
-       event = LeaveEvent.create(LeaveEventType.REJECT_EVENT, leave);
-       } else {
-             if (approver != null) {
-                 leave.agree(approver);
-                 event = LeaveEvent.create(LeaveEventType.AGREE_EVENT, leave); } else {
-                    leave.finish();
-                    event = LeaveEvent.create(LeaveEventType.APPROVED_EVENT, leave);
-                    }
-           }
-      leave.addHistoryApprovalInfo(leave.getCurrentApprovalInfo());
-      leaveRepositoryInterface.save(leaveFactory.createLeavePO(leave));
-      leaveRepositoryInterface.saveEvent(leaveFactory.createLeaveEventPO(event));
-      eventPublisher.publish(event);
-    }
+    <span class="token annotation punctuation">@Transactional</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">submitApproval</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">,</span> <span class="token class-name">Approver</span> approver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token class-name">LeaveEvent</span> event<span class="token punctuation">;</span>
+       <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">ApprovalType</span><span class="token punctuation">.</span><span class="token constant">REJECT</span> <span class="token operator">==</span> leave<span class="token punctuation">.</span><span class="token function">getCurrentApprovalInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getApprovalType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       leave<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       event <span class="token operator">=</span> <span class="token class-name">LeaveEvent</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">LeaveEventType</span><span class="token punctuation">.</span><span class="token constant">REJECT_EVENT</span><span class="token punctuation">,</span> leave<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+             <span class="token keyword">if</span> <span class="token punctuation">(</span>approver <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 leave<span class="token punctuation">.</span><span class="token function">agree</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                 event <span class="token operator">=</span> <span class="token class-name">LeaveEvent</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">LeaveEventType</span><span class="token punctuation">.</span><span class="token constant">AGREE_EVENT</span><span class="token punctuation">,</span> leave<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    leave<span class="token punctuation">.</span><span class="token function">finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    event <span class="token operator">=</span> <span class="token class-name">LeaveEvent</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">LeaveEventType</span><span class="token punctuation">.</span><span class="token constant">APPROVED_EVENT</span><span class="token punctuation">,</span> leave<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+           <span class="token punctuation">}</span>
+      leave<span class="token punctuation">.</span><span class="token function">addHistoryApprovalInfo</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getCurrentApprovalInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeavePO</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">saveEvent</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeaveEventPO</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      eventPublisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public Leave getLeaveInfo(String leaveId) {
-    LeavePO leavePO = leaveRepositoryInterface.findById(leaveId);
-    return leaveFactory.getLeave(leavePO);
-    }
+    <span class="token keyword">public</span> <span class="token class-name">Leave</span> <span class="token function">getLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">String</span> leaveId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">LeavePO</span> leavePO <span class="token operator">=</span> leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>leaveId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> leaveFactory<span class="token punctuation">.</span><span class="token function">getLeave</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> queryLeaveInfosByApplicant(String applicantId) {
-        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList = leaveRepositoryInterface.queryByApplicantId(applicantId);
-    return leavePOList.stream().map(leavePO -&gt; leaveFactory.getLeave(leavePO)).collect(Collectors.toList());
-    }
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Leave</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryLeaveInfosByApplicant</span><span class="token punctuation">(</span><span class="token class-name">String</span> applicantId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList <span class="token operator">=</span> leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">queryByApplicantId</span><span class="token punctuation">(</span>applicantId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> leavePOList<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>leavePO <span class="token operator">-&gt;</span> leaveFactory<span class="token punctuation">.</span><span class="token function">getLeave</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> queryLeaveInfosByApprover(String approverId) {
-    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList = leaveRepositoryInterface.queryByApproverId(approverId);
-    return leavePOList.stream().map(leavePO -&gt; leaveFactory.getLeave(leavePO)).collect(Collectors.toList());
-    }
-}
-</code></pre><p><strong>&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x65F6;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Leave</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryLeaveInfosByApprover</span><span class="token punctuation">(</span><span class="token class-name">String</span> approverId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList <span class="token operator">=</span> leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">queryByApproverId</span><span class="token punctuation">(</span>approverId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> leavePOList<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>leavePO <span class="token operator">-&gt;</span> leaveFactory<span class="token punctuation">.</span><span class="token function">getLeave</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x65F6;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
 <p>&#x5728;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x6216;&#x5B9E;&#x4F53;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x8C03;&#x7528;&#x5176;&#x5B83;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x6216;&#x5F15;&#x7528;&#x5176;&#x5B83;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#x6216;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x79CD;&#x64CD;&#x4F5C;&#x4F1A;&#x589E;&#x52A0;&#x805A;&#x5408;&#x7684;&#x8026;&#x5408;&#x5EA6;&#x3002;&#x5728;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x6F14;&#x8FDB;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x805A;&#x5408;&#x62C6;&#x5206;&#x548C;&#x91CD;&#x7EC4;&#xFF0C;&#x8FD9;&#x79CD;&#x8DE8;&#x805A;&#x5408;&#x7684;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x548C;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#xFF0C;&#x4F1A;&#x53D8;&#x6210;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5BFC;&#x81F4;&#x8FD9;&#x79CD;&#x8DE8;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x548C;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x5931;&#x6548;&#xFF0C;&#x5728;&#x805A;&#x5408;&#x5206;&#x62C6;&#x65F6;&#x4F1A;&#x589E;&#x52A0;&#x4F60;&#x4EE3;&#x7801;&#x89E3;&#x8026;&#x548C;&#x91CD;&#x6784;&#x7684;&#x5DE5;&#x4F5C;&#x91CF;&#x3002;</p>
 <p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x6BB5;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x91CC;Approver&#x662F;leave&#x805A;&#x5408;&#x7684;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x4F5C;&#x4E3A;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x5230;person&#x805A;&#x5408;&#x7684;findNextApprover&#x9886;&#x57DF;&#x670D;&#x52A1;&#x3002;&#x5982;&#x679C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x5185;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x7684;&#x3002;&#x4F46;&#x5728;&#x67B6;&#x6784;&#x6F14;&#x8FDB;&#x65F6;&#xFF0C;&#x5982;&#x679C;person&#x548C;leave&#x4E24;&#x4E2A;&#x805A;&#x5408;&#x88AB;&#x5206;&#x62C6;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;leave&#x4E2D;&#x7684;Approver&#x5BF9;&#x8C61;&#x4EE5;&#x53CA;&#x5B83;&#x7684;getPersonId()&#x548C;fromPersonPO&#x65B9;&#x6CD5;&#x5728;person&#x805A;&#x5408;&#x4E2D;&#x5C31;&#x4F1A;&#x5931;&#x6548;&#xFF0C;&#x8FD9;&#x65F6;&#x4F60;&#x5C31;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4EE3;&#x7801;&#x91CD;&#x6784;&#x4E86;&#x3002;</p>
-<pre class="language-"><code>public class PersonDomainService {
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonDomainService</span> <span class="token punctuation">{</span>
 
-   public Approver findNextApprover(Approver currentApprover, int leaderMaxLevel) {
-   PersonPO leaderPO = personRepository.findLeaderByPersonId(currentApprover.getPersonId());
-        if (leaderPO.getRoleLevel() &gt; leaderMaxLevel) {
-            return null;
-        } else {
-            return Approver.fromPersonPO(leaderPO);
-        }
-   }
-}
-</code></pre><p>&#x90A3;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5462;&#xFF1F;&#x5728;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7EC4;&#x5408;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ID&#x6216;&#x8005;&#x53C2;&#x6570;&#x6765;&#x4F20;&#x6570;&#xFF0C;&#x5982;&#x5355;&#x4E00;&#x53C2;&#x6570;currentApproverId&#x3002;&#x8FD9;&#x6837;&#x805A;&#x5408;&#x4E4B;&#x95F4;&#x5C31;&#x89E3;&#x8026;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4E0D;&#x4F9D;&#x8D56;&#x5176;&#x5B83;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#xFF0C;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;</p>
-<pre class="language-"><code>public class PersonDomainService {
+   <span class="token keyword">public</span> <span class="token class-name">Approver</span> <span class="token function">findNextApprover</span><span class="token punctuation">(</span><span class="token class-name">Approver</span> currentApprover<span class="token punctuation">,</span> <span class="token keyword">int</span> leaderMaxLevel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token class-name">PersonPO</span> leaderPO <span class="token operator">=</span> personRepository<span class="token punctuation">.</span><span class="token function">findLeaderByPersonId</span><span class="token punctuation">(</span>currentApprover<span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>leaderPO<span class="token punctuation">.</span><span class="token function">getRoleLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> leaderMaxLevel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token class-name">Approver</span><span class="token punctuation">.</span><span class="token function">fromPersonPO</span><span class="token punctuation">(</span>leaderPO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x90A3;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5462;&#xFF1F;&#x5728;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7EC4;&#x5408;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ID&#x6216;&#x8005;&#x53C2;&#x6570;&#x6765;&#x4F20;&#x6570;&#xFF0C;&#x5982;&#x5355;&#x4E00;&#x53C2;&#x6570;currentApproverId&#x3002;&#x8FD9;&#x6837;&#x805A;&#x5408;&#x4E4B;&#x95F4;&#x5C31;&#x89E3;&#x8026;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4E0D;&#x4F9D;&#x8D56;&#x5176;&#x5B83;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#xFF0C;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonDomainService</span> <span class="token punctuation">{</span>
 
-   public Person findNextApprover(String currentApproverId, int leaderMaxLevel) {
-   PersonPO leaderPO = personRepository.findLeaderByPersonId(currentApproverId);
-   if (leaderPO.getRoleLevel() &gt; leaderMaxLevel) {
-       return null;
-    } else {
-            return personFactory.createPerson(leaderPO);
-      }
-  }
-}
-</code></pre><h2 id="&#x9886;&#x57DF;&#x4E8B;&#x4EF6;">&#x9886;&#x57DF;&#x4E8B;&#x4EF6;</h2>
+   <span class="token keyword">public</span> <span class="token class-name">Person</span> <span class="token function">findNextApprover</span><span class="token punctuation">(</span><span class="token class-name">String</span> currentApproverId<span class="token punctuation">,</span> <span class="token keyword">int</span> leaderMaxLevel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token class-name">PersonPO</span> leaderPO <span class="token operator">=</span> personRepository<span class="token punctuation">.</span><span class="token function">findLeaderByPersonId</span><span class="token punctuation">(</span>currentApproverId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>leaderPO<span class="token punctuation">.</span><span class="token function">getRoleLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> leaderMaxLevel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> personFactory<span class="token punctuation">.</span><span class="token function">createPerson</span><span class="token punctuation">(</span>leaderPO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x9886;&#x57DF;&#x4E8B;&#x4EF6;">&#x9886;&#x57DF;&#x4E8B;&#x4EF6;</h2>
 <p>&#x5728;&#x521B;&#x5EFA;&#x8BF7;&#x5047;&#x5355;&#x548C;&#x8BF7;&#x5047;&#x5BA1;&#x6279;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x4EA7;&#x751F;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x3002;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x805A;&#x5408;&#x5185;&#x7684;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x653E;&#x5728;&#x805A;&#x5408;&#x7684;event&#x76EE;&#x5F55;&#x4E2D;&#x3002;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;&#x5728;&#x805A;&#x5408;&#x4ED3;&#x50A8;&#x5185;&#x5B8C;&#x6210;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x4F46;&#x662F;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E0D;&#x53D7;&#x805A;&#x5408;&#x6839;&#x7BA1;&#x7406;&#x3002;</p>
 <h3 id="1-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x57FA;&#x7C7B;domainevent">1. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x57FA;&#x7C7B;DomainEvent</h3>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x7EDF;&#x4E00;&#x7684;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x57FA;&#x7C7B;DomainEvent&#x3002;&#x57FA;&#x7C7B;&#x5305;&#x542B;&#xFF1A;&#x4E8B;&#x4EF6;ID&#x3001;&#x65F6;&#x95F4;&#x6233;&#x3001;&#x4E8B;&#x4EF6;&#x6E90;&#x4EE5;&#x53CA;&#x4E8B;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x3002;</p>
-<pre class="language-"><code>public class DomainEvent {
-    String id;
-    Date timestamp;
-    String source;
-    String data;
-}
-</code></pre><h3 id="2-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;">2. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;</h3>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DomainEvent</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> id<span class="token punctuation">;</span>
+    <span class="token class-name">Date</span> timestamp<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> source<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;">2. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;</h3>
 <p>&#x8BF7;&#x5047;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;LeaveEvent&#x7EE7;&#x627F;&#x57FA;&#x7C7B;DomainEvent&#x3002;&#x53EF;&#x6839;&#x636E;&#x9700;&#x8981;&#x6269;&#x5C55;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;leaveEventType&#x3002;data&#x5B57;&#x6BB5;&#x4E2D;&#x5B58;&#x50A8;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;XML&#x6216;Json&#x7B49;&#x683C;&#x5F0F;&#x3002;</p>
-<pre class="language-"><code>public class LeaveEvent extends DomainEvent {
-    LeaveEventType leaveEventType;
-    public static LeaveEvent create(LeaveEventType eventType, Leave leave){
-       LeaveEvent event = new LeaveEvent();
-       event.setId(IdGenerator.nextId());
-       event.setLeaveEventType(eventType);
-       event.setTimestamp(new Date());
-       event.setData(JSON.toJSONString(leave));
-       return event;
-    }
-}
-</code></pre><h3 id="3-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x903B;&#x8F91;">3. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x903B;&#x8F91;</h3>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveEvent</span> <span class="token keyword">extends</span> <span class="token class-name">DomainEvent</span> <span class="token punctuation">{</span>
+    <span class="token class-name">LeaveEventType</span> leaveEventType<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">LeaveEvent</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">LeaveEventType</span> eventType<span class="token punctuation">,</span> <span class="token class-name">Leave</span> leave<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token class-name">LeaveEvent</span> event <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LeaveEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       event<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token class-name">IdGenerator</span><span class="token punctuation">.</span><span class="token function">nextId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       event<span class="token punctuation">.</span><span class="token function">setLeaveEventType</span><span class="token punctuation">(</span>eventType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       event<span class="token punctuation">.</span><span class="token function">setTimestamp</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       event<span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">return</span> event<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="3-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x903B;&#x8F91;">3. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x903B;&#x8F91;</h3>
 <p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x903B;&#x8F91;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x6267;&#x884C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x4EA7;&#x751F;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x3002;</p>
 <p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
-<pre class="language-"><code>leaveRepositoryInterface.save(leaveFactory.createLeavePO(leave));
-</code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
-<pre class="language-"><code>leaveRepositoryInterface.saveEvent(leaveFactory.createLeaveEventPO(event));
-</code></pre><p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x53D1;&#x5E03;&#x3002;</p>
-<pre class="language-"><code>eventPublisher.publish(event);
-</code></pre><p>&#x4EE5;&#x4E0A;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#x8BE6;&#x89C1;LeaveDomainService&#x4E2D;submitApproval&#x9886;&#x57DF;&#x670D;&#x52A1;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x8BF7;&#x5047;&#x63D0;&#x4EA4;&#x5BA1;&#x6279;&#x4E8B;&#x4EF6;&#x7684;&#x5B8C;&#x6574;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
+<pre class="language-"><code class="lang-java">leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeavePO</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
+<pre class="language-"><code class="lang-java">leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">saveEvent</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeaveEventPO</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x53D1;&#x5E03;&#x3002;</p>
+<pre class="language-"><code class="lang-java">eventPublisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#x8BE6;&#x89C1;LeaveDomainService&#x4E2D;submitApproval&#x9886;&#x57DF;&#x670D;&#x52A1;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x8BF7;&#x5047;&#x63D0;&#x4EA4;&#x5BA1;&#x6279;&#x4E8B;&#x4EF6;&#x7684;&#x5B8C;&#x6574;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
 <h3 id="4-&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;">4. &#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;</h3>
 <p>&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x4E8B;&#x4EF6;&#x53D1;&#x5E03;&#x65B9;&#x4E0E;&#x4E8B;&#x4EF6;&#x8BA2;&#x9605;&#x65B9;&#x6570;&#x636E;&#x7684;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x548C;&#x6570;&#x636E;&#x5BA1;&#x8BA1;&#xFF0C;&#x6709;&#x4E9B;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x9700;&#x8981;&#x5EFA;&#x7ACB;&#x6570;&#x636E;&#x5BF9;&#x8D26;&#x673A;&#x5236;&#x3002;&#x6570;&#x636E;&#x5BF9;&#x8D26;&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x5BF9;&#x6E90;&#x7AEF;&#x548C;&#x76EE;&#x7684;&#x7AEF;&#x7684;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x6BD4;&#x5BF9;&#xFF0C;&#x4ECE;&#x800C;&#x53D1;&#x73B0;&#x5F02;&#x5E38;&#x6570;&#x636E;&#x5E76;&#x8FDB;&#x4E00;&#x6B65;&#x5904;&#x7406;&#xFF0C;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x3002;</p>
 <p>&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x5BF9;&#x8D26;&#x7684;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8BBE;&#x8BA1;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;PO&#xFF0C;&#x5B8C;&#x6210;&#x9886;&#x57DF;&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x5982;LeaveEvent&#x4E8B;&#x4EF6;&#x5B9E;&#x4F53;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;LeaveEventPO&#x3002;&#x518D;&#x901A;&#x8FC7;&#x805A;&#x5408;&#x7684;&#x4ED3;&#x50A8;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#xFF1A;</p>
-<pre class="language-"><code>leaveRepositoryInterface.saveEvent(leaveFactory.createLeaveEventPO(event))&#x3002;
-</code></pre><p>&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;LeaveEventPO&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre class="language-"><code>public class LeaveEventPO {
-    @Id
-    @GenericGenerator(name = &quot;idGenerator&quot;, strategy = &quot;uuid&quot;) 
-    @GeneratedValue(generator = &quot;idGenerator&quot;)
-    int id;
-    @Enumerated(EnumType.STRING)
-    LeaveEventType leaveEventType;
-    Date timestamp;
-    String source;
-    String data;
-}
-</code></pre><h2 id="&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;">&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;</h2>
+<pre class="language-"><code class="lang-java">leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">saveEvent</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeaveEventPO</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">)</span>&#x3002;
+</code></pre>
+<p>&#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;LeaveEventPO&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveEventPO</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GenericGenerator</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&quot;idGenerator&quot;</span><span class="token punctuation">,</span> strategy <span class="token operator">=</span> <span class="token string">&quot;uuid&quot;</span><span class="token punctuation">)</span> 
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>generator <span class="token operator">=</span> <span class="token string">&quot;idGenerator&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Enumerated</span><span class="token punctuation">(</span><span class="token class-name">EnumType</span><span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">)</span>
+    <span class="token class-name">LeaveEventType</span> leaveEventType<span class="token punctuation">;</span>
+    <span class="token class-name">Date</span> timestamp<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> source<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;">&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;</h2>
 <p>&#x9886;&#x57DF;&#x6A21;&#x578B;&#x4E2D;DO&#x5B9E;&#x4F53;&#x7684;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x662F;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#xFF0C;DDD&#x91C7;&#x7528;&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x4F7F;&#x5F97;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E0E;&#x57FA;&#x7840;&#x8D44;&#x6E90;&#x903B;&#x8F91;&#x89E3;&#x8026;&#xFF0C;&#x5B9E;&#x73B0;&#x4F9D;&#x8D56;&#x5012;&#x7F6E;&#x3002;&#x6301;&#x4E45;&#x5316;&#x65F6;&#x5148;&#x5B8C;&#x6210;DO&#x4E0E;PO&#x5BF9;&#x8C61;&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4ED3;&#x50A8;&#x670D;&#x52A1;&#x4E2D;&#x5B8C;&#x6210;PO&#x5BF9;&#x8C61;&#x7684;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
 <h3 id="1-do&#x4E0E;po&#x5BF9;&#x8C61;&#x7684;&#x8F6C;&#x6362;">1. DO&#x4E0E;PO&#x5BF9;&#x8C61;&#x7684;&#x8F6C;&#x6362;</h3>
 <p>Leave&#x805A;&#x5408;&#x6839;&#x7684;DO&#x5B9E;&#x4F53;&#x9664;&#x4E86;&#x81EA;&#x8EAB;&#x7684;&#x5C5E;&#x6027;&#x5916;&#xFF0C;&#x8FD8;&#x4F1A;&#x6839;&#x636E;&#x9886;&#x57DF;&#x6A21;&#x578B;&#x5F15;&#x7528;&#x591A;&#x4E2A;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;Applicant&#x548C;Approver&#x7B49;&#xFF0C;&#x5B83;&#x4EEC;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#xFF1A;personId&#x3001;personName&#x548C;personType&#x7B49;&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x5728;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;PO&#x8BBE;&#x8BA1;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x4E9B;&#x503C;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5D4C;&#x5165;PO&#x5C5E;&#x6027;&#x4E2D;&#xFF0C;&#x6216;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x7EC4;&#x5408;&#x5C5E;&#x6027;&#x5B57;&#x6BB5;&#xFF0C;&#x4EE5;Json&#x4E32;&#x7684;&#x65B9;&#x5F0F;&#x5B58;&#x50A8;&#x5728;PO&#x4E2D;&#x3002;</p>
 <p>&#x4EE5;&#x4E0B;&#x662F;leave&#x7684;DO&#x7684;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre class="language-"><code>public class Leave {
-    String id;
-    Applicant applicant;
-    Approver approver;
-    LeaveType type;
-    Status status;
-    Date startTime;
-    Date endTime;
-    long duration;
-    int leaderMaxLevel;
-    ApprovalInfo currentApprovalInfo;
-    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfos;
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Leave</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> id<span class="token punctuation">;</span>
+    <span class="token class-name">Applicant</span> applicant<span class="token punctuation">;</span>
+    <span class="token class-name">Approver</span> approver<span class="token punctuation">;</span>
+    <span class="token class-name">LeaveType</span> type<span class="token punctuation">;</span>
+    <span class="token class-name">Status</span> status<span class="token punctuation">;</span>
+    <span class="token class-name">Date</span> startTime<span class="token punctuation">;</span>
+    <span class="token class-name">Date</span> endTime<span class="token punctuation">;</span>
+    <span class="token keyword">long</span> duration<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> leaderMaxLevel<span class="token punctuation">;</span>
+    <span class="token class-name">ApprovalInfo</span> currentApprovalInfo<span class="token punctuation">;</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfos<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-public class Applicant {
-    String personId;
-    String personName;
-    String personType;
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Applicant</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> personId<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> personName<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> personType<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-public class Approver {
-    String personId;
-    String personName;
-    int level;
-}
-</code></pre><p>&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x6570;&#x636E;&#x5E93;&#x8868;&#x6570;&#x91CF;&#x4EE5;&#x53CA;&#x8868;&#x4E0E;&#x8868;&#x7684;&#x590D;&#x6742;&#x5173;&#x8054;&#x5173;&#x7CFB;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;leave&#x5B9E;&#x4F53;&#x548C;&#x591A;&#x4E2A;&#x503C;&#x5BF9;&#x8C61;&#x653E;&#x5728;&#x4E00;&#x4E2A;LeavePO&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4EE5;&#x5C5E;&#x6027;&#x5D4C;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;Applicant&#x503C;&#x5BF9;&#x8C61;&#x5728;LeavePO&#x4E2D;&#x4F1A;&#x5C55;&#x5F00;&#x4E3A;&#xFF1A;applicantId&#x3001;applicantName&#x548C;applicantType&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Approver</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> personId<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> personName<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> level<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x6570;&#x636E;&#x5E93;&#x8868;&#x6570;&#x91CF;&#x4EE5;&#x53CA;&#x8868;&#x4E0E;&#x8868;&#x7684;&#x590D;&#x6742;&#x5173;&#x8054;&#x5173;&#x7CFB;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;leave&#x5B9E;&#x4F53;&#x548C;&#x591A;&#x4E2A;&#x503C;&#x5BF9;&#x8C61;&#x653E;&#x5728;&#x4E00;&#x4E2A;LeavePO&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4EE5;&#x5C5E;&#x6027;&#x5D4C;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;Applicant&#x503C;&#x5BF9;&#x8C61;&#x5728;LeavePO&#x4E2D;&#x4F1A;&#x5C55;&#x5F00;&#x4E3A;&#xFF1A;applicantId&#x3001;applicantName&#x548C;applicantType&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x4EE5;&#x4E0B;&#x4E3A;&#x91C7;&#x7528;&#x5C5E;&#x6027;&#x5D4C;&#x5165;&#x65B9;&#x5F0F;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;LeavePO&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
-<pre class="language-"><code>public class LeavePO {
-    @Id
-    @GenericGenerator(name=&quot;idGenerator&quot;, strategy=&quot;uuid&quot;) 
-    @GeneratedValue(generator=&quot;idGenerator&quot;)
-    String id;
-    String applicantId;
-    String applicantName;
-    @Enumerated(EnumType.STRING)
-    PersonType applicantType;
-    String approverId;
-    String approverName;
-    @Enumerated(EnumType.STRING)
-    LeaveType leaveType;
-    @Enumerated(EnumType.STRING)
-    Status status;
-    Date startTime;
-    Date endTime;
-    long duration;
-    @Transient
-    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoPOList;
-}
-</code></pre><h3 id="2-&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;">2. &#x4ED3;&#x50A8;&#x6A21;&#x5F0F;</h3>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeavePO</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GenericGenerator</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;idGenerator&quot;</span><span class="token punctuation">,</span> strategy<span class="token operator">=</span><span class="token string">&quot;uuid&quot;</span><span class="token punctuation">)</span> 
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>generator<span class="token operator">=</span><span class="token string">&quot;idGenerator&quot;</span><span class="token punctuation">)</span>
+    <span class="token class-name">String</span> id<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> applicantId<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> applicantName<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Enumerated</span><span class="token punctuation">(</span><span class="token class-name">EnumType</span><span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">)</span>
+    <span class="token class-name">PersonType</span> applicantType<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> approverId<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> approverName<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Enumerated</span><span class="token punctuation">(</span><span class="token class-name">EnumType</span><span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">)</span>
+    <span class="token class-name">LeaveType</span> leaveType<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Enumerated</span><span class="token punctuation">(</span><span class="token class-name">EnumType</span><span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">)</span>
+    <span class="token class-name">Status</span> status<span class="token punctuation">;</span>
+    <span class="token class-name">Date</span> startTime<span class="token punctuation">;</span>
+    <span class="token class-name">Date</span> endTime<span class="token punctuation">;</span>
+    <span class="token keyword">long</span> duration<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Transient</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoPOList<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;">2. &#x4ED3;&#x50A8;&#x6A21;&#x5F0F;</h3>
 <p>&#x4E3A;&#x4E86;&#x89E3;&#x8026;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x548C;&#x57FA;&#x7840;&#x8D44;&#x6E90;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x57FA;&#x7840;&#x5C42;&#x548C;&#x9886;&#x57DF;&#x5C42;&#x4E4B;&#x95F4;&#x589E;&#x52A0;&#x4E00;&#x5C42;&#x4ED3;&#x50A8;&#x670D;&#x52A1;&#xFF0C;&#x5B9E;&#x73B0;&#x4F9D;&#x8D56;&#x5012;&#x7F6E;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x4E00;&#x5C42;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x548C;&#x57FA;&#x7840;&#x5C42;&#x8D44;&#x6E90;&#x7684;&#x4F9D;&#x8D56;&#x5206;&#x79BB;&#x3002;&#x5728;&#x53D8;&#x66F4;&#x57FA;&#x7840;&#x5C42;&#x6570;&#x636E;&#x5E93;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EA;&#x8981;&#x66FF;&#x6362;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x4E0A;&#x5C42;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E0D;&#x4F1A;&#x53D7;&#x57FA;&#x7840;&#x8D44;&#x6E90;&#x53D8;&#x66F4;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x4F9D;&#x8D56;&#x5012;&#x7F6E;&#x3002;</p>
 <p>&#x4E00;&#x4E2A;&#x805A;&#x5408;&#x4E00;&#x4E2A;&#x4ED3;&#x50A8;&#xFF0C;&#x5B9E;&#x73B0;&#x805A;&#x5408;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316;&#x3002;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x901A;&#x8FC7;&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#x6765;&#x8BBF;&#x95EE;&#x57FA;&#x7840;&#x8D44;&#x6E90;&#xFF0C;&#x7531;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x548C;&#x521D;&#x59CB;&#x5316;&#x3002;&#x4ED3;&#x50A8;&#x4E00;&#x822C;&#x5305;&#x542B;&#xFF1A;&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#x548C;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x3002;</p>
 <p><strong>2.1&#x4ED3;&#x50A8;&#x63A5;&#x53E3;</strong></p>
 <p>&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#x9762;&#x5411;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;&#x3002;</p>
-<pre class="language-"><code>public interface LeaveRepositoryInterface {
-   void save(LeavePO leavePO);
-   void saveEvent(LeaveEventPO leaveEventPO);
-   LeavePO findById(String id);
-   List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApplicantId(String applicantId);
-   List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApproverId(String approverId);
-}
-</code></pre><p><strong>2.2&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">LeaveRepositoryInterface</span> <span class="token punctuation">{</span>
+   <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">LeavePO</span> leavePO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">void</span> <span class="token function">saveEvent</span><span class="token punctuation">(</span><span class="token class-name">LeaveEventPO</span> leaveEventPO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token class-name">LeavePO</span> <span class="token function">findById</span><span class="token punctuation">(</span><span class="token class-name">String</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryByApplicantId</span><span class="token punctuation">(</span><span class="token class-name">String</span> applicantId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryByApproverId</span><span class="token punctuation">(</span><span class="token class-name">String</span> approverId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>2.2&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;</strong></p>
 <p>&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x548C;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x3002;</p>
-<pre class="language-"><code>@Repository
-public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
+<pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@Repository</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveRepositoryImpl</span> <span class="token keyword">implements</span> <span class="token class-name">LeaveRepositoryInterface</span> <span class="token punctuation">{</span>
 
-    @Autowired
-    LeaveDao leaveDao;
-    @Autowired
-    ApprovalInfoDao approvalInfoDao;
-    @Autowired
-    LeaveEventDao leaveEventDao;
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">LeaveDao</span> leaveDao<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">ApprovalInfoDao</span> approvalInfoDao<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">LeaveEventDao</span> leaveEventDao<span class="token punctuation">;</span>
 
-    public void save(LeavePO leavePO) { 
-        leaveDao.save(leavePO);
-        approvalInfoDao.saveAll(leavePO.getHistoryApprovalInfoPOList());
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">LeavePO</span> leavePO<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        leaveDao<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        approvalInfoDao<span class="token punctuation">.</span><span class="token function">saveAll</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getHistoryApprovalInfoPOList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void saveEvent(LeaveEventPO leaveEventPO){
-        leaveEventDao.save(leaveEventPO);
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveEvent</span><span class="token punctuation">(</span><span class="token class-name">LeaveEventPO</span> leaveEventPO<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        leaveEventDao<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>leaveEventPO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public LeavePO findById(String id) {
-        return leaveDao.findById(id)
-                .orElseThrow(() -&gt; new RuntimeException(&quot;leave not found&quot;));
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">LeavePO</span> <span class="token function">findById</span><span class="token punctuation">(</span><span class="token class-name">String</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> leaveDao<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">orElseThrow</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">&quot;leave not found&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApplicantId(String applicantId) {
-        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList = leaveDao.queryByApplicantId(applicantId);
-        leavePOList.stream()
-                .forEach(leavePO -&gt; {
-                    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> approvalInfoPOList = approvalInfoDao.queryByLeaveId(leavePO.getId());
-                    leavePO.setHistoryApprovalInfoPOList(approvalInfoPOList);
-                });
-        return leavePOList;
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryByApplicantId</span><span class="token punctuation">(</span><span class="token class-name">String</span> applicantId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList <span class="token operator">=</span> leaveDao<span class="token punctuation">.</span><span class="token function">queryByApplicantId</span><span class="token punctuation">(</span>applicantId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        leavePOList<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>leavePO <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+                    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> approvalInfoPOList <span class="token operator">=</span> approvalInfoDao<span class="token punctuation">.</span><span class="token function">queryByLeaveId</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    leavePO<span class="token punctuation">.</span><span class="token function">setHistoryApprovalInfoPOList</span><span class="token punctuation">(</span>approvalInfoPOList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> leavePOList<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApproverId(String approverId) {
-        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList = leaveDao.queryByApproverId(approverId);
-        leavePOList.stream()
-                .forEach(leavePO -&gt; {
-                    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> approvalInfoPOList = approvalInfoDao.queryByLeaveId(leavePO.getId());
-                    leavePO.setHistoryApprovalInfoPOList(approvalInfoPOList);
-                });
-        return leavePOList;
-    }
-}
-</code></pre><p>&#x8FD9;&#x91CC;&#x6301;&#x4E45;&#x5316;&#x7EC4;&#x4EF6;&#x91C7;&#x7528;&#x4E86;Jpa&#x3002;</p>
-<pre class="language-"><code>public interface LeaveDao extends JpaRepository<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO,</span> <span class="token attr-name">String</span><span class="token punctuation">&gt;</span></span> {
-    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApplicantId(String applicantId);
-    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeavePO</span><span class="token punctuation">&gt;</span></span> queryByApproverId(String approverId);
-}
-</code></pre><p><strong>2.3&#x4ED3;&#x50A8;&#x6267;&#x884C;&#x903B;&#x8F91;</strong></p>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryByApproverId</span><span class="token punctuation">(</span><span class="token class-name">String</span> approverId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> leavePOList <span class="token operator">=</span> leaveDao<span class="token punctuation">.</span><span class="token function">queryByApproverId</span><span class="token punctuation">(</span>approverId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        leavePOList<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>leavePO <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+                    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> approvalInfoPOList <span class="token operator">=</span> approvalInfoDao<span class="token punctuation">.</span><span class="token function">queryByLeaveId</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    leavePO<span class="token punctuation">.</span><span class="token function">setHistoryApprovalInfoPOList</span><span class="token punctuation">(</span>approvalInfoPOList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> leavePOList<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x6301;&#x4E45;&#x5316;&#x7EC4;&#x4EF6;&#x91C7;&#x7528;&#x4E86;Jpa&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">LeaveDao</span> <span class="token keyword">extends</span> <span class="token class-name">JpaRepository</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryByApplicantId</span><span class="token punctuation">(</span><span class="token class-name">String</span> applicantId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeavePO</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryByApproverId</span><span class="token punctuation">(</span><span class="token class-name">String</span> approverId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>2.3&#x4ED3;&#x50A8;&#x6267;&#x884C;&#x903B;&#x8F91;</strong></p>
 <p>&#x4EE5;&#x521B;&#x5EFA;&#x8BF7;&#x5047;&#x5355;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ED3;&#x50A8;&#x7684;&#x6267;&#x884C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#x3002;</p>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4ED3;&#x50A8;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x5C06;&#x805A;&#x5408;&#x5185;DO&#x4F1A;&#x8F6C;&#x6362;&#x4E3A;PO&#xFF0C;&#x8FD9;&#x79CD;&#x8F6C;&#x6362;&#x5728;&#x5DE5;&#x5382;&#x670D;&#x52A1;&#x4E2D;&#x5B8C;&#x6210;&#xFF1A;</p>
-<pre class="language-"><code>leaveFactory.createLeavePO(leave)&#x3002;
-</code></pre><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x540E;&#xFF0C;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#xFF1A;</p>
-<pre class="language-"><code>leaveRepositoryInterface.save&#x3002;
-</code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x7531;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5B8C;&#x6210;PO&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
+<pre class="language-"><code class="lang-java">leaveFactory<span class="token punctuation">.</span><span class="token function">createLeavePO</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span>&#x3002;
+</code></pre>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5B8C;&#x6210;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x540E;&#xFF0C;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x4ED3;&#x50A8;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre class="language-"><code class="lang-java">leaveRepositoryInterface<span class="token punctuation">.</span>save&#x3002;
+</code></pre>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x7531;&#x4ED3;&#x50A8;&#x5B9E;&#x73B0;&#x5B8C;&#x6210;PO&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
 <p>&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre class="language-"><code>public void createLeave(Leave leave, int leaderMaxLevel, Approver approver) {
-  leave.setLeaderMaxLevel(leaderMaxLevel);
-  leave.setApprover(approver);
-  leave.create();
-  leaveRepositoryInterface.save(leaveFactory.createLeavePO(leave));
-}
-</code></pre><h2 id="&#x5DE5;&#x5382;&#x6A21;&#x5F0F;">&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</h2>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">createLeave</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">,</span> <span class="token keyword">int</span> leaderMaxLevel<span class="token punctuation">,</span> <span class="token class-name">Approver</span> approver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  leave<span class="token punctuation">.</span><span class="token function">setLeaderMaxLevel</span><span class="token punctuation">(</span>leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  leave<span class="token punctuation">.</span><span class="token function">setApprover</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  leave<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  leaveRepositoryInterface<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>leaveFactory<span class="token punctuation">.</span><span class="token function">createLeavePO</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x5DE5;&#x5382;&#x6A21;&#x5F0F;">&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</h2>
 <p>&#x5BF9;&#x4E8E;&#x5927;&#x578B;&#x7684;&#x590D;&#x6742;&#x9886;&#x57DF;&#x6A21;&#x578B;&#xFF0C;&#x805A;&#x5408;&#x5185;&#x7684;&#x805A;&#x5408;&#x6839;&#x3001;&#x5B9E;&#x4F53;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x8FD9;&#x79CD;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4E0D;&#x9002;&#x5408;&#x901A;&#x8FC7;&#x6839;&#x5B9E;&#x4F53;&#x6784;&#x9020;&#x5668;&#x6765;&#x521B;&#x5EFA;&#x3002;&#x4E3A;&#x4E86;&#x534F;&#x8C03;&#x8FD9;&#x79CD;&#x590D;&#x6742;&#x7684;&#x9886;&#x57DF;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;&#xFF0C;&#x5728;DDD&#x91CC;&#x5F15;&#x5165;&#x4E86;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;Factory&#xFF09;&#xFF0C;&#x5728;&#x5DE5;&#x5382;&#x91CC;&#x5C01;&#x88C5;&#x590D;&#x6742;&#x7684;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x3002;</p>
 <p>&#x5F53;&#x805A;&#x5408;&#x6839;&#x88AB;&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x805A;&#x5408;&#x5185;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x88AB;&#x540C;&#x65F6;&#x521B;&#x5EFA;&#x3002;</p>
 <p>&#x5DE5;&#x5382;&#x4E0E;&#x4ED3;&#x50A8;&#x6A21;&#x5F0F;&#x5F80;&#x5F80;&#x7ED3;&#x5BF9;&#x51FA;&#x73B0;&#xFF0C;&#x5E94;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x7684;&#x521D;&#x59CB;&#x5316;&#x548C;&#x6301;&#x4E45;&#x5316;&#x4E24;&#x7C7B;&#x573A;&#x666F;&#x3002;</p>
@@ -960,46 +982,47 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
 <li>DO&#x7684;&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5316;&#xFF1A;&#x5C06;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x7684;DO&#x5BF9;&#x8C61;&#x4E00;&#x6B21;&#x8F6C;&#x6362;&#x4E3A;PO&#x5BF9;&#x8C61;&#xFF0C;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x3002;</li>
 </ul>
 <p>&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x662F;leave&#x805A;&#x5408;&#x7684;&#x5DE5;&#x5382;&#x7C7B;LeaveFactory&#x3002;&#x5176;&#x4E2D;createLeavePO&#xFF08;leave&#xFF09;&#x65B9;&#x6CD5;&#x7EC4;&#x7EC7;leave&#x805A;&#x5408;&#x7684;DO&#x5BF9;&#x8C61;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#x5B8C;&#x6210;leavePO&#x5BF9;&#x8C61;&#x7684;&#x6784;&#x5EFA;&#x3002;getLeave&#xFF08;leave&#xFF09;&#x901A;&#x8FC7;&#x6301;&#x4E45;&#x5316;&#x5BF9;&#x8C61;PO&#x6784;&#x5EFA;&#x805A;&#x5408;&#x7684;DO&#x5BF9;&#x8C61;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x5B8C;&#x6210;leave&#x805A;&#x5408;DO&#x5B9E;&#x4F53;&#x7684;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
-<pre class="language-"><code>public class LeaveFactory {
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveFactory</span> <span class="token punctuation">{</span>
 
-   public LeavePO createLeavePO(Leave leave) {
-   LeavePO leavePO = new LeavePO();
-   leavePO.setId(UUID.randomUUID().toString());
-   leavePO.setApplicantId(leave.getApplicant().getPersonId());
-   leavePO.setApplicantName(leave.getApplicant().getPersonName());
-   leavePO.setApproverId(leave.getApprover().getPersonId());
-   leavePO.setApproverName(leave.getApprover().getPersonName());
-   leavePO.setStartTime(leave.getStartTime());
-   leavePO.setStatus(leave.getStatus());
-   List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoPOList = approvalInfoPOListFromDO(leave);
-   leavePO.setHistoryApprovalInfoPOList(historyApprovalInfoPOList);
-   return leavePO;
-}
-
-
-   public Leave getLeave(LeavePO leavePO) {
-   Leave leave = new Leave();
-   Applicant applicant = Applicant.builder()
-       .personId(leavePO.getApplicantId())
-       .personName(leavePO.getApplicantName())
-       .build();
-   leave.setApplicant(applicant);
-   Approver approver = Approver.builder()
-       .personId(leavePO.getApproverId())
-       .personName(leavePO.getApproverName())
-       .build();
-   leave.setApprover(approver);
-   leave.setStartTime(leavePO.getStartTime());
-   leave.setStatus(leavePO.getStatus());
-   List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfo</span><span class="token punctuation">&gt;</span></span> approvalInfos = getApprovalInfos(leavePO.getHistoryApprovalInfoPOList());
-   leave.setHistoryApprovalInfos(approvalInfos);
-   return leave;
-   }
+   <span class="token keyword">public</span> <span class="token class-name">LeavePO</span> <span class="token function">createLeavePO</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token class-name">LeavePO</span> leavePO <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LeavePO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leavePO<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token constant">UUID</span><span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leavePO<span class="token punctuation">.</span><span class="token function">setApplicantId</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leavePO<span class="token punctuation">.</span><span class="token function">setApplicantName</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leavePO<span class="token punctuation">.</span><span class="token function">setApproverId</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApprover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leavePO<span class="token punctuation">.</span><span class="token function">setApproverName</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApprover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leavePO<span class="token punctuation">.</span><span class="token function">setStartTime</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getStartTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leavePO<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfoPO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoPOList <span class="token operator">=</span> <span class="token function">approvalInfoPOListFromDO</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leavePO<span class="token punctuation">.</span><span class="token function">setHistoryApprovalInfoPOList</span><span class="token punctuation">(</span>historyApprovalInfoPOList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> leavePO<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 
-//&#x5176;&#x5B83;&#x65B9;&#x6CD5;
-}
-</code></pre><h2 id="&#x670D;&#x52A1;&#x7684;&#x7EC4;&#x5408;&#x4E0E;&#x7F16;&#x6392;">&#x670D;&#x52A1;&#x7684;&#x7EC4;&#x5408;&#x4E0E;&#x7F16;&#x6392;</h2>
+   <span class="token keyword">public</span> <span class="token class-name">Leave</span> <span class="token function">getLeave</span><span class="token punctuation">(</span><span class="token class-name">LeavePO</span> leavePO<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token class-name">Leave</span> leave <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Leave</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token class-name">Applicant</span> applicant <span class="token operator">=</span> <span class="token class-name">Applicant</span><span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">personId</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getApplicantId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">personName</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getApplicantName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leave<span class="token punctuation">.</span><span class="token function">setApplicant</span><span class="token punctuation">(</span>applicant<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token class-name">Approver</span> approver <span class="token operator">=</span> <span class="token class-name">Approver</span><span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">personId</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getApproverId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">personName</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getApproverName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leave<span class="token punctuation">.</span><span class="token function">setApprover</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leave<span class="token punctuation">.</span><span class="token function">setStartTime</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getStartTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leave<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfo</span><span class="token punctuation">&gt;</span></span> approvalInfos <span class="token operator">=</span> <span class="token function">getApprovalInfos</span><span class="token punctuation">(</span>leavePO<span class="token punctuation">.</span><span class="token function">getHistoryApprovalInfoPOList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   leave<span class="token punctuation">.</span><span class="token function">setHistoryApprovalInfos</span><span class="token punctuation">(</span>approvalInfos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> leave<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+
+<span class="token comment">//&#x5176;&#x5B83;&#x65B9;&#x6CD5;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x670D;&#x52A1;&#x7684;&#x7EC4;&#x5408;&#x4E0E;&#x7F16;&#x6392;">&#x670D;&#x52A1;&#x7684;&#x7EC4;&#x5408;&#x4E0E;&#x7F16;&#x6392;</h2>
 <p>&#x5E94;&#x7528;&#x5C42;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5B8C;&#x6210;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x7684;&#x7EC4;&#x5408;&#x4E0E;&#x7F16;&#x6392;&#x3002;&#x4E00;&#x4E2A;&#x805A;&#x5408;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7C7B;&#xFF0C;&#x7BA1;&#x7406;&#x805A;&#x5408;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x3002;&#x6BD4;&#x5982;leave&#x805A;&#x5408;&#x6709;LeaveApplicationService&#xFF0C;person&#x805A;&#x5408;&#x6709;PersonApplicationService&#x3002;</p>
 <p>&#x5728;&#x8BF7;&#x5047;&#x5FAE;&#x670D;&#x52A1;&#x4E2D;&#xFF0C;&#x6709;&#x4E09;&#x4E2A;&#x805A;&#x5408;&#xFF1A;leave&#x3001;person&#x548C;rule&#x3002;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x662F;&#x5982;&#x4F55;&#x8DE8;&#x805A;&#x5408;&#x6765;&#x8FDB;&#x884C;&#x670D;&#x52A1;&#x7684;&#x7EC4;&#x5408;&#x548C;&#x7F16;&#x6392;&#x7684;&#x3002;&#x4EE5;&#x521B;&#x5EFA;&#x8BF7;&#x5047;&#x5355;createLeaveInfo&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4E3A;&#x4F8B;&#xFF0C;&#x5206;&#x4E3A;&#x8FD9;&#x6837;&#x4E09;&#x4E2A;&#x6B65;&#x9AA4;&#x3002;</p>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x8BF7;&#x5047;&#x5355;&#x5B9A;&#x4E49;&#x7684;&#x4EBA;&#x5458;&#x7C7B;&#x578B;&#x3001;&#x8BF7;&#x5047;&#x7C7B;&#x578B;&#x548C;&#x8BF7;&#x5047;&#x65F6;&#x957F;&#x4ECE;rule&#x805A;&#x5408;&#x4E2D;&#x83B7;&#x53D6;&#x8BF7;&#x5047;&#x5BA1;&#x6279;&#x89C4;&#x5219;&#x3002;&#x8FD9;&#x4E00;&#x6B65;&#x901A;&#x8FC7;approvalRuleDomainService&#x7C7B;&#x7684;getLeaderMaxLevel&#x9886;&#x57DF;&#x670D;&#x52A1;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
@@ -1007,194 +1030,205 @@ public class LeaveRepositoryImpl implements LeaveRepositoryInterface {
 <p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x8BF7;&#x5047;&#x6570;&#x636E;&#x548C;&#x4ECE;rule&#x548C;person&#x805A;&#x5408;&#x83B7;&#x53D6;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x521B;&#x5EFA;&#x8BF7;&#x5047;&#x5355;&#x3002;&#x8FD9;&#x4E00;&#x6B65;&#x901A;&#x8FC7;leaveDomainService&#x7C7B;&#x7684;createLeave&#x9886;&#x57DF;&#x670D;&#x52A1;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
 <p>&#x7531;&#x4E8E;&#x9886;&#x57DF;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x5DF2;&#x7ECF;&#x5F88;&#x597D;&#x5730;&#x6C89;&#x6DC0;&#x5230;&#x4E86;&#x9886;&#x57DF;&#x5C42;&#x4E2D;&#xFF0C;&#x9886;&#x57DF;&#x5C42;&#x7684;&#x8FD9;&#x4E9B;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x53EF;&#x4EE5;&#x9AD8;&#x5EA6;&#x590D;&#x7528;&#x3002;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x53EA;&#x9700;&#x8981;&#x7075;&#x6D3B;&#x5730;&#x7EC4;&#x5408;&#x548C;&#x7F16;&#x6392;&#x8FD9;&#x4E9B;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x9002;&#x914D;&#x524D;&#x7AEF;&#x4E1A;&#x52A1;&#x7684;&#x53D8;&#x5316;&#x3002;&#x56E0;&#x6B64;&#x5E94;&#x7528;&#x5C42;&#x4E0D;&#x4F1A;&#x79EF;&#x7D2F;&#x592A;&#x591A;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x8584;&#xFF0C;&#x4EE3;&#x7801;&#x7EF4;&#x62A4;&#x8D77;&#x6765;&#x4E5F;&#x4F1A;&#x5BB9;&#x6613;&#x5F97;&#x591A;&#x3002;</p>
 <p>&#x4EE5;&#x4E0B;&#x662F;leave&#x805A;&#x5408;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7C7B;&#x3002;&#x4EE3;&#x7801;&#x662F;&#x4E0D;&#x662F;&#x975E;&#x5E38;&#x5F97;&#x5C11;&#xFF1F;</p>
-<pre class="language-"><code>public class LeaveApplicationService{
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveApplicationService</span><span class="token punctuation">{</span>
 
-    @Autowired
-    LeaveDomainService leaveDomainService;
-    @Autowired
-    PersonDomainService personDomainService;
-    @Autowired
-    ApprovalRuleDomainService approvalRuleDomainService;
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">LeaveDomainService</span> leaveDomainService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">PersonDomainService</span> personDomainService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">ApprovalRuleDomainService</span> approvalRuleDomainService<span class="token punctuation">;</span>
 
-    public void createLeaveInfo(Leave leave){
-    //get approval leader max level by rule
-    int leaderMaxLevel = approvalRuleDomainService.getLeaderMaxLevel(leave.getApplicant().getPersonType(), leave.getType().toString(), leave.getDuration());
-    //find next approver
-    Person approver = personDomainService.findFirstApprover(leave.getApplicant().getPersonId(), leaderMaxLevel);
-    leaveDomainService.createLeave(leave, leaderMaxLevel, Approver.fromPerson(approver));
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">createLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//get approval leader max level by rule</span>
+    <span class="token keyword">int</span> leaderMaxLevel <span class="token operator">=</span> approvalRuleDomainService<span class="token punctuation">.</span><span class="token function">getLeaderMaxLevel</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leave<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leave<span class="token punctuation">.</span><span class="token function">getDuration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//find next approver</span>
+    <span class="token class-name">Person</span> approver <span class="token operator">=</span> personDomainService<span class="token punctuation">.</span><span class="token function">findFirstApprover</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    leaveDomainService<span class="token punctuation">.</span><span class="token function">createLeave</span><span class="token punctuation">(</span>leave<span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">,</span> <span class="token class-name">Approver</span><span class="token punctuation">.</span><span class="token function">fromPerson</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void updateLeaveInfo(Leave leave){
-    leaveDomainService.updateLeaveInfo(leave);
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">updateLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    leaveDomainService<span class="token punctuation">.</span><span class="token function">updateLeaveInfo</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void submitApproval(Leave leave){
-    //find next approver
-    Person approver = personDomainService.findNextApprover(leave.getApprover().getPersonId(), leave.getLeaderMaxLevel());
-    leaveDomainService.submitApproval(leave, Approver.fromPerson(approver));
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">submitApproval</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//find next approver</span>
+    <span class="token class-name">Person</span> approver <span class="token operator">=</span> personDomainService<span class="token punctuation">.</span><span class="token function">findNextApprover</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApprover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leave<span class="token punctuation">.</span><span class="token function">getLeaderMaxLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    leaveDomainService<span class="token punctuation">.</span><span class="token function">submitApproval</span><span class="token punctuation">(</span>leave<span class="token punctuation">,</span> <span class="token class-name">Approver</span><span class="token punctuation">.</span><span class="token function">fromPerson</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public Leave getLeaveInfo(String leaveId){
-        return leaveDomainService.getLeaveInfo(leaveId);
-    }
+    <span class="token keyword">public</span> <span class="token class-name">Leave</span> <span class="token function">getLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">String</span> leaveId<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> leaveDomainService<span class="token punctuation">.</span><span class="token function">getLeaveInfo</span><span class="token punctuation">(</span>leaveId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> queryLeaveInfosByApplicant(String applicantId){
-    return leaveDomainService.queryLeaveInfosByApplicant(applicantId);
-    }
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Leave</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryLeaveInfosByApplicant</span><span class="token punctuation">(</span><span class="token class-name">String</span> applicantId<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> leaveDomainService<span class="token punctuation">.</span><span class="token function">queryLeaveInfosByApplicant</span><span class="token punctuation">(</span>applicantId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> queryLeaveInfosByApprover(String approverId){
-    return leaveDomainService.queryLeaveInfosByApprover(approverId);
-    }
-}
-</code></pre><p><strong>&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Leave</span><span class="token punctuation">&gt;</span></span> <span class="token function">queryLeaveInfosByApprover</span><span class="token punctuation">(</span><span class="token class-name">String</span> approverId<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> leaveDomainService<span class="token punctuation">.</span><span class="token function">queryLeaveInfosByApprover</span><span class="token punctuation">(</span>approverId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
 <p>&#x4E3A;&#x4E86;&#x805A;&#x5408;&#x89E3;&#x8026;&#x548C;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x6F14;&#x8FDB;&#xFF0C;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5728;&#x5BF9;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x7F16;&#x6392;&#x65F6;&#xFF0C;&#x5E94;&#x907F;&#x514D;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x4E2D;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x4E00;&#x65E6;&#x805A;&#x5408;&#x62C6;&#x5206;&#x548C;&#x91CD;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E9B;&#x8DE8;&#x805A;&#x5408;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x5931;&#x6548;&#x3002;</p>
 <p>&#x5728;LeaveApplicationService&#x4E2D;&#xFF0C;leave&#x5B9E;&#x4F53;&#x548C;Applicant&#x503C;&#x5BF9;&#x8C61;&#x5206;&#x522B;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x88AB;rule&#x805A;&#x5408;&#x548C;person&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x589E;&#x52A0;&#x805A;&#x5408;&#x7684;&#x8026;&#x5408;&#x5EA6;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
-<pre class="language-"><code>public class LeaveApplicationService{
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveApplicationService</span><span class="token punctuation">{</span>
 
-  public void createLeaveInfo(Leave leave){
-  //get approval leader max level by rule
-  ApprovalRule rule = approvalRuleDomainService.getLeaveApprovalRule(leave);
-  int leaderMaxLevel = approvalRuleDomainService.getLeaderMaxLevel(rule);
-  leave.setLeaderMaxLevel(leaderMaxLevel);
-  //find next approver
-  Approver approver = personDomainService.findFirstApprover(leave.getApplicant(), leaderMaxLevel);
-  leave.setApprover(approver);
-  leaveDomainService.createLeave(leave);
-  }
-}
-</code></pre><p>&#x90A3;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x805A;&#x5408;&#x7684;&#x89E3;&#x8026;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8DE8;&#x805A;&#x5408;&#x8C03;&#x7528;&#x65F6;&#x7684;&#x5BF9;&#x8C61;&#x4F20;&#x503C;&#x8C03;&#x6574;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;&#x4E00;&#x8D77;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x8C03;&#x6574;&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;getLeaderMaxLevel&#x7531;leave&#x5BF9;&#x8C61;&#x4F20;&#x503C;&#x8C03;&#x6574;&#x4E3A;personType&#xFF0C;leaveType&#x548C;duration&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;findFirstApprover&#x4E2D;Applicant&#x503C;&#x5BF9;&#x8C61;&#x8C03;&#x6574;&#x4E3A;personId&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;</p>
-<pre class="language-"><code>public class LeaveApplicationService{
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">createLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">//get approval leader max level by rule</span>
+  <span class="token class-name">ApprovalRule</span> rule <span class="token operator">=</span> approvalRuleDomainService<span class="token punctuation">.</span><span class="token function">getLeaveApprovalRule</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> leaderMaxLevel <span class="token operator">=</span> approvalRuleDomainService<span class="token punctuation">.</span><span class="token function">getLeaderMaxLevel</span><span class="token punctuation">(</span>rule<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  leave<span class="token punctuation">.</span><span class="token function">setLeaderMaxLevel</span><span class="token punctuation">(</span>leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//find next approver</span>
+  <span class="token class-name">Approver</span> approver <span class="token operator">=</span> personDomainService<span class="token punctuation">.</span><span class="token function">findFirstApprover</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  leave<span class="token punctuation">.</span><span class="token function">setApprover</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  leaveDomainService<span class="token punctuation">.</span><span class="token function">createLeave</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x90A3;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x805A;&#x5408;&#x7684;&#x89E3;&#x8026;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8DE8;&#x805A;&#x5408;&#x8C03;&#x7528;&#x65F6;&#x7684;&#x5BF9;&#x8C61;&#x4F20;&#x503C;&#x8C03;&#x6574;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;&#x4E00;&#x8D77;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x8C03;&#x6574;&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;getLeaderMaxLevel&#x7531;leave&#x5BF9;&#x8C61;&#x4F20;&#x503C;&#x8C03;&#x6574;&#x4E3A;personType&#xFF0C;leaveType&#x548C;duration&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;findFirstApprover&#x4E2D;Applicant&#x503C;&#x5BF9;&#x8C61;&#x8C03;&#x6574;&#x4E3A;personId&#x53C2;&#x6570;&#x4F20;&#x503C;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveApplicationService</span><span class="token punctuation">{</span>
 
-  public void createLeaveInfo(Leave leave){
-  //get approval leader max level by rule
-  int leaderMaxLevel = approvalRuleDomainService.getLeaderMaxLevel(leave.getApplicant().getPersonType(), leave.getType().toString(), leave.getDuration());
-  //find next approver
-  Person approver = personDomainService.findFirstApprover(leave.getApplicant().getPersonId(), leaderMaxLevel);
-  leaveDomainService.createLeave(leave, leaderMaxLevel, Approver.fromPerson(approver));
-  }
-}
-</code></pre><p>&#x5728;&#x5FAE;&#x670D;&#x52A1;&#x6F14;&#x8FDB;&#x548C;&#x805A;&#x5408;&#x91CD;&#x7EC4;&#x65F6;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x805A;&#x5408;&#x89E3;&#x8026;&#x548C;&#x4EE3;&#x7801;&#x91CD;&#x6784;&#x4E86;&#x3002;</p>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">createLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">//get approval leader max level by rule</span>
+  <span class="token keyword">int</span> leaderMaxLevel <span class="token operator">=</span> approvalRuleDomainService<span class="token punctuation">.</span><span class="token function">getLeaderMaxLevel</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leave<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leave<span class="token punctuation">.</span><span class="token function">getDuration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//find next approver</span>
+  <span class="token class-name">Person</span> approver <span class="token operator">=</span> personDomainService<span class="token punctuation">.</span><span class="token function">findFirstApprover</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  leaveDomainService<span class="token punctuation">.</span><span class="token function">createLeave</span><span class="token punctuation">(</span>leave<span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">,</span> <span class="token class-name">Approver</span><span class="token punctuation">.</span><span class="token function">fromPerson</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5728;&#x5FAE;&#x670D;&#x52A1;&#x6F14;&#x8FDB;&#x548C;&#x805A;&#x5408;&#x91CD;&#x7EC4;&#x65F6;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x805A;&#x5408;&#x89E3;&#x8026;&#x548C;&#x4EE3;&#x7801;&#x91CD;&#x6784;&#x4E86;&#x3002;</p>
 <h2 id="&#x5FAE;&#x670D;&#x52A1;&#x805A;&#x5408;&#x62C6;&#x5206;&#x65F6;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x8FDB;">&#x5FAE;&#x670D;&#x52A1;&#x805A;&#x5408;&#x62C6;&#x5206;&#x65F6;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x8FDB;</h2>
 <p>&#x5982;&#x679C;&#x8BF7;&#x5047;&#x5FAE;&#x670D;&#x52A1;&#x672A;&#x6765;&#x9700;&#x8981;&#x6F14;&#x8FDB;&#x4E3A;&#x4EBA;&#x5458;&#x548C;&#x8BF7;&#x5047;&#x4E24;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x8BF7;&#x5047;leave&#x548C;&#x4EBA;&#x5458;person&#x4E24;&#x4E2A;&#x805A;&#x5408;&#x6765;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#x3002;&#x7531;&#x4E8E;&#x4E24;&#x4E2A;&#x805A;&#x5408;&#x5DF2;&#x7ECF;&#x5B8C;&#x5168;&#x89E3;&#x8026;&#xFF0C;&#x9886;&#x57DF;&#x903B;&#x8F91;&#x975E;&#x5E38;&#x7A33;&#x5B9A;&#xFF0C;&#x5728;&#x5FAE;&#x670D;&#x52A1;&#x805A;&#x5408;&#x4EE3;&#x7801;&#x62C6;&#x5206;&#x65F6;&#xFF0C;&#x805A;&#x5408;&#x9886;&#x57DF;&#x5C42;&#x7684;&#x4EE3;&#x7801;&#x57FA;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x6574;&#x3002;&#x8C03;&#x6574;&#x4E3B;&#x8981;&#x96C6;&#x4E2D;&#x5728;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4E2D;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x4EE5;&#x5E94;&#x7528;&#x670D;&#x52A1;createLeaveInfo&#x4E3A;&#x4F8B;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x770B;&#x770B;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x505A;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x8C03;&#x6574;&#xFF1F;</p>
 <h3 id="1-&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x524D;">1. &#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x524D;</h3>
 <p>createLeaveInfo&#x5E94;&#x7528;&#x670D;&#x52A1;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre class="language-"><code>public void createLeaveInfo(Leave leave){
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">createLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-    //get approval leader max level by rule
-    int leaderMaxLevel = approvalRuleDomainService.getLeaderMaxLevel(leave.getApplicant().getPersonType(), leave.getType().toString(), leave.getDuration());
-    //find next approver
-    Person approver = personDomainService.findFirstApprover(leave.getApplicant().getPersonId(), leaderMaxLevel);
-    leaveDomainService.createLeave(leave, leaderMaxLevel, Approver.fromPerson(approver));
-}
-</code></pre><h3 id="2-&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x540E;">2. &#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x540E;</h3>
+    <span class="token comment">//get approval leader max level by rule</span>
+    <span class="token keyword">int</span> leaderMaxLevel <span class="token operator">=</span> approvalRuleDomainService<span class="token punctuation">.</span><span class="token function">getLeaderMaxLevel</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leave<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leave<span class="token punctuation">.</span><span class="token function">getDuration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//find next approver</span>
+    <span class="token class-name">Person</span> approver <span class="token operator">=</span> personDomainService<span class="token punctuation">.</span><span class="token function">findFirstApprover</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    leaveDomainService<span class="token punctuation">.</span><span class="token function">createLeave</span><span class="token punctuation">(</span>leave<span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">,</span> <span class="token class-name">Approver</span><span class="token punctuation">.</span><span class="token function">fromPerson</span><span class="token punctuation">(</span>approver<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x540E;">2. &#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x540E;</h3>
 <p>leave&#x548C;person&#x4E24;&#x4E2A;&#x805A;&#x5408;&#x968F;&#x5FAE;&#x670D;&#x52A1;&#x62C6;&#x5206;&#x540E;&#xFF0C;createLeaveInfo&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4E2D;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C06;&#x4F1A;&#x53D8;&#x6210;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x3002;</p>
-<pre class="language-"><code>Person approver = personDomainService.findFirstApprover(leave.getApplicant().getPersonId(), leaderMaxLevel);
-</code></pre><p>&#x7531;&#x4E8E;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x8C03;&#x7528;&#x662F;&#x5728;&#x5E94;&#x7528;&#x5C42;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x8C03;&#x6574;createLeaveInfo&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;&#x5C06;&#x539F;&#x6765;&#x5FAE;&#x670D;&#x52A1;&#x5185;&#x7684;&#x670D;&#x52A1;&#x8C03;&#x7528;personDomainService.findFirstApprover&#x4FEE;&#x6539;&#x4E3A;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x670D;&#x52A1;&#x8C03;&#x7528;&#xFF1A;personFeignService. findFirstApprover&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">Person</span> approver <span class="token operator">=</span> personDomainService<span class="token punctuation">.</span><span class="token function">findFirstApprover</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x8C03;&#x7528;&#x662F;&#x5728;&#x5E94;&#x7528;&#x5C42;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x8C03;&#x6574;createLeaveInfo&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;&#x5C06;&#x539F;&#x6765;&#x5FAE;&#x670D;&#x52A1;&#x5185;&#x7684;&#x670D;&#x52A1;&#x8C03;&#x7528;personDomainService.findFirstApprover&#x4FEE;&#x6539;&#x4E3A;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x670D;&#x52A1;&#x8C03;&#x7528;&#xFF1A;personFeignService. findFirstApprover&#x3002;</p>
 <p>&#x540C;&#x65F6;&#x65B0;&#x589E;ApproverAssembler&#x7EC4;&#x88C5;&#x5668;&#x548C;PersonResponse&#x7684;DTO&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C06;person&#x5FAE;&#x670D;&#x52A1;&#x8FD4;&#x56DE;&#x7684;person DTO&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;approver&#x503C;&#x5BF9;&#x8C61;&#x3002;</p>
-<pre class="language-"><code>// PersonResponse&#x4E3A;&#x8C03;&#x7528;&#x5FAE;&#x670D;&#x52A1;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7684;&#x5C01;&#x88C5;
-//&#x901A;&#x8FC7;personFeignService&#x8C03;&#x7528;Person&#x5FAE;&#x670D;&#x52A1;&#x7528;&#x6237;&#x63A5;&#x53E3;&#x5C42;&#x7684;findFirstApprover facade&#x63A5;&#x53E3;
-PersonResponse approverResponse = personFeignService. findFirstApprover(leave.getApplicant().getPersonId(), leaderMaxLevel);
-Approver approver = ApproverAssembler.toDO(approverResponse);
-</code></pre><p>&#x5728;&#x539F;&#x6765;&#x7684;person&#x805A;&#x5408;&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;findFirstApprover&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5DF2;&#x7ECF;&#x9010;&#x5C42;&#x5C01;&#x88C5;&#x4E3A;&#x7528;&#x6237;&#x63A5;&#x53E3;&#x5C42;&#x7684;Facade&#x63A5;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;person&#x5FAE;&#x670D;&#x52A1;&#x4E0D;&#x9700;&#x8981;&#x505A;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#x8C03;&#x6574;&#xFF0C;&#x53EA;&#x9700;&#x5C06;PersonApi&#x7684;findFirstApprover Facade&#x670D;&#x52A1;&#xFF0C;&#x53D1;&#x5E03;&#x5230;API&#x7F51;&#x5173;&#x5373;&#x53EF;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token comment">// PersonResponse&#x4E3A;&#x8C03;&#x7528;&#x5FAE;&#x670D;&#x52A1;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7684;&#x5C01;&#x88C5;</span>
+<span class="token comment">//&#x901A;&#x8FC7;personFeignService&#x8C03;&#x7528;Person&#x5FAE;&#x670D;&#x52A1;&#x7528;&#x6237;&#x63A5;&#x53E3;&#x5C42;&#x7684;findFirstApprover facade&#x63A5;&#x53E3;</span>
+<span class="token class-name">PersonResponse</span> approverResponse <span class="token operator">=</span> personFeignService<span class="token punctuation">.</span> <span class="token function">findFirstApprover</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getApplicant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPersonId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Approver</span> approver <span class="token operator">=</span> <span class="token class-name">ApproverAssembler</span><span class="token punctuation">.</span><span class="token function">toDO</span><span class="token punctuation">(</span>approverResponse<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5728;&#x539F;&#x6765;&#x7684;person&#x805A;&#x5408;&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;findFirstApprover&#x9886;&#x57DF;&#x670D;&#x52A1;&#x5DF2;&#x7ECF;&#x9010;&#x5C42;&#x5C01;&#x88C5;&#x4E3A;&#x7528;&#x6237;&#x63A5;&#x53E3;&#x5C42;&#x7684;Facade&#x63A5;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;person&#x5FAE;&#x670D;&#x52A1;&#x4E0D;&#x9700;&#x8981;&#x505A;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#x8C03;&#x6574;&#xFF0C;&#x53EA;&#x9700;&#x5C06;PersonApi&#x7684;findFirstApprover Facade&#x670D;&#x52A1;&#xFF0C;&#x53D1;&#x5E03;&#x5230;API&#x7F51;&#x5173;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x62C6;&#x5206;&#x524D;person&#x805A;&#x5408;&#x7684;findFirstApprover&#x9886;&#x57DF;&#x670D;&#x52A1;&#xFF0C;&#x6CA1;&#x6709;&#x88AB;&#x5C01;&#x88C5;&#x4E3A;Facade&#x63A5;&#x53E3;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5728;person&#x5FAE;&#x670D;&#x52A1;&#x4E2D;&#x6309;&#x7167;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x8C03;&#x6574;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5C06;person&#x805A;&#x5408;PersonDomainService&#x7C7B;&#x4E2D;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;findFirstApprover&#x5C01;&#x88C5;&#x4E3A;&#x5E94;&#x7528;&#x670D;&#x52A1;findFirstApprover&#x3002;</p>
-<pre class="language-"><code>@Service
-public class PersonApplicationService {
+<pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonApplicationService</span> <span class="token punctuation">{</span>
 
-  @Autowired
-  PersonDomainService personDomainService;
+  <span class="token annotation punctuation">@Autowired</span>
+  <span class="token class-name">PersonDomainService</span> personDomainService<span class="token punctuation">;</span>
 
-  public Person findFirstApprover(String applicantId, int leaderMaxLevel) {
-  return personDomainService.findFirstApprover(applicantId, leaderMaxLevel);
-  }
-}
-</code></pre><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5C06;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5C01;&#x88C5;&#x4E3A;Facade&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x53D1;&#x5E03;&#x5230;API&#x7F51;&#x5173;&#x3002;</p>
-<pre class="language-"><code>@RestController
-@RequestMapping(&quot;/person&quot;)
-@Slf4j
-public class PersonApi {
+  <span class="token keyword">public</span> <span class="token class-name">Person</span> <span class="token function">findFirstApprover</span><span class="token punctuation">(</span><span class="token class-name">String</span> applicantId<span class="token punctuation">,</span> <span class="token keyword">int</span> leaderMaxLevel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> personDomainService<span class="token punctuation">.</span><span class="token function">findFirstApprover</span><span class="token punctuation">(</span>applicantId<span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5C06;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5C01;&#x88C5;&#x4E3A;Facade&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x53D1;&#x5E03;&#x5230;API&#x7F51;&#x5173;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/person&quot;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonApi</span> <span class="token punctuation">{</span>
 
-  @Autowired
-  @GetMapping(&quot;/findFirstApprover&quot;)
-  public Response findFirstApprover(@RequestParam String applicantId, @RequestParam int leaderMaxLevel) {
-  Person person = personApplicationService.findFirstApprover(applicantId, leaderMaxLevel);
-          return Response.ok(PersonAssembler.toDTO(person));
-  }
-}
-</code></pre><h2 id="&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x7684;&#x63D0;&#x4F9B;">&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x7684;&#x63D0;&#x4F9B;</h2>
+  <span class="token annotation punctuation">@Autowired</span>
+  <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/findFirstApprover&quot;</span><span class="token punctuation">)</span>
+  <span class="token keyword">public</span> <span class="token class-name">Response</span> <span class="token function">findFirstApprover</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> applicantId<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span> <span class="token keyword">int</span> leaderMaxLevel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Person</span> person <span class="token operator">=</span> personApplicationService<span class="token punctuation">.</span><span class="token function">findFirstApprover</span><span class="token punctuation">(</span>applicantId<span class="token punctuation">,</span> leaderMaxLevel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> <span class="token class-name">Response</span><span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token class-name">PersonAssembler</span><span class="token punctuation">.</span><span class="token function">toDTO</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x7684;&#x63D0;&#x4F9B;">&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x7684;&#x63D0;&#x4F9B;</h2>
 <p>&#x7528;&#x6237;&#x63A5;&#x53E3;&#x5C42;&#x662F;&#x524D;&#x7AEF;&#x5E94;&#x7528;&#x4E0E;&#x5FAE;&#x670D;&#x52A1;&#x5E94;&#x7528;&#x5C42;&#x7684;&#x6865;&#x6881;&#xFF0C;&#x901A;&#x8FC7;Facade&#x63A5;&#x53E3;&#x5C01;&#x88C5;&#x5E94;&#x7528;&#x670D;&#x52A1;&#xFF0C;&#x9002;&#x914D;&#x524D;&#x7AEF;&#x5E76;&#x63D0;&#x4F9B;&#x7075;&#x6D3B;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x5B8C;&#x6210;DO&#x548C;DTO&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x3002;</p>
 <p>&#x5F53;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x63A5;&#x6536;&#x5230;&#x524D;&#x7AEF;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x7EC4;&#x88C5;&#x5668;&#x4F1A;&#x5C06;DTO&#x8F6C;&#x6362;&#x4E3A;DO&#x3002;&#x5F53;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5411;&#x524D;&#x7AEF;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x7EC4;&#x88C5;&#x5668;&#x4F1A;&#x5C06;DO&#x8F6C;&#x6362;&#x4E3A;DTO&#x3002;</p>
 <h3 id="1-facade&#x63A5;&#x53E3;">1. facade&#x63A5;&#x53E3;</h3>
 <p>facade&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x95E8;&#x9762;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x95E8;&#x9762;&#x63A5;&#x53E3;&#x52A0;&#x4E00;&#x4E2A;&#x95E8;&#x9762;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#x3002;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x524D;&#x7AEF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#xFF0C;&#x7531;&#x4E8E;&#x8BF7;&#x5047;&#x5FAE;&#x670D;&#x52A1;&#x524D;&#x7AEF;&#x529F;&#x80FD;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x76F4;&#x63A5;&#x7528;&#x4E00;&#x4E2A;&#x95E8;&#x9762;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
-<pre class="language-"><code>public class LeaveApi {   
-  @PostMapping
-  public Response createLeaveInfo(LeaveDTO leaveDTO){
-          Leave leave = LeaveAssembler.toDO(leaveDTO);
-          leaveApplicationService.createLeaveInfo(leave);
-          return Response.ok();
-  }
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveApi</span> <span class="token punctuation">{</span>   
+  <span class="token annotation punctuation">@PostMapping</span>
+  <span class="token keyword">public</span> <span class="token class-name">Response</span> <span class="token function">createLeaveInfo</span><span class="token punctuation">(</span><span class="token class-name">LeaveDTO</span> leaveDTO<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token class-name">Leave</span> leave <span class="token operator">=</span> <span class="token class-name">LeaveAssembler</span><span class="token punctuation">.</span><span class="token function">toDO</span><span class="token punctuation">(</span>leaveDTO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          leaveApplicationService<span class="token punctuation">.</span><span class="token function">createLeaveInfo</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> <span class="token class-name">Response</span><span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @PostMapping(&quot;/query/applicant/{applicantId}&quot;)
-  public Response queryByApplicant(@PathVariable String applicantId){
-  List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Leave</span><span class="token punctuation">&gt;</span></span> leaveList = leaveApplicationService.queryLeaveInfosByApplicant(applicantId);
-  List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LeaveDTO</span><span class="token punctuation">&gt;</span></span> leaveDTOList = leaveList.stream().map(leave -&gt; LeaveAssembler.toDTO(leave)).collect(Collectors.toList());
-          return Response.ok(leaveDTOList);
-  }
+  <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/query/applicant/{applicantId}&quot;</span><span class="token punctuation">)</span>
+  <span class="token keyword">public</span> <span class="token class-name">Response</span> <span class="token function">queryByApplicant</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token class-name">String</span> applicantId<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Leave</span><span class="token punctuation">&gt;</span></span> leaveList <span class="token operator">=</span> leaveApplicationService<span class="token punctuation">.</span><span class="token function">queryLeaveInfosByApplicant</span><span class="token punctuation">(</span>applicantId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LeaveDTO</span><span class="token punctuation">&gt;</span></span> leaveDTOList <span class="token operator">=</span> leaveList<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>leave <span class="token operator">-&gt;</span> <span class="token class-name">LeaveAssembler</span><span class="token punctuation">.</span><span class="token function">toDTO</span><span class="token punctuation">(</span>leave<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> <span class="token class-name">Response</span><span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>leaveDTOList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-//&#x5176;&#x5B83;&#x65B9;&#x6CD5;
-}
-</code></pre><h3 id="2-dto&#x6570;&#x636E;&#x7EC4;&#x88C5;">2. DTO&#x6570;&#x636E;&#x7EC4;&#x88C5;</h3>
+<span class="token comment">//&#x5176;&#x5B83;&#x65B9;&#x6CD5;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-dto&#x6570;&#x636E;&#x7EC4;&#x88C5;">2. DTO&#x6570;&#x636E;&#x7EC4;&#x88C5;</h3>
 <p>&#x7EC4;&#x88C5;&#x7C7B;&#xFF08;Assembler&#xFF09;&#xFF1A;&#x8D1F;&#x8D23;&#x5C06;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x8FD4;&#x56DE;&#x7684;&#x591A;&#x4E2A;DO&#x5BF9;&#x8C61;&#x7EC4;&#x88C5;&#x4E3A;&#x524D;&#x7AEF;DTO&#x5BF9;&#x8C61;&#xFF0C;&#x6216;&#x5C06;&#x524D;&#x7AEF;&#x8BF7;&#x6C42;&#x7684;DTO&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x591A;&#x4E2A;DO&#x5BF9;&#x8C61;&#xFF0C;&#x4F9B;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F7F;&#x7528;&#x3002;&#x7EC4;&#x88C5;&#x7C7B;&#x4E2D;&#x4E0D;&#x5E94;&#x6709;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x3001;&#x5B57;&#x6BB5;&#x6620;&#x5C04;&#x7B49;&#x3002;Assembler&#x5F80;&#x5F80;&#x4E0E;DTO&#x540C;&#x65F6;&#x5B58;&#x5728;&#x3002;LeaveAssembler&#x5B8C;&#x6210;&#x8BF7;&#x5047;DO&#x548C;DTO&#x6570;&#x636E;&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x3002;</p>
-<pre class="language-"><code>public class LeaveAssembler {
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveAssembler</span> <span class="token punctuation">{</span>
 
-    public static LeaveDTO toDTO(Leave leave){
-        LeaveDTO dto = new LeaveDTO();
-        dto.setLeaveId(leave.getId());
-        dto.setLeaveType(leave.getType().toString());
-        dto.setStatus(leave.getStatus().toString());
-        dto.setStartTime(DateUtil.formatDateTime(leave.getStartTime()));
-        dto.setEndTime(DateUtil.formatDateTime(leave.getEndTime()));
-        dto.setCurrentApprovalInfoDTO(ApprovalInfoAssembler.toDTO(leave.getCurrentApprovalInfo()));
-        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoDTO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList = leave.getHistoryApprovalInfos()
-                .stream()
-                .map(historyApprovalInfo -&gt; ApprovalInfoAssembler.toDTO(leave.getCurrentApprovalInfo()))
-                .collect(Collectors.toList());
-        dto.setHistoryApprovalInfoDTOList(historyApprovalInfoDTOList);
-        dto.setDuration(leave.getDuration());
-        return dto;
-    }
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">LeaveDTO</span> <span class="token function">toDTO</span><span class="token punctuation">(</span><span class="token class-name">Leave</span> leave<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">LeaveDTO</span> dto <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LeaveDTO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dto<span class="token punctuation">.</span><span class="token function">setLeaveId</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dto<span class="token punctuation">.</span><span class="token function">setLeaveType</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dto<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dto<span class="token punctuation">.</span><span class="token function">setStartTime</span><span class="token punctuation">(</span><span class="token class-name">DateUtil</span><span class="token punctuation">.</span><span class="token function">formatDateTime</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getStartTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dto<span class="token punctuation">.</span><span class="token function">setEndTime</span><span class="token punctuation">(</span><span class="token class-name">DateUtil</span><span class="token punctuation">.</span><span class="token function">formatDateTime</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getEndTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dto<span class="token punctuation">.</span><span class="token function">setCurrentApprovalInfoDTO</span><span class="token punctuation">(</span><span class="token class-name">ApprovalInfoAssembler</span><span class="token punctuation">.</span><span class="token function">toDTO</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getCurrentApprovalInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfoDTO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList <span class="token operator">=</span> leave<span class="token punctuation">.</span><span class="token function">getHistoryApprovalInfos</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>historyApprovalInfo <span class="token operator">-&gt;</span> <span class="token class-name">ApprovalInfoAssembler</span><span class="token punctuation">.</span><span class="token function">toDTO</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getCurrentApprovalInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dto<span class="token punctuation">.</span><span class="token function">setHistoryApprovalInfoDTOList</span><span class="token punctuation">(</span>historyApprovalInfoDTOList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dto<span class="token punctuation">.</span><span class="token function">setDuration</span><span class="token punctuation">(</span>leave<span class="token punctuation">.</span><span class="token function">getDuration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> dto<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public static Leave toDO(LeaveDTO dto){
-        Leave leave = new Leave();
-        leave.setId(dto.getLeaveId());
-        leave.setApplicant(ApplicantAssembler.toDO(dto.getApplicantDTO()));
-        leave.setApprover(ApproverAssembler.toDO(dto.getApproverDTO()));
-        leave.setCurrentApprovalInfo(ApprovalInfoAssembler.toDO(dto.getCurrentApprovalInfoDTO()));
-        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList = dto.getHistoryApprovalInfoDTOList()
-                .stream()
-                .map(historyApprovalInfoDTO -&gt; ApprovalInfoAssembler.toDO(historyApprovalInfoDTO))
-                .collect(Collectors.toList());
-        leave.setHistoryApprovalInfos(historyApprovalInfoDTOList);
-        return leave;
-    }
-}
-</code></pre><p>DTO&#x7C7B;&#xFF1A;&#x5305;&#x62EC;requestDTO&#x548C;responseDTO&#x4E24;&#x90E8;&#x5206;&#x3002;</p>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Leave</span> <span class="token function">toDO</span><span class="token punctuation">(</span><span class="token class-name">LeaveDTO</span> dto<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Leave</span> leave <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Leave</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        leave<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span>dto<span class="token punctuation">.</span><span class="token function">getLeaveId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        leave<span class="token punctuation">.</span><span class="token function">setApplicant</span><span class="token punctuation">(</span><span class="token class-name">ApplicantAssembler</span><span class="token punctuation">.</span><span class="token function">toDO</span><span class="token punctuation">(</span>dto<span class="token punctuation">.</span><span class="token function">getApplicantDTO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        leave<span class="token punctuation">.</span><span class="token function">setApprover</span><span class="token punctuation">(</span><span class="token class-name">ApproverAssembler</span><span class="token punctuation">.</span><span class="token function">toDO</span><span class="token punctuation">(</span>dto<span class="token punctuation">.</span><span class="token function">getApproverDTO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        leave<span class="token punctuation">.</span><span class="token function">setCurrentApprovalInfo</span><span class="token punctuation">(</span><span class="token class-name">ApprovalInfoAssembler</span><span class="token punctuation">.</span><span class="token function">toDO</span><span class="token punctuation">(</span>dto<span class="token punctuation">.</span><span class="token function">getCurrentApprovalInfoDTO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfo</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList <span class="token operator">=</span> dto<span class="token punctuation">.</span><span class="token function">getHistoryApprovalInfoDTOList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>historyApprovalInfoDTO <span class="token operator">-&gt;</span> <span class="token class-name">ApprovalInfoAssembler</span><span class="token punctuation">.</span><span class="token function">toDO</span><span class="token punctuation">(</span>historyApprovalInfoDTO<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        leave<span class="token punctuation">.</span><span class="token function">setHistoryApprovalInfos</span><span class="token punctuation">(</span>historyApprovalInfoDTOList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> leave<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>DTO&#x7C7B;&#xFF1A;&#x5305;&#x62EC;requestDTO&#x548C;responseDTO&#x4E24;&#x90E8;&#x5206;&#x3002;</p>
 <p>DTO&#x5E94;&#x5C3D;&#x91CF;&#x6839;&#x636E;&#x524D;&#x7AEF;&#x5C55;&#x793A;&#x6570;&#x636E;&#x7684;&#x9700;&#x6C42;&#x6765;&#x5B9A;&#x4E49;&#xFF0C;&#x907F;&#x514D;&#x8FC7;&#x591A;&#x5730;&#x66B4;&#x9732;&#x540E;&#x7AEF;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;&#x5C24;&#x5176;&#x5BF9;&#x4E8E;&#x591A;&#x6E20;&#x9053;&#x573A;&#x666F;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6E20;&#x9053;&#x5C5E;&#x6027;&#x548C;&#x8981;&#x6C42;&#xFF0C;&#x4E3A;&#x6BCF;&#x4E2A;&#x6E20;&#x9053;&#x524D;&#x7AEF;&#x5E94;&#x7528;&#x5B9A;&#x4E49;&#x4E2A;&#x6027;&#x5316;&#x7684;DTO&#x3002;&#x7531;&#x4E8E;&#x8BF7;&#x5047;&#x5FAE;&#x670D;&#x52A1;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;leaveDTO&#x4EE3;&#x7801;&#x505A;&#x4E2A;&#x793A;&#x4F8B;&#x3002;</p>
-<pre class="language-"><code>@Data
-public class LeaveDTO {
-    String leaveId;
-    ApplicantDTO applicantDTO;
-    ApproverDTO approverDTO;
-    String leaveType;
-    ApprovalInfoDTO currentApprovalInfoDTO;
-    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApprovalInfoDTO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList;
-    String startTime;
-    String endTime;
-    long duration;
-    String status;
-}
-</code></pre><h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LeaveDTO</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> leaveId<span class="token punctuation">;</span>
+    <span class="token class-name">ApplicantDTO</span> applicantDTO<span class="token punctuation">;</span>
+    <span class="token class-name">ApproverDTO</span> approverDTO<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> leaveType<span class="token punctuation">;</span>
+    <span class="token class-name">ApprovalInfoDTO</span> currentApprovalInfoDTO<span class="token punctuation">;</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApprovalInfoDTO</span><span class="token punctuation">&gt;</span></span> historyApprovalInfoDTOList<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> startTime<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> endTime<span class="token punctuation">;</span>
+    <span class="token keyword">long</span> duration<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> status<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
 <p>&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;&#x7528;DDD&#x5F00;&#x53D1;&#x51FA;&#x6765;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x4EE3;&#x7801;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x4E9B;&#x6838;&#x5FC3;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x9010;&#x6B65;&#x5F15;&#x5165;&#x5230;&#x9879;&#x76EE;&#x4E2D;&#x53BB;&#xFF0C;&#x6162;&#x6162;&#x5145;&#x5B9E;&#x81EA;&#x5DF1;&#x7684;DDD&#x77E5;&#x8BC6;&#x4F53;&#x7CFB;&#x3002;&#x6211;&#x8FD8;&#x60F3;&#x518D;&#x91CD;&#x70B9;&#x5F3A;&#x8C03;&#x7684;&#x662F;&#xFF1A;&#x7531;&#x4E8E;&#x67B6;&#x6784;&#x7684;&#x6F14;&#x8FDB;&#xFF0C;&#x5FAE;&#x670D;&#x52A1;&#x4E0E;&#x751F;&#x4FF1;&#x6765;&#x5C31;&#x9700;&#x8981;&#x8003;&#x8651;&#x805A;&#x5408;&#x7684;&#x672A;&#x6765;&#x91CD;&#x7EC4;&#x3002;&#x56E0;&#x6B64;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x5F00;&#x53D1;&#x8981;&#x505A;&#x5230;&#x672A;&#x96E8;&#x7EF8;&#x7F2A;&#xFF0C;&#x800C;&#x8FD9;&#x6700;&#x5173;&#x952E;&#x7684;&#x5C31;&#x662F;&#x89E3;&#x8026;&#x4E86;&#x3002;</p>
 <p><strong>&#x805A;&#x5408;&#x4E0E;&#x805A;&#x5408;&#x7684;&#x89E3;&#x8026;&#xFF1A;</strong>&#x5F53;&#x591A;&#x4E2A;&#x805A;&#x5408;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x5F88;&#x591A;&#x4F20;&#x7EDF;&#x67B6;&#x6784;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4F1A;&#x4E0B;&#x610F;&#x8BC6;&#x5730;&#x5F15;&#x7528;&#x5176;&#x4ED6;&#x805A;&#x5408;&#x7684;&#x5B9E;&#x4F53;&#x548C;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x6216;&#x8005;&#x8C03;&#x7528;&#x5176;&#x5B83;&#x805A;&#x5408;&#x7684;&#x9886;&#x57DF;&#x670D;&#x52A1;&#x3002;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x805A;&#x5408;&#x7684;&#x4EE3;&#x7801;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x5185;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x4E0D;&#x4F1A;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x4F3C;&#x4E4E;&#x4E5F;&#x66F4;&#x9AD8;&#xFF0C;&#x4F46;&#x8FD9;&#x6837;&#x4F1A;&#x4E0D;&#x81EA;&#x89C9;&#x5730;&#x589E;&#x52A0;&#x805A;&#x5408;&#x4E4B;&#x95F4;&#x7684;&#x8026;&#x5408;&#x3002;&#x5728;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x6F14;&#x8FDB;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x805A;&#x5408;&#x88AB;&#x5206;&#x522B;&#x62C6;&#x5206;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x4E2D;&#xFF0C;&#x539F;&#x6765;&#x5FAE;&#x670D;&#x52A1;&#x5185;&#x7684;&#x5173;&#x7CFB;&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x8DE8;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x539F;&#x6765;&#x5FAE;&#x670D;&#x52A1;&#x5185;&#x7684;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x6216;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x5C06;&#x4F1A;&#x5931;&#x6548;&#x3002;&#x6700;&#x7EC8;&#x4F60;&#x8FD8;&#x662F;&#x514D;&#x4E0D;&#x4E86;&#x8981;&#x82B1;&#x5927;&#x91CF;&#x7684;&#x7CBE;&#x529B;&#x53BB;&#x505A;&#x805A;&#x5408;&#x89E3;&#x8026;&#x3002;&#x867D;&#x7136;&#x524D;&#x671F;&#x9886;&#x57DF;&#x5EFA;&#x6A21;&#x548C;&#x8FB9;&#x754C;&#x5212;&#x5206;&#x5F97;&#x5F88;&#x597D;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x4F1A;&#x56E0;&#x4E3A;&#x5F00;&#x53D1;&#x7A0D;&#x4E0D;&#x6CE8;&#x610F;&#xFF0C;&#x800C;&#x5BFC;&#x81F4;&#x89E3;&#x8026;&#x5DE5;&#x4F5C;&#x524D;&#x529F;&#x5C3D;&#x5F03;&#x3002;</p>
 <p><strong>&#x5FAE;&#x670D;&#x52A1;&#x5185;&#x5404;&#x5C42;&#x7684;&#x89E3;&#x8026;&#xFF1A;</strong>&#x5FAE;&#x670D;&#x52A1;&#x5185;&#x6709;&#x56DB;&#x5C42;&#xFF0C;&#x5728;&#x5E94;&#x7528;&#x5C42;&#x548C;&#x9886;&#x57DF;&#x5C42;&#x7EC4;&#x6210;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x9886;&#x57DF;&#x7684;&#x4E24;&#x7AEF;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x6216;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x533A;&#x3002;&#x524D;&#x7AEF;&#x4E0E;&#x5E94;&#x7528;&#x5C42;&#x901A;&#x8FC7;&#x7EC4;&#x88C5;&#x5668;&#x5B9E;&#x73B0;DTO&#x548C;DO&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x8FD9;&#x79CD;&#x9002;&#x914D;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x66F4;&#x5BB9;&#x6613;&#x5730;&#x54CD;&#x5E94;&#x524D;&#x7AEF;&#x9700;&#x6C42;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x9690;&#x85CF;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4FDD;&#x8BC1;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x7A33;&#x5B9A;&#xFF0C;&#x5B9E;&#x73B0;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E0E;&#x524D;&#x7AEF;&#x5E94;&#x7528;&#x7684;&#x89E3;&#x8026;&#x3002;&#x800C;&#x9886;&#x57DF;&#x5C42;&#x4E0E;&#x57FA;&#x7840;&#x5C42;&#x901A;&#x8FC7;&#x4ED3;&#x50A8;&#x548C;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;DO&#x548C;PO&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x5B9E;&#x73B0;&#x5E94;&#x7528;&#x903B;&#x8F91;&#x4E0E;&#x57FA;&#x7840;&#x8D44;&#x6E90;&#x903B;&#x8F91;&#x7684;&#x89E3;&#x8026;&#x3002;</p>
@@ -1242,7 +1276,7 @@ public class LeaveDTO {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基于DDD的微服务设计实例代码详解","level":"7.1","depth":1,"next":{"title":"抽奖｜《DDD实战课》沉淀成书了，感谢有你！","level":"7.2","depth":1,"path":"docs/307617.md","ref":"./docs/307617.md","articles":[]},"previous":{"title":"结束语 | 所谓高手，就是跨过坑和大海！","level":"6.1","depth":1,"path":"docs/172730.md","ref":"./docs/172730.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-d4t","hide-element","code","prism","prism-themes","-lunr","-search","-sharing","search-pro-fixed","-highlight","back-to-top-button","mermaid-gb3","expandable-chapters-small","toolbar","splitter"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"theme-d4t":{},"prism":{"css":["prism-themes/themes/prism-coldark-cold.css"]},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/README.assets/logo.svg","favicon":"/README.assets/favicon.ico"},"splitter":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".logo",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"back-to-top-button":{},"prism-themes":{},"expandable-chapters-small":{},"toolbar":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","author":"zzturn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"../book_she_ji_mo_shi_zhi_mei/","target":"_self","name":"设计模式之美"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"DDD实战课","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"docs/185174.md","mtime":"2025-11-06T15:41:54.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-11-06T15:43:09.917Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基于DDD的微服务设计实例代码详解","level":"7.1","depth":1,"next":{"title":"抽奖｜《DDD实战课》沉淀成书了，感谢有你！","level":"7.2","depth":1,"path":"docs/307617.md","ref":"./docs/307617.md","articles":[]},"previous":{"title":"结束语 | 所谓高手，就是跨过坑和大海！","level":"6.1","depth":1,"path":"docs/172730.md","ref":"./docs/172730.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-d4t","hide-element","code","prism","prism-themes","-lunr","-search","-sharing","search-pro-fixed","-highlight","back-to-top-button","mermaid-gb3","expandable-chapters-small","toolbar","splitter"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"theme-d4t":{},"prism":{"css":["prism-themes/themes/prism-coldark-cold.css"]},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/README.assets/logo.svg","favicon":"/README.assets/favicon.ico"},"splitter":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".logo",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"back-to-top-button":{},"prism-themes":{},"expandable-chapters-small":{},"toolbar":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","author":"zzturn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"../book_she_ji_mo_shi_zhi_mei/","target":"_self","name":"设计模式之美"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"DDD实战课","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"docs/185174.md","mtime":"2025-11-06T16:17:26.311Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-11-06T16:19:12.004Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

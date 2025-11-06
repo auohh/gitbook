@@ -1801,246 +1801,255 @@
                     <section class="normal markdown-section">
                         
                         <h1 id="44--&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;&#x4E0A;&#xFF09;&#xFF1A;&#x6211;&#x4E3A;&#x4EC0;&#x4E48;&#x8BF4;&#x6CA1;&#x4E8B;&#x4E0D;&#x8981;&#x968F;&#x4FBF;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF1F;">44 | &#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;&#x4E0A;&#xFF09;&#xFF1A;&#x6211;&#x4E3A;&#x4EC0;&#x4E48;&#x8BF4;&#x6CA1;&#x4E8B;&#x4E0D;&#x8981;&#x968F;&#x4FBF;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF1F;</h1>
-<pre class="language-"><code>&#x4E0A;&#x51E0;&#x8282;&#x8BFE;&#x6211;&#x4EEC;&#x8BB2;&#x4E86;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF0C;&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x8BB2;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;&#xFF1A;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;Factory Design Pattern&#xFF09;&#x3002;
-</code></pre><p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5206;&#x4E3A;&#x4E09;&#x79CD;&#x66F4;&#x52A0;&#x7EC6;&#x5206;&#x7684;&#x7C7B;&#x578B;&#xFF1A;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x548C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5728;GoF&#x7684;&#x300A;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x300B;&#x4E00;&#x4E66;&#x4E2D;&#xFF0C;&#x5B83;&#x5C06;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x770B;&#x4F5C;&#x662F;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x53EA;&#x88AB;&#x5206;&#x6210;&#x4E86;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x548C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x4E24;&#x7C7B;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x524D;&#x9762;&#x4E00;&#x79CD;&#x5206;&#x7C7B;&#x65B9;&#x6CD5;&#x66F4;&#x52A0;&#x5E38;&#x89C1;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x4ECA;&#x5929;&#x7684;&#x8BB2;&#x89E3;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6CBF;&#x7528;&#x7B2C;&#x4E00;&#x79CD;&#x5206;&#x7C7B;&#x65B9;&#x6CD5;&#x3002;</p>
+<blockquote>
+<p>&#x4E0A;&#x51E0;&#x8282;&#x8BFE;&#x6211;&#x4EEC;&#x8BB2;&#x4E86;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF0C;&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x8BB2;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;&#xFF1A;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;Factory Design Pattern&#xFF09;&#x3002;</p>
+</blockquote>
+<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5206;&#x4E3A;&#x4E09;&#x79CD;&#x66F4;&#x52A0;&#x7EC6;&#x5206;&#x7684;&#x7C7B;&#x578B;&#xFF1A;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x548C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5728;GoF&#x7684;&#x300A;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x300B;&#x4E00;&#x4E66;&#x4E2D;&#xFF0C;&#x5B83;&#x5C06;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x770B;&#x4F5C;&#x662F;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x53EA;&#x88AB;&#x5206;&#x6210;&#x4E86;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x548C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x4E24;&#x7C7B;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x524D;&#x9762;&#x4E00;&#x79CD;&#x5206;&#x7C7B;&#x65B9;&#x6CD5;&#x66F4;&#x52A0;&#x5E38;&#x89C1;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x4ECA;&#x5929;&#x7684;&#x8BB2;&#x89E3;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6CBF;&#x7528;&#x7B2C;&#x4E00;&#x79CD;&#x5206;&#x7C7B;&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x5728;&#x8FD9;&#x4E09;&#x79CD;&#x7EC6;&#x5206;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x539F;&#x7406;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4E5F;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x3002;&#x800C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7684;&#x539F;&#x7406;&#x7A0D;&#x5FAE;&#x590D;&#x6742;&#x70B9;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x76F8;&#x5BF9;&#x4E5F;&#x4E0D;&#x5E38;&#x7528;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x4ECA;&#x5929;&#x8BB2;&#x89E3;&#x7684;&#x91CD;&#x70B9;&#x662F;&#x524D;&#x4E24;&#x79CD;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x3002;&#x5BF9;&#x4E8E;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#xFF0C;&#x4F60;&#x7A0D;&#x5FAE;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8BB2;&#x89E3;&#x7684;&#x91CD;&#x70B9;&#x4E5F;&#x4E0D;&#x662F;&#x539F;&#x7406;&#x548C;&#x5B9E;&#x73B0;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x90FD;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x91CD;&#x70B9;&#x8FD8;&#x662F;&#x5E26;&#x4F60;&#x641E;&#x6E05;&#x695A;&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8BE5;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF1F;&#x76F8;&#x5BF9;&#x4E8E;&#x76F4;&#x63A5;new&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x6765;&#x521B;&#x5EFA;&#x7A76;&#x7ADF;&#x6709;&#x4EC0;&#x4E48;&#x597D;&#x5904;&#x5462;&#xFF1F;</p>
 <p>&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6B63;&#x5F0F;&#x5F00;&#x59CB;&#x4ECA;&#x5929;&#x7684;&#x5B66;&#x4E60;&#x5427;&#xFF01;</p>
 <h2 id="&#x7B80;&#x5355;&#x5DE5;&#x5382;&#xFF08;simple-factory&#xFF09;">&#x7B80;&#x5355;&#x5DE5;&#x5382;&#xFF08;Simple Factory&#xFF09;</h2>
 <p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x3002;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x3002;</p>
 <p>&#x5728;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#xFF08;json&#x3001;xml&#x3001;yaml&#x3001;properties&#xFF09;&#xFF0C;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF08;JsonRuleConfigParser&#x3001;XmlRuleConfigParser&#x2026;&#x2026;&#xFF09;&#xFF0C;&#x5C06;&#x5B58;&#x50A8;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#x89E3;&#x6790;&#x6210;&#x5185;&#x5B58;&#x5BF9;&#x8C61;RuleConfig&#x3002;</p>
-<pre class="language-"><code>public class RuleConfigSource {
-  public RuleConfig load(String ruleConfigFilePath) {
-    String ruleConfigFileExtension = getFileExtension(ruleConfigFilePath);
-    IRuleConfigParser parser = null;
-    if (&quot;json&quot;.equalsIgnoreCase(ruleConfigFileExtension)) {
-      parser = new JsonRuleConfigParser();
-    } else if (&quot;xml&quot;.equalsIgnoreCase(ruleConfigFileExtension)) {
-      parser = new XmlRuleConfigParser();
-    } else if (&quot;yaml&quot;.equalsIgnoreCase(ruleConfigFileExtension)) {
-      parser = new YamlRuleConfigParser();
-    } else if (&quot;properties&quot;.equalsIgnoreCase(ruleConfigFileExtension)) {
-      parser = new PropertiesRuleConfigParser();
-    } else {
-      throw new InvalidRuleConfigException(
-             &quot;Rule config file format is not supported: &quot; + ruleConfigFilePath);
-    }
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuleConfigSource</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token class-name">RuleConfig</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token class-name">String</span> ruleConfigFilePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> ruleConfigFileExtension <span class="token operator">=</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span>ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">IRuleConfigParser</span> parser <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;json&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JsonRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;xml&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;yaml&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">YamlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;properties&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PropertiesRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InvalidRuleConfigException</span><span class="token punctuation">(</span>
+             <span class="token string">&quot;Rule config file format is not supported: &quot;</span> <span class="token operator">+</span> ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    String configText = &quot;&quot;;
-    //&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;
-    RuleConfig ruleConfig = parser.parse(configText);
-    return ruleConfig;
-  }
+    <span class="token class-name">String</span> configText <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;</span>
+    <span class="token class-name">RuleConfig</span> ruleConfig <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>configText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> ruleConfig<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  private String getFileExtension(String filePath) {
-    //...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json
-    return &quot;json&quot;;
-  }
-}
-</code></pre><p>&#x5728;&#x201C;&#x89C4;&#x8303;&#x548C;&#x91CD;&#x6784;&#x201D;&#x90A3;&#x4E00;&#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x8BB2;&#x5230;&#xFF0C;&#x4E3A;&#x4E86;&#x8BA9;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#xFF0C;&#x53EF;&#x8BFB;&#x6027;&#x66F4;&#x597D;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5584;&#x4E8E;&#x5C06;&#x529F;&#x80FD;&#x72EC;&#x7ACB;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x5C01;&#x88C5;&#x6210;&#x51FD;&#x6570;&#x3002;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x4EE3;&#x7801;&#x4E2D;&#x6D89;&#x53CA;parser&#x521B;&#x5EFA;&#x7684;&#x90E8;&#x5206;&#x903B;&#x8F91;&#x5265;&#x79BB;&#x51FA;&#x6765;&#xFF0C;&#x62BD;&#x8C61;&#x6210;createParser()&#x51FD;&#x6570;&#x3002;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre class="language-"><code>  public RuleConfig load(String ruleConfigFilePath) {
-    String ruleConfigFileExtension = getFileExtension(ruleConfigFilePath);
-    IRuleConfigParser parser = createParser(ruleConfigFileExtension);
-    if (parser == null) {
-      throw new InvalidRuleConfigException(
-              &quot;Rule config file format is not supported: &quot; + ruleConfigFilePath);
-    }
+  <span class="token keyword">private</span> <span class="token class-name">String</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span><span class="token class-name">String</span> filePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;json&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5728;&#x201C;&#x89C4;&#x8303;&#x548C;&#x91CD;&#x6784;&#x201D;&#x90A3;&#x4E00;&#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x8BB2;&#x5230;&#xFF0C;&#x4E3A;&#x4E86;&#x8BA9;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#xFF0C;&#x53EF;&#x8BFB;&#x6027;&#x66F4;&#x597D;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5584;&#x4E8E;&#x5C06;&#x529F;&#x80FD;&#x72EC;&#x7ACB;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x5C01;&#x88C5;&#x6210;&#x51FD;&#x6570;&#x3002;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x4EE3;&#x7801;&#x4E2D;&#x6D89;&#x53CA;parser&#x521B;&#x5EFA;&#x7684;&#x90E8;&#x5206;&#x903B;&#x8F91;&#x5265;&#x79BB;&#x51FA;&#x6765;&#xFF0C;&#x62BD;&#x8C61;&#x6210;createParser()&#x51FD;&#x6570;&#x3002;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-java">  <span class="token keyword">public</span> <span class="token class-name">RuleConfig</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token class-name">String</span> ruleConfigFilePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> ruleConfigFileExtension <span class="token operator">=</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span>ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">IRuleConfigParser</span> parser <span class="token operator">=</span> <span class="token function">createParser</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>parser <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InvalidRuleConfigException</span><span class="token punctuation">(</span>
+              <span class="token string">&quot;Rule config file format is not supported: &quot;</span> <span class="token operator">+</span> ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    String configText = &quot;&quot;;
-    //&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;
-    RuleConfig ruleConfig = parser.parse(configText);
-    return ruleConfig;
-  }
+    <span class="token class-name">String</span> configText <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;</span>
+    <span class="token class-name">RuleConfig</span> ruleConfig <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>configText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> ruleConfig<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  private String getFileExtension(String filePath) {
-    //...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json
-    return &quot;json&quot;;
-  }
+  <span class="token keyword">private</span> <span class="token class-name">String</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span><span class="token class-name">String</span> filePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;json&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  private IRuleConfigParser createParser(String configFormat) {
-    IRuleConfigParser parser = null;
-    if (&quot;json&quot;.equalsIgnoreCase(configFormat)) {
-      parser = new JsonRuleConfigParser();
-    } else if (&quot;xml&quot;.equalsIgnoreCase(configFormat)) {
-      parser = new XmlRuleConfigParser();
-    } else if (&quot;yaml&quot;.equalsIgnoreCase(configFormat)) {
-      parser = new YamlRuleConfigParser();
-    } else if (&quot;properties&quot;.equalsIgnoreCase(configFormat)) {
-      parser = new PropertiesRuleConfigParser();
-    }
-    return parser;
-  }
-}
-</code></pre><p>&#x4E3A;&#x4E86;&#x8BA9;&#x7C7B;&#x7684;&#x804C;&#x8D23;&#x66F4;&#x52A0;&#x5355;&#x4E00;&#x3001;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x5C06;createParser()&#x51FD;&#x6570;&#x5265;&#x79BB;&#x5230;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7C7B;&#x4E2D;&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x7C7B;&#x53EA;&#x8D1F;&#x8D23;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x3002;&#x800C;&#x8FD9;&#x4E2A;&#x7C7B;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x8981;&#x8BB2;&#x7684;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7C7B;&#x3002;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre class="language-"><code>public class RuleConfigSource {
-  public RuleConfig load(String ruleConfigFilePath) {
-    String ruleConfigFileExtension = getFileExtension(ruleConfigFilePath);
-    IRuleConfigParser parser = RuleConfigParserFactory.createParser(ruleConfigFileExtension);
-    if (parser == null) {
-      throw new InvalidRuleConfigException(
-              &quot;Rule config file format is not supported: &quot; + ruleConfigFilePath);
-    }
+  <span class="token keyword">private</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createParser</span><span class="token punctuation">(</span><span class="token class-name">String</span> configFormat<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">IRuleConfigParser</span> parser <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;json&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JsonRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;xml&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;yaml&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">YamlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;properties&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PropertiesRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> parser<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x8BA9;&#x7C7B;&#x7684;&#x804C;&#x8D23;&#x66F4;&#x52A0;&#x5355;&#x4E00;&#x3001;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x5C06;createParser()&#x51FD;&#x6570;&#x5265;&#x79BB;&#x5230;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7C7B;&#x4E2D;&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x7C7B;&#x53EA;&#x8D1F;&#x8D23;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x3002;&#x800C;&#x8FD9;&#x4E2A;&#x7C7B;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x8981;&#x8BB2;&#x7684;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7C7B;&#x3002;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuleConfigSource</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token class-name">RuleConfig</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token class-name">String</span> ruleConfigFilePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> ruleConfigFileExtension <span class="token operator">=</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span>ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">IRuleConfigParser</span> parser <span class="token operator">=</span> <span class="token class-name">RuleConfigParserFactory</span><span class="token punctuation">.</span><span class="token function">createParser</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>parser <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InvalidRuleConfigException</span><span class="token punctuation">(</span>
+              <span class="token string">&quot;Rule config file format is not supported: &quot;</span> <span class="token operator">+</span> ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    String configText = &quot;&quot;;
-    //&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;
-    RuleConfig ruleConfig = parser.parse(configText);
-    return ruleConfig;
-  }
+    <span class="token class-name">String</span> configText <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;</span>
+    <span class="token class-name">RuleConfig</span> ruleConfig <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>configText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> ruleConfig<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  private String getFileExtension(String filePath) {
-    //...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json
-    return &quot;json&quot;;
-  }
-}
+  <span class="token keyword">private</span> <span class="token class-name">String</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span><span class="token class-name">String</span> filePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;json&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class RuleConfigParserFactory {
-  public static IRuleConfigParser createParser(String configFormat) {
-    IRuleConfigParser parser = null;
-    if (&quot;json&quot;.equalsIgnoreCase(configFormat)) {
-      parser = new JsonRuleConfigParser();
-    } else if (&quot;xml&quot;.equalsIgnoreCase(configFormat)) {
-      parser = new XmlRuleConfigParser();
-    } else if (&quot;yaml&quot;.equalsIgnoreCase(configFormat)) {
-      parser = new YamlRuleConfigParser();
-    } else if (&quot;properties&quot;.equalsIgnoreCase(configFormat)) {
-      parser = new PropertiesRuleConfigParser();
-    }
-    return parser;
-  }
-}
-</code></pre><p>&#x5927;&#x90E8;&#x5206;&#x5DE5;&#x5382;&#x7C7B;&#x90FD;&#x662F;&#x4EE5;&#x201C;Factory&#x201D;&#x8FD9;&#x4E2A;&#x5355;&#x8BCD;&#x7ED3;&#x5C3E;&#x7684;&#xFF0C;&#x4F46;&#x4E5F;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x6BD4;&#x5982;Java&#x4E2D;&#x7684;DateFormat&#x3001;Calender&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x5DE5;&#x5382;&#x7C7B;&#x4E2D;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x4E00;&#x822C;&#x90FD;&#x662F;create&#x5F00;&#x5934;&#xFF0C;&#x6BD4;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x7684;createParser()&#xFF0C;&#x4F46;&#x6709;&#x7684;&#x4E5F;&#x547D;&#x540D;&#x4E3A;getInstance()&#x3001;createInstance()&#x3001;newInstance()&#xFF0C;&#x6709;&#x7684;&#x751A;&#x81F3;&#x547D;&#x540D;&#x4E3A;valueOf()&#xFF08;&#x6BD4;&#x5982;Java String&#x7C7B;&#x7684;valueOf()&#x51FD;&#x6570;&#xFF09;&#x7B49;&#x7B49;&#xFF0C;&#x8FD9;&#x4E2A;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x5177;&#x4F53;&#x7684;&#x573A;&#x666F;&#x548C;&#x4E60;&#x60EF;&#x6765;&#x547D;&#x540D;&#x5C31;&#x597D;&#x3002;</p>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuleConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createParser</span><span class="token punctuation">(</span><span class="token class-name">String</span> configFormat<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">IRuleConfigParser</span> parser <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;json&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JsonRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;xml&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;yaml&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">YamlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;properties&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PropertiesRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> parser<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5927;&#x90E8;&#x5206;&#x5DE5;&#x5382;&#x7C7B;&#x90FD;&#x662F;&#x4EE5;&#x201C;Factory&#x201D;&#x8FD9;&#x4E2A;&#x5355;&#x8BCD;&#x7ED3;&#x5C3E;&#x7684;&#xFF0C;&#x4F46;&#x4E5F;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x6BD4;&#x5982;Java&#x4E2D;&#x7684;DateFormat&#x3001;Calender&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x5DE5;&#x5382;&#x7C7B;&#x4E2D;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x4E00;&#x822C;&#x90FD;&#x662F;create&#x5F00;&#x5934;&#xFF0C;&#x6BD4;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x7684;createParser()&#xFF0C;&#x4F46;&#x6709;&#x7684;&#x4E5F;&#x547D;&#x540D;&#x4E3A;getInstance()&#x3001;createInstance()&#x3001;newInstance()&#xFF0C;&#x6709;&#x7684;&#x751A;&#x81F3;&#x547D;&#x540D;&#x4E3A;valueOf()&#xFF08;&#x6BD4;&#x5982;Java String&#x7C7B;&#x7684;valueOf()&#x51FD;&#x6570;&#xFF09;&#x7B49;&#x7B49;&#xFF0C;&#x8FD9;&#x4E2A;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x5177;&#x4F53;&#x7684;&#x573A;&#x666F;&#x548C;&#x4E60;&#x60EF;&#x6765;&#x547D;&#x540D;&#x5C31;&#x597D;&#x3002;</p>
 <p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x8C03;&#x7528;RuleConfigParserFactory&#x7684;createParser()&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;parser&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5982;&#x679C;parser&#x53EF;&#x4EE5;&#x590D;&#x7528;&#xFF0C;&#x4E3A;&#x4E86;&#x8282;&#x7701;&#x5185;&#x5B58;&#x548C;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;parser&#x4E8B;&#x5148;&#x521B;&#x5EFA;&#x597D;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#x3002;&#x5F53;&#x8C03;&#x7528;createParser()&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x53D6;&#x51FA;parser&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x3002;</p>
 <p>&#x8FD9;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x548C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x7ED3;&#x5408;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x8BB2;&#x89E3;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x4E0A;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x53EB;&#x4F5C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x7B2C;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF0C;&#x628A;&#x4E0B;&#x9762;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x53EB;&#x4F5C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x3002;</p>
-<pre class="language-"><code>public class RuleConfigParserFactory {
-  private static final Map<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String,</span> <span class="token attr-name">RuleConfigParser</span><span class="token punctuation">&gt;</span></span> cachedParsers = new HashMap&lt;&gt;();
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuleConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">RuleConfigParser</span><span class="token punctuation">&gt;</span></span> cachedParsers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  static {
-    cachedParsers.put(&quot;json&quot;, new JsonRuleConfigParser());
-    cachedParsers.put(&quot;xml&quot;, new XmlRuleConfigParser());
-    cachedParsers.put(&quot;yaml&quot;, new YamlRuleConfigParser());
-    cachedParsers.put(&quot;properties&quot;, new PropertiesRuleConfigParser());
-  }
+  <span class="token keyword">static</span> <span class="token punctuation">{</span>
+    cachedParsers<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;json&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">JsonRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cachedParsers<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;xml&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">XmlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cachedParsers<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;yaml&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">YamlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cachedParsers<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;properties&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">PropertiesRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  public static IRuleConfigParser createParser(String configFormat) {
-    if (configFormat == null || configFormat.isEmpty()) {
-      return null;//&#x8FD4;&#x56DE;null&#x8FD8;&#x662F;IllegalArgumentException&#x5168;&#x51ED;&#x4F60;&#x81EA;&#x5DF1;&#x8BF4;&#x4E86;&#x7B97;
-    }
-    IRuleConfigParser parser = cachedParsers.get(configFormat.toLowerCase());
-    return parser;
-  }
-}
-</code></pre><p>&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x4E24;&#x79CD;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x6DFB;&#x52A0;&#x65B0;&#x7684;parser&#xFF0C;&#x90A3;&#x52BF;&#x5FC5;&#x8981;&#x6539;&#x52A8;&#x5230;RuleConfigParserFactory&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x90A3;&#x8FD9;&#x662F;&#x4E0D;&#x662F;&#x8FDD;&#x53CD;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x5462;&#xFF1F;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x9700;&#x8981;&#x9891;&#x7E41;&#x5730;&#x6DFB;&#x52A0;&#x65B0;&#x7684;parser&#xFF0C;&#x53EA;&#x662F;&#x5076;&#x5C14;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;RuleConfigParserFactory&#x4EE3;&#x7801;&#xFF0C;&#x7A0D;&#x5FAE;&#x4E0D;&#x7B26;&#x5408;&#x5F00;&#x95ED;&#x539F;&#x5219;&#xFF0C;&#x4E5F;&#x662F;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x7684;&#x3002;</p>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createParser</span><span class="token punctuation">(</span><span class="token class-name">String</span> configFormat<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>configFormat <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> configFormat<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span><span class="token comment">//&#x8FD4;&#x56DE;null&#x8FD8;&#x662F;IllegalArgumentException&#x5168;&#x51ED;&#x4F60;&#x81EA;&#x5DF1;&#x8BF4;&#x4E86;&#x7B97;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">IRuleConfigParser</span> parser <span class="token operator">=</span> cachedParsers<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>configFormat<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> parser<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x4E24;&#x79CD;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x6DFB;&#x52A0;&#x65B0;&#x7684;parser&#xFF0C;&#x90A3;&#x52BF;&#x5FC5;&#x8981;&#x6539;&#x52A8;&#x5230;RuleConfigParserFactory&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x90A3;&#x8FD9;&#x662F;&#x4E0D;&#x662F;&#x8FDD;&#x53CD;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x5462;&#xFF1F;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x9700;&#x8981;&#x9891;&#x7E41;&#x5730;&#x6DFB;&#x52A0;&#x65B0;&#x7684;parser&#xFF0C;&#x53EA;&#x662F;&#x5076;&#x5C14;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;RuleConfigParserFactory&#x4EE3;&#x7801;&#xFF0C;&#x7A0D;&#x5FAE;&#x4E0D;&#x7B26;&#x5408;&#x5F00;&#x95ED;&#x539F;&#x5219;&#xFF0C;&#x4E5F;&#x662F;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x7684;&#x3002;</p>
 <p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x5728;RuleConfigParserFactory&#x7684;&#x7B2C;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x7EC4;if&#x5206;&#x652F;&#x5224;&#x65AD;&#x903B;&#x8F91;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x5E94;&#x8BE5;&#x7528;&#x591A;&#x6001;&#x6216;&#x5176;&#x4ED6;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x6765;&#x66FF;&#x4EE3;&#x5462;&#xFF1F;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5982;&#x679C;if&#x5206;&#x652F;&#x5E76;&#x4E0D;&#x662F;&#x5F88;&#x591A;&#xFF0C;&#x4EE3;&#x7801;&#x4E2D;&#x6709;if&#x5206;&#x652F;&#x4E5F;&#x662F;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x7684;&#x3002;&#x5E94;&#x7528;&#x591A;&#x6001;&#x6216;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x6765;&#x66FF;&#x4EE3;if&#x5206;&#x652F;&#x5224;&#x65AD;&#x903B;&#x8F91;&#xFF0C;&#x4E5F;&#x5E76;&#x4E0D;&#x662F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7F3A;&#x70B9;&#x7684;&#xFF0C;&#x5B83;&#x867D;&#x7136;&#x63D0;&#x9AD8;&#x4E86;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x66F4;&#x52A0;&#x7B26;&#x5408;&#x5F00;&#x95ED;&#x539F;&#x5219;&#xFF0C;&#x4F46;&#x4E5F;&#x589E;&#x52A0;&#x4E86;&#x7C7B;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x727A;&#x7272;&#x4E86;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x3002;&#x5173;&#x4E8E;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x540E;&#x9762;&#x7AE0;&#x8282;&#x4E2D;&#x4F1A;&#x8BE6;&#x7EC6;&#x8BB2;&#x5230;&#x3002;</p>
 <p>&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x5C3D;&#x7BA1;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x6709;&#x591A;&#x5904;if&#x5206;&#x652F;&#x5224;&#x65AD;&#x903B;&#x8F91;&#xFF0C;&#x8FDD;&#x80CC;&#x5F00;&#x95ED;&#x539F;&#x5219;&#xFF0C;&#x4F46;&#x6743;&#x8861;&#x6269;&#x5C55;&#x6027;&#x548C;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF08;&#x6BD4;&#x5982;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x9891;&#x7E41;&#x5730;&#x6DFB;&#x52A0;parser&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x592A;&#x591A;&#x7684;parser&#xFF09;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x7684;&#x3002;</p>
 <h2 id="&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF08;factory-method&#xFF09;">&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF08;Factory Method&#xFF09;</h2>
 <p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x975E;&#x5F97;&#x8981;&#x5C06;if&#x5206;&#x652F;&#x903B;&#x8F91;&#x53BB;&#x6389;&#xFF0C;&#x90A3;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#x5462;&#xFF1F;&#x6BD4;&#x8F83;&#x7ECF;&#x5178;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x5229;&#x7528;&#x591A;&#x6001;&#x3002;&#x6309;&#x7167;&#x591A;&#x6001;&#x7684;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#xFF0C;&#x5BF9;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x91CD;&#x6784;&#x3002;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre class="language-"><code>public interface IRuleConfigParserFactory {
-  IRuleConfigParser createParser();
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IRuleConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token class-name">IRuleConfigParser</span> <span class="token function">createParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-public class JsonRuleConfigParserFactory implements IRuleConfigParserFactory {
-  @Override
-  public IRuleConfigParser createParser() {
-    return new JsonRuleConfigParser();
-  }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JsonRuleConfigParserFactory</span> <span class="token keyword">implements</span> <span class="token class-name">IRuleConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">JsonRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class XmlRuleConfigParserFactory implements IRuleConfigParserFactory {
-  @Override
-  public IRuleConfigParser createParser() {
-    return new XmlRuleConfigParser();
-  }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">XmlRuleConfigParserFactory</span> <span class="token keyword">implements</span> <span class="token class-name">IRuleConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">XmlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class YamlRuleConfigParserFactory implements IRuleConfigParserFactory {
-  @Override
-  public IRuleConfigParser createParser() {
-    return new YamlRuleConfigParser();
-  }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">YamlRuleConfigParserFactory</span> <span class="token keyword">implements</span> <span class="token class-name">IRuleConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">YamlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class PropertiesRuleConfigParserFactory implements IRuleConfigParserFactory {
-  @Override
-  public IRuleConfigParser createParser() {
-    return new PropertiesRuleConfigParser();
-  }
-}
-</code></pre><p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7684;&#x5178;&#x578B;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x6837;&#x5F53;&#x6211;&#x4EEC;&#x65B0;&#x589E;&#x4E00;&#x79CD;parser&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;IRuleConfigParserFactory&#x63A5;&#x53E3;&#x7684;Factory&#x7C7B;&#x5373;&#x53EF;&#x3002;&#x6240;&#x4EE5;&#xFF0C;<strong>&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x6BD4;&#x8D77;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x66F4;&#x52A0;&#x7B26;&#x5408;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;</strong></p>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PropertiesRuleConfigParserFactory</span> <span class="token keyword">implements</span> <span class="token class-name">IRuleConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">PropertiesRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7684;&#x5178;&#x578B;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x6837;&#x5F53;&#x6211;&#x4EEC;&#x65B0;&#x589E;&#x4E00;&#x79CD;parser&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;IRuleConfigParserFactory&#x63A5;&#x53E3;&#x7684;Factory&#x7C7B;&#x5373;&#x53EF;&#x3002;&#x6240;&#x4EE5;&#xFF0C;<strong>&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x6BD4;&#x8D77;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x66F4;&#x52A0;&#x7B26;&#x5408;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;</strong></p>
 <p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#x6765;&#x770B;&#xFF0C;&#x4E00;&#x5207;&#x90FD;&#x5F88;&#x5B8C;&#x7F8E;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#x5B58;&#x5728;&#x633A;&#x5927;&#x7684;&#x95EE;&#x9898;&#x3002;&#x95EE;&#x9898;&#x5B58;&#x5728;&#x4E8E;&#x8FD9;&#x4E9B;&#x5DE5;&#x5382;&#x7C7B;&#x7684;&#x4F7F;&#x7528;&#x4E0A;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x4F55;&#x7528;&#x8FD9;&#x4E9B;&#x5DE5;&#x5382;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;RuleConfigSource&#x7684;load()&#x51FD;&#x6570;&#x3002;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre class="language-"><code>public class RuleConfigSource {
-  public RuleConfig load(String ruleConfigFilePath) {
-    String ruleConfigFileExtension = getFileExtension(ruleConfigFilePath);
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuleConfigSource</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token class-name">RuleConfig</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token class-name">String</span> ruleConfigFilePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> ruleConfigFileExtension <span class="token operator">=</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span>ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    IRuleConfigParserFactory parserFactory = null;
-    if (&quot;json&quot;.equalsIgnoreCase(ruleConfigFileExtension)) {
-      parserFactory = new JsonRuleConfigParserFactory();
-    } else if (&quot;xml&quot;.equalsIgnoreCase(ruleConfigFileExtension)) {
-      parserFactory = new XmlRuleConfigParserFactory();
-    } else if (&quot;yaml&quot;.equalsIgnoreCase(ruleConfigFileExtension)) {
-      parserFactory = new YamlRuleConfigParserFactory();
-    } else if (&quot;properties&quot;.equalsIgnoreCase(ruleConfigFileExtension)) {
-      parserFactory = new PropertiesRuleConfigParserFactory();
-    } else {
-      throw new InvalidRuleConfigException(&quot;Rule config file format is not supported: &quot; + ruleConfigFilePath);
-    }
-    IRuleConfigParser parser = parserFactory.createParser();
+    <span class="token class-name">IRuleConfigParserFactory</span> parserFactory <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;json&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parserFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JsonRuleConfigParserFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;xml&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parserFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlRuleConfigParserFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;yaml&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parserFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">YamlRuleConfigParserFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;properties&quot;</span><span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parserFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PropertiesRuleConfigParserFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InvalidRuleConfigException</span><span class="token punctuation">(</span><span class="token string">&quot;Rule config file format is not supported: &quot;</span> <span class="token operator">+</span> ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">IRuleConfigParser</span> parser <span class="token operator">=</span> parserFactory<span class="token punctuation">.</span><span class="token function">createParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    String configText = &quot;&quot;;
-    //&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;
-    RuleConfig ruleConfig = parser.parse(configText);
-    return ruleConfig;
-  }
+    <span class="token class-name">String</span> configText <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;</span>
+    <span class="token class-name">RuleConfig</span> ruleConfig <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>configText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> ruleConfig<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  private String getFileExtension(String filePath) {
-    //...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json
-    return &quot;json&quot;;
-  }
-}
-</code></pre><p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x6765;&#x770B;&#xFF0C;&#x5DE5;&#x5382;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x903B;&#x8F91;&#x53C8;&#x8026;&#x5408;&#x8FDB;&#x4E86;load()&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x8DDF;&#x6211;&#x4EEC;&#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x7248;&#x672C;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF0C;&#x5F15;&#x5165;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x975E;&#x4F46;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF0C;&#x53CD;&#x5012;&#x8BA9;&#x8BBE;&#x8BA1;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x4E86;&#x3002;&#x90A3;&#x600E;&#x4E48;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5462;&#xFF1F;</p>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span><span class="token class-name">String</span> filePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;json&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x6765;&#x770B;&#xFF0C;&#x5DE5;&#x5382;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x903B;&#x8F91;&#x53C8;&#x8026;&#x5408;&#x8FDB;&#x4E86;load()&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x8DDF;&#x6211;&#x4EEC;&#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x7248;&#x672C;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF0C;&#x5F15;&#x5165;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x975E;&#x4F46;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF0C;&#x53CD;&#x5012;&#x8BA9;&#x8BBE;&#x8BA1;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x4E86;&#x3002;&#x90A3;&#x600E;&#x4E48;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5462;&#xFF1F;</p>
 <p><strong>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E3A;&#x5DE5;&#x5382;&#x7C7B;&#x518D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5DE5;&#x5382;&#x7684;&#x5DE5;&#x5382;&#xFF0C;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x5DE5;&#x5382;&#x7C7B;&#x5BF9;&#x8C61;&#x3002;</strong>&#x8FD9;&#x6BB5;&#x8BDD;&#x542C;&#x8D77;&#x6765;&#x6709;&#x70B9;&#x7ED5;&#xFF0C;&#x6211;&#x628A;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x4F60;&#x4E00;&#x770B;&#x5C31;&#x80FD;&#x660E;&#x767D;&#x4E86;&#x3002;&#x5176;&#x4E2D;&#xFF0C;RuleConfigParserFactoryMap&#x7C7B;&#x662F;&#x521B;&#x5EFA;&#x5DE5;&#x5382;&#x5BF9;&#x8C61;&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;getParserFactory()&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x7F13;&#x5B58;&#x597D;&#x7684;&#x5355;&#x4F8B;&#x5DE5;&#x5382;&#x5BF9;&#x8C61;&#x3002;</p>
-<pre class="language-"><code>public class RuleConfigSource {
-  public RuleConfig load(String ruleConfigFilePath) {
-    String ruleConfigFileExtension = getFileExtension(ruleConfigFilePath);
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuleConfigSource</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token class-name">RuleConfig</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token class-name">String</span> ruleConfigFilePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> ruleConfigFileExtension <span class="token operator">=</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span>ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    IRuleConfigParserFactory parserFactory = RuleConfigParserFactoryMap.getParserFactory(ruleConfigFileExtension);
-    if (parserFactory == null) {
-      throw new InvalidRuleConfigException(&quot;Rule config file format is not supported: &quot; + ruleConfigFilePath);
-    }
-    IRuleConfigParser parser = parserFactory.createParser();
+    <span class="token class-name">IRuleConfigParserFactory</span> parserFactory <span class="token operator">=</span> <span class="token class-name">RuleConfigParserFactoryMap</span><span class="token punctuation">.</span><span class="token function">getParserFactory</span><span class="token punctuation">(</span>ruleConfigFileExtension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>parserFactory <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InvalidRuleConfigException</span><span class="token punctuation">(</span><span class="token string">&quot;Rule config file format is not supported: &quot;</span> <span class="token operator">+</span> ruleConfigFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">IRuleConfigParser</span> parser <span class="token operator">=</span> parserFactory<span class="token punctuation">.</span><span class="token function">createParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    String configText = &quot;&quot;;
-    //&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;
-    RuleConfig ruleConfig = parser.parse(configText);
-    return ruleConfig;
-  }
+    <span class="token class-name">String</span> configText <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x4ECE;ruleConfigFilePath&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x5230;configText&#x4E2D;</span>
+    <span class="token class-name">RuleConfig</span> ruleConfig <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>configText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> ruleConfig<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  private String getFileExtension(String filePath) {
-    //...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json
-    return &quot;json&quot;;
-  }
-}
+  <span class="token keyword">private</span> <span class="token class-name">String</span> <span class="token function">getFileExtension</span><span class="token punctuation">(</span><span class="token class-name">String</span> filePath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D;&#x83B7;&#x53D6;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x6BD4;&#x5982;rule.json&#xFF0C;&#x8FD4;&#x56DE;json</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;json&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-//&#x56E0;&#x4E3A;&#x5DE5;&#x5382;&#x7C7B;&#x53EA;&#x5305;&#x542B;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#xFF0C;
-//&#x4E0D;&#x9700;&#x8981;&#x6BCF;&#x6B21;&#x90FD;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x66F4;&#x52A0;&#x5408;&#x9002;&#x3002;
-public class RuleConfigParserFactoryMap { //&#x5DE5;&#x5382;&#x7684;&#x5DE5;&#x5382;
-  private static final Map<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String,</span> <span class="token attr-name">IRuleConfigParserFactory</span><span class="token punctuation">&gt;</span></span> cachedFactories = new HashMap&lt;&gt;();
+<span class="token comment">//&#x56E0;&#x4E3A;&#x5DE5;&#x5382;&#x7C7B;&#x53EA;&#x5305;&#x542B;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#xFF0C;</span>
+<span class="token comment">//&#x4E0D;&#x9700;&#x8981;&#x6BCF;&#x6B21;&#x90FD;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x66F4;&#x52A0;&#x5408;&#x9002;&#x3002;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RuleConfigParserFactoryMap</span> <span class="token punctuation">{</span> <span class="token comment">//&#x5DE5;&#x5382;&#x7684;&#x5DE5;&#x5382;</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">IRuleConfigParserFactory</span><span class="token punctuation">&gt;</span></span> cachedFactories <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  static {
-    cachedFactories.put(&quot;json&quot;, new JsonRuleConfigParserFactory());
-    cachedFactories.put(&quot;xml&quot;, new XmlRuleConfigParserFactory());
-    cachedFactories.put(&quot;yaml&quot;, new YamlRuleConfigParserFactory());
-    cachedFactories.put(&quot;properties&quot;, new PropertiesRuleConfigParserFactory());
-  }
+  <span class="token keyword">static</span> <span class="token punctuation">{</span>
+    cachedFactories<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;json&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">JsonRuleConfigParserFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cachedFactories<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;xml&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">XmlRuleConfigParserFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cachedFactories<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;yaml&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">YamlRuleConfigParserFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cachedFactories<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;properties&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">PropertiesRuleConfigParserFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  public static IRuleConfigParserFactory getParserFactory(String type) {
-    if (type == null || type.isEmpty()) {
-      return null;
-    }
-    IRuleConfigParserFactory parserFactory = cachedFactories.get(type.toLowerCase());
-    return parserFactory;
-  }
-}
-</code></pre><p>&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x89E3;&#x6790;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x65B0;&#x7684;parser&#x7C7B;&#x548C;parser factory&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x5728;RuleConfigParserFactoryMap&#x7C7B;&#x4E2D;&#xFF0C;&#x5C06;&#x65B0;&#x7684;parser factory&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;cachedFactories&#x4E2D;&#x5373;&#x53EF;&#x3002;&#x4EE3;&#x7801;&#x7684;&#x6539;&#x52A8;&#x975E;&#x5E38;&#x5C11;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x7B26;&#x5408;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;</p>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">IRuleConfigParserFactory</span> <span class="token function">getParserFactory</span><span class="token punctuation">(</span><span class="token class-name">String</span> type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> type<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">IRuleConfigParserFactory</span> parserFactory <span class="token operator">=</span> cachedFactories<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> parserFactory<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x89E3;&#x6790;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x65B0;&#x7684;parser&#x7C7B;&#x548C;parser factory&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x5728;RuleConfigParserFactoryMap&#x7C7B;&#x4E2D;&#xFF0C;&#x5C06;&#x65B0;&#x7684;parser factory&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;cachedFactories&#x4E2D;&#x5373;&#x53EF;&#x3002;&#x4EE3;&#x7801;&#x7684;&#x6539;&#x52A8;&#x975E;&#x5E38;&#x5C11;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x7B26;&#x5408;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;</p>
 <p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5BF9;&#x4E8E;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x573A;&#x666F;&#x6765;&#x8BF4;&#xFF0C;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x9700;&#x8981;&#x989D;&#x5916;&#x521B;&#x5EFA;&#x8BF8;&#x591A;Factory&#x7C7B;&#xFF0C;&#x4E5F;&#x4F1A;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x800C;&#x4E14;&#xFF0C;&#x6BCF;&#x4E2A;Factory&#x7C7B;&#x53EA;&#x662F;&#x505A;&#x7B80;&#x5355;&#x7684;new&#x64CD;&#x4F5C;&#xFF0C;&#x529F;&#x80FD;&#x975E;&#x5E38;&#x5355;&#x8584;&#xFF08;&#x53EA;&#x6709;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#xFF09;&#xFF0C;&#x4E5F;&#x6CA1;&#x5FC5;&#x8981;&#x8BBE;&#x8BA1;&#x6210;&#x72EC;&#x7ACB;&#x7684;&#x7C7B;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7B80;&#x5355;&#x597D;&#x7528;&#xFF0C;&#x6BD4;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x66F4;&#x52A0;&#x5408;&#x9002;&#x3002;</p>
 <p><strong>&#x90A3;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8BE5;&#x7528;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#xFF0C;&#x800C;&#x975E;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5462;&#xFF1F;</strong></p>
 <p>&#x6211;&#x4EEC;&#x524D;&#x9762;&#x63D0;&#x5230;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x5C06;&#x67D0;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#x5265;&#x79BB;&#x51FA;&#x6765;&#xFF0C;&#x72EC;&#x7ACB;&#x4E3A;&#x51FD;&#x6570;&#x6216;&#x8005;&#x7C7B;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#x7684;&#x903B;&#x8F91;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#xFF0C;&#x5265;&#x79BB;&#x4E4B;&#x540E;&#x80FD;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#xFF0C;&#x66F4;&#x52A0;&#x53EF;&#x8BFB;&#x3001;&#x53EF;&#x7EF4;&#x62A4;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4EE3;&#x7801;&#x5757;&#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x5C31;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#x800C;&#x5DF2;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x6CA1;&#x5FC5;&#x8981;&#x5C06;&#x5B83;&#x62C6;&#x5206;&#x6210;&#x5355;&#x72EC;&#x7684;&#x51FD;&#x6570;&#x6216;&#x8005;&#x7C7B;&#x3002;</p>
@@ -2049,51 +2058,53 @@ public class RuleConfigParserFactoryMap { //&#x5DE5;&#x5382;&#x7684;&#x5DE5;&#x5
 <h2 id="&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#xFF08;abstract-factory&#xFF09;">&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#xFF08;Abstract Factory&#xFF09;</h2>
 <p>&#x8BB2;&#x5B8C;&#x4E86;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x3002;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x6CA1;&#x6709;&#x524D;&#x4E24;&#x79CD;&#x5E38;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x672C;&#x8282;&#x8BFE;&#x5B66;&#x4E60;&#x7684;&#x91CD;&#x70B9;&#xFF0C;&#x4F60;&#x7B80;&#x5355;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
 <p>&#x5728;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x548C;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x7C7B;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x5206;&#x7C7B;&#x65B9;&#x5F0F;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5728;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x89E3;&#x6790;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x89E3;&#x6790;&#x5668;&#x7C7B;&#x53EA;&#x4F1A;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF08;Json&#x3001;Xml&#x3001;Yaml&#x2026;&#x2026;&#xFF09;&#x6765;&#x5206;&#x7C7B;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x7C7B;&#x6709;&#x4E24;&#x79CD;&#x5206;&#x7C7B;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x65E2;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x6765;&#x5206;&#x7C7B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x89E3;&#x6790;&#x7684;&#x5BF9;&#x8C61;&#xFF08;Rule&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x8FD8;&#x662F;System&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#xFF09;&#x6765;&#x5206;&#x7C7B;&#xFF0C;&#x90A3;&#x5C31;&#x4F1A;&#x5BF9;&#x5E94;&#x4E0B;&#x9762;&#x8FD9;8&#x4E2A;parser&#x7C7B;&#x3002;</p>
-<pre class="language-"><code>&#x9488;&#x5BF9;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF1A;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;IRuleConfigParser
-JsonRuleConfigParser
-XmlRuleConfigParser
-YamlRuleConfigParser
-PropertiesRuleConfigParser
+<pre class="language-"><code class="lang-java">&#x9488;&#x5BF9;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF1A;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;<span class="token class-name">IRuleConfigParser</span>
+<span class="token class-name">JsonRuleConfigParser</span>
+<span class="token class-name">XmlRuleConfigParser</span>
+<span class="token class-name">YamlRuleConfigParser</span>
+<span class="token class-name">PropertiesRuleConfigParser</span>
 
-&#x9488;&#x5BF9;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF1A;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;ISystemConfigParser
-JsonSystemConfigParser
-XmlSystemConfigParser
-YamlSystemConfigParser
-PropertiesSystemConfigParser
-</code></pre><p>&#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x7EE7;&#x7EED;&#x7528;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x9488;&#x5BF9;&#x6BCF;&#x4E2A;parser&#x90FD;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8981;&#x7F16;&#x5199;8&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x672A;&#x6765;&#x8FD8;&#x9700;&#x8981;&#x589E;&#x52A0;&#x9488;&#x5BF9;&#x4E1A;&#x52A1;&#x914D;&#x7F6E;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF08;&#x6BD4;&#x5982;IBizConfigParser&#xFF09;&#xFF0C;&#x90A3;&#x5C31;&#x8981;&#x518D;&#x5BF9;&#x5E94;&#x5730;&#x589E;&#x52A0;4&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#x3002;&#x800C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;&#x8FC7;&#x591A;&#x7684;&#x7C7B;&#x4E5F;&#x4F1A;&#x8BA9;&#x7CFB;&#x7EDF;&#x96BE;&#x7EF4;&#x62A4;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x8BE5;&#x600E;&#x4E48;&#x89E3;&#x51B3;&#x5462;&#xFF1F;</p>
+&#x9488;&#x5BF9;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF1A;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;<span class="token class-name">ISystemConfigParser</span>
+<span class="token class-name">JsonSystemConfigParser</span>
+<span class="token class-name">XmlSystemConfigParser</span>
+<span class="token class-name">YamlSystemConfigParser</span>
+<span class="token class-name">PropertiesSystemConfigParser</span>
+</code></pre>
+<p>&#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x7EE7;&#x7EED;&#x7528;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x9488;&#x5BF9;&#x6BCF;&#x4E2A;parser&#x90FD;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8981;&#x7F16;&#x5199;8&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x672A;&#x6765;&#x8FD8;&#x9700;&#x8981;&#x589E;&#x52A0;&#x9488;&#x5BF9;&#x4E1A;&#x52A1;&#x914D;&#x7F6E;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF08;&#x6BD4;&#x5982;IBizConfigParser&#xFF09;&#xFF0C;&#x90A3;&#x5C31;&#x8981;&#x518D;&#x5BF9;&#x5E94;&#x5730;&#x589E;&#x52A0;4&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#x3002;&#x800C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;&#x8FC7;&#x591A;&#x7684;&#x7C7B;&#x4E5F;&#x4F1A;&#x8BA9;&#x7CFB;&#x7EDF;&#x96BE;&#x7EF4;&#x62A4;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x8BE5;&#x600E;&#x4E48;&#x89E3;&#x51B3;&#x5462;&#xFF1F;</p>
 <p>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x5C31;&#x662F;&#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x975E;&#x5E38;&#x7279;&#x6B8A;&#x7684;&#x573A;&#x666F;&#x800C;&#x8BDE;&#x751F;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BA9;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x8D1F;&#x8D23;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF08;IRuleConfigParser&#x3001;ISystemConfigParser&#x7B49;&#xFF09;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x53EA;&#x521B;&#x5EFA;&#x4E00;&#x79CD;parser&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x5730;&#x51CF;&#x5C11;&#x5DE5;&#x5382;&#x7C7B;&#x7684;&#x4E2A;&#x6570;&#x3002;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre class="language-"><code>public interface IConfigParserFactory {
-  IRuleConfigParser createRuleParser();
-  ISystemConfigParser createSystemParser();
-  //&#x6B64;&#x5904;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x65B0;&#x7684;parser&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;IBizConfigParser
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token class-name">IRuleConfigParser</span> <span class="token function">createRuleParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">ISystemConfigParser</span> <span class="token function">createSystemParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//&#x6B64;&#x5904;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x65B0;&#x7684;parser&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;IBizConfigParser</span>
+<span class="token punctuation">}</span>
 
-public class JsonConfigParserFactory implements IConfigParserFactory {
-  @Override
-  public IRuleConfigParser createRuleParser() {
-    return new JsonRuleConfigParser();
-  }
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JsonConfigParserFactory</span> <span class="token keyword">implements</span> <span class="token class-name">IConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createRuleParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">JsonRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @Override
-  public ISystemConfigParser createSystemParser() {
-    return new JsonSystemConfigParser();
-  }
-}
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">ISystemConfigParser</span> <span class="token function">createSystemParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">JsonSystemConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class XmlConfigParserFactory implements IConfigParserFactory {
-  @Override
-  public IRuleConfigParser createRuleParser() {
-    return new XmlRuleConfigParser();
-  }
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">XmlConfigParserFactory</span> <span class="token keyword">implements</span> <span class="token class-name">IConfigParserFactory</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">IRuleConfigParser</span> <span class="token function">createRuleParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">XmlRuleConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @Override
-  public ISystemConfigParser createSystemParser() {
-    return new XmlSystemConfigParser();
-  }
-}
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">ISystemConfigParser</span> <span class="token function">createSystemParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">XmlSystemConfigParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// &#x7701;&#x7565;YamlConfigParserFactory&#x548C;PropertiesConfigParserFactory&#x4EE3;&#x7801;
-</code></pre><h2 id="&#x91CD;&#x70B9;&#x56DE;&#x987E;">&#x91CD;&#x70B9;&#x56DE;&#x987E;</h2>
+<span class="token comment">// &#x7701;&#x7565;YamlConfigParserFactory&#x548C;PropertiesConfigParserFactory&#x4EE3;&#x7801;</span>
+</code></pre>
+<h2 id="&#x91CD;&#x70B9;&#x56DE;&#x987E;">&#x91CD;&#x70B9;&#x56DE;&#x987E;</h2>
 <p>&#x597D;&#x4E86;&#xFF0C;&#x4ECA;&#x5929;&#x7684;&#x5185;&#x5BB9;&#x5230;&#x6B64;&#x5C31;&#x8BB2;&#x5B8C;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x6765;&#x4E00;&#x5757;&#x603B;&#x7ED3;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x91CD;&#x70B9;&#x638C;&#x63E1;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
 <p>&#x5728;&#x4ECA;&#x5929;&#x8BB2;&#x7684;&#x4E09;&#x79CD;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x548C;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#xFF0C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x6240;&#x4EE5;&#x5F88;&#x5C11;&#x7528;&#x5230;&#xFF0C;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x7684;&#x91CD;&#x70B9;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x91CD;&#x70B9;&#x5BF9;&#x524D;&#x4E24;&#x79CD;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x8FDB;&#x884C;&#x603B;&#x7ED3;&#x3002;</p>
 <p>&#x5F53;&#x521B;&#x5EFA;&#x903B;&#x8F91;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x5927;&#x5DE5;&#x7A0B;&#x201D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF0C;&#x5C06;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x4F7F;&#x7528;&#x76F8;&#x5206;&#x79BB;&#x3002;&#x4F55;&#x4E3A;&#x521B;&#x5EFA;&#x903B;&#x8F91;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x5462;&#xFF1F;&#x6211;&#x603B;&#x7ED3;&#x4E86;&#x4E0B;&#x9762;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x3002;</p>
@@ -2158,7 +2169,7 @@ public class XmlConfigParserFactory implements IConfigParserFactory {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"44 | 工厂模式（上）：工厂模式的适用场景","level":"10.4","depth":1,"next":{"title":"45 | 工厂模式（下）：实现Dependency Injection框架","level":"10.5","depth":1,"path":"docs/198614.md","ref":"./docs/198614.md","articles":[]},"previous":{"title":"43 | 单例模式（下）：分布式单例模式设计","level":"10.3","depth":1,"path":"docs/196790.md","ref":"./docs/196790.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-d4t","hide-element","code","prism","prism-themes","-lunr","-search","-sharing","search-pro-fixed","-highlight","back-to-top-button","mermaid-gb3","expandable-chapters-small","toolbar","splitter"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"theme-d4t":{},"prism":{"css":["prism-themes/themes/prism-coldark-cold.css"]},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/README.assets/logo.svg","favicon":"/README.assets/favicon.ico"},"splitter":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".logo",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"back-to-top-button":{},"prism-themes":{},"expandable-chapters-small":{},"toolbar":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","author":"zzturn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_ddd_shi_zhan_ke/","target":"_self","name":"DDD实战课"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"设计模式之美","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"docs/197254.md","mtime":"2025-11-06T15:41:54.724Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-11-06T15:43:23.350Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"44 | 工厂模式（上）：工厂模式的适用场景","level":"10.4","depth":1,"next":{"title":"45 | 工厂模式（下）：实现Dependency Injection框架","level":"10.5","depth":1,"path":"docs/198614.md","ref":"./docs/198614.md","articles":[]},"previous":{"title":"43 | 单例模式（下）：分布式单例模式设计","level":"10.3","depth":1,"path":"docs/196790.md","ref":"./docs/196790.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-d4t","hide-element","code","prism","prism-themes","-lunr","-search","-sharing","search-pro-fixed","-highlight","back-to-top-button","mermaid-gb3","expandable-chapters-small","toolbar","splitter"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"theme-d4t":{},"prism":{"css":["prism-themes/themes/prism-coldark-cold.css"]},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/README.assets/logo.svg","favicon":"/README.assets/favicon.ico"},"splitter":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".logo",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"back-to-top-button":{},"prism-themes":{},"expandable-chapters-small":{},"toolbar":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","author":"zzturn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_ddd_shi_zhan_ke/","target":"_self","name":"DDD实战课"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"设计模式之美","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"docs/197254.md","mtime":"2025-11-06T16:17:26.395Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-11-06T16:19:25.283Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
