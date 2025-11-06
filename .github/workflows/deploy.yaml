@@ -29,6 +29,10 @@ jobs:
         run: |
           mkdir -p public
           bash ./scripts/gen_books_home_and_nav.sh
+          # Copy CNAME if it exists
+          if [ -f "CNAME" ]; then
+            cp CNAME public/
+          fi
 
       - name: Build all book* folders
         run: |
