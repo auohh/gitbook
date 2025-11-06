@@ -1,0 +1,2155 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>45 | 工厂模式（下）：实现Dependency Injection框架 · 设计模式之美</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="zzturn">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-coldark-cold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-d4t/style.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="199674.html" />
+    
+    
+    <link rel="prev" href="197254.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/"><div class="logo"></div></a>
+        <span class="title"></span>
+
+        <!-- Search -->
+        
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="../book_10x_cheng_xu_yuan_gong_zuo_fa/" target="_self">10x程序员工作法</a>
+            </li><li>
+                <a href="../book_ddd_shi_zhan_ke/" target="_self">DDD实战课</a>
+            </li><li>
+                <a href="../book_da_chang_jin_sheng_zhi_nan/" target="_self">大厂晋升指南</a>
+            </li><li>
+                <a href="https://github.com/auohh/" target="_blank">Github</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <div class="sidebar-nav-space"></div>
+        
+        
+        <nav role="navigation">
+            
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">开篇词</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="160463.html">
+            
+                <a href="160463.html">
+            
+                    
+                    开篇词 | 一对一的设计与编码集训，让你告别没有成长的烂代码！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式学习导读</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="160981.html">
+            
+                <a href="160981.html">
+            
+                    
+                    01 | 为什么说每个程序员都要尽早地学习并掌握设计模式相关知识？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="160985.html">
+            
+                <a href="160985.html">
+            
+                    
+                    02 | 从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="160991.html">
+            
+                <a href="160991.html">
+            
+                    
+                    03 | 面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计原则与思想</li>
+        
+        
+    
+
+    
+        
+        <li class="header">面向对象</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="161575.html">
+            
+                <a href="161575.html">
+            
+                    
+                    04 | 理论一：当谈论面向对象的时候，我们到底在谈论什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="161114.html">
+            
+                <a href="161114.html">
+            
+                    
+                    05 | 理论二：封装、抽象、继承、多态分别可以解决哪些编程问题？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="161587.html">
+            
+                <a href="161587.html">
+            
+                    
+                    06 | 理论三：面向对象相比面向过程有哪些优势？面向过程真的过时了吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="164907.html">
+            
+                <a href="164907.html">
+            
+                    
+                    07 | 理论四：哪些代码设计看似是面向对象，实际是面向过程的？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="165103.html">
+            
+                <a href="165103.html">
+            
+                    
+                    08 | 理论五：接口vs抽象类的区别？如何用普通的类模拟抽象类和接口？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="165114.html">
+            
+                <a href="165114.html">
+            
+                    
+                    09 | 理论六：为什么基于接口而非实现编程？有必要为每个类都定义接口吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="169593.html">
+            
+                <a href="169593.html">
+            
+                    
+                    10 | 理论七：为何说要多用组合少用继承？如何决定该用组合还是继承？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="169600.html">
+            
+                <a href="169600.html">
+            
+                    
+                    11 | 实战一（上）：业务开发常用的基于贫血模型的MVC架构违背OOP吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="169631.html">
+            
+                <a href="169631.html">
+            
+                    
+                    12 | 实战一（下）：如何利用基于充血模型的DDD开发一个虚拟钱包系统？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="171760.html">
+            
+                <a href="171760.html">
+            
+                    
+                    13 | 实战二（上）：如何对接口鉴权这样一个功能开发做面向对象分析？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="171767.html">
+            
+                <a href="171767.html">
+            
+                    
+                    14 | 实战二（下）：如何利用面向对象设计和编程开发接口鉴权功能？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计原则</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="171771.html">
+            
+                <a href="171771.html">
+            
+                    
+                    15 | 单一职责原则：如何判定某个类的职责是否够“单一”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="176075.html">
+            
+                <a href="176075.html">
+            
+                    
+                    16 | 开闭原则：如何做到“对扩展开放、修改关闭”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="177110.html">
+            
+                <a href="177110.html">
+            
+                    
+                    17 | 里式替换原则：LSP跟多态有何区别？哪些代码违背了LSP？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="177442.html">
+            
+                <a href="177442.html">
+            
+                    
+                    18 | 接口隔离原则：有哪三种应用？“接口”该如何理解？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="177444.html">
+            
+                <a href="177444.html">
+            
+                    
+                    19 | 依赖反转原则：控制反转、依赖反转、依赖注入的区别和联系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="177448.html">
+            
+                <a href="177448.html">
+            
+                    
+                    20 | KISS、YAGNI原则：看似简单，却经常被用错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="179607.html">
+            
+                <a href="179607.html">
+            
+                    
+                    21 | DRY原则：重复的代码就一定违背DRY吗？如何提高代码的复用性？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="179615.html">
+            
+                <a href="179615.html">
+            
+                    
+                    22 | 迪米特法则（LOD）：如何实现“高内聚、松耦合”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="182001.html">
+            
+                <a href="182001.html">
+            
+                    
+                    23 | 实战一（上）：业务系统的需求分析和设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="183007.html">
+            
+                <a href="183007.html">
+            
+                    
+                    24 | 实战一（下）：实现一个遵从设计原则的积分兑换系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="179644.html">
+            
+                <a href="179644.html">
+            
+                    
+                    25 | 实战二（上）：通用框架开发的需求分析和设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="179673.html">
+            
+                <a href="179673.html">
+            
+                    
+                    26 | 实战二（下）：实现支持各种统计规则的性能计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">规范与重构</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="179679.html">
+            
+                <a href="179679.html">
+            
+                    
+                    27 | 什么情况下要重构？如何重构？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="185684.html">
+            
+                <a href="185684.html">
+            
+                    
+                    28 | 保证重构不出错的技术手段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="186691.html">
+            
+                <a href="186691.html">
+            
+                    
+                    29 | 代码的可测试性：如何写出可测试性好的代码？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="187761.html">
+            
+                <a href="187761.html">
+            
+                    
+                    30 | 解耦代码的技术：封装、抽象、模块化、中间层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="188622.html">
+            
+                <a href="188622.html">
+            
+                    
+                    31 | 编程规范（上）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="188857.html">
+            
+                <a href="188857.html">
+            
+                    
+                    32 | 编程规范（中）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="188882.html">
+            
+                <a href="188882.html">
+            
+                    
+                    33 | 编程规范（下）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="190979.html">
+            
+                <a href="190979.html">
+            
+                    
+                    34 | 实战一（上）：ID生成器代码质量问题分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="191621.html">
+            
+                <a href="191621.html">
+            
+                    
+                    35 | 实战一（下）：ID生成器代码重构实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="191642.html">
+            
+                <a href="191642.html">
+            
+                    
+                    36 | 实战二（上）：程序出错该返回啥？NULL、异常、错误码、空对象？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="191647.html">
+            
+                <a href="191647.html">
+            
+                    
+                    37 | 实战二（下）：重构ID生成器项目中各函数的异常处理代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="193093.html">
+            
+                <a href="193093.html">
+            
+                    
+                    38 | 总结回顾面向对象、设计原则、编程规范、重构技巧等知识点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="193221.html">
+            
+                <a href="193221.html">
+            
+                    
+                    39 | 完善性能计数器项目（上）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="193555.html">
+            
+                <a href="193555.html">
+            
+                    
+                    40 | 完善性能计数器项目（下）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式与范式</li>
+        
+        
+    
+
+    
+        
+        <li class="header">创建型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="194035.html">
+            
+                <a href="194035.html">
+            
+                    
+                    41 | 单例模式（上）：懒加载与饿汉式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="194068.html">
+            
+                <a href="194068.html">
+            
+                    
+                    42 | 单例模式（中）：不推荐单例模式及替代方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="196790.html">
+            
+                <a href="196790.html">
+            
+                    
+                    43 | 单例模式（下）：分布式单例模式设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="197254.html">
+            
+                <a href="197254.html">
+            
+                    
+                    44 | 工厂模式（上）：工厂模式的适用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="10.5" data-path="198614.html">
+            
+                <a href="198614.html">
+            
+                    
+                    45 | 工厂模式（下）：实现Dependency Injection框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="199674.html">
+            
+                <a href="199674.html">
+            
+                    
+                    46 | 建造者模式：对象创建方式详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="200786.html">
+            
+                <a href="200786.html">
+            
+                    
+                    47 | 原型模式：clone一个HashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">结构型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="201823.html">
+            
+                <a href="201823.html">
+            
+                    
+                    48 | 代理模式：在RPC、缓存、监控中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="202786.html">
+            
+                <a href="202786.html">
+            
+                    
+                    49 | 桥接模式：消息推送系统设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="204845.html">
+            
+                <a href="204845.html">
+            
+                    
+                    50 | 装饰器模式：Java IO源码剖析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="205912.html">
+            
+                <a href="205912.html">
+            
+                    
+                    51 | 适配器模式：与代理、桥接、装饰的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="206409.html">
+            
+                <a href="206409.html">
+            
+                    
+                    52 | 门面模式：接口粒度设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6" data-path="207456.html">
+            
+                <a href="207456.html">
+            
+                    
+                    53 | 组合模式：文件系统目录树结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.7" data-path="208572.html">
+            
+                <a href="208572.html">
+            
+                    
+                    54 | 享元模式（上）：文本编辑器内存优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.8" data-path="209343.html">
+            
+                <a href="209343.html">
+            
+                    
+                    55 | 享元模式（下）：Java Integer、String中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">行为型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="210170.html">
+            
+                <a href="210170.html">
+            
+                    
+                    56 | 观察者模式（上）：多种实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="211239.html">
+            
+                <a href="211239.html">
+            
+                    
+                    57 | 观察者模式（下）：异步非阻塞EventBus框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="212049.html">
+            
+                <a href="212049.html">
+            
+                    
+                    58 | 模板模式（上）：JDK、Servlet、JUnit中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="212802.html">
+            
+                <a href="212802.html">
+            
+                    
+                    59 | 模板模式（下）：模板模式与Callback的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="214014.html">
+            
+                <a href="214014.html">
+            
+                    
+                    60 | 策略模式（上）：避免冗长分支判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="215132.html">
+            
+                <a href="215132.html">
+            
+                    
+                    61 | 策略模式（下）：文件排序小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.7" data-path="216278.html">
+            
+                <a href="216278.html">
+            
+                    
+                    62 | 职责链模式（上）：敏感信息过滤框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.8" data-path="217395.html">
+            
+                <a href="217395.html">
+            
+                    
+                    63 | 职责链模式（下）：过滤器、拦截器实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.9" data-path="218375.html">
+            
+                <a href="218375.html">
+            
+                    
+                    64 | 状态模式：状态机实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.10" data-path="219290.html">
+            
+                <a href="219290.html">
+            
+                    
+                    65 | 迭代器模式（上）：迭代器的优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.11" data-path="219964.html">
+            
+                <a href="219964.html">
+            
+                    
+                    66 | 迭代器模式（中）：遍历与集合修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.12" data-path="221269.html">
+            
+                <a href="221269.html">
+            
+                    
+                    67 | 迭代器模式（下）：快照功能实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.13" data-path="221852.html">
+            
+                <a href="221852.html">
+            
+                    
+                    68 | 访问者模式（上）：模式诞生思维过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.14" data-path="222762.html">
+            
+                <a href="222762.html">
+            
+                    
+                    69 | 访问者模式（下）：双分派语言与访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.15" data-path="223947.html">
+            
+                <a href="223947.html">
+            
+                    
+                    70 | 备忘录模式：大对象的备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.16" data-path="224549.html">
+            
+                <a href="224549.html">
+            
+                    
+                    71 | 命令模式：手游后端架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.17" data-path="225904.html">
+            
+                <a href="225904.html">
+            
+                    
+                    72 | 解释器模式：自定义告警规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.18" data-path="226710.html">
+            
+                <a href="226710.html">
+            
+                    
+                    73 | 中介模式：中介与观察者的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="227452.html">
+            
+                <a href="227452.html">
+            
+                    
+                    74 | 23种经典设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2" data-path="229157.html">
+            
+                <a href="229157.html">
+            
+                    
+                    75 | 如何避免过度设计与设计不足
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">开源与项目实战</li>
+        
+        
+    
+
+    
+        
+        <li class="header">开源实战</li>
+        
+        
+    
+        <li class="chapter " data-level="15.1" data-path="229996.html">
+            
+                <a href="229996.html">
+            
+                    
+                    76 | 开源实战一（上）：剖析Java JDK源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.2" data-path="230708.html">
+            
+                <a href="230708.html">
+            
+                    
+                    77 | 开源实战一（下）：剖析Java JDK源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.3" data-path="232061.html">
+            
+                <a href="232061.html">
+            
+                    
+                    78 | 开源实战二（上）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.4" data-path="232427.html">
+            
+                <a href="232427.html">
+            
+                    
+                    79 | 开源实战二（中）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.5" data-path="232687.html">
+            
+                <a href="232687.html">
+            
+                    
+                    80 | 开源实战二（下）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.6" data-path="233742.html">
+            
+                <a href="233742.html">
+            
+                    
+                    81 | 开源实战三（上）：Google Guava通用模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.7" data-path="234758.html">
+            
+                <a href="234758.html">
+            
+                    
+                    82 | 开源实战三（中）：Guava中的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.8" data-path="235334.html">
+            
+                <a href="235334.html">
+            
+                    
+                    83 | 开源实战三（下）：Guava与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.9" data-path="236935.html">
+            
+                <a href="236935.html">
+            
+                    
+                    84 | 开源实战四（上）：Spring框架设计思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.10" data-path="237810.html">
+            
+                <a href="237810.html">
+            
+                    
+                    85 | 开源实战四（中）：Spring的扩展设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.11" data-path="238418.html">
+            
+                <a href="238418.html">
+            
+                    
+                    86 | 开源实战四（下）：Spring设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.12" data-path="239239.html">
+            
+                <a href="239239.html">
+            
+                    
+                    87 | 开源实战五（上）：MyBatis的设计权衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.13" data-path="240147.html">
+            
+                <a href="240147.html">
+            
+                    
+                    88 | 开源实战五（中）：MyBatis Plugin实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.14" data-path="240971.html">
+            
+                <a href="240971.html">
+            
+                    
+                    89 | 开源实战五（下）：MyBatis设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">项目实战</li>
+        
+        
+    
+        <li class="chapter " data-level="16.1" data-path="242314.html">
+            
+                <a href="242314.html">
+            
+                    
+                    90 | 项目实战一：限流框架（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.2" data-path="243175.html">
+            
+                <a href="243175.html">
+            
+                    
+                    91 | 项目实战一：限流框架（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.3" data-path="243961.html">
+            
+                <a href="243961.html">
+            
+                    
+                    92 | 项目实战一：限流框架（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.4" data-path="245022.html">
+            
+                <a href="245022.html">
+            
+                    
+                    93 | 项目实战二：接口幂等框架（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.5" data-path="245788.html">
+            
+                <a href="245788.html">
+            
+                    
+                    94 | 项目实战二：接口幂等框架（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.6" data-path="246379.html">
+            
+                <a href="246379.html">
+            
+                    
+                    95 | 项目实战二：接口幂等框架（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.7" data-path="247776.html">
+            
+                <a href="247776.html">
+            
+                    
+                    96 | 项目实战三：灰度发布组件（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.8" data-path="248714.html">
+            
+                <a href="248714.html">
+            
+                    
+                    97 | 项目实战三：灰度发布组件（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.9" data-path="249369.html">
+            
+                <a href="249369.html">
+            
+                    
+                    98 | 项目实战三：灰度发布组件（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="17.1" data-path="250942.html">
+            
+                <a href="250942.html">
+            
+                    
+                    99 | 项目实战与设计总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="17.2" data-path="251930.html">
+            
+                <a href="251930.html">
+            
+                    
+                    100 | 理论知识在项目中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">不定期加餐</li>
+        
+        
+    
+        <li class="chapter " data-level="18.1" data-path="166698.html">
+            
+                <a href="166698.html">
+            
+                    
+                    加餐一 | 用一篇文章带你了解专栏中用到的所有Java语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.2" data-path="172690.html">
+            
+                <a href="172690.html">
+            
+                    
+                    加餐二 | 设计模式、重构、编程规范等相关书籍推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.3" data-path="192789.html">
+            
+                <a href="192789.html">
+            
+                    
+                    春节特别加餐 | 王争：如何学习《设计模式之美》专栏？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.4" data-path="252937.html">
+            
+                <a href="252937.html">
+            
+                    
+                    加餐三 | 聊一聊Google是如何做Code Review的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.5" data-path="254190.html">
+            
+                <a href="254190.html">
+            
+                    
+                    加餐四 | 聊一聊Google那些让我快速成长的地方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.6" data-path="255037.html">
+            
+                <a href="255037.html">
+            
+                    
+                    加餐五 | 听一听小争哥对Google工程师文化的解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.7" data-path="255697.html">
+            
+                <a href="255697.html">
+            
+                    
+                    加餐六 | 什么才是所谓的编程能力？如何考察一个人的编程能力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.8" data-path="256866.html">
+            
+                <a href="256866.html">
+            
+                    
+                    加餐七 | 基础学科的知识如何转化成实际的技术生产力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.9" data-path="257513.html">
+            
+                <a href="257513.html">
+            
+                    
+                    加餐八 | 程序员怎么才能让自己走得更高、更远？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.10" data-path="258207.html">
+            
+                <a href="258207.html">
+            
+                    
+                    加餐九 | 作为面试官或候选人，如何面试或回答设计模式问题？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.11" data-path="259489.html">
+            
+                <a href="259489.html">
+            
+                    
+                    加餐十 | 如何接手一坨烂业务代码？如何在烂业务代码中成长？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">结束语</li>
+        
+        
+    
+        <li class="chapter " data-level="19.1" data-path="260184.html">
+            
+                <a href="260184.html">
+            
+                    
+                    结束语  | 聊一聊机遇、方向、能力、努力！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+        </nav>
+        
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <div class="book-anchor-title">ON THIS PAGE</div>
+        <div class="book-anchor-body">
+
+        </div>
+    </div>
+
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >45 | 工厂模式（下）：实现Dependency Injection框架</a>
+    </h1>
+</div>
+
+
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="45--&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;&#x4E0B;&#xFF09;&#xFF1A;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;dependency-injection&#x6846;&#x67B6;&#xFF1F;">45 | &#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;&#x4E0B;&#xFF09;&#xFF1A;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;Dependency Injection&#x6846;&#x67B6;&#xFF1F;</h1>
+<pre class="language-"><code>&#x5728;&#x4E0A;&#x4E00;&#x8282;&#x8BFE;&#x6211;&#x4EEC;&#x8BB2;&#x5230;&#xFF0C;&#x5F53;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x5927;&#x5DE5;&#x7A0B;&#x201D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x4F1A;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x6765;&#x5C01;&#x88C5;&#x5BF9;&#x8C61;&#x590D;&#x6742;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF0C;&#x5C06;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x4F7F;&#x7528;&#x5206;&#x79BB;&#xFF0C;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x3002;&#x90A3;&#x4F55;&#x4E3A;&#x201C;&#x5927;&#x5DE5;&#x7A0B;&#x201D;&#x5462;&#xFF1F;&#x4E0A;&#x4E00;&#x8282;&#x8BFE;&#x4E2D;&#x6211;&#x4EEC;&#x8BB2;&#x4E86;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x6D89;&#x53CA;&#x590D;&#x6742;&#x7684;if-else&#x5206;&#x652F;&#x5224;&#x65AD;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x9700;&#x8981;&#x7EC4;&#x88C5;&#x591A;&#x4E2A;&#x5176;&#x4ED6;&#x7C7B;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x9700;&#x8981;&#x590D;&#x6742;&#x7684;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;&#x3002;
+</code></pre><p>&#x4ECA;&#x5929;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x8BB2;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x201C;&#x5927;&#x5DE5;&#x7A0B;&#x201D;&#xFF0C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x6846;&#x67B6;&#xFF0C;&#x6216;&#x8005;&#x53EB;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5BB9;&#x5668;&#xFF08;Dependency Injection Container&#xFF09;&#xFF0C;&#x7B80;&#x79F0;DI&#x5BB9;&#x5668;&#x3002;&#x5728;&#x4ECA;&#x5929;&#x7684;&#x8BB2;&#x89E3;&#x4E2D;&#xFF0C;&#x6211;&#x4F1A;&#x5E26;&#x4F60;&#x4E00;&#x5757;&#x641E;&#x6E05;&#x695A;&#x8FD9;&#x6837;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;DI&#x5BB9;&#x5668;&#x8DDF;&#x6211;&#x4EEC;&#x8BB2;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x53C8;&#x6709;&#x4F55;&#x533A;&#x522B;&#x548C;&#x8054;&#x7CFB;&#xFF1F;DI&#x5BB9;&#x5668;&#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x6709;&#x54EA;&#x4E9B;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;DI&#x5BB9;&#x5668;&#xFF1F;</p>
+<p>&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6B63;&#x5F0F;&#x5F00;&#x59CB;&#x4ECA;&#x5929;&#x7684;&#x5B66;&#x4E60;&#x5427;&#xFF01;</p>
+<h2 id="&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x548C;di&#x5BB9;&#x5668;&#x6709;&#x4F55;&#x533A;&#x522B;&#xFF1F;">&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x548C;DI&#x5BB9;&#x5668;&#x6709;&#x4F55;&#x533A;&#x522B;&#xFF1F;</h2>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;DI&#x5BB9;&#x5668;&#x5E95;&#x5C42;&#x6700;&#x57FA;&#x672C;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#x5C31;&#x662F;&#x57FA;&#x4E8E;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x3002;DI&#x5BB9;&#x5668;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x5927;&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x8D1F;&#x8D23;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6839;&#x636E;&#x914D;&#x7F6E;&#xFF08;&#x8981;&#x521B;&#x5EFA;&#x54EA;&#x4E9B;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x6BCF;&#x4E2A;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x54EA;&#x4E9B;&#x5176;&#x4ED6;&#x7C7B;&#x5BF9;&#x8C61;&#xFF09;&#x4E8B;&#x5148;&#x521B;&#x5EFA;&#x597D;&#x5BF9;&#x8C61;&#x3002;&#x5F53;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x67D0;&#x4E2A;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE;&#x5BB9;&#x5668;&#x4E2D;&#x83B7;&#x53D6;&#x5373;&#x53EF;&#x3002;&#x6B63;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x6301;&#x6709;&#x4E00;&#x5806;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x624D;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x5BB9;&#x5668;&#x201D;&#x3002;</p>
+<p>DI&#x5BB9;&#x5668;&#x76F8;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x4E0A;&#x8282;&#x8BFE;&#x8BB2;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x5904;&#x7406;&#x7684;&#x662F;&#x66F4;&#x5927;&#x7684;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x5DE5;&#x7A0B;&#x3002;&#x4E0A;&#x8282;&#x8BFE;&#x8BB2;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#x53EA;&#x8D1F;&#x8D23;&#x67D0;&#x4E2A;&#x7C7B;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x67D0;&#x4E00;&#x7EC4;&#x76F8;&#x5173;&#x7C7B;&#x5BF9;&#x8C61;&#xFF08;&#x7EE7;&#x627F;&#x81EA;&#x540C;&#x4E00;&#x62BD;&#x8C61;&#x7C7B;&#x6216;&#x8005;&#x63A5;&#x53E3;&#x7684;&#x5B50;&#x7C7B;&#xFF09;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x800C;DI&#x5BB9;&#x5668;&#x8D1F;&#x8D23;&#x7684;&#x662F;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x4E2D;&#x6240;&#x6709;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x3002;</p>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;DI&#x5BB9;&#x5668;&#x8D1F;&#x8D23;&#x7684;&#x4E8B;&#x60C5;&#x8981;&#x6BD4;&#x5355;&#x7EAF;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x8981;&#x591A;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5B83;&#x8FD8;&#x5305;&#x62EC;&#x914D;&#x7F6E;&#x7684;&#x89E3;&#x6790;&#x3001;&#x5BF9;&#x8C61;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x7BA1;&#x7406;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8BE6;&#x7EC6;&#x8BB2;&#x8BB2;&#xFF0C;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;DI&#x5BB9;&#x5668;&#x5E94;&#x8BE5;&#x5305;&#x542B;&#x54EA;&#x4E9B;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="di&#x5BB9;&#x5668;&#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;">DI&#x5BB9;&#x5668;&#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</h2>
+<p>&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;DI&#x5BB9;&#x5668;&#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x4E00;&#x822C;&#x6709;&#x4E09;&#x4E2A;&#xFF1A;&#x914D;&#x7F6E;&#x89E3;&#x6790;&#x3001;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x548C;&#x5BF9;&#x8C61;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;&#x3002;</p>
+<p><strong>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x914D;&#x7F6E;&#x89E3;&#x6790;&#x3002;</strong></p>
+<p>&#x5728;&#x4E0A;&#x8282;&#x8BFE;&#x8BB2;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x5DE5;&#x5382;&#x7C7B;&#x8981;&#x521B;&#x5EFA;&#x54EA;&#x4E2A;&#x7C7B;&#x5BF9;&#x8C61;&#x662F;&#x4E8B;&#x5148;&#x786E;&#x5B9A;&#x597D;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5199;&#x6B7B;&#x5728;&#x5DE5;&#x5382;&#x7C7B;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x6846;&#x67B6;&#x6765;&#x8BF4;&#xFF0C;&#x6846;&#x67B6;&#x4EE3;&#x7801;&#x8DDF;&#x5E94;&#x7528;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x662F;&#x9AD8;&#x5EA6;&#x89E3;&#x8026;&#x7684;&#xFF0C;DI&#x5BB9;&#x5668;&#x4E8B;&#x5148;&#x5E76;&#x4E0D;&#x77E5;&#x9053;&#x5E94;&#x7528;&#x4F1A;&#x521B;&#x5EFA;&#x54EA;&#x4E9B;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x628A;&#x67D0;&#x4E2A;&#x5E94;&#x7528;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x5199;&#x6B7B;&#x5728;&#x6846;&#x67B6;&#x4EE3;&#x7801;&#x4E2D;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4E00;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x8BA9;&#x5E94;&#x7528;&#x544A;&#x77E5;DI&#x5BB9;&#x5668;&#x8981;&#x521B;&#x5EFA;&#x54EA;&#x4E9B;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x8BB2;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x9700;&#x8981;&#x7531;DI&#x5BB9;&#x5668;&#x6765;&#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x5BF9;&#x8C61;&#x548C;&#x521B;&#x5EFA;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x5FC5;&#x8981;&#x4FE1;&#x606F;&#xFF08;&#x4F7F;&#x7528;&#x54EA;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4EE5;&#x53CA;&#x5BF9;&#x5E94;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x4EC0;&#x4E48;&#x7B49;&#x7B49;&#xFF09;&#xFF0C;&#x653E;&#x5230;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x5BB9;&#x5668;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x63D0;&#x4F9B;&#x7684;&#x4FE1;&#x606F;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;Spring&#x5BB9;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;Spring&#x5BB9;&#x5668;&#x8BFB;&#x53D6;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x89E3;&#x6790;&#x51FA;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#xFF1A;rateLimiter&#x548C;redisCounter&#xFF0C;&#x5E76;&#x4E14;&#x5F97;&#x5230;&#x4E24;&#x8005;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF1A;rateLimiter&#x4F9D;&#x8D56;redisCounter&#x3002;</p>
+<pre class="language-"><code>public class RateLimiter {
+  private RedisCounter redisCounter;
+  public RateLimiter(RedisCounter redisCounter) {
+    this.redisCounter = redisCounter;
+  }
+  public void test() {
+    System.out.println(&quot;Hello World!&quot;);
+  }
+  //...
+}
+
+public class RedisCounter {
+  private String ipAddress;
+  private int port;
+  public RedisCounter(String ipAddress, int port) {
+    this.ipAddress = ipAddress;
+    this.port = port;
+  }
+  //...
+}
+
+&#x914D;&#x7F6E;&#x6587;&#x4EF6;beans.xml&#xFF1A;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>rateLimiter<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.xzg.RateLimiter<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>redisCounter<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>redisCounter<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.xzg.redisCounter<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>String<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>127.0.0.1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>1234</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><strong>&#x5176;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x3002;</strong></p>
+<p>&#x5728;DI&#x5BB9;&#x5668;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7ED9;&#x6BCF;&#x4E2A;&#x7C7B;&#x90FD;&#x5BF9;&#x5E94;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x90A3;&#x9879;&#x76EE;&#x4E2D;&#x7C7B;&#x7684;&#x4E2A;&#x6570;&#x4F1A;&#x6210;&#x500D;&#x589E;&#x52A0;&#xFF0C;&#x8FD9;&#x4F1A;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x7684;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#x3002;&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5E76;&#x4E0D;&#x96BE;&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6240;&#x6709;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x90FD;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#x4E2D;&#x5B8C;&#x6210;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x6BD4;&#x5982;BeansFactory&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x5BF9;&#x8C61;&#x975E;&#x5E38;&#x591A;&#xFF0C;BeansFactory&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x4E0D;&#x4F1A;&#x7EBF;&#x6027;&#x81A8;&#x80C0;&#xFF08;&#x4EE3;&#x7801;&#x91CF;&#x8DDF;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x4E2A;&#x6570;&#x6210;&#x6B63;&#x6BD4;&#xFF09;&#x5462;&#xFF1F;&#x5B9E;&#x9645;&#x4E0A;&#x5E76;&#x4E0D;&#x4F1A;&#x3002;&#x5F85;&#x4F1A;&#x8BB2;&#x5230;DI&#x5BB9;&#x5668;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x8BB2;&#x201C;&#x53CD;&#x5C04;&#x201D;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#xFF0C;&#x5B83;&#x80FD;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x52A8;&#x6001;&#x5730;&#x52A0;&#x8F7D;&#x7C7B;&#x3001;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E8B;&#x5148;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5199;&#x6B7B;&#x8981;&#x521B;&#x5EFA;&#x54EA;&#x4E9B;&#x5BF9;&#x8C61;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x8FD8;&#x662F;&#x5341;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;BeansFactory&#x5DE5;&#x5382;&#x7C7B;&#x4EE3;&#x7801;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<p><strong>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;&#x3002;</strong></p>
+<p>&#x4E0A;&#x4E00;&#x8282;&#x8BFE;&#x6211;&#x4EEC;&#x8BB2;&#x5230;&#xFF0C;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x6709;&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x6BCF;&#x6B21;&#x90FD;&#x8FD4;&#x56DE;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x6BCF;&#x6B21;&#x90FD;&#x8FD4;&#x56DE;&#x540C;&#x4E00;&#x4E2A;&#x4E8B;&#x5148;&#x521B;&#x5EFA;&#x597D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x5355;&#x4F8B;&#x5BF9;&#x8C61;&#x3002;&#x5728;Spring&#x6846;&#x67B6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;scope&#x5C5E;&#x6027;&#xFF0C;&#x6765;&#x533A;&#x5206;&#x8FD9;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x3002;scope=prototype&#x8868;&#x793A;&#x8FD4;&#x56DE;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;scope=singleton&#x8868;&#x793A;&#x8FD4;&#x56DE;&#x5355;&#x4F8B;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x652F;&#x6301;&#x61D2;&#x52A0;&#x8F7D;&#x3002;&#x5982;&#x679C;lazy-init=true&#xFF0C;&#x5BF9;&#x8C61;&#x5728;&#x771F;&#x6B63;&#x88AB;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x6BD4;&#x5982;&#xFF1A;BeansFactory.getBean(&#x201C;userService&#x201D;)&#xFF09;&#x624D;&#x88AB;&#x88AB;&#x521B;&#x5EFA;&#xFF1B;&#x5982;&#x679C;lazy-init=false&#xFF0C;&#x5BF9;&#x8C61;&#x5728;&#x5E94;&#x7528;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4E8B;&#x5148;&#x521B;&#x5EFA;&#x597D;&#x3002;</p>
+<p>&#x4E0D;&#x4EC5;&#x5982;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;&#x7684;init-method&#x548C;destroy-method&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;init-method=loadProperties()&#xFF0C;destroy-method=updateConfigFile()&#x3002;DI&#x5BB9;&#x5668;&#x5728;&#x521B;&#x5EFA;&#x597D;&#x5BF9;&#x8C61;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528;init-method&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x521D;&#x59CB;&#x5316;&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x5BF9;&#x8C61;&#x88AB;&#x6700;&#x7EC8;&#x9500;&#x6BC1;&#x4E4B;&#x524D;&#xFF0C;DI&#x5BB9;&#x5668;&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528;destroy-method&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x6E05;&#x7406;&#x5DE5;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x91CA;&#x653E;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;&#x3001;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;di&#x5BB9;&#x5668;&#xFF1F;">&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;DI&#x5BB9;&#x5668;&#xFF1F;</h2>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x7528;Java&#x8BED;&#x8A00;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;DI&#x5BB9;&#x5668;&#xFF0C;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x53EA;&#x9700;&#x8981;&#x5305;&#x62EC;&#x8FD9;&#x6837;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#x3001;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x901A;&#x8FC7;&#x201C;&#x53CD;&#x5C04;&#x201D;&#x8BED;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="1&#x6700;&#x5C0F;&#x539F;&#x578B;&#x8BBE;&#x8BA1;">1.&#x6700;&#x5C0F;&#x539F;&#x578B;&#x8BBE;&#x8BA1;</h3>
+<p>&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x662F;&#x8BB2;&#x89E3;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x4ECA;&#x5929;&#x7684;&#x8BB2;&#x89E3;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;DI&#x5BB9;&#x5668;&#x7684;&#x6700;&#x5C0F;&#x539F;&#x578B;&#x3002;&#x50CF;Spring&#x6846;&#x67B6;&#x8FD9;&#x6837;&#x7684;DI&#x5BB9;&#x5668;&#xFF0C;&#x5B83;&#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x683C;&#x5F0F;&#x975E;&#x5E38;&#x7075;&#x6D3B;&#x548C;&#x590D;&#x6742;&#x3002;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF0C;&#x91CD;&#x70B9;&#x8BB2;&#x89E3;&#x539F;&#x7406;&#xFF0C;&#x5728;&#x6700;&#x5C0F;&#x539F;&#x578B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x652F;&#x6301;&#x4E0B;&#x9762;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6D89;&#x53CA;&#x7684;&#x914D;&#x7F6E;&#x8BED;&#x6CD5;&#x3002;</p>
+<pre class="language-"><code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;beans.xml
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>rateLimiter<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.xzg.RateLimiter<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>redisCounter<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>redisCounter<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.xzg.redisCounter<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scope</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>singleton<span class="token punctuation">&quot;</span></span> <span class="token attr-name">lazy-init</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>String<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>127.0.0.1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>1234</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+&lt;/bean
+</code></pre><p>&#x6700;&#x5C0F;&#x539F;&#x578B;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x8DDF;Spring&#x6846;&#x67B6;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>public class Demo {
+  public static void main(String[] args) {
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+            &quot;beans.xml&quot;);
+    RateLimiter rateLimiter = (RateLimiter) applicationContext.getBean(&quot;rateLimiter&quot;);
+    rateLimiter.test();
+    //...
+  }
+}
+</code></pre><h3 id="2&#x63D0;&#x4F9B;&#x6267;&#x884C;&#x5165;&#x53E3;">2.&#x63D0;&#x4F9B;&#x6267;&#x884C;&#x5165;&#x53E3;</h3>
+<p>&#x524D;&#x9762;&#x6211;&#x4EEC;&#x8BB2;&#x5230;&#xFF0C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BBE;&#x8BA1;&#x7684;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x662F;&#xFF1A;&#x7EC4;&#x88C5;&#x7C7B;&#x5E76;&#x63D0;&#x4F9B;&#x6267;&#x884C;&#x5165;&#x53E3;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6267;&#x884C;&#x5165;&#x53E3;&#x5C31;&#x662F;&#x4E00;&#x7EC4;&#x66B4;&#x9732;&#x7ED9;&#x5916;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x63A5;&#x53E3;&#x548C;&#x7C7B;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x521A;&#x521A;&#x7684;&#x6700;&#x5C0F;&#x539F;&#x578B;&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x6267;&#x884C;&#x5165;&#x53E3;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4E24;&#x90E8;&#x5206;&#xFF1A;ApplicationContext&#x548C;ClassPathXmlApplicationContext&#x3002;&#x5176;&#x4E2D;&#xFF0C;ApplicationContext&#x662F;&#x63A5;&#x53E3;&#xFF0C;ClassPathXmlApplicationContext&#x662F;&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x3002;&#x4E24;&#x4E2A;&#x7C7B;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>public interface ApplicationContext {
+  Object getBean(String beanId);
+}
+
+public class ClassPathXmlApplicationContext implements ApplicationContext {
+  private BeansFactory beansFactory;
+  private BeanConfigParser beanConfigParser;
+
+  public ClassPathXmlApplicationContext(String configLocation) {
+    this.beansFactory = new BeansFactory();
+    this.beanConfigParser = new XmlBeanConfigParser();
+    loadBeanDefinitions(configLocation);
+  }
+
+  private void loadBeanDefinitions(String configLocation) {
+    InputStream in = null;
+    try {
+      in = this.getClass().getResourceAsStream(&quot;/&quot; + configLocation);
+      if (in == null) {
+        throw new RuntimeException(&quot;Can not find config file: &quot; + configLocation);
+      }
+      List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BeanDefinition</span><span class="token punctuation">&gt;</span></span> beanDefinitions = beanConfigParser.parse(in);
+      beansFactory.addBeanDefinitions(beanDefinitions);
+    } finally {
+      if (in != null) {
+        try {
+          in.close();
+        } catch (IOException e) {
+          // TODO: log error
+        }
+      }
+    }
+  }
+
+  @Override
+  public Object getBean(String beanId) {
+    return beansFactory.getBean(beanId);
+  }
+}
+</code></pre><p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;ClassPathXmlApplicationContext&#x8D1F;&#x8D23;&#x7EC4;&#x88C5;BeansFactory&#x548C;BeanConfigParser&#x4E24;&#x4E2A;&#x7C7B;&#xFF0C;&#x4E32;&#x8054;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#xFF1A;&#x4ECE;classpath&#x4E2D;&#x52A0;&#x8F7D;XML&#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;BeanConfigParser&#x89E3;&#x6790;&#x4E3A;&#x7EDF;&#x4E00;&#x7684;BeanDefinition&#x683C;&#x5F0F;&#xFF0C;&#x7136;&#x540E;&#xFF0C;BeansFactory&#x6839;&#x636E;BeanDefinition&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="3&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;">3.&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;</h3>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#x4E3B;&#x8981;&#x5305;&#x542B;BeanConfigParser&#x63A5;&#x53E3;&#x548C;XmlBeanConfigParser&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x8D1F;&#x8D23;&#x5C06;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#x4E3A;BeanDefinition&#x7ED3;&#x6784;&#xFF0C;&#x4EE5;&#x4FBF;BeansFactory&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x7ED3;&#x6784;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x89E3;&#x6790;&#x6BD4;&#x8F83;&#x7E41;&#x7410;&#xFF0C;&#x4E0D;&#x6D89;&#x53CA;&#x6211;&#x4EEC;&#x4E13;&#x680F;&#x8981;&#x8BB2;&#x7684;&#x7406;&#x8BBA;&#x77E5;&#x8BC6;&#xFF0C;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x8BB2;&#x89E3;&#x7684;&#x91CD;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x53EA;&#x7ED9;&#x51FA;&#x4E24;&#x4E2A;&#x7C7B;&#x7684;&#x5927;&#x81F4;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF0C;&#x5E76;&#x672A;&#x7ED9;&#x51FA;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x8865;&#x5145;&#x5B8C;&#x6574;&#x3002;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x6846;&#x67B6;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>public interface BeanConfigParser {
+  List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BeanDefinition</span><span class="token punctuation">&gt;</span></span> parse(InputStream inputStream);
+  List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BeanDefinition</span><span class="token punctuation">&gt;</span></span> parse(String configContent);
+}
+
+public class XmlBeanConfigParser implements BeanConfigParser {
+
+  @Override
+  public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BeanDefinition</span><span class="token punctuation">&gt;</span></span> parse(InputStream inputStream) {
+    String content = null;
+    // TODO:...
+    return parse(content);
+  }
+
+  @Override
+  public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BeanDefinition</span><span class="token punctuation">&gt;</span></span> parse(String configContent) {
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BeanDefinition</span><span class="token punctuation">&gt;</span></span> beanDefinitions = new ArrayList&lt;&gt;();
+    // TODO:...
+    return beanDefinitions;
+  }
+
+}
+
+public class BeanDefinition {
+  private String id;
+  private String className;
+  private List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ConstructorArg</span><span class="token punctuation">&gt;</span></span> constructorArgs = new ArrayList&lt;&gt;();
+  private Scope scope = Scope.SINGLETON;
+  private boolean lazyInit = false;
+  // &#x7701;&#x7565;&#x5FC5;&#x8981;&#x7684;getter/setter/constructors
+
+  public boolean isSingleton() {
+    return scope.equals(Scope.SINGLETON);
+  }
+
+
+  public static enum Scope {
+    SINGLETON,
+    PROTOTYPE
+  }
+
+  public static class ConstructorArg {
+    private boolean isRef;
+    private Class type;
+    private Object arg;
+    // &#x7701;&#x7565;&#x5FC5;&#x8981;&#x7684;getter/setter/constructors
+  }
+}
+</code></pre><h3 id="4&#x6838;&#x5FC3;&#x5DE5;&#x5382;&#x7C7B;&#x8BBE;&#x8BA1;">4.&#x6838;&#x5FC3;&#x5DE5;&#x5382;&#x7C7B;&#x8BBE;&#x8BA1;</h3>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#xFF0C;BeansFactory&#x662F;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x548C;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x8FD9;&#x4E5F;&#x662F;&#x6211;&#x4EEC;&#x8FD9;&#x4E2A;DI&#x5BB9;&#x5668;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x4E00;&#x4E2A;&#x7C7B;&#x4E86;&#x3002;&#x5B83;&#x8D1F;&#x8D23;&#x6839;&#x636E;&#x4ECE;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#x5F97;&#x5230;&#x7684;BeanDefinition&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x7684;scope&#x5C5E;&#x6027;&#x662F;singleton&#xFF0C;&#x90A3;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x4E4B;&#x540E;&#x4F1A;&#x7F13;&#x5B58;&#x5728;singletonObjects&#x8FD9;&#x6837;&#x4E00;&#x4E2A;map&#x4E2D;&#xFF0C;&#x4E0B;&#x6B21;&#x518D;&#x8BF7;&#x6C42;&#x6B64;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE;map&#x4E2D;&#x53D6;&#x51FA;&#x8FD4;&#x56DE;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x7684;scope&#x5C5E;&#x6027;&#x662F;prototype&#xFF0C;&#x90A3;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#xFF0C;BeansFactory&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;BeansFactory&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7528;&#x5230;&#x7684;&#x4E3B;&#x8981;&#x6280;&#x672F;&#x70B9;&#x5C31;&#x662F;Java&#x4E2D;&#x7684;&#x53CD;&#x5C04;&#x8BED;&#x6CD5;&#xFF1A;&#x4E00;&#x79CD;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x7C7B;&#x548C;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x673A;&#x5236;&#x3002;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;JVM&#x5728;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6839;&#x636E;&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5730;&#x52A0;&#x8F7D;&#x7C7B;&#x3001;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x3002;&#x81F3;&#x4E8E;&#x90FD;&#x8981;&#x52A0;&#x8F7D;&#x54EA;&#x4E9B;&#x7C7B;&#x3001;&#x521B;&#x5EFA;&#x54EA;&#x4E9B;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5199;&#x6B7B;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x63D0;&#x524D;&#x5199;&#x597D;&#x7684;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x5E76;&#x4E0D;&#x662F;&#x5199;&#x6B7B;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x653E;&#x5230;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#xFF0C;&#x52A8;&#x6001;&#x5730;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x52A0;&#x8F7D;&#x7C7B;&#x3001;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x8FD9;&#x90E8;&#x5206;&#x5DE5;&#x4F5C;&#x5C31;&#x6CA1;&#x6CD5;&#x8BA9;JVM&#x5E2E;&#x6211;&#x4EEC;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5229;&#x7528;Java&#x63D0;&#x4F9B;&#x7684;&#x53CD;&#x5C04;&#x8BED;&#x6CD5;&#x81EA;&#x5DF1;&#x53BB;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x641E;&#x6E05;&#x695A;&#x4E86;&#x53CD;&#x5C04;&#x7684;&#x539F;&#x7406;&#xFF0C;BeansFactory&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x4E0D;&#x96BE;&#x770B;&#x61C2;&#x4E86;&#x3002;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>public class BeansFactory {
+  private ConcurrentHashMap<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String,</span> <span class="token attr-name">Object</span><span class="token punctuation">&gt;</span></span> singletonObjects = new ConcurrentHashMap&lt;&gt;();
+  private ConcurrentHashMap<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String,</span> <span class="token attr-name">BeanDefinition</span><span class="token punctuation">&gt;</span></span> beanDefinitions = new ConcurrentHashMap&lt;&gt;();
+
+  public void addBeanDefinitions(List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BeanDefinition</span><span class="token punctuation">&gt;</span></span> beanDefinitionList) {
+    for (BeanDefinition beanDefinition : beanDefinitionList) {
+      this.beanDefinitions.putIfAbsent(beanDefinition.getId(), beanDefinition);
+    }
+
+    for (BeanDefinition beanDefinition : beanDefinitionList) {
+      if (beanDefinition.isLazyInit() == false &amp;&amp; beanDefinition.isSingleton()) {
+        createBean(beanDefinition);
+      }
+    }
+  }
+
+  public Object getBean(String beanId) {
+    BeanDefinition beanDefinition = beanDefinitions.get(beanId);
+    if (beanDefinition == null) {
+      throw new NoSuchBeanDefinitionException(&quot;Bean is not defined: &quot; + beanId);
+    }
+    return createBean(beanDefinition);
+  }
+
+  @VisibleForTesting
+  protected Object createBean(BeanDefinition beanDefinition) {
+    if (beanDefinition.isSingleton() &amp;&amp; singletonObjects.contains(beanDefinition.getId())) {
+      return singletonObjects.get(beanDefinition.getId());
+    }
+
+    Object bean = null;
+    try {
+      Class beanClass = Class.forName(beanDefinition.getClassName());
+      List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BeanDefinition.ConstructorArg</span><span class="token punctuation">&gt;</span></span> args = beanDefinition.getConstructorArgs();
+      if (args.isEmpty()) {
+        bean = beanClass.newInstance();
+      } else {
+        Class[] argClasses = new Class[args.size()];
+        Object[] argObjects = new Object[args.size()];
+        for (int i = 0; i &lt; args.size(); ++i) {
+          BeanDefinition.ConstructorArg arg = args.get(i);
+          if (!arg.getIsRef()) {
+            argClasses[i] = arg.getType();
+            argObjects[i] = arg.getArg();
+          } else {
+            BeanDefinition refBeanDefinition = beanDefinitions.get(arg.getArg());
+            if (refBeanDefinition == null) {
+              throw new NoSuchBeanDefinitionException(&quot;Bean is not defined: &quot; + arg.getArg());
+            }
+            argClasses[i] = Class.forName(refBeanDefinition.getClassName());
+            argObjects[i] = createBean(refBeanDefinition);
+          }
+        }
+        bean = beanClass.getConstructor(argClasses).newInstance(argObjects);
+      }
+    } catch (ClassNotFoundException | IllegalAccessException
+            | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
+      throw new BeanCreationFailureException(&quot;&quot;, e);
+    }
+
+    if (bean != null &amp;&amp; beanDefinition.isSingleton()) {
+      singletonObjects.putIfAbsent(beanDefinition.getId(), bean);
+      return singletonObjects.get(beanDefinition.getId());
+    }
+    return bean;
+  }
+}
+</code></pre><h2 id="&#x91CD;&#x70B9;&#x56DE;&#x987E;">&#x91CD;&#x70B9;&#x56DE;&#x987E;</h2>
+<p>&#x597D;&#x4E86;&#xFF0C;&#x4ECA;&#x5929;&#x7684;&#x5185;&#x5BB9;&#x5230;&#x6B64;&#x5C31;&#x8BB2;&#x5B8C;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x6765;&#x4E00;&#x5757;&#x603B;&#x7ED3;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x91CD;&#x70B9;&#x638C;&#x63E1;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>DI&#x5BB9;&#x5668;&#x5728;&#x4E00;&#x4E9B;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x4E2D;&#x5DF2;&#x7ECF;&#x6210;&#x4E3A;&#x4E86;&#x6807;&#x914D;&#xFF0C;&#x6BD4;&#x5982;Spring IOC&#x3001;Google Guice&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x4EBA;&#x53EF;&#x80FD;&#x53EA;&#x662F;&#x628A;&#x5B83;&#x5F53;&#x4F5C;&#x4E00;&#x4E2A;&#x9ED1;&#x76D2;&#x5B50;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x672A;&#x771F;&#x6B63;&#x53BB;&#x4E86;&#x89E3;&#x5B83;&#x7684;&#x5E95;&#x5C42;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x662F;&#x505A;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x5C0F;&#x9879;&#x76EE;&#xFF0C;&#x7B80;&#x5355;&#x4F1A;&#x7528;&#x5C31;&#x8DB3;&#x591F;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9762;&#x5BF9;&#x7684;&#x662F;&#x975E;&#x5E38;&#x590D;&#x6742;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x5F53;&#x7CFB;&#x7EDF;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x5E95;&#x5C42;&#x539F;&#x7406;&#x7684;&#x638C;&#x63E1;&#x7A0B;&#x5EA6;&#xFF0C;&#x51B3;&#x5B9A;&#x4E86;&#x6211;&#x4EEC;&#x6392;&#x67E5;&#x95EE;&#x9898;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x76F4;&#x63A5;&#x5F71;&#x54CD;&#x5230;&#x6211;&#x4EEC;&#x6392;&#x67E5;&#x95EE;&#x9898;&#x7684;&#x6548;&#x7387;&#x3002;</p>
+<p>&#x4ECA;&#x5929;&#xFF0C;&#x6211;&#x4EEC;&#x8BB2;&#x89E3;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;DI&#x5BB9;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#xFF0C;&#x5176;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#xFF0C;&#x4EE5;&#x53CA;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x901A;&#x8FC7;&#x201C;&#x53CD;&#x5C04;&#x201D;&#x8BED;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;&#x5C31;&#x5E94;&#x7528;&#x5230;&#x4E86;&#x6211;&#x4EEC;&#x5728;&#x5B66;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x3002;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x3001;&#x7EC4;&#x88C5;&#x3001;&#x7BA1;&#x7406;&#x5B8C;&#x5168;&#x6709;DI&#x5BB9;&#x5668;&#x6765;&#x8D1F;&#x8D23;&#xFF0C;&#x8DDF;&#x5177;&#x4F53;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x89E3;&#x8026;&#xFF0C;&#x8BA9;&#x7A0B;&#x5E8F;&#x5458;&#x805A;&#x7126;&#x5728;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x7684;&#x5F00;&#x53D1;&#x4E0A;&#x3002;</p>
+<h2 id="&#x8BFE;&#x5802;&#x8BA8;&#x8BBA;">&#x8BFE;&#x5802;&#x8BA8;&#x8BBA;</h2>
+<p>BeansFactory&#x7C7B;&#x4E2D;&#x7684;createBean()&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x3002;&#x5F53;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;ref&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x4F1A;&#x9012;&#x5F52;&#x5730;&#x521B;&#x5EFA;ref&#x5C5E;&#x6027;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x9519;&#x8BEF;&#x5730;&#x914D;&#x7F6E;&#x4E86;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x5BFC;&#x81F4;&#x5B58;&#x5728;&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#xFF0C;&#x90A3;BeansFactory&#x7684;createBean()&#x51FD;&#x6570;&#x662F;&#x5426;&#x4F1A;&#x51FA;&#x73B0;&#x5806;&#x6808;&#x6EA2;&#x51FA;&#xFF1F;&#x53C8;&#x8BE5;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5462;&#xFF1F;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x53EF;&#x4EE5;&#x5728;&#x7559;&#x8A00;&#x533A;&#x8BF4;&#x4E00;&#x8BF4;&#xFF0C;&#x548C;&#x540C;&#x5B66;&#x4E00;&#x8D77;&#x4EA4;&#x6D41;&#x548C;&#x5206;&#x4EAB;&#x3002;&#x5982;&#x679C;&#x6709;&#x6536;&#x83B7;&#xFF0C;&#x4E5F;&#x6B22;&#x8FCE;&#x4F60;&#x628A;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x5206;&#x4EAB;&#x7ED9;&#x4F60;&#x7684;&#x670B;&#x53CB;&#x3002;</p>
+
+                        
+                    </section>
+                    
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+        <a href="197254.html" class="navigation navigation-prev " aria-label="Previous page: 44 | 工厂模式（上）：工厂模式的适用场景">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="199674.html" class="navigation navigation-next " aria-label="Next page: 46 | 建造者模式：对象创建方式详解">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"45 | 工厂模式（下）：实现Dependency Injection框架","level":"10.5","depth":1,"next":{"title":"46 | 建造者模式：对象创建方式详解","level":"10.6","depth":1,"path":"docs/199674.md","ref":"./docs/199674.md","articles":[]},"previous":{"title":"44 | 工厂模式（上）：工厂模式的适用场景","level":"10.4","depth":1,"path":"docs/197254.md","ref":"./docs/197254.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-d4t","hide-element","code","prism","prism-themes","-lunr","-search","-sharing","search-pro-fixed","-highlight","back-to-top-button","mermaid-gb3","expandable-chapters-small","toolbar","splitter"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"theme-d4t":{},"prism":{"css":["prism-themes/themes/prism-coldark-cold.css"]},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/README.assets/logo.svg","favicon":"/README.assets/favicon.ico"},"splitter":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".logo",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"back-to-top-button":{},"prism-themes":{},"expandable-chapters-small":{},"toolbar":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","author":"zzturn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_ddd_shi_zhan_ke/","target":"_self","name":"DDD实战课"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"设计模式之美","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"docs/198614.md","mtime":"2025-11-06T15:41:54.724Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-11-06T15:43:23.350Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-d4t/script.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

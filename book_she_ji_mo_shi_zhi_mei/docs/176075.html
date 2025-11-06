@@ -1,0 +1,2161 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>16 | 开闭原则：如何做到“对扩展开放、修改关闭”？ · 设计模式之美</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="zzturn">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-coldark-cold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-d4t/style.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="177110.html" />
+    
+    
+    <link rel="prev" href="171771.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/"><div class="logo"></div></a>
+        <span class="title"></span>
+
+        <!-- Search -->
+        
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="../book_10x_cheng_xu_yuan_gong_zuo_fa/" target="_self">10x程序员工作法</a>
+            </li><li>
+                <a href="../book_ddd_shi_zhan_ke/" target="_self">DDD实战课</a>
+            </li><li>
+                <a href="../book_da_chang_jin_sheng_zhi_nan/" target="_self">大厂晋升指南</a>
+            </li><li>
+                <a href="https://github.com/auohh/" target="_blank">Github</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <div class="sidebar-nav-space"></div>
+        
+        
+        <nav role="navigation">
+            
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">开篇词</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="160463.html">
+            
+                <a href="160463.html">
+            
+                    
+                    开篇词 | 一对一的设计与编码集训，让你告别没有成长的烂代码！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式学习导读</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="160981.html">
+            
+                <a href="160981.html">
+            
+                    
+                    01 | 为什么说每个程序员都要尽早地学习并掌握设计模式相关知识？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="160985.html">
+            
+                <a href="160985.html">
+            
+                    
+                    02 | 从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="160991.html">
+            
+                <a href="160991.html">
+            
+                    
+                    03 | 面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计原则与思想</li>
+        
+        
+    
+
+    
+        
+        <li class="header">面向对象</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="161575.html">
+            
+                <a href="161575.html">
+            
+                    
+                    04 | 理论一：当谈论面向对象的时候，我们到底在谈论什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="161114.html">
+            
+                <a href="161114.html">
+            
+                    
+                    05 | 理论二：封装、抽象、继承、多态分别可以解决哪些编程问题？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="161587.html">
+            
+                <a href="161587.html">
+            
+                    
+                    06 | 理论三：面向对象相比面向过程有哪些优势？面向过程真的过时了吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="164907.html">
+            
+                <a href="164907.html">
+            
+                    
+                    07 | 理论四：哪些代码设计看似是面向对象，实际是面向过程的？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="165103.html">
+            
+                <a href="165103.html">
+            
+                    
+                    08 | 理论五：接口vs抽象类的区别？如何用普通的类模拟抽象类和接口？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="165114.html">
+            
+                <a href="165114.html">
+            
+                    
+                    09 | 理论六：为什么基于接口而非实现编程？有必要为每个类都定义接口吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="169593.html">
+            
+                <a href="169593.html">
+            
+                    
+                    10 | 理论七：为何说要多用组合少用继承？如何决定该用组合还是继承？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="169600.html">
+            
+                <a href="169600.html">
+            
+                    
+                    11 | 实战一（上）：业务开发常用的基于贫血模型的MVC架构违背OOP吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="169631.html">
+            
+                <a href="169631.html">
+            
+                    
+                    12 | 实战一（下）：如何利用基于充血模型的DDD开发一个虚拟钱包系统？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="171760.html">
+            
+                <a href="171760.html">
+            
+                    
+                    13 | 实战二（上）：如何对接口鉴权这样一个功能开发做面向对象分析？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="171767.html">
+            
+                <a href="171767.html">
+            
+                    
+                    14 | 实战二（下）：如何利用面向对象设计和编程开发接口鉴权功能？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计原则</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="171771.html">
+            
+                <a href="171771.html">
+            
+                    
+                    15 | 单一职责原则：如何判定某个类的职责是否够“单一”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="176075.html">
+            
+                <a href="176075.html">
+            
+                    
+                    16 | 开闭原则：如何做到“对扩展开放、修改关闭”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="177110.html">
+            
+                <a href="177110.html">
+            
+                    
+                    17 | 里式替换原则：LSP跟多态有何区别？哪些代码违背了LSP？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="177442.html">
+            
+                <a href="177442.html">
+            
+                    
+                    18 | 接口隔离原则：有哪三种应用？“接口”该如何理解？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="177444.html">
+            
+                <a href="177444.html">
+            
+                    
+                    19 | 依赖反转原则：控制反转、依赖反转、依赖注入的区别和联系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="177448.html">
+            
+                <a href="177448.html">
+            
+                    
+                    20 | KISS、YAGNI原则：看似简单，却经常被用错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="179607.html">
+            
+                <a href="179607.html">
+            
+                    
+                    21 | DRY原则：重复的代码就一定违背DRY吗？如何提高代码的复用性？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="179615.html">
+            
+                <a href="179615.html">
+            
+                    
+                    22 | 迪米特法则（LOD）：如何实现“高内聚、松耦合”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="182001.html">
+            
+                <a href="182001.html">
+            
+                    
+                    23 | 实战一（上）：业务系统的需求分析和设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="183007.html">
+            
+                <a href="183007.html">
+            
+                    
+                    24 | 实战一（下）：实现一个遵从设计原则的积分兑换系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="179644.html">
+            
+                <a href="179644.html">
+            
+                    
+                    25 | 实战二（上）：通用框架开发的需求分析和设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="179673.html">
+            
+                <a href="179673.html">
+            
+                    
+                    26 | 实战二（下）：实现支持各种统计规则的性能计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">规范与重构</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="179679.html">
+            
+                <a href="179679.html">
+            
+                    
+                    27 | 什么情况下要重构？如何重构？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="185684.html">
+            
+                <a href="185684.html">
+            
+                    
+                    28 | 保证重构不出错的技术手段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="186691.html">
+            
+                <a href="186691.html">
+            
+                    
+                    29 | 代码的可测试性：如何写出可测试性好的代码？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="187761.html">
+            
+                <a href="187761.html">
+            
+                    
+                    30 | 解耦代码的技术：封装、抽象、模块化、中间层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="188622.html">
+            
+                <a href="188622.html">
+            
+                    
+                    31 | 编程规范（上）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="188857.html">
+            
+                <a href="188857.html">
+            
+                    
+                    32 | 编程规范（中）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="188882.html">
+            
+                <a href="188882.html">
+            
+                    
+                    33 | 编程规范（下）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="190979.html">
+            
+                <a href="190979.html">
+            
+                    
+                    34 | 实战一（上）：ID生成器代码质量问题分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="191621.html">
+            
+                <a href="191621.html">
+            
+                    
+                    35 | 实战一（下）：ID生成器代码重构实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="191642.html">
+            
+                <a href="191642.html">
+            
+                    
+                    36 | 实战二（上）：程序出错该返回啥？NULL、异常、错误码、空对象？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="191647.html">
+            
+                <a href="191647.html">
+            
+                    
+                    37 | 实战二（下）：重构ID生成器项目中各函数的异常处理代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="193093.html">
+            
+                <a href="193093.html">
+            
+                    
+                    38 | 总结回顾面向对象、设计原则、编程规范、重构技巧等知识点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="193221.html">
+            
+                <a href="193221.html">
+            
+                    
+                    39 | 完善性能计数器项目（上）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="193555.html">
+            
+                <a href="193555.html">
+            
+                    
+                    40 | 完善性能计数器项目（下）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式与范式</li>
+        
+        
+    
+
+    
+        
+        <li class="header">创建型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="194035.html">
+            
+                <a href="194035.html">
+            
+                    
+                    41 | 单例模式（上）：懒加载与饿汉式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="194068.html">
+            
+                <a href="194068.html">
+            
+                    
+                    42 | 单例模式（中）：不推荐单例模式及替代方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="196790.html">
+            
+                <a href="196790.html">
+            
+                    
+                    43 | 单例模式（下）：分布式单例模式设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="197254.html">
+            
+                <a href="197254.html">
+            
+                    
+                    44 | 工厂模式（上）：工厂模式的适用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="198614.html">
+            
+                <a href="198614.html">
+            
+                    
+                    45 | 工厂模式（下）：实现Dependency Injection框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="199674.html">
+            
+                <a href="199674.html">
+            
+                    
+                    46 | 建造者模式：对象创建方式详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="200786.html">
+            
+                <a href="200786.html">
+            
+                    
+                    47 | 原型模式：clone一个HashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">结构型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="201823.html">
+            
+                <a href="201823.html">
+            
+                    
+                    48 | 代理模式：在RPC、缓存、监控中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="202786.html">
+            
+                <a href="202786.html">
+            
+                    
+                    49 | 桥接模式：消息推送系统设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="204845.html">
+            
+                <a href="204845.html">
+            
+                    
+                    50 | 装饰器模式：Java IO源码剖析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="205912.html">
+            
+                <a href="205912.html">
+            
+                    
+                    51 | 适配器模式：与代理、桥接、装饰的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="206409.html">
+            
+                <a href="206409.html">
+            
+                    
+                    52 | 门面模式：接口粒度设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6" data-path="207456.html">
+            
+                <a href="207456.html">
+            
+                    
+                    53 | 组合模式：文件系统目录树结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.7" data-path="208572.html">
+            
+                <a href="208572.html">
+            
+                    
+                    54 | 享元模式（上）：文本编辑器内存优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.8" data-path="209343.html">
+            
+                <a href="209343.html">
+            
+                    
+                    55 | 享元模式（下）：Java Integer、String中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">行为型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="210170.html">
+            
+                <a href="210170.html">
+            
+                    
+                    56 | 观察者模式（上）：多种实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="211239.html">
+            
+                <a href="211239.html">
+            
+                    
+                    57 | 观察者模式（下）：异步非阻塞EventBus框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="212049.html">
+            
+                <a href="212049.html">
+            
+                    
+                    58 | 模板模式（上）：JDK、Servlet、JUnit中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="212802.html">
+            
+                <a href="212802.html">
+            
+                    
+                    59 | 模板模式（下）：模板模式与Callback的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="214014.html">
+            
+                <a href="214014.html">
+            
+                    
+                    60 | 策略模式（上）：避免冗长分支判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="215132.html">
+            
+                <a href="215132.html">
+            
+                    
+                    61 | 策略模式（下）：文件排序小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.7" data-path="216278.html">
+            
+                <a href="216278.html">
+            
+                    
+                    62 | 职责链模式（上）：敏感信息过滤框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.8" data-path="217395.html">
+            
+                <a href="217395.html">
+            
+                    
+                    63 | 职责链模式（下）：过滤器、拦截器实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.9" data-path="218375.html">
+            
+                <a href="218375.html">
+            
+                    
+                    64 | 状态模式：状态机实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.10" data-path="219290.html">
+            
+                <a href="219290.html">
+            
+                    
+                    65 | 迭代器模式（上）：迭代器的优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.11" data-path="219964.html">
+            
+                <a href="219964.html">
+            
+                    
+                    66 | 迭代器模式（中）：遍历与集合修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.12" data-path="221269.html">
+            
+                <a href="221269.html">
+            
+                    
+                    67 | 迭代器模式（下）：快照功能实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.13" data-path="221852.html">
+            
+                <a href="221852.html">
+            
+                    
+                    68 | 访问者模式（上）：模式诞生思维过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.14" data-path="222762.html">
+            
+                <a href="222762.html">
+            
+                    
+                    69 | 访问者模式（下）：双分派语言与访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.15" data-path="223947.html">
+            
+                <a href="223947.html">
+            
+                    
+                    70 | 备忘录模式：大对象的备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.16" data-path="224549.html">
+            
+                <a href="224549.html">
+            
+                    
+                    71 | 命令模式：手游后端架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.17" data-path="225904.html">
+            
+                <a href="225904.html">
+            
+                    
+                    72 | 解释器模式：自定义告警规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.18" data-path="226710.html">
+            
+                <a href="226710.html">
+            
+                    
+                    73 | 中介模式：中介与观察者的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="227452.html">
+            
+                <a href="227452.html">
+            
+                    
+                    74 | 23种经典设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2" data-path="229157.html">
+            
+                <a href="229157.html">
+            
+                    
+                    75 | 如何避免过度设计与设计不足
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">开源与项目实战</li>
+        
+        
+    
+
+    
+        
+        <li class="header">开源实战</li>
+        
+        
+    
+        <li class="chapter " data-level="15.1" data-path="229996.html">
+            
+                <a href="229996.html">
+            
+                    
+                    76 | 开源实战一（上）：剖析Java JDK源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.2" data-path="230708.html">
+            
+                <a href="230708.html">
+            
+                    
+                    77 | 开源实战一（下）：剖析Java JDK源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.3" data-path="232061.html">
+            
+                <a href="232061.html">
+            
+                    
+                    78 | 开源实战二（上）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.4" data-path="232427.html">
+            
+                <a href="232427.html">
+            
+                    
+                    79 | 开源实战二（中）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.5" data-path="232687.html">
+            
+                <a href="232687.html">
+            
+                    
+                    80 | 开源实战二（下）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.6" data-path="233742.html">
+            
+                <a href="233742.html">
+            
+                    
+                    81 | 开源实战三（上）：Google Guava通用模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.7" data-path="234758.html">
+            
+                <a href="234758.html">
+            
+                    
+                    82 | 开源实战三（中）：Guava中的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.8" data-path="235334.html">
+            
+                <a href="235334.html">
+            
+                    
+                    83 | 开源实战三（下）：Guava与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.9" data-path="236935.html">
+            
+                <a href="236935.html">
+            
+                    
+                    84 | 开源实战四（上）：Spring框架设计思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.10" data-path="237810.html">
+            
+                <a href="237810.html">
+            
+                    
+                    85 | 开源实战四（中）：Spring的扩展设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.11" data-path="238418.html">
+            
+                <a href="238418.html">
+            
+                    
+                    86 | 开源实战四（下）：Spring设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.12" data-path="239239.html">
+            
+                <a href="239239.html">
+            
+                    
+                    87 | 开源实战五（上）：MyBatis的设计权衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.13" data-path="240147.html">
+            
+                <a href="240147.html">
+            
+                    
+                    88 | 开源实战五（中）：MyBatis Plugin实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.14" data-path="240971.html">
+            
+                <a href="240971.html">
+            
+                    
+                    89 | 开源实战五（下）：MyBatis设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">项目实战</li>
+        
+        
+    
+        <li class="chapter " data-level="16.1" data-path="242314.html">
+            
+                <a href="242314.html">
+            
+                    
+                    90 | 项目实战一：限流框架（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.2" data-path="243175.html">
+            
+                <a href="243175.html">
+            
+                    
+                    91 | 项目实战一：限流框架（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.3" data-path="243961.html">
+            
+                <a href="243961.html">
+            
+                    
+                    92 | 项目实战一：限流框架（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.4" data-path="245022.html">
+            
+                <a href="245022.html">
+            
+                    
+                    93 | 项目实战二：接口幂等框架（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.5" data-path="245788.html">
+            
+                <a href="245788.html">
+            
+                    
+                    94 | 项目实战二：接口幂等框架（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.6" data-path="246379.html">
+            
+                <a href="246379.html">
+            
+                    
+                    95 | 项目实战二：接口幂等框架（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.7" data-path="247776.html">
+            
+                <a href="247776.html">
+            
+                    
+                    96 | 项目实战三：灰度发布组件（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.8" data-path="248714.html">
+            
+                <a href="248714.html">
+            
+                    
+                    97 | 项目实战三：灰度发布组件（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.9" data-path="249369.html">
+            
+                <a href="249369.html">
+            
+                    
+                    98 | 项目实战三：灰度发布组件（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="17.1" data-path="250942.html">
+            
+                <a href="250942.html">
+            
+                    
+                    99 | 项目实战与设计总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="17.2" data-path="251930.html">
+            
+                <a href="251930.html">
+            
+                    
+                    100 | 理论知识在项目中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">不定期加餐</li>
+        
+        
+    
+        <li class="chapter " data-level="18.1" data-path="166698.html">
+            
+                <a href="166698.html">
+            
+                    
+                    加餐一 | 用一篇文章带你了解专栏中用到的所有Java语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.2" data-path="172690.html">
+            
+                <a href="172690.html">
+            
+                    
+                    加餐二 | 设计模式、重构、编程规范等相关书籍推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.3" data-path="192789.html">
+            
+                <a href="192789.html">
+            
+                    
+                    春节特别加餐 | 王争：如何学习《设计模式之美》专栏？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.4" data-path="252937.html">
+            
+                <a href="252937.html">
+            
+                    
+                    加餐三 | 聊一聊Google是如何做Code Review的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.5" data-path="254190.html">
+            
+                <a href="254190.html">
+            
+                    
+                    加餐四 | 聊一聊Google那些让我快速成长的地方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.6" data-path="255037.html">
+            
+                <a href="255037.html">
+            
+                    
+                    加餐五 | 听一听小争哥对Google工程师文化的解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.7" data-path="255697.html">
+            
+                <a href="255697.html">
+            
+                    
+                    加餐六 | 什么才是所谓的编程能力？如何考察一个人的编程能力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.8" data-path="256866.html">
+            
+                <a href="256866.html">
+            
+                    
+                    加餐七 | 基础学科的知识如何转化成实际的技术生产力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.9" data-path="257513.html">
+            
+                <a href="257513.html">
+            
+                    
+                    加餐八 | 程序员怎么才能让自己走得更高、更远？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.10" data-path="258207.html">
+            
+                <a href="258207.html">
+            
+                    
+                    加餐九 | 作为面试官或候选人，如何面试或回答设计模式问题？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.11" data-path="259489.html">
+            
+                <a href="259489.html">
+            
+                    
+                    加餐十 | 如何接手一坨烂业务代码？如何在烂业务代码中成长？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">结束语</li>
+        
+        
+    
+        <li class="chapter " data-level="19.1" data-path="260184.html">
+            
+                <a href="260184.html">
+            
+                    
+                    结束语  | 聊一聊机遇、方向、能力、努力！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+        </nav>
+        
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <div class="book-anchor-title">ON THIS PAGE</div>
+        <div class="book-anchor-body">
+
+        </div>
+    </div>
+
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >16 | 开闭原则：如何做到“对扩展开放、修改关闭”？</a>
+    </h1>
+</div>
+
+
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="16--&#x7406;&#x8BBA;&#x4E8C;&#xFF1A;&#x5982;&#x4F55;&#x505A;&#x5230;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#xFF1F;&#x6269;&#x5C55;&#x548C;&#x4FEE;&#x6539;&#x5404;&#x6307;&#x4EC0;&#x4E48;&#xFF1F;">16 | &#x7406;&#x8BBA;&#x4E8C;&#xFF1A;&#x5982;&#x4F55;&#x505A;&#x5230;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF1F;&#x6269;&#x5C55;&#x548C;&#x4FEE;&#x6539;&#x5404;&#x6307;&#x4EC0;&#x4E48;&#xFF1F;</h1>
+<pre class="language-"><code>&#x5728;&#x4E0A;&#x4E00;&#x8282;&#x8BFE;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x4E86;&#x5355;&#x4E00;&#x804C;&#x8D23;&#x539F;&#x5219;&#x3002;&#x4ECA;&#x5929;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x5B66;&#x4E60;SOLID&#x4E2D;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x539F;&#x5219;&#xFF1A;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;&#x6211;&#x4E2A;&#x4EBA;&#x89C9;&#x5F97;&#xFF0C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x662F;SOLID&#x4E2D;&#x6700;&#x96BE;&#x7406;&#x89E3;&#x3001;&#x6700;&#x96BE;&#x638C;&#x63E1;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x6700;&#x6709;&#x7528;&#x7684;&#x4E00;&#x6761;&#x539F;&#x5219;&#x3002;
+</code></pre><p>&#x4E4B;&#x6240;&#x4EE5;&#x8BF4;&#x8FD9;&#x6761;&#x539F;&#x5219;&#x96BE;&#x7406;&#x89E3;&#xFF0C;&#x90A3;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x201C;&#x600E;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x624D;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x2018;&#x6269;&#x5C55;&#x2019;&#xFF1F;&#x600E;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x624D;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x2018;&#x4FEE;&#x6539;&#x2019;&#xFF1F;&#x600E;&#x4E48;&#x624D;&#x7B97;&#x6EE1;&#x8DB3;&#x6216;&#x8FDD;&#x53CD;&#x2018;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x2019;&#xFF1F;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x5C31;&#x4E00;&#x5B9A;&#x610F;&#x5473;&#x7740;&#x8FDD;&#x53CD;&#x2018;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x2019;&#x5417;&#xFF1F;&#x201D;&#x7B49;&#x7B49;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#xFF0C;&#x90FD;&#x6BD4;&#x8F83;&#x96BE;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x4E4B;&#x6240;&#x4EE5;&#x8BF4;&#x8FD9;&#x6761;&#x539F;&#x5219;&#x96BE;&#x638C;&#x63E1;&#xFF0C;&#x90A3;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x201C;&#x5982;&#x4F55;&#x505A;&#x5230;&#x2018;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x2019;&#xFF1F;&#x5982;&#x4F55;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x7075;&#x6D3B;&#x5730;&#x5E94;&#x7528;&#x2018;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x2019;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x5728;&#x8FFD;&#x6C42;&#x6269;&#x5C55;&#x6027;&#x7684;&#x540C;&#x65F6;&#x5F71;&#x54CD;&#x5230;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF1F;&#x201D;&#x7B49;&#x7B49;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#xFF0C;&#x90FD;&#x6BD4;&#x8F83;&#x96BE;&#x638C;&#x63E1;&#x3002;</p>
+<p>&#x4E4B;&#x6240;&#x4EE5;&#x8BF4;&#x8FD9;&#x6761;&#x539F;&#x5219;&#x6700;&#x6709;&#x7528;&#xFF0C;&#x90A3;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x6269;&#x5C55;&#x6027;&#x662F;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x6700;&#x91CD;&#x8981;&#x7684;&#x8861;&#x91CF;&#x6807;&#x51C6;&#x4E4B;&#x4E00;&#x3002;&#x5728;23&#x79CD;&#x7ECF;&#x5178;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x90FD;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x95EE;&#x9898;&#x800C;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x9075;&#x4ECE;&#x7684;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x5C31;&#x662F;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x8BF4;&#xFF0C;&#x4ECA;&#x5929;&#x7684;&#x5185;&#x5BB9;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x5E0C;&#x671B;&#x4F60;&#x80FD;&#x96C6;&#x4E2D;&#x7CBE;&#x529B;&#xFF0C;&#x8DDF;&#x4E0A;&#x6211;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5C06;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x7406;&#x89E3;&#x900F;&#x5F7B;&#xFF0C;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3;&#x540E;&#x9762;&#x7AE0;&#x8282;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6B63;&#x5F0F;&#x5F00;&#x59CB;&#x4ECA;&#x5929;&#x7684;&#x5B66;&#x4E60;&#x5427;&#xFF01;</p>
+<h2 id="&#x5982;&#x4F55;&#x7406;&#x89E3;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#xFF1F;">&#x5982;&#x4F55;&#x7406;&#x89E3;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF1F;</h2>
+<p>&#x5F00;&#x95ED;&#x539F;&#x5219;&#x7684;&#x82F1;&#x6587;&#x5168;&#x79F0;&#x662F;Open Closed Principle&#xFF0C;&#x7B80;&#x5199;&#x4E3A;OCP&#x3002;&#x5B83;&#x7684;&#x82F1;&#x6587;&#x63CF;&#x8FF0;&#x662F;&#xFF1A;software entities (modules, classes, functions, etc.) should be open for extension , but closed for modification&#x3002;&#x6211;&#x4EEC;&#x628A;&#x5B83;&#x7FFB;&#x8BD1;&#x6210;&#x4E2D;&#x6587;&#x5C31;&#x662F;&#xFF1A;&#x8F6F;&#x4EF6;&#x5B9E;&#x4F53;&#xFF08;&#x6A21;&#x5757;&#x3001;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x7B49;&#xFF09;&#x5E94;&#x8BE5;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x63CF;&#x8FF0;&#x6BD4;&#x8F83;&#x7B80;&#x7565;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8BE6;&#x7EC6;&#x8868;&#x8FF0;&#x4E00;&#x4E0B;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x529F;&#x80FD;&#x5E94;&#x8BE5;&#x662F;&#xFF0C;&#x5728;&#x5DF2;&#x6709;&#x4EE3;&#x7801;&#x57FA;&#x7840;&#x4E0A;&#x6269;&#x5C55;&#x4EE3;&#x7801;&#xFF08;&#x65B0;&#x589E;&#x6A21;&#x5757;&#x3001;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x7B49;&#xFF09;&#xFF0C;&#x800C;&#x975E;&#x4FEE;&#x6539;&#x5DF2;&#x6709;&#x4EE3;&#x7801;&#xFF08;&#x4FEE;&#x6539;&#x6A21;&#x5757;&#x3001;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x7B49;&#xFF09;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8BA9;&#x4F60;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x539F;&#x5219;&#xFF0C;&#x6211;&#x4E3E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x8FDB;&#x4E00;&#x6B65;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;API&#x63A5;&#x53E3;&#x76D1;&#x63A7;&#x544A;&#x8B66;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#xFF0C;AlertRule&#x5B58;&#x50A8;&#x544A;&#x8B66;&#x89C4;&#x5219;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x8BBE;&#x7F6E;&#x3002;Notification&#x662F;&#x544A;&#x8B66;&#x901A;&#x77E5;&#x7C7B;&#xFF0C;&#x652F;&#x6301;&#x90AE;&#x4EF6;&#x3001;&#x77ED;&#x4FE1;&#x3001;&#x5FAE;&#x4FE1;&#x3001;&#x624B;&#x673A;&#x7B49;&#x591A;&#x79CD;&#x901A;&#x77E5;&#x6E20;&#x9053;&#x3002;NotificationEmergencyLevel&#x8868;&#x793A;&#x901A;&#x77E5;&#x7684;&#x7D27;&#x6025;&#x7A0B;&#x5EA6;&#xFF0C;&#x5305;&#x62EC;SEVERE&#xFF08;&#x4E25;&#x91CD;&#xFF09;&#x3001;URGENCY&#xFF08;&#x7D27;&#x6025;&#xFF09;&#x3001;NORMAL&#xFF08;&#x666E;&#x901A;&#xFF09;&#x3001;TRIVIAL&#xFF08;&#x65E0;&#x5173;&#x7D27;&#x8981;&#xFF09;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x7D27;&#x6025;&#x7A0B;&#x5EA6;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x7684;&#x53D1;&#x9001;&#x6E20;&#x9053;&#x3002;&#x5173;&#x4E8E;API&#x63A5;&#x53E3;&#x76D1;&#x63A7;&#x544A;&#x8B66;&#x8FD9;&#x90E8;&#x5206;&#xFF0C;&#x66F4;&#x52A0;&#x8BE6;&#x7EC6;&#x7684;&#x4E1A;&#x52A1;&#x9700;&#x6C42;&#x5206;&#x6790;&#x548C;&#x8BBE;&#x8BA1;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x540E;&#x9762;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x6A21;&#x5757;&#x518D;&#x62FF;&#x51FA;&#x6765;&#x8FDB;&#x4E00;&#x6B65;&#x8BB2;&#x89E3;&#xFF0C;&#x8FD9;&#x91CC;&#x4F60;&#x53EA;&#x8981;&#x7B80;&#x5355;&#x77E5;&#x9053;&#x8FD9;&#x4E9B;&#xFF0C;&#x5C31;&#x591F;&#x6211;&#x4EEC;&#x4ECA;&#x5929;&#x7528;&#x4E86;&#x3002;</p>
+<pre class="language-"><code>public class Alert {
+  private AlertRule rule;
+  private Notification notification;
+
+  public Alert(AlertRule rule, Notification notification) {
+    this.rule = rule;
+    this.notification = notification;
+  }
+
+  public void check(String api, long requestCount, long errorCount, long durationOfSeconds) {
+    long tps = requestCount / durationOfSeconds;
+    if (tps &gt; rule.getMatchedRule(api).getMaxTps()) {
+      notification.notify(NotificationEmergencyLevel.URGENCY, &quot;...&quot;);
+    }
+    if (errorCount &gt; rule.getMatchedRule(api).getMaxErrorCount()) {
+      notification.notify(NotificationEmergencyLevel.SEVERE, &quot;...&quot;);
+    }
+  }
+}
+</code></pre><p>&#x4E0A;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E3B;&#x8981;&#x96C6;&#x4E2D;&#x5728;check()&#x51FD;&#x6570;&#x4E2D;&#x3002;&#x5F53;&#x63A5;&#x53E3;&#x7684;TPS&#x8D85;&#x8FC7;&#x67D0;&#x4E2A;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#x7684;&#x6700;&#x5927;&#x503C;&#x65F6;&#xFF0C;&#x4EE5;&#x53CA;&#x5F53;&#x63A5;&#x53E3;&#x8BF7;&#x6C42;&#x51FA;&#x9519;&#x6570;&#x5927;&#x4E8E;&#x67D0;&#x4E2A;&#x6700;&#x5927;&#x5141;&#x8BB8;&#x503C;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;&#x544A;&#x8B66;&#xFF0C;&#x901A;&#x77E5;&#x63A5;&#x53E3;&#x7684;&#x76F8;&#x5173;&#x8D1F;&#x8D23;&#x4EBA;&#x6216;&#x8005;&#x56E2;&#x961F;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x5F53;&#x6BCF;&#x79D2;&#x949F;&#x63A5;&#x53E3;&#x8D85;&#x65F6;&#x8BF7;&#x6C42;&#x4E2A;&#x6570;&#xFF0C;&#x8D85;&#x8FC7;&#x67D0;&#x4E2A;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#x7684;&#x6700;&#x5927;&#x9608;&#x503C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x8981;&#x89E6;&#x53D1;&#x544A;&#x8B66;&#x53D1;&#x9001;&#x901A;&#x77E5;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x8BE5;&#x5982;&#x4F55;&#x6539;&#x52A8;&#x4EE3;&#x7801;&#x5462;&#xFF1F;&#x4E3B;&#x8981;&#x7684;&#x6539;&#x52A8;&#x6709;&#x4E24;&#x5904;&#xFF1A;&#x7B2C;&#x4E00;&#x5904;&#x662F;&#x4FEE;&#x6539;check()&#x51FD;&#x6570;&#x7684;&#x5165;&#x53C2;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;timeoutCount&#xFF0C;&#x8868;&#x793A;&#x8D85;&#x65F6;&#x63A5;&#x53E3;&#x8BF7;&#x6C42;&#x6570;&#xFF1B;&#x7B2C;&#x4E8C;&#x5904;&#x662F;&#x5728;check()&#x51FD;&#x6570;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x544A;&#x8B66;&#x903B;&#x8F91;&#x3002;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>public class Alert {
+  // ...&#x7701;&#x7565;AlertRule/Notification&#x5C5E;&#x6027;&#x548C;&#x6784;&#x9020;&#x51FD;&#x6570;...
+
+  // &#x6539;&#x52A8;&#x4E00;&#xFF1A;&#x6DFB;&#x52A0;&#x53C2;&#x6570;timeoutCount
+  public void check(String api, long requestCount, long errorCount, long timeoutCount, long durationOfSeconds) {
+    long tps = requestCount / durationOfSeconds;
+    if (tps &gt; rule.getMatchedRule(api).getMaxTps()) {
+      notification.notify(NotificationEmergencyLevel.URGENCY, &quot;...&quot;);
+    }
+    if (errorCount &gt; rule.getMatchedRule(api).getMaxErrorCount()) {
+      notification.notify(NotificationEmergencyLevel.SEVERE, &quot;...&quot;);
+    }
+    // &#x6539;&#x52A8;&#x4E8C;&#xFF1A;&#x6DFB;&#x52A0;&#x63A5;&#x53E3;&#x8D85;&#x65F6;&#x5904;&#x7406;&#x903B;&#x8F91;
+    long timeoutTps = timeoutCount / durationOfSeconds;
+    if (timeoutTps &gt; rule.getMatchedRule(api).getMaxTimeoutTps()) {
+      notification.notify(NotificationEmergencyLevel.URGENCY, &quot;...&quot;);
+    }
+  }
+}
+</code></pre><p>&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x5B9E;&#x9645;&#x4E0A;&#x5B58;&#x5728;&#x633A;&#x591A;&#x95EE;&#x9898;&#x7684;&#x3002;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x4E86;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x8981;&#x505A;&#x76F8;&#x5E94;&#x7684;&#x4FEE;&#x6539;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x4FEE;&#x6539;&#x4E86;check()&#x51FD;&#x6570;&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x90FD;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF08;&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5185;&#x5BB9;&#x6211;&#x4EEC;&#x5728;&#x91CD;&#x6784;&#x90A3;&#x90E8;&#x5206;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#xFF09;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x662F;&#x57FA;&#x4E8E;&#x201C;&#x4FEE;&#x6539;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x65B0;&#x529F;&#x80FD;&#x7684;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9075;&#x5FAA;&#x5F00;&#x95ED;&#x539F;&#x5219;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#x3002;&#x90A3;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x201C;&#x6269;&#x5C55;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x7684;&#x529F;&#x80FD;&#x5462;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x91CD;&#x6784;&#x4E00;&#x4E0B;&#x4E4B;&#x524D;&#x7684;Alert&#x4EE3;&#x7801;&#xFF0C;&#x8BA9;&#x5B83;&#x7684;&#x6269;&#x5C55;&#x6027;&#x66F4;&#x597D;&#x4E00;&#x4E9B;&#x3002;&#x91CD;&#x6784;&#x7684;&#x5185;&#x5BB9;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4E24;&#x90E8;&#x5206;&#xFF1A;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x5C06;check()&#x51FD;&#x6570;&#x7684;&#x591A;&#x4E2A;&#x5165;&#x53C2;&#x5C01;&#x88C5;&#x6210;ApiStatInfo&#x7C7B;&#xFF1B;</li>
+<li>&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x662F;&#x5F15;&#x5165;handler&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5C06;if&#x5224;&#x65AD;&#x903B;&#x8F91;&#x5206;&#x6563;&#x5728;&#x5404;&#x4E2A;handler&#x4E2D;&#x3002;</li>
+</ul>
+<p>&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>public class Alert {
+  private List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>AlertHandler</span><span class="token punctuation">&gt;</span></span> alertHandlers = new ArrayList&lt;&gt;();
+
+  public void addAlertHandler(AlertHandler alertHandler) {
+    this.alertHandlers.add(alertHandler);
+  }
+
+  public void check(ApiStatInfo apiStatInfo) {
+    for (AlertHandler handler : alertHandlers) {
+      handler.check(apiStatInfo);
+    }
+  }
+}
+
+public class ApiStatInfo {//&#x7701;&#x7565;constructor/getter/setter&#x65B9;&#x6CD5;
+  private String api;
+  private long requestCount;
+  private long errorCount;
+  private long durationOfSeconds;
+}
+
+public abstract class AlertHandler {
+  protected AlertRule rule;
+  protected Notification notification;
+  public AlertHandler(AlertRule rule, Notification notification) {
+    this.rule = rule;
+    this.notification = notification;
+  }
+  public abstract void check(ApiStatInfo apiStatInfo);
+}
+
+public class TpsAlertHandler extends AlertHandler {
+  public TpsAlertHandler(AlertRule rule, Notification notification) {
+    super(rule, notification);
+  }
+
+  @Override
+  public void check(ApiStatInfo apiStatInfo) {
+    long tps = apiStatInfo.getRequestCount()/ apiStatInfo.getDurationOfSeconds();
+    if (tps &gt; rule.getMatchedRule(apiStatInfo.getApi()).getMaxTps()) {
+      notification.notify(NotificationEmergencyLevel.URGENCY, &quot;...&quot;);
+    }
+  }
+}
+
+public class ErrorAlertHandler extends AlertHandler {
+  public ErrorAlertHandler(AlertRule rule, Notification notification){
+    super(rule, notification);
+  }
+
+  @Override
+  public void check(ApiStatInfo apiStatInfo) {
+    if (apiStatInfo.getErrorCount() &gt; rule.getMatchedRule(apiStatInfo.getApi()).getMaxErrorCount()) {
+      notification.notify(NotificationEmergencyLevel.SEVERE, &quot;...&quot;);
+    }
+  }
+}
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x5BF9;Alert&#x7684;&#x91CD;&#x6784;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x4E0B;&#xFF0C;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;Alert&#x8BE5;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5462;&#xFF1F;&#x5177;&#x4F53;&#x7684;&#x4F7F;&#x7528;&#x4EE3;&#x7801;&#x6211;&#x4E5F;&#x5199;&#x5728;&#x8FD9;&#x91CC;&#x4E86;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#xFF0C;ApplicationContext&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x7C7B;&#xFF0C;&#x8D1F;&#x8D23;Alert&#x7684;&#x521B;&#x5EFA;&#x3001;&#x7EC4;&#x88C5;&#xFF08;alertRule&#x548C;notification&#x7684;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF09;&#x3001;&#x521D;&#x59CB;&#x5316;&#xFF08;&#x6DFB;&#x52A0;handlers&#xFF09;&#x5DE5;&#x4F5C;&#x3002;</p>
+<pre class="language-"><code>public class ApplicationContext {
+  private AlertRule alertRule;
+  private Notification notification;
+  private Alert alert;
+
+  public void initializeBeans() {
+    alertRule = new AlertRule(/*.&#x7701;&#x7565;&#x53C2;&#x6570;.*/); //&#x7701;&#x7565;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x4EE3;&#x7801;
+    notification = new Notification(/*.&#x7701;&#x7565;&#x53C2;&#x6570;.*/); //&#x7701;&#x7565;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x4EE3;&#x7801;
+    alert = new Alert();
+    alert.addAlertHandler(new TpsAlertHandler(alertRule, notification));
+    alert.addAlertHandler(new ErrorAlertHandler(alertRule, notification));
+  }
+  public Alert getAlert() { return alert; }
+
+  // &#x997F;&#x6C49;&#x5F0F;&#x5355;&#x4F8B;
+  private static final ApplicationContext instance = new ApplicationContext();
+  private ApplicationContext() {
+    initializeBeans();
+  }
+  public static ApplicationContext getInstance() {
+    return instance;
+  }
+}
+
+public class Demo {
+  public static void main(String[] args) {
+    ApiStatInfo apiStatInfo = new ApiStatInfo();
+    // ...&#x7701;&#x7565;&#x8BBE;&#x7F6E;apiStatInfo&#x6570;&#x636E;&#x503C;&#x7684;&#x4EE3;&#x7801;
+    ApplicationContext.getInstance().getAlert().check(apiStatInfo);
+  }
+}
+</code></pre><p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x4E0B;&#xFF0C;&#x57FA;&#x4E8E;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x518D;&#x6DFB;&#x52A0;&#x4E0A;&#x9762;&#x8BB2;&#x5230;&#x7684;&#x90A3;&#x4E2A;&#x65B0;&#x529F;&#x80FD;&#xFF0C;&#x6BCF;&#x79D2;&#x949F;&#x63A5;&#x53E3;&#x8D85;&#x65F6;&#x8BF7;&#x6C42;&#x4E2A;&#x6570;&#x8D85;&#x8FC7;&#x67D0;&#x4E2A;&#x6700;&#x5927;&#x9608;&#x503C;&#x5C31;&#x544A;&#x8B66;&#xFF0C;&#x6211;&#x4EEC;&#x53C8;&#x8BE5;&#x5982;&#x4F55;&#x6539;&#x52A8;&#x4EE3;&#x7801;&#x5462;&#xFF1F;&#x4E3B;&#x8981;&#x7684;&#x6539;&#x52A8;&#x6709;&#x4E0B;&#x9762;&#x56DB;&#x5904;&#x3002;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x5904;&#x6539;&#x52A8;&#x662F;&#xFF1A;&#x5728;ApiStatInfo&#x7C7B;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5C5E;&#x6027;timeoutCount&#x3002;</li>
+<li>&#x7B2C;&#x4E8C;&#x5904;&#x6539;&#x52A8;&#x662F;&#xFF1A;&#x6DFB;&#x52A0;&#x65B0;&#x7684;TimeoutAlertHander&#x7C7B;&#x3002;</li>
+<li>&#x7B2C;&#x4E09;&#x5904;&#x6539;&#x52A8;&#x662F;&#xFF1A;&#x5728;ApplicationContext&#x7C7B;&#x7684;initializeBeans()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5F80;alert&#x5BF9;&#x8C61;&#x4E2D;&#x6CE8;&#x518C;&#x65B0;&#x7684;timeoutAlertHandler&#x3002;</li>
+<li>&#x7B2C;&#x56DB;&#x5904;&#x6539;&#x52A8;&#x662F;&#xFF1A;&#x5728;&#x4F7F;&#x7528;Alert&#x7C7B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x7ED9;check()&#x51FD;&#x6570;&#x7684;&#x5165;&#x53C2;apiStatInfo&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;timeoutCount&#x7684;&#x503C;&#x3002;</li>
+</ul>
+<p>&#x6539;&#x52A8;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>public class Alert { // &#x4EE3;&#x7801;&#x672A;&#x6539;&#x52A8;... }
+public class ApiStatInfo {//&#x7701;&#x7565;constructor/getter/setter&#x65B9;&#x6CD5;
+  private String api;
+  private long requestCount;
+  private long errorCount;
+  private long durationOfSeconds;
+  private long timeoutCount; // &#x6539;&#x52A8;&#x4E00;&#xFF1A;&#x6DFB;&#x52A0;&#x65B0;&#x5B57;&#x6BB5;
+}
+public abstract class AlertHandler { //&#x4EE3;&#x7801;&#x672A;&#x6539;&#x52A8;... }
+public class TpsAlertHandler extends AlertHandler {//&#x4EE3;&#x7801;&#x672A;&#x6539;&#x52A8;...}
+public class ErrorAlertHandler extends AlertHandler {//&#x4EE3;&#x7801;&#x672A;&#x6539;&#x52A8;...}
+// &#x6539;&#x52A8;&#x4E8C;&#xFF1A;&#x6DFB;&#x52A0;&#x65B0;&#x7684;handler
+public class TimeoutAlertHandler extends AlertHandler {//&#x7701;&#x7565;&#x4EE3;&#x7801;...}
+
+public class ApplicationContext {
+  private AlertRule alertRule;
+  private Notification notification;
+  private Alert alert;
+
+  public void initializeBeans() {
+    alertRule = new AlertRule(/*.&#x7701;&#x7565;&#x53C2;&#x6570;.*/); //&#x7701;&#x7565;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x4EE3;&#x7801;
+    notification = new Notification(/*.&#x7701;&#x7565;&#x53C2;&#x6570;.*/); //&#x7701;&#x7565;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x4EE3;&#x7801;
+    alert = new Alert();
+    alert.addAlertHandler(new TpsAlertHandler(alertRule, notification));
+    alert.addAlertHandler(new ErrorAlertHandler(alertRule, notification));
+    // &#x6539;&#x52A8;&#x4E09;&#xFF1A;&#x6CE8;&#x518C;handler
+    alert.addAlertHandler(new TimeoutAlertHandler(alertRule, notification));
+  }
+  //...&#x7701;&#x7565;&#x5176;&#x4ED6;&#x672A;&#x6539;&#x52A8;&#x4EE3;&#x7801;...
+}
+
+public class Demo {
+  public static void main(String[] args) {
+    ApiStatInfo apiStatInfo = new ApiStatInfo();
+    // ...&#x7701;&#x7565;apiStatInfo&#x7684;set&#x5B57;&#x6BB5;&#x4EE3;&#x7801;
+    apiStatInfo.setTimeoutCount(289); // &#x6539;&#x52A8;&#x56DB;&#xFF1A;&#x8BBE;&#x7F6E;tiemoutCount&#x503C;
+    ApplicationContext.getInstance().getAlert().check(apiStatInfo);
+}
+</code></pre><p>&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x548C;&#x6613;&#x6269;&#x5C55;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x60F3;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x544A;&#x8B66;&#x903B;&#x8F91;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x6269;&#x5C55;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x65B0;&#x7684;handler&#x7C7B;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6539;&#x52A8;&#x539F;&#x6765;&#x7684;check()&#x51FD;&#x6570;&#x7684;&#x903B;&#x8F91;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x4E3A;&#x65B0;&#x7684;handler&#x7C7B;&#x6DFB;&#x52A0;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x8001;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x90FD;&#x4E0D;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x4E5F;&#x4E0D;&#x7528;&#x4FEE;&#x6539;&#x3002;</p>
+<h2 id="&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x5C31;&#x610F;&#x5473;&#x7740;&#x8FDD;&#x80CC;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x5417;&#xFF1F;">&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x5C31;&#x610F;&#x5473;&#x7740;&#x8FDD;&#x80CC;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x5417;&#xFF1F;</h2>
+<p>&#x770B;&#x4E86;&#x4E0A;&#x9762;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x8FD8;&#x4F1A;&#x6709;&#x7591;&#x95EE;&#xFF1A;&#x5728;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x544A;&#x8B66;&#x903B;&#x8F91;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C3D;&#x7BA1;&#x6539;&#x52A8;&#x4E8C;&#xFF08;&#x6DFB;&#x52A0;&#x65B0;&#x7684;handler&#x7C7B;&#xFF09;&#x662F;&#x57FA;&#x4E8E;&#x6269;&#x5C55;&#x800C;&#x975E;&#x4FEE;&#x6539;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x4F46;&#x6539;&#x52A8;&#x4E00;&#x3001;&#x4E09;&#x3001;&#x56DB;&#x8C8C;&#x4F3C;&#x4E0D;&#x662F;&#x57FA;&#x4E8E;&#x6269;&#x5C55;&#x800C;&#x662F;&#x57FA;&#x4E8E;&#x4FEE;&#x6539;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x90A3;&#x6539;&#x52A8;&#x4E00;&#x3001;&#x4E09;&#x3001;&#x56DB;&#x4E0D;&#x5C31;&#x8FDD;&#x80CC;&#x4E86;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x5417;&#xFF1F;</p>
+<p><strong>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x6539;&#x52A8;&#x4E00;&#xFF1A;&#x5F80;ApiStatInfo&#x7C7B;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5C5E;&#x6027;timeoutCount&#x3002;</strong></p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4EC5;&#x5F80;ApiStatInfo&#x7C7B;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x5C5E;&#x6027;&#xFF0C;&#x8FD8;&#x6DFB;&#x52A0;&#x4E86;&#x5BF9;&#x5E94;&#x7684;getter/setter&#x65B9;&#x6CD5;&#x3002;&#x90A3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5C31;&#x8F6C;&#x5316;&#x4E3A;&#xFF1A;&#x7ED9;&#x7C7B;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x7B97;&#x4F5C;&#x201C;&#x4FEE;&#x6539;&#x201D;&#x8FD8;&#x662F;&#x201C;&#x6269;&#x5C55;&#x201D;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x518D;&#x4E00;&#x5757;&#x56DE;&#x5FC6;&#x4E00;&#x4E0B;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;&#x8F6F;&#x4EF6;&#x5B9E;&#x4F53;&#xFF08;&#x6A21;&#x5757;&#x3001;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x7B49;&#xFF09;&#x5E94;&#x8BE5;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#x3002;&#x4ECE;&#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x5728;&#x4E0D;&#x540C;&#x7C92;&#x5EA6;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x6A21;&#x5757;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7C7B;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x65B9;&#x6CD5;&#xFF08;&#x53CA;&#x5176;&#x5C5E;&#x6027;&#xFF09;&#x3002;&#x540C;&#x6837;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#xFF0C;&#x5728;&#x7C97;&#x4EE3;&#x7801;&#x7C92;&#x5EA6;&#x4E0B;&#xFF0C;&#x88AB;&#x8BA4;&#x5B9A;&#x4E3A;&#x201C;&#x4FEE;&#x6539;&#x201D;&#xFF0C;&#x5728;&#x7EC6;&#x4EE3;&#x7801;&#x7C92;&#x5EA6;&#x4E0B;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x88AB;&#x8BA4;&#x5B9A;&#x4E3A;&#x201C;&#x6269;&#x5C55;&#x201D;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x6539;&#x52A8;&#x4E00;&#xFF0C;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x76F8;&#x5F53;&#x4E8E;&#x4FEE;&#x6539;&#x7C7B;&#xFF0C;&#x5728;&#x7C7B;&#x8FD9;&#x4E2A;&#x5C42;&#x9762;&#xFF0C;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x53EF;&#x4EE5;&#x88AB;&#x8BA4;&#x5B9A;&#x4E3A;&#x201C;&#x4FEE;&#x6539;&#x201D;&#xFF1B;&#x4F46;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x5E76;&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x5DF2;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x65B9;&#x6CD5;&#xFF08;&#x53CA;&#x5176;&#x5C5E;&#x6027;&#xFF09;&#x8FD9;&#x4E00;&#x5C42;&#x9762;&#xFF0C;&#x5B83;&#x53C8;&#x53EF;&#x4EE5;&#x88AB;&#x8BA4;&#x5B9A;&#x4E3A;&#x201C;&#x6269;&#x5C55;&#x201D;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x6CA1;&#x5FC5;&#x8981;&#x7EA0;&#x7ED3;&#x67D0;&#x4E2A;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x662F;&#x201C;&#x4FEE;&#x6539;&#x201D;&#x8FD8;&#x662F;&#x201C;&#x6269;&#x5C55;&#x201D;&#xFF0C;&#x66F4;&#x6CA1;&#x5FC5;&#x8981;&#x592A;&#x7EA0;&#x7ED3;&#x5B83;&#x662F;&#x5426;&#x8FDD;&#x53CD;&#x201C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x201D;&#x3002;&#x6211;&#x4EEC;&#x56DE;&#x5230;&#x8FD9;&#x6761;&#x539F;&#x5219;&#x7684;&#x8BBE;&#x8BA1;&#x521D;&#x8877;&#xFF1A;&#x53EA;&#x8981;&#x5B83;&#x6CA1;&#x6709;&#x7834;&#x574F;&#x539F;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x6CA1;&#x6709;&#x7834;&#x574F;&#x539F;&#x6709;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8BF4;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5408;&#x683C;&#x7684;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x3002;</p>
+<p><strong>&#x6211;&#x4EEC;&#x518D;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x6539;&#x52A8;&#x4E09;&#x548C;&#x6539;&#x52A8;&#x56DB;&#xFF1A;&#x5728;ApplicationContext&#x7C7B;&#x7684;initializeBeans()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5F80;alert&#x5BF9;&#x8C61;&#x4E2D;&#x6CE8;&#x518C;&#x65B0;&#x7684;timeoutAlertHandler&#xFF1B;&#x5728;&#x4F7F;&#x7528;Alert&#x7C7B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x7ED9;check()&#x51FD;&#x6570;&#x7684;&#x5165;&#x53C2;apiStatInfo&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;timeoutCount&#x7684;&#x503C;&#x3002;</strong></p>
+<p>&#x8FD9;&#x4E24;&#x5904;&#x6539;&#x52A8;&#x90FD;&#x662F;&#x5728;&#x65B9;&#x6CD5;&#x5185;&#x90E8;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x4E0D;&#x7BA1;&#x4ECE;&#x54EA;&#x4E2A;&#x5C42;&#x9762;&#xFF08;&#x6A21;&#x5757;&#x3001;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#xFF09;&#x6765;&#x8BB2;&#xFF0C;&#x90FD;&#x4E0D;&#x80FD;&#x7B97;&#x662F;&#x201C;&#x6269;&#x5C55;&#x201D;&#xFF0C;&#x800C;&#x662F;&#x5730;&#x5730;&#x9053;&#x9053;&#x7684;&#x201C;&#x4FEE;&#x6539;&#x201D;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6709;&#x4E9B;&#x4FEE;&#x6539;&#x662F;&#x5728;&#x6240;&#x96BE;&#x514D;&#x7684;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x63A5;&#x53D7;&#x7684;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x8BF4;&#x5462;&#xFF1F;&#x6211;&#x6765;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x5728;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;Alert&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x96C6;&#x4E2D;&#x5728;Alert&#x7C7B;&#x53CA;&#x5176;&#x5404;&#x4E2A;handler&#x4E2D;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x544A;&#x8B66;&#x903B;&#x8F91;&#x7684;&#x65F6;&#x5019;&#xFF0C;Alert&#x7C7B;&#x5B8C;&#x5168;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x800C;&#x53EA;&#x9700;&#x8981;&#x6269;&#x5C55;&#x4E00;&#x4E2A;&#x65B0;handler&#x7C7B;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x628A;Alert&#x7C7B;&#x53CA;&#x5404;&#x4E2A;handler&#x7C7B;&#x5408;&#x8D77;&#x6765;&#x770B;&#x4F5C;&#x4E00;&#x4E2A;&#x201C;&#x6A21;&#x5757;&#x201D;&#xFF0C;&#x90A3;&#x6A21;&#x5757;&#x672C;&#x8EAB;&#x5728;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x529F;&#x80FD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B8C;&#x5168;&#x6EE1;&#x8DB3;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;</p>
+<p>&#x800C;&#x4E14;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x8BA4;&#x8BC6;&#x5230;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x4EFB;&#x4F55;&#x6A21;&#x5757;&#x3001;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x4E0D;&#x201C;&#x4FEE;&#x6539;&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x505A;&#x4E0D;&#x5230;&#x7684;&#x3002;&#x7C7B;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x3001;&#x7EC4;&#x88C5;&#x3001;&#x5E76;&#x4E14;&#x505A;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#xFF0C;&#x624D;&#x80FD;&#x6784;&#x5EFA;&#x6210;&#x53EF;&#x8FD0;&#x884C;&#x7684;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x7684;&#x4FEE;&#x6539;&#x662F;&#x5728;&#x6240;&#x96BE;&#x514D;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x8981;&#x505A;&#x7684;&#x662F;&#x5C3D;&#x91CF;&#x8BA9;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x66F4;&#x96C6;&#x4E2D;&#x3001;&#x66F4;&#x5C11;&#x3001;&#x66F4;&#x4E0A;&#x5C42;&#xFF0C;&#x5C3D;&#x91CF;&#x8BA9;&#x6700;&#x6838;&#x5FC3;&#x3001;&#x6700;&#x590D;&#x6742;&#x7684;&#x90A3;&#x90E8;&#x5206;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#x6EE1;&#x8DB3;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x505A;&#x5230;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#xFF1F;">&#x5982;&#x4F55;&#x505A;&#x5230;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF1F;</h2>
+<p>&#x5728;&#x521A;&#x521A;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x5F15;&#x5165;&#x4E00;&#x7EC4;handler&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x652F;&#x6301;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x592A;&#x591A;&#x590D;&#x6742;&#x4EE3;&#x7801;&#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x5F00;&#x53D1;&#x7ECF;&#x9A8C;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x7591;&#x95EE;&#xFF1A;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#x6211;&#x600E;&#x4E48;&#x60F3;&#x4E0D;&#x5230;&#x5462;&#xFF1F;&#x4F60;&#x662F;&#x600E;&#x4E48;&#x60F3;&#x5230;&#x7684;&#x5462;&#xFF1F;</p>
+<p>&#x5148;&#x7ED9;&#x4F60;&#x4E2A;&#x7ED3;&#x8BBA;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x6211;&#x80FD;&#x60F3;&#x5230;&#xFF0C;&#x9760;&#x7684;&#x5C31;&#x662F;&#x7406;&#x8BBA;&#x77E5;&#x8BC6;&#x548C;&#x5B9E;&#x6218;&#x7ECF;&#x9A8C;&#xFF0C;&#x8FD9;&#x4E9B;&#x9700;&#x8981;&#x4F60;&#x6162;&#x6162;&#x5B66;&#x4E60;&#x548C;&#x79EF;&#x7D2F;&#x3002;&#x5BF9;&#x4E8E;&#x5982;&#x4F55;&#x505A;&#x5230;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x6307;&#x5BFC;&#x601D;&#x60F3;&#x548C;&#x5177;&#x4F53;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x5757;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x8BB2;&#x7684;&#x5C31;&#x662F;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x662F;&#x5224;&#x65AD;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x662F;&#x5426;&#x6613;&#x6269;&#x5C55;&#x7684;&#x201C;&#x91D1;&#x6807;&#x51C6;&#x201D;&#x3002;&#x5982;&#x679C;&#x67D0;&#x6BB5;&#x4EE3;&#x7801;&#x5728;&#x5E94;&#x5BF9;&#x672A;&#x6765;&#x9700;&#x6C42;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x80FD;&#x591F;&#x505A;&#x5230;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF0C;&#x90A3;&#x5C31;&#x8BF4;&#x660E;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x6BD4;&#x8F83;&#x597D;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x95EE;&#x5982;&#x4F55;&#x624D;&#x80FD;&#x505A;&#x5230;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF0C;&#x4E5F;&#x5C31;&#x7C97;&#x7565;&#x5730;&#x7B49;&#x540C;&#x4E8E;&#x5728;&#x95EE;&#xFF0C;&#x5982;&#x4F55;&#x624D;&#x80FD;&#x5199;&#x51FA;&#x6269;&#x5C55;&#x6027;&#x597D;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p><strong>&#x5728;&#x8BB2;&#x5177;&#x4F53;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E9B;&#x66F4;&#x52A0;&#x504F;&#x5411;&#x9876;&#x5C42;&#x7684;&#x6307;&#x5BFC;&#x601D;&#x60F3;&#x3002;&#x4E3A;&#x4E86;&#x5C3D;&#x91CF;&#x5199;&#x51FA;&#x6269;&#x5C55;&#x6027;&#x597D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x65F6;&#x523B;&#x5177;&#x5907;&#x6269;&#x5C55;&#x610F;&#x8BC6;&#x3001;&#x62BD;&#x8C61;&#x610F;&#x8BC6;&#x3001;&#x5C01;&#x88C5;&#x610F;&#x8BC6;&#x3002;&#x8FD9;&#x4E9B;&#x201C;&#x6F5C;&#x610F;&#x8BC6;&#x201D;&#x53EF;&#x80FD;&#x6BD4;&#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x6280;&#x5DE7;&#x90FD;&#x91CD;&#x8981;&#x3002;</strong></p>
+<p>&#x5728;&#x5199;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x591A;&#x82B1;&#x70B9;&#x65F6;&#x95F4;&#x5F80;&#x524D;&#x591A;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x672A;&#x6765;&#x53EF;&#x80FD;&#x6709;&#x54EA;&#x4E9B;&#x9700;&#x6C42;&#x53D8;&#x66F4;&#x3001;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#xFF0C;&#x4E8B;&#x5148;&#x7559;&#x597D;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x672A;&#x6765;&#x9700;&#x6C42;&#x53D8;&#x66F4;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6539;&#x52A8;&#x4EE3;&#x7801;&#x6574;&#x4F53;&#x7ED3;&#x6784;&#x3001;&#x505A;&#x5230;&#x6700;&#x5C0F;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x80FD;&#x591F;&#x5F88;&#x7075;&#x6D3B;&#x5730;&#x63D2;&#x5165;&#x5230;&#x6269;&#x5C55;&#x70B9;&#x4E0A;&#xFF0C;&#x505A;&#x5230;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#xFF0C;&#x5728;&#x8BC6;&#x522B;&#x51FA;&#x4EE3;&#x7801;&#x53EF;&#x53D8;&#x90E8;&#x5206;&#x548C;&#x4E0D;&#x53EF;&#x53D8;&#x90E8;&#x5206;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5C06;&#x53EF;&#x53D8;&#x90E8;&#x5206;&#x5C01;&#x88C5;&#x8D77;&#x6765;&#xFF0C;&#x9694;&#x79BB;&#x53D8;&#x5316;&#xFF0C;&#x63D0;&#x4F9B;&#x62BD;&#x8C61;&#x5316;&#x7684;&#x4E0D;&#x53EF;&#x53D8;&#x63A5;&#x53E3;&#xFF0C;&#x7ED9;&#x4E0A;&#x5C42;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x3002;&#x5F53;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x76F8;&#x540C;&#x7684;&#x62BD;&#x8C61;&#x63A5;&#x53E3;&#xFF0C;&#x6269;&#x5C55;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x66FF;&#x6362;&#x6389;&#x8001;&#x7684;&#x5B9E;&#x73B0;&#x5373;&#x53EF;&#xFF0C;&#x4E0A;&#x6E38;&#x7CFB;&#x7EDF;&#x7684;&#x4EE3;&#x7801;&#x51E0;&#x4E4E;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x3002;</p>
+<p><strong>&#x521A;&#x521A;&#x6211;&#x4EEC;&#x8BB2;&#x4E86;&#x5B9E;&#x73B0;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x7684;&#x4E00;&#x4E9B;&#x504F;&#x5411;&#x9876;&#x5C42;&#x7684;&#x6307;&#x5BFC;&#x601D;&#x60F3;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x4E0B;&#xFF0C;&#x652F;&#x6301;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x7684;&#x4E00;&#x4E9B;&#x66F4;&#x52A0;&#x5177;&#x4F53;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#x3002;</strong></p>
+<p>&#x6211;&#x4EEC;&#x524D;&#x9762;&#x8BB2;&#x5230;&#xFF0C;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x662F;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x8BC4;&#x5224;&#x7684;&#x6700;&#x91CD;&#x8981;&#x7684;&#x6807;&#x51C6;&#x4E4B;&#x4E00;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x6574;&#x4E2A;&#x4E13;&#x680F;&#x7684;&#x5927;&#x90E8;&#x5206;&#x77E5;&#x8BC6;&#x70B9;&#x90FD;&#x662F;&#x56F4;&#x7ED5;&#x6269;&#x5C55;&#x6027;&#x95EE;&#x9898;&#x6765;&#x8BB2;&#x89E3;&#x7684;&#x3002;&#x4E13;&#x680F;&#x4E2D;&#x8BB2;&#x5230;&#x7684;&#x5F88;&#x591A;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x3001;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x3001;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x90FD;&#x662F;&#x4EE5;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x4E3A;&#x6700;&#x7EC8;&#x76EE;&#x7684;&#x7684;&#x3002;&#x7279;&#x522B;&#x662F;23&#x79CD;&#x7ECF;&#x5178;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x95EE;&#x9898;&#x800C;&#x603B;&#x7ED3;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x90FD;&#x662F;&#x4EE5;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x4E3A;&#x6307;&#x5BFC;&#x539F;&#x5219;&#x7684;&#x3002;</p>
+<p>&#x5728;&#x4F17;&#x591A;&#x7684;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x3001;&#x601D;&#x60F3;&#x3001;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x6700;&#x5E38;&#x7528;&#x6765;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x6269;&#x5C55;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#xFF1A;&#x591A;&#x6001;&#x3001;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x3001;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x800C;&#x975E;&#x5B9E;&#x73B0;&#x7F16;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x5927;&#x90E8;&#x5206;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF08;&#x6BD4;&#x5982;&#xFF0C;&#x88C5;&#x9970;&#x3001;&#x7B56;&#x7565;&#x3001;&#x6A21;&#x677F;&#x3001;&#x804C;&#x8D23;&#x94FE;&#x3001;&#x72B6;&#x6001;&#x7B49;&#xFF09;&#x3002;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x540E;&#x9762;&#x8BFE;&#x7A0B;&#x4E2D;&#x6211;&#x4EEC;&#x80FD;&#x4F1A;&#x8BE6;&#x7EC6;&#x8BB2;&#x5230;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x5C55;&#x5F00;&#x4E86;&#x3002;&#x4ECA;&#x5929;&#x6211;&#x91CD;&#x70B9;&#x8BB2;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x4F55;&#x5229;&#x7528;&#x591A;&#x6001;&#x3001;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x3001;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x800C;&#x975E;&#x5B9E;&#x73B0;&#x7F16;&#x7A0B;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x591A;&#x6001;&#x3001;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x3001;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x800C;&#x975E;&#x5B9E;&#x73B0;&#x7F16;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;&#x62BD;&#x8C61;&#x610F;&#x8BC6;&#xFF0C;&#x8BF4;&#x7684;&#x90FD;&#x662F;&#x540C;&#x4E00;&#x79CD;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF0C;&#x53EA;&#x662F;&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x89D2;&#x5EA6;&#x3001;&#x4E0D;&#x540C;&#x7684;&#x5C42;&#x9762;&#x6765;&#x9610;&#x8FF0;&#x800C;&#x5DF2;&#x3002;&#x8FD9;&#x4E5F;&#x4F53;&#x73B0;&#x4E86;&#x201C;&#x5F88;&#x591A;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x3001;&#x601D;&#x60F3;&#x3001;&#x6A21;&#x5F0F;&#x90FD;&#x662F;&#x76F8;&#x901A;&#x7684;&#x201D;&#x8FD9;&#x4E00;&#x601D;&#x60F3;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x5C31;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x4F55;&#x5229;&#x7528;&#x8FD9;&#x51E0;&#x4E2A;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x6216;&#x539F;&#x5219;&#x6765;&#x5B9E;&#x73B0;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x540E;&#x9762;&#x4F1A;&#x8BB2;&#x5230;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x8FD9;&#x5757;&#x4E0D;&#x4E86;&#x89E3;&#xFF0C;&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x5148;&#x5FFD;&#x7565;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;&#x53EA;&#x5173;&#x6CE8;&#x591A;&#x6001;&#x3001;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x800C;&#x975E;&#x5B9E;&#x73B0;&#x7F16;&#x7A0B;&#x4EE5;&#x53CA;&#x62BD;&#x8C61;&#x610F;&#x8BC6;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x4EE3;&#x7801;&#x4E2D;&#x901A;&#x8FC7;Kafka&#x6765;&#x53D1;&#x9001;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#x5F00;&#x53D1;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5B66;&#x4F1A;&#x5C06;&#x5176;&#x62BD;&#x8C61;&#x6210;&#x4E00;&#x7EC4;&#x8DDF;&#x5177;&#x4F53;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF08;Kafka&#xFF09;&#x65E0;&#x5173;&#x7684;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x63A5;&#x53E3;&#x3002;&#x6240;&#x6709;&#x4E0A;&#x5C42;&#x7CFB;&#x7EDF;&#x90FD;&#x4F9D;&#x8D56;&#x8FD9;&#x7EC4;&#x62BD;&#x8C61;&#x7684;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8C03;&#x7528;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x8981;&#x66FF;&#x6362;&#x65B0;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BD4;&#x5982;&#x5C06;Kafka&#x66FF;&#x6362;&#x6210;RocketMQ&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x62D4;&#x6389;&#x8001;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x5B9E;&#x73B0;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x5B9E;&#x73B0;&#x3002;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>// &#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x4F53;&#x73B0;&#x4E86;&#x62BD;&#x8C61;&#x610F;&#x8BC6;
+public interface MessageQueue { //... }
+public class KafkaMessageQueue implements MessageQueue { //... }
+public class RocketMQMessageQueue implements MessageQueue {//...}
+
+public interface MessageFromatter { //... }
+public class JsonMessageFromatter implements MessageFromatter {//...}
+public class ProtoBufMessageFromatter implements MessageFromatter {//...}
+
+public class Demo {
+  private MessageQueue msgQueue; // &#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x800C;&#x975E;&#x5B9E;&#x73B0;&#x7F16;&#x7A0B;
+  public Demo(MessageQueue msgQueue) { // &#x4F9D;&#x8D56;&#x6CE8;&#x5165;
+    this.msgQueue = msgQueue;
+  }
+
+  // msgFormatter&#xFF1A;&#x591A;&#x6001;&#x3001;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;
+  public void sendNotification(Notification notification, MessageFormatter msgFormatter) {
+    //...    
+  }
+}
+</code></pre><p>&#x5BF9;&#x4E8E;&#x5982;&#x4F55;&#x5199;&#x51FA;&#x6269;&#x5C55;&#x6027;&#x597D;&#x7684;&#x4EE3;&#x7801;&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4ECA;&#x5929;&#x53EA;&#x662F;&#x6BD4;&#x8F83;&#x7B3C;&#x7EDF;&#x5730;&#x603B;&#x7ED3;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x8BE6;&#x7EC6;&#x7684;&#x77E5;&#x8BC6;&#x6211;&#x4EEC;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x6162;&#x6162;&#x5B66;&#x4E60;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x7075;&#x6D3B;&#x5E94;&#x7528;&#x5F00;&#x95ED;&#x539F;&#x5219;&#xFF1F;">&#x5982;&#x4F55;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x7075;&#x6D3B;&#x5E94;&#x7528;&#x5F00;&#x95ED;&#x539F;&#x5219;&#xFF1F;</h2>
+<p>&#x524D;&#x9762;&#x6211;&#x4EEC;&#x63D0;&#x5230;&#xFF0C;&#x5199;&#x51FA;&#x652F;&#x6301;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x5173;&#x952E;&#x662F;&#x9884;&#x7559;&#x6269;&#x5C55;&#x70B9;&#x3002;&#x90A3;&#x95EE;&#x9898;&#x662F;&#x5982;&#x4F55;&#x624D;&#x80FD;&#x8BC6;&#x522B;&#x51FA;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x6269;&#x5C55;&#x70B9;&#x5462;&#xFF1F;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x5F00;&#x53D1;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4E1A;&#x52A1;&#x5BFC;&#x5411;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD4;&#x5982;&#x91D1;&#x878D;&#x7CFB;&#x7EDF;&#x3001;&#x7535;&#x5546;&#x7CFB;&#x7EDF;&#x3001;&#x7269;&#x6D41;&#x7CFB;&#x7EDF;&#x7B49;&#xFF0C;&#x8981;&#x60F3;&#x8BC6;&#x522B;&#x51FA;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x5C31;&#x8981;&#x5BF9;&#x4E1A;&#x52A1;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x80FD;&#x591F;&#x77E5;&#x9053;&#x5F53;&#x4E0B;&#x4EE5;&#x53CA;&#x672A;&#x6765;&#x53EF;&#x80FD;&#x8981;&#x652F;&#x6301;&#x7684;&#x4E1A;&#x52A1;&#x9700;&#x6C42;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5F00;&#x53D1;&#x7684;&#x662F;&#x8DDF;&#x4E1A;&#x52A1;&#x65E0;&#x5173;&#x7684;&#x3001;&#x901A;&#x7528;&#x7684;&#x3001;&#x504F;&#x5E95;&#x5C42;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x6846;&#x67B6;&#x3001;&#x7EC4;&#x4EF6;&#x3001;&#x7C7B;&#x5E93;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x201C;&#x5B83;&#x4EEC;&#x4F1A;&#x88AB;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#xFF1F;&#x4ECA;&#x540E;&#x4F60;&#x6253;&#x7B97;&#x6DFB;&#x52A0;&#x54EA;&#x4E9B;&#x529F;&#x80FD;&#xFF1F;&#x4F7F;&#x7528;&#x8005;&#x672A;&#x6765;&#x4F1A;&#x6709;&#x54EA;&#x4E9B;&#x66F4;&#x591A;&#x7684;&#x529F;&#x80FD;&#x9700;&#x6C42;&#xFF1F;&#x201D;&#x7B49;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x6709;&#x4E00;&#x53E5;&#x8BDD;&#x8BF4;&#x5F97;&#x597D;&#xFF0C;&#x201C;&#x552F;&#x4E00;&#x4E0D;&#x53D8;&#x7684;&#x53EA;&#x6709;&#x53D8;&#x5316;&#x672C;&#x8EAB;&#x201D;&#x3002;&#x5373;&#x4FBF;&#x6211;&#x4EEC;&#x5BF9;&#x4E1A;&#x52A1;&#x3001;&#x5BF9;&#x7CFB;&#x7EDF;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x90A3;&#x4E5F;&#x4E0D;&#x53EF;&#x80FD;&#x8BC6;&#x522B;&#x51FA;&#x6240;&#x6709;&#x7684;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x5373;&#x4FBF;&#x4F60;&#x80FD;&#x8BC6;&#x522B;&#x51FA;&#x6240;&#x6709;&#x7684;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x4E3A;&#x8FD9;&#x4E9B;&#x5730;&#x65B9;&#x90FD;&#x9884;&#x7559;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x6210;&#x672C;&#x4E5F;&#x662F;&#x4E0D;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x6CA1;&#x5FC5;&#x8981;&#x4E3A;&#x4E00;&#x4E9B;&#x9065;&#x8FDC;&#x7684;&#x3001;&#x4E0D;&#x4E00;&#x5B9A;&#x53D1;&#x751F;&#x7684;&#x9700;&#x6C42;&#x53BB;&#x63D0;&#x524D;&#x4E70;&#x5355;&#xFF0C;&#x505A;&#x8FC7;&#x5EA6;&#x8BBE;&#x8BA1;&#x3002;</p>
+<p>&#x6700;&#x5408;&#x7406;&#x7684;&#x505A;&#x6CD5;&#x662F;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x786E;&#x5B9A;&#x7684;&#x3001;&#x77ED;&#x671F;&#x5185;&#x53EF;&#x80FD;&#x5C31;&#x4F1A;&#x6269;&#x5C55;&#xFF0C;&#x6216;&#x8005;&#x9700;&#x6C42;&#x6539;&#x52A8;&#x5BF9;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x5F71;&#x54CD;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6216;&#x8005;&#x5B9E;&#x73B0;&#x6210;&#x672C;&#x4E0D;&#x9AD8;&#x7684;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x5728;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4E8B;&#x5148;&#x505A;&#x4E9B;&#x6269;&#x5C55;&#x6027;&#x8BBE;&#x8BA1;&#x3002;&#x4F46;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x4E0D;&#x786E;&#x5B9A;&#x672A;&#x6765;&#x662F;&#x5426;&#x8981;&#x652F;&#x6301;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6216;&#x8005;&#x5B9E;&#x73B0;&#x8D77;&#x6765;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B49;&#x5230;&#x6709;&#x9700;&#x6C42;&#x9A71;&#x52A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x518D;&#x901A;&#x8FC7;&#x91CD;&#x6784;&#x4EE3;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x652F;&#x6301;&#x6269;&#x5C55;&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x800C;&#x4E14;&#xFF0C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x4E5F;&#x5E76;&#x4E0D;&#x662F;&#x514D;&#x8D39;&#x7684;&#x3002;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x4F1A;&#x8DDF;&#x53EF;&#x8BFB;&#x6027;&#x76F8;&#x51B2;&#x7A81;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x4E3E;&#x7684;Alert&#x544A;&#x8B66;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5730;&#x652F;&#x6301;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x4E86;&#x91CD;&#x6784;&#xFF0C;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x8981;&#x6BD4;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x590D;&#x6742;&#x5F88;&#x591A;&#xFF0C;&#x7406;&#x89E3;&#x8D77;&#x6765;&#x4E5F;&#x66F4;&#x52A0;&#x6709;&#x96BE;&#x5EA6;&#x3002;&#x5F88;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x9700;&#x8981;&#x5728;&#x6269;&#x5C55;&#x6027;&#x548C;&#x53EF;&#x8BFB;&#x6027;&#x4E4B;&#x95F4;&#x505A;&#x6743;&#x8861;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x9002;&#x5F53;&#x5730;&#x727A;&#x7272;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;&#x5728;&#x53E6;&#x4E00;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x66F4;&#x52A0;&#x91CD;&#x8981;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x5C31;&#x9002;&#x5F53;&#x5730;&#x727A;&#x7272;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x3002;</p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x4E3E;&#x7684;Alert&#x544A;&#x8B66;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x544A;&#x8B66;&#x89C4;&#x5219;&#x5E76;&#x4E0D;&#x662F;&#x5F88;&#x591A;&#x3001;&#x4E5F;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x90A3;check()&#x51FD;&#x6570;&#x4E2D;&#x7684;if&#x8BED;&#x53E5;&#x5C31;&#x4E0D;&#x4F1A;&#x5F88;&#x591A;&#xFF0C;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x4E5F;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x4EE3;&#x7801;&#x884C;&#x6570;&#x4E5F;&#x4E0D;&#x591A;&#xFF0C;&#x90A3;&#x6700;&#x521D;&#x7684;&#x7B2C;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x7B80;&#x5355;&#x6613;&#x8BFB;&#xFF0C;&#x5C31;&#x662F;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x7684;&#x9009;&#x62E9;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x679C;&#x544A;&#x8B66;&#x89C4;&#x5219;&#x5F88;&#x591A;&#x3001;&#x5F88;&#x590D;&#x6742;&#xFF0C;check()&#x51FD;&#x6570;&#x7684;if&#x8BED;&#x53E5;&#x3001;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x5C31;&#x4F1A;&#x5F88;&#x591A;&#x3001;&#x5F88;&#x590D;&#x6742;&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#x4EE3;&#x7801;&#x884C;&#x6570;&#x4E5F;&#x4F1A;&#x5F88;&#x591A;&#xFF0C;&#x53EF;&#x8BFB;&#x6027;&#x3001;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x5C31;&#x4F1A;&#x53D8;&#x5DEE;&#xFF0C;&#x90A3;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x5C31;&#x662F;&#x66F4;&#x52A0;&#x5408;&#x7406;&#x7684;&#x9009;&#x62E9;&#x4E86;&#x3002;&#x603B;&#x4E4B;&#xFF0C;&#x8FD9;&#x91CC;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x653E;&#x4E4B;&#x56DB;&#x6D77;&#x800C;&#x7686;&#x51C6;&#x7684;&#x53C2;&#x8003;&#x6807;&#x51C6;&#xFF0C;&#x5168;&#x51ED;&#x5B9E;&#x9645;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x6765;&#x51B3;&#x5B9A;&#x3002;</p>
+<h2 id="&#x91CD;&#x70B9;&#x56DE;&#x987E;">&#x91CD;&#x70B9;&#x56DE;&#x987E;</h2>
+<p>&#x4ECA;&#x5929;&#x7684;&#x5185;&#x5BB9;&#x5230;&#x6B64;&#x5C31;&#x8BB2;&#x5B8C;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x4E00;&#x5757;&#x6765;&#x603B;&#x7ED3;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x638C;&#x63E1;&#x7684;&#x7684;&#x91CD;&#x70B9;&#x5185;&#x5BB9;&#x3002;</p>
+<p><strong>1.&#x5982;&#x4F55;&#x7406;&#x89E3;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF1F;</strong></p>
+<p>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x901A;&#x8FC7;&#x5728;&#x5DF2;&#x6709;&#x4EE3;&#x7801;&#x57FA;&#x7840;&#x4E0A;&#x6269;&#x5C55;&#x4EE3;&#x7801;&#xFF08;&#x65B0;&#x589E;&#x6A21;&#x5757;&#x3001;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x3001;&#x5C5E;&#x6027;&#x7B49;&#xFF09;&#xFF0C;&#x800C;&#x975E;&#x4FEE;&#x6539;&#x5DF2;&#x6709;&#x4EE3;&#x7801;&#xFF08;&#x4FEE;&#x6539;&#x6A21;&#x5757;&#x3001;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x3001;&#x5C5E;&#x6027;&#x7B49;&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B8C;&#x6210;&#x3002;&#x5173;&#x4E8E;&#x5B9A;&#x4E49;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E24;&#x70B9;&#x8981;&#x6CE8;&#x610F;&#x3002;&#x7B2C;&#x4E00;&#x70B9;&#x662F;&#xFF0C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x5E76;&#x4E0D;&#x662F;&#x8BF4;&#x5B8C;&#x5168;&#x675C;&#x7EDD;&#x4FEE;&#x6539;&#xFF0C;&#x800C;&#x662F;&#x4EE5;&#x6700;&#x5C0F;&#x7684;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x7684;&#x4EE3;&#x4EF7;&#x6765;&#x5B8C;&#x6210;&#x65B0;&#x529F;&#x80FD;&#x7684;&#x5F00;&#x53D1;&#x3002;&#x7B2C;&#x4E8C;&#x70B9;&#x662F;&#xFF0C;&#x540C;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#xFF0C;&#x5728;&#x7C97;&#x4EE3;&#x7801;&#x7C92;&#x5EA6;&#x4E0B;&#xFF0C;&#x53EF;&#x80FD;&#x88AB;&#x8BA4;&#x5B9A;&#x4E3A;&#x201C;&#x4FEE;&#x6539;&#x201D;&#xFF1B;&#x5728;&#x7EC6;&#x4EE3;&#x7801;&#x7C92;&#x5EA6;&#x4E0B;&#xFF0C;&#x53EF;&#x80FD;&#x53C8;&#x88AB;&#x8BA4;&#x5B9A;&#x4E3A;&#x201C;&#x6269;&#x5C55;&#x201D;&#x3002;</p>
+<p><strong>2.&#x5982;&#x4F55;&#x505A;&#x5230;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF1F;</strong></p>
+<p>&#x6211;&#x4EEC;&#x8981;&#x65F6;&#x523B;&#x5177;&#x5907;&#x6269;&#x5C55;&#x610F;&#x8BC6;&#x3001;&#x62BD;&#x8C61;&#x610F;&#x8BC6;&#x3001;&#x5C01;&#x88C5;&#x610F;&#x8BC6;&#x3002;&#x5728;&#x5199;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x591A;&#x82B1;&#x70B9;&#x65F6;&#x95F4;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x672A;&#x6765;&#x53EF;&#x80FD;&#x6709;&#x54EA;&#x4E9B;&#x9700;&#x6C42;&#x53D8;&#x66F4;&#xFF0C;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#xFF0C;&#x4E8B;&#x5148;&#x7559;&#x597D;&#x6269;&#x5C55;&#x70B9;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x672A;&#x6765;&#x9700;&#x6C42;&#x53D8;&#x66F4;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5728;&#x4E0D;&#x6539;&#x52A8;&#x4EE3;&#x7801;&#x6574;&#x4F53;&#x7ED3;&#x6784;&#x3001;&#x505A;&#x5230;&#x6700;&#x5C0F;&#x4EE3;&#x7801;&#x6539;&#x52A8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x7075;&#x6D3B;&#x5730;&#x63D2;&#x5165;&#x5230;&#x6269;&#x5C55;&#x70B9;&#x4E0A;&#x3002;</p>
+<p>&#x5F88;&#x591A;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x3001;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x3001;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x90FD;&#x662F;&#x4EE5;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x4E3A;&#x6700;&#x7EC8;&#x76EE;&#x7684;&#x7684;&#x3002;&#x7279;&#x522B;&#x662F;23&#x79CD;&#x7ECF;&#x5178;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4EE3;&#x7801;&#x7684;&#x6269;&#x5C55;&#x6027;&#x95EE;&#x9898;&#x800C;&#x603B;&#x7ED3;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x90FD;&#x662F;&#x4EE5;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x4E3A;&#x6307;&#x5BFC;&#x539F;&#x5219;&#x7684;&#x3002;&#x6700;&#x5E38;&#x7528;&#x6765;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x6269;&#x5C55;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#xFF1A;&#x591A;&#x6001;&#x3001;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x3001;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x800C;&#x975E;&#x5B9E;&#x73B0;&#x7F16;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x5927;&#x90E8;&#x5206;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF08;&#x6BD4;&#x5982;&#xFF0C;&#x88C5;&#x9970;&#x3001;&#x7B56;&#x7565;&#x3001;&#x6A21;&#x677F;&#x3001;&#x804C;&#x8D23;&#x94FE;&#x3001;&#x72B6;&#x6001;&#xFF09;&#x3002;</p>
+<h2 id="&#x8BFE;&#x5802;&#x8BA8;&#x8BBA;">&#x8BFE;&#x5802;&#x8BA8;&#x8BBA;</h2>
+<p>&#x5B66;&#x4E60;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#xFF0C;&#x8981;&#x591A;&#x95EE;&#x4E2A;&#x4E3A;&#x4EC0;&#x4E48;&#x3002;&#x4E0D;&#x80FD;&#x628A;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x5F53;&#x771F;&#x7406;&#xFF0C;&#x800C;&#x662F;&#x8981;&#x7406;&#x89E3;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;&#x3002;&#x641E;&#x6E05;&#x695A;&#x8FD9;&#x4E2A;&#xFF0C;&#x6BD4;&#x5355;&#x7EAF;&#x7406;&#x89E3;&#x539F;&#x5219;&#x8BB2;&#x7684;&#x662F;&#x5565;&#xFF0C;&#x66F4;&#x80FD;&#x8BA9;&#x4F60;&#x7075;&#x6D3B;&#x5E94;&#x7528;&#x539F;&#x5219;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x4ECA;&#x5929;&#x8BFE;&#x5802;&#x8BA8;&#x8BBA;&#x7684;&#x8BDD;&#x9898;&#x662F;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x4EEC;&#x8981;&#x201C;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#x3001;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x201D;&#xFF1F;</p>
+<p>&#x6B22;&#x8FCE;&#x5728;&#x7559;&#x8A00;&#x533A;&#x5199;&#x4E0B;&#x4F60;&#x7684;&#x7B54;&#x6848;&#xFF0C;&#x548C;&#x540C;&#x5B66;&#x4E00;&#x8D77;&#x4EA4;&#x6D41;&#x548C;&#x5206;&#x4EAB;&#x3002;&#x5982;&#x679C;&#x6709;&#x6536;&#x83B7;&#xFF0C;&#x4E5F;&#x6B22;&#x8FCE;&#x4F60;&#x628A;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x5206;&#x4EAB;&#x7ED9;&#x4F60;&#x7684;&#x670B;&#x53CB;&#x3002;</p>
+
+                        
+                    </section>
+                    
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+        <a href="171771.html" class="navigation navigation-prev " aria-label="Previous page: 15 | 单一职责原则：如何判定某个类的职责是否够“单一”？">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="177110.html" class="navigation navigation-next " aria-label="Next page: 17 | 里式替换原则：LSP跟多态有何区别？哪些代码违背了LSP？">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"16 | 开闭原则：如何做到“对扩展开放、修改关闭”？","level":"6.2","depth":1,"next":{"title":"17 | 里式替换原则：LSP跟多态有何区别？哪些代码违背了LSP？","level":"6.3","depth":1,"path":"docs/177110.md","ref":"./docs/177110.md","articles":[]},"previous":{"title":"15 | 单一职责原则：如何判定某个类的职责是否够“单一”？","level":"6.1","depth":1,"path":"docs/171771.md","ref":"./docs/171771.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-d4t","hide-element","code","prism","prism-themes","-lunr","-search","-sharing","search-pro-fixed","-highlight","back-to-top-button","mermaid-gb3","expandable-chapters-small","toolbar","splitter"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"theme-d4t":{},"prism":{"css":["prism-themes/themes/prism-coldark-cold.css"]},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/README.assets/logo.svg","favicon":"/README.assets/favicon.ico"},"splitter":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".logo",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"back-to-top-button":{},"prism-themes":{},"expandable-chapters-small":{},"toolbar":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","author":"zzturn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_ddd_shi_zhan_ke/","target":"_self","name":"DDD实战课"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"设计模式之美","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"docs/176075.md","mtime":"2025-11-06T15:41:54.721Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-11-06T15:43:23.350Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-d4t/script.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

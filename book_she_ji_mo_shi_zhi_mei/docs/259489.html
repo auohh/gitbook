@@ -1,0 +1,1926 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>加餐十 | 如何接手一坨烂业务代码？如何在烂业务代码中成长？ · 设计模式之美</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="zzturn">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-coldark-cold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-d4t/style.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="260184.html" />
+    
+    
+    <link rel="prev" href="258207.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/"><div class="logo"></div></a>
+        <span class="title"></span>
+
+        <!-- Search -->
+        
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="../book_10x_cheng_xu_yuan_gong_zuo_fa/" target="_self">10x程序员工作法</a>
+            </li><li>
+                <a href="../book_ddd_shi_zhan_ke/" target="_self">DDD实战课</a>
+            </li><li>
+                <a href="../book_da_chang_jin_sheng_zhi_nan/" target="_self">大厂晋升指南</a>
+            </li><li>
+                <a href="https://github.com/auohh/" target="_blank">Github</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <div class="sidebar-nav-space"></div>
+        
+        
+        <nav role="navigation">
+            
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">开篇词</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="160463.html">
+            
+                <a href="160463.html">
+            
+                    
+                    开篇词 | 一对一的设计与编码集训，让你告别没有成长的烂代码！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式学习导读</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="160981.html">
+            
+                <a href="160981.html">
+            
+                    
+                    01 | 为什么说每个程序员都要尽早地学习并掌握设计模式相关知识？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="160985.html">
+            
+                <a href="160985.html">
+            
+                    
+                    02 | 从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="160991.html">
+            
+                <a href="160991.html">
+            
+                    
+                    03 | 面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计原则与思想</li>
+        
+        
+    
+
+    
+        
+        <li class="header">面向对象</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="161575.html">
+            
+                <a href="161575.html">
+            
+                    
+                    04 | 理论一：当谈论面向对象的时候，我们到底在谈论什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="161114.html">
+            
+                <a href="161114.html">
+            
+                    
+                    05 | 理论二：封装、抽象、继承、多态分别可以解决哪些编程问题？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="161587.html">
+            
+                <a href="161587.html">
+            
+                    
+                    06 | 理论三：面向对象相比面向过程有哪些优势？面向过程真的过时了吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="164907.html">
+            
+                <a href="164907.html">
+            
+                    
+                    07 | 理论四：哪些代码设计看似是面向对象，实际是面向过程的？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="165103.html">
+            
+                <a href="165103.html">
+            
+                    
+                    08 | 理论五：接口vs抽象类的区别？如何用普通的类模拟抽象类和接口？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="165114.html">
+            
+                <a href="165114.html">
+            
+                    
+                    09 | 理论六：为什么基于接口而非实现编程？有必要为每个类都定义接口吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="169593.html">
+            
+                <a href="169593.html">
+            
+                    
+                    10 | 理论七：为何说要多用组合少用继承？如何决定该用组合还是继承？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="169600.html">
+            
+                <a href="169600.html">
+            
+                    
+                    11 | 实战一（上）：业务开发常用的基于贫血模型的MVC架构违背OOP吗？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="169631.html">
+            
+                <a href="169631.html">
+            
+                    
+                    12 | 实战一（下）：如何利用基于充血模型的DDD开发一个虚拟钱包系统？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="171760.html">
+            
+                <a href="171760.html">
+            
+                    
+                    13 | 实战二（上）：如何对接口鉴权这样一个功能开发做面向对象分析？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="171767.html">
+            
+                <a href="171767.html">
+            
+                    
+                    14 | 实战二（下）：如何利用面向对象设计和编程开发接口鉴权功能？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计原则</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="171771.html">
+            
+                <a href="171771.html">
+            
+                    
+                    15 | 单一职责原则：如何判定某个类的职责是否够“单一”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="176075.html">
+            
+                <a href="176075.html">
+            
+                    
+                    16 | 开闭原则：如何做到“对扩展开放、修改关闭”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="177110.html">
+            
+                <a href="177110.html">
+            
+                    
+                    17 | 里式替换原则：LSP跟多态有何区别？哪些代码违背了LSP？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="177442.html">
+            
+                <a href="177442.html">
+            
+                    
+                    18 | 接口隔离原则：有哪三种应用？“接口”该如何理解？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="177444.html">
+            
+                <a href="177444.html">
+            
+                    
+                    19 | 依赖反转原则：控制反转、依赖反转、依赖注入的区别和联系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="177448.html">
+            
+                <a href="177448.html">
+            
+                    
+                    20 | KISS、YAGNI原则：看似简单，却经常被用错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="179607.html">
+            
+                <a href="179607.html">
+            
+                    
+                    21 | DRY原则：重复的代码就一定违背DRY吗？如何提高代码的复用性？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="179615.html">
+            
+                <a href="179615.html">
+            
+                    
+                    22 | 迪米特法则（LOD）：如何实现“高内聚、松耦合”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="182001.html">
+            
+                <a href="182001.html">
+            
+                    
+                    23 | 实战一（上）：业务系统的需求分析和设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="183007.html">
+            
+                <a href="183007.html">
+            
+                    
+                    24 | 实战一（下）：实现一个遵从设计原则的积分兑换系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="179644.html">
+            
+                <a href="179644.html">
+            
+                    
+                    25 | 实战二（上）：通用框架开发的需求分析和设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="179673.html">
+            
+                <a href="179673.html">
+            
+                    
+                    26 | 实战二（下）：实现支持各种统计规则的性能计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">规范与重构</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="179679.html">
+            
+                <a href="179679.html">
+            
+                    
+                    27 | 什么情况下要重构？如何重构？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="185684.html">
+            
+                <a href="185684.html">
+            
+                    
+                    28 | 保证重构不出错的技术手段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="186691.html">
+            
+                <a href="186691.html">
+            
+                    
+                    29 | 代码的可测试性：如何写出可测试性好的代码？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="187761.html">
+            
+                <a href="187761.html">
+            
+                    
+                    30 | 解耦代码的技术：封装、抽象、模块化、中间层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="188622.html">
+            
+                <a href="188622.html">
+            
+                    
+                    31 | 编程规范（上）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="188857.html">
+            
+                <a href="188857.html">
+            
+                    
+                    32 | 编程规范（中）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="188882.html">
+            
+                <a href="188882.html">
+            
+                    
+                    33 | 编程规范（下）：改善代码质量的20条建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="190979.html">
+            
+                <a href="190979.html">
+            
+                    
+                    34 | 实战一（上）：ID生成器代码质量问题分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="191621.html">
+            
+                <a href="191621.html">
+            
+                    
+                    35 | 实战一（下）：ID生成器代码重构实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="191642.html">
+            
+                <a href="191642.html">
+            
+                    
+                    36 | 实战二（上）：程序出错该返回啥？NULL、异常、错误码、空对象？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="191647.html">
+            
+                <a href="191647.html">
+            
+                    
+                    37 | 实战二（下）：重构ID生成器项目中各函数的异常处理代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="193093.html">
+            
+                <a href="193093.html">
+            
+                    
+                    38 | 总结回顾面向对象、设计原则、编程规范、重构技巧等知识点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="193221.html">
+            
+                <a href="193221.html">
+            
+                    
+                    39 | 完善性能计数器项目（上）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="193555.html">
+            
+                <a href="193555.html">
+            
+                    
+                    40 | 完善性能计数器项目（下）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式与范式</li>
+        
+        
+    
+
+    
+        
+        <li class="header">创建型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="194035.html">
+            
+                <a href="194035.html">
+            
+                    
+                    41 | 单例模式（上）：懒加载与饿汉式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="194068.html">
+            
+                <a href="194068.html">
+            
+                    
+                    42 | 单例模式（中）：不推荐单例模式及替代方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="196790.html">
+            
+                <a href="196790.html">
+            
+                    
+                    43 | 单例模式（下）：分布式单例模式设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="197254.html">
+            
+                <a href="197254.html">
+            
+                    
+                    44 | 工厂模式（上）：工厂模式的适用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="198614.html">
+            
+                <a href="198614.html">
+            
+                    
+                    45 | 工厂模式（下）：实现Dependency Injection框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="199674.html">
+            
+                <a href="199674.html">
+            
+                    
+                    46 | 建造者模式：对象创建方式详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="200786.html">
+            
+                <a href="200786.html">
+            
+                    
+                    47 | 原型模式：clone一个HashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">结构型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="201823.html">
+            
+                <a href="201823.html">
+            
+                    
+                    48 | 代理模式：在RPC、缓存、监控中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="202786.html">
+            
+                <a href="202786.html">
+            
+                    
+                    49 | 桥接模式：消息推送系统设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="204845.html">
+            
+                <a href="204845.html">
+            
+                    
+                    50 | 装饰器模式：Java IO源码剖析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="205912.html">
+            
+                <a href="205912.html">
+            
+                    
+                    51 | 适配器模式：与代理、桥接、装饰的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="206409.html">
+            
+                <a href="206409.html">
+            
+                    
+                    52 | 门面模式：接口粒度设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6" data-path="207456.html">
+            
+                <a href="207456.html">
+            
+                    
+                    53 | 组合模式：文件系统目录树结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.7" data-path="208572.html">
+            
+                <a href="208572.html">
+            
+                    
+                    54 | 享元模式（上）：文本编辑器内存优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.8" data-path="209343.html">
+            
+                <a href="209343.html">
+            
+                    
+                    55 | 享元模式（下）：Java Integer、String中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">行为型模式</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="210170.html">
+            
+                <a href="210170.html">
+            
+                    
+                    56 | 观察者模式（上）：多种实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="211239.html">
+            
+                <a href="211239.html">
+            
+                    
+                    57 | 观察者模式（下）：异步非阻塞EventBus框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="212049.html">
+            
+                <a href="212049.html">
+            
+                    
+                    58 | 模板模式（上）：JDK、Servlet、JUnit中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="212802.html">
+            
+                <a href="212802.html">
+            
+                    
+                    59 | 模板模式（下）：模板模式与Callback的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="214014.html">
+            
+                <a href="214014.html">
+            
+                    
+                    60 | 策略模式（上）：避免冗长分支判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="215132.html">
+            
+                <a href="215132.html">
+            
+                    
+                    61 | 策略模式（下）：文件排序小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.7" data-path="216278.html">
+            
+                <a href="216278.html">
+            
+                    
+                    62 | 职责链模式（上）：敏感信息过滤框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.8" data-path="217395.html">
+            
+                <a href="217395.html">
+            
+                    
+                    63 | 职责链模式（下）：过滤器、拦截器实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.9" data-path="218375.html">
+            
+                <a href="218375.html">
+            
+                    
+                    64 | 状态模式：状态机实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.10" data-path="219290.html">
+            
+                <a href="219290.html">
+            
+                    
+                    65 | 迭代器模式（上）：迭代器的优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.11" data-path="219964.html">
+            
+                <a href="219964.html">
+            
+                    
+                    66 | 迭代器模式（中）：遍历与集合修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.12" data-path="221269.html">
+            
+                <a href="221269.html">
+            
+                    
+                    67 | 迭代器模式（下）：快照功能实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.13" data-path="221852.html">
+            
+                <a href="221852.html">
+            
+                    
+                    68 | 访问者模式（上）：模式诞生思维过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.14" data-path="222762.html">
+            
+                <a href="222762.html">
+            
+                    
+                    69 | 访问者模式（下）：双分派语言与访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.15" data-path="223947.html">
+            
+                <a href="223947.html">
+            
+                    
+                    70 | 备忘录模式：大对象的备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.16" data-path="224549.html">
+            
+                <a href="224549.html">
+            
+                    
+                    71 | 命令模式：手游后端架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.17" data-path="225904.html">
+            
+                <a href="225904.html">
+            
+                    
+                    72 | 解释器模式：自定义告警规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.18" data-path="226710.html">
+            
+                <a href="226710.html">
+            
+                    
+                    73 | 中介模式：中介与观察者的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="227452.html">
+            
+                <a href="227452.html">
+            
+                    
+                    74 | 23种经典设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2" data-path="229157.html">
+            
+                <a href="229157.html">
+            
+                    
+                    75 | 如何避免过度设计与设计不足
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">开源与项目实战</li>
+        
+        
+    
+
+    
+        
+        <li class="header">开源实战</li>
+        
+        
+    
+        <li class="chapter " data-level="15.1" data-path="229996.html">
+            
+                <a href="229996.html">
+            
+                    
+                    76 | 开源实战一（上）：剖析Java JDK源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.2" data-path="230708.html">
+            
+                <a href="230708.html">
+            
+                    
+                    77 | 开源实战一（下）：剖析Java JDK源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.3" data-path="232061.html">
+            
+                <a href="232061.html">
+            
+                    
+                    78 | 开源实战二（上）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.4" data-path="232427.html">
+            
+                <a href="232427.html">
+            
+                    
+                    79 | 开源实战二（中）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.5" data-path="232687.html">
+            
+                <a href="232687.html">
+            
+                    
+                    80 | 开源实战二（下）：Unix开源开发经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.6" data-path="233742.html">
+            
+                <a href="233742.html">
+            
+                    
+                    81 | 开源实战三（上）：Google Guava通用模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.7" data-path="234758.html">
+            
+                <a href="234758.html">
+            
+                    
+                    82 | 开源实战三（中）：Guava中的设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.8" data-path="235334.html">
+            
+                <a href="235334.html">
+            
+                    
+                    83 | 开源实战三（下）：Guava与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.9" data-path="236935.html">
+            
+                <a href="236935.html">
+            
+                    
+                    84 | 开源实战四（上）：Spring框架设计思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.10" data-path="237810.html">
+            
+                <a href="237810.html">
+            
+                    
+                    85 | 开源实战四（中）：Spring的扩展设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.11" data-path="238418.html">
+            
+                <a href="238418.html">
+            
+                    
+                    86 | 开源实战四（下）：Spring设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.12" data-path="239239.html">
+            
+                <a href="239239.html">
+            
+                    
+                    87 | 开源实战五（上）：MyBatis的设计权衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.13" data-path="240147.html">
+            
+                <a href="240147.html">
+            
+                    
+                    88 | 开源实战五（中）：MyBatis Plugin实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="15.14" data-path="240971.html">
+            
+                <a href="240971.html">
+            
+                    
+                    89 | 开源实战五（下）：MyBatis设计模式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">项目实战</li>
+        
+        
+    
+        <li class="chapter " data-level="16.1" data-path="242314.html">
+            
+                <a href="242314.html">
+            
+                    
+                    90 | 项目实战一：限流框架（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.2" data-path="243175.html">
+            
+                <a href="243175.html">
+            
+                    
+                    91 | 项目实战一：限流框架（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.3" data-path="243961.html">
+            
+                <a href="243961.html">
+            
+                    
+                    92 | 项目实战一：限流框架（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.4" data-path="245022.html">
+            
+                <a href="245022.html">
+            
+                    
+                    93 | 项目实战二：接口幂等框架（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.5" data-path="245788.html">
+            
+                <a href="245788.html">
+            
+                    
+                    94 | 项目实战二：接口幂等框架（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.6" data-path="246379.html">
+            
+                <a href="246379.html">
+            
+                    
+                    95 | 项目实战二：接口幂等框架（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.7" data-path="247776.html">
+            
+                <a href="247776.html">
+            
+                    
+                    96 | 项目实战三：灰度发布组件（分析）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.8" data-path="248714.html">
+            
+                <a href="248714.html">
+            
+                    
+                    97 | 项目实战三：灰度发布组件（设计）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="16.9" data-path="249369.html">
+            
+                <a href="249369.html">
+            
+                    
+                    98 | 项目实战三：灰度发布组件（实现）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">总结课</li>
+        
+        
+    
+        <li class="chapter " data-level="17.1" data-path="250942.html">
+            
+                <a href="250942.html">
+            
+                    
+                    99 | 项目实战与设计总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="17.2" data-path="251930.html">
+            
+                <a href="251930.html">
+            
+                    
+                    100 | 理论知识在项目中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">不定期加餐</li>
+        
+        
+    
+        <li class="chapter " data-level="18.1" data-path="166698.html">
+            
+                <a href="166698.html">
+            
+                    
+                    加餐一 | 用一篇文章带你了解专栏中用到的所有Java语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.2" data-path="172690.html">
+            
+                <a href="172690.html">
+            
+                    
+                    加餐二 | 设计模式、重构、编程规范等相关书籍推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.3" data-path="192789.html">
+            
+                <a href="192789.html">
+            
+                    
+                    春节特别加餐 | 王争：如何学习《设计模式之美》专栏？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.4" data-path="252937.html">
+            
+                <a href="252937.html">
+            
+                    
+                    加餐三 | 聊一聊Google是如何做Code Review的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.5" data-path="254190.html">
+            
+                <a href="254190.html">
+            
+                    
+                    加餐四 | 聊一聊Google那些让我快速成长的地方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.6" data-path="255037.html">
+            
+                <a href="255037.html">
+            
+                    
+                    加餐五 | 听一听小争哥对Google工程师文化的解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.7" data-path="255697.html">
+            
+                <a href="255697.html">
+            
+                    
+                    加餐六 | 什么才是所谓的编程能力？如何考察一个人的编程能力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.8" data-path="256866.html">
+            
+                <a href="256866.html">
+            
+                    
+                    加餐七 | 基础学科的知识如何转化成实际的技术生产力？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.9" data-path="257513.html">
+            
+                <a href="257513.html">
+            
+                    
+                    加餐八 | 程序员怎么才能让自己走得更高、更远？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="18.10" data-path="258207.html">
+            
+                <a href="258207.html">
+            
+                    
+                    加餐九 | 作为面试官或候选人，如何面试或回答设计模式问题？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="18.11" data-path="259489.html">
+            
+                <a href="259489.html">
+            
+                    
+                    加餐十 | 如何接手一坨烂业务代码？如何在烂业务代码中成长？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">结束语</li>
+        
+        
+    
+        <li class="chapter " data-level="19.1" data-path="260184.html">
+            
+                <a href="260184.html">
+            
+                    
+                    结束语  | 聊一聊机遇、方向、能力、努力！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+        </nav>
+        
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <div class="book-anchor-title">ON THIS PAGE</div>
+        <div class="book-anchor-body">
+
+        </div>
+    </div>
+
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >加餐十 | 如何接手一坨烂业务代码？如何在烂业务代码中成长？</a>
+    </h1>
+</div>
+
+
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="&#x52A0;&#x9910;&#x5341;--&#x5982;&#x4F55;&#x63A5;&#x624B;&#x4E00;&#x5768;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#xFF1F;&#x5982;&#x4F55;&#x5728;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x6210;&#x957F;&#xFF1F;">&#x52A0;&#x9910;&#x5341; | &#x5982;&#x4F55;&#x63A5;&#x624B;&#x4E00;&#x5768;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#xFF1F;&#x5982;&#x4F55;&#x5728;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x6210;&#x957F;&#xFF1F;</h1>
+<pre class="language-"><code>&#x5728;&#x6211;&#x4EEC;&#x7684;&#x804C;&#x4E1A;&#x751F;&#x6DAF;&#x4E2D;&#xFF0C;&#x5F88;&#x5C11;&#x6709;&#x673A;&#x4F1A;&#x53EF;&#x4EE5;&#x4ECE;&#x96F6;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x63A5;&#x624B;&#x522B;&#x4EBA;&#x7684;&#x4EE3;&#x7801;&#x7EE7;&#x7EED;&#x5F00;&#x53D1;&#xFF0C;&#x6216;&#x8005;&#x505A;&#x4E9B;&#x7EF4;&#x62A4;&#x6027;&#x5F00;&#x53D1;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x5BF9;&#x4E8E;&#x5927;&#x90E8;&#x5206;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x6765;&#x8BF4;&#xFF0C;&#x56E0;&#x4E3A;&#x4E1A;&#x52A1;&#x5BFC;&#x5411;&#xFF0C;&#x9700;&#x6C42;&#x5012;&#x903C;&#xFF0C;&#x5F00;&#x53D1;&#x5DE5;&#x671F;&#x7D27;&#xFF0C;&#x56E2;&#x961F;&#x5F80;&#x5F80;&#x90FD;&#x4E0D;&#x662F;&#x5F88;&#x91CD;&#x89C6;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#xFF0C;&#x5FEB;&#x901F;&#x4E0A;&#x7EBF;&#x662F;&#x7B2C;&#x4E00;&#x8981;&#x52A1;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5F88;&#x591A;&#x56E2;&#x961F;&#x7684;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x4E00;&#x822C;&#x90FD;&#x4E0D;&#x600E;&#x4E48;&#x9AD8;&#x3002;&#x57CB;&#x5751;&#x65E0;&#x6570;&#x3001;&#x6CA1;&#x6709;&#x6587;&#x6863;&#x3001;&#x4E5F;&#x6CA1;&#x6709;&#x6CE8;&#x91CA;&#xFF0C;&#x4EE3;&#x7801;&#x8BFB;&#x4E0D;&#x61C2;&#x3001;&#x4E5F;&#x4E0D;&#x6562;&#x6539;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x65B0;&#x4EBA;&#x6765;&#x8BF4;&#xFF0C;&#x4F1A;&#x975E;&#x5E38;&#x82E6;&#x607C;&#x3002;&#x4ECA;&#x5929;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x804A;&#x4E00;&#x804A;&#xFF0C;&#x5982;&#x4F55;&#x63A5;&#x624B;&#x4E00;&#x5768;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x5728;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x6210;&#x957F;&#xFF1F;
+</code></pre><p>&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6B63;&#x5F0F;&#x5F00;&#x59CB;&#x4ECA;&#x5929;&#x7684;&#x5185;&#x5BB9;&#x5427;&#xFF01;</p>
+<h2 id="&#x5982;&#x4F55;&#x63A5;&#x624B;&#x4E00;&#x5768;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#xFF1F;">&#x5982;&#x4F55;&#x63A5;&#x624B;&#x4E00;&#x5768;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#xFF1F;</h2>
+<p>&#x5728;&#x6211;&#x8FC7;&#x53BB;10&#x5E74;&#x7684;&#x5DE5;&#x4F5C;&#x7ECF;&#x5386;&#x4E2D;&#xFF0C;&#x6211;&#x63A5;&#x624B;&#x8FC7;&#x5F88;&#x591A;&#x4E2A;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x6BD4;&#x8F83;&#x70C2;&#x7684;&#x9879;&#x76EE;&#x3002;&#x8FD9;&#x4E9B;&#x9879;&#x76EE;&#x90FD;&#x6709;&#x5F88;&#x591A;&#x5171;&#x6027;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x5DF2;&#x7ECF;&#x7EF4;&#x62A4;&#x4E86;&#x4E24;&#x4E09;&#x5E74;&#xFF0C;&#x751A;&#x81F3;&#x4E94;&#x516D;&#x5E74;&#x4E4B;&#x4E45;&#xFF0C;&#x4EE3;&#x7801;&#x91CF;&#x5F88;&#x5927;&#xFF0C;&#x6709;&#x5341;&#x51E0;&#x4E07;&#x884C;&#x4EE5;&#x4E0A;&#xFF0C;&#x5E76;&#x4E14;&#x5927;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x90FD;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x6CE8;&#x91CA;&#xFF0C;&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x975E;&#x5E38;&#x5E9E;&#x6742;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x4E1A;&#x52A1;&#x6587;&#x6863;&#x3002;</p>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x4EE3;&#x7801;&#x4E2D;&#x8FD8;&#x5145;&#x65A5;&#x7740;&#x5404;&#x79CD;&#x4E34;&#x65F6;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF08;Workaround&#xFF09;&#x3001;&#x786C;&#x7F16;&#x7801;&#xFF08;Hard Code&#xFF09;&#x3001;&#x9057;&#x7559;&#x4EE3;&#x7801;&#xFF08;Legacy Code&#xFF09;&#xFF0C;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x532A;&#x5937;&#x6240;&#x601D;&#x7684;&#x8BBE;&#x8BA1;&#x3002;&#x5BF9;&#x4E8E;&#x6709;&#x4E9B;&#x8BBE;&#x8BA1;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x201C;&#x53CD;&#x4EBA;&#x7C7B;&#x201D;&#x8BBE;&#x8BA1;&#x6216;&#x8005;&#x201C;&#x6545;&#x610F;&#x6316;&#x5751;&#x201D;&#xFF0C;&#x4E00;&#x70B9;&#x90FD;&#x4E0D;&#x4E3A;&#x8FC7;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8001;&#x5458;&#x5DE5;&#x7ED9;&#x4F60;&#x89E3;&#x91CA;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4F60;&#x4E07;&#x4E07;&#x90FD;&#x60F3;&#x4E0D;&#x5230;&#x5B83;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x8BBE;&#x8BA1;&#x548C;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;<strong>&#x8981;&#x60F3;&#x63A5;&#x624B;&#x4E00;&#x4E2A;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x8981;&#x8BFB;&#x61C2;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x8BFB;&#x61C2;&#x4EE3;&#x7801;&#x7684;&#x5173;&#x952E;&#xFF0C;&#x662F;&#x8981;&#x719F;&#x6089;&#x4E1A;&#x52A1;&#x3002;</strong>&#x53EA;&#x8981;&#x4E1A;&#x52A1;&#x641E;&#x6E05;&#x695A;&#x4E86;&#xFF0C;&#x4EE3;&#x7801;&#x53EA;&#x4E0D;&#x8FC7;&#x662F;&#x5BF9;&#x4E1A;&#x52A1;&#x7684;&#x7FFB;&#x8BD1;&#xFF0C;&#x5BF9;&#x7167;&#x7740;&#x4E1A;&#x52A1;&#x770B;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF0C;&#x770B;&#x61C2;&#x5E76;&#x4E0D;&#x662F;&#x4EF6;&#x96BE;&#x4E8B;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6211;&#x6240;&#x63A5;&#x624B;&#x7684;&#x8FD9;&#x51E0;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x96F6;&#x6587;&#x6863;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x4E1A;&#x52A1;&#x77E5;&#x8BC6;&#x90FD;&#x662F;&#x9760;&#x53E3;&#x53E3;&#x76F8;&#x4F20;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x641E;&#x6E05;&#x695A;&#x4E1A;&#x52A1;&#xFF0C;&#x5C31;&#x6210;&#x4E86;&#x63A5;&#x624B;&#x9879;&#x76EE;&#x6700;&#x96BE;&#x7684;&#x4E8B;&#x60C5;&#x4E86;&#x3002;</p>
+<p>&#x9762;&#x5BF9;&#x5982;&#x6B64;&#x5E9E;&#x5927;&#x7684;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#xFF0C;&#x6CA1;&#x6709;&#x6587;&#x6863;&#xFF0C;&#x51E0;&#x4E4E;&#x5C31;&#x662F;&#x4E24;&#x773C;&#x4E00;&#x62B9;&#x9ED1;&#x3002;&#x539F;&#x6765;&#x53C2;&#x4E0E;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x7684;&#x8001;&#x540C;&#x4E8B;&#xFF0C;&#x6709;&#x7684;&#x79BB;&#x804C;&#xFF0C;&#x6709;&#x7684;&#x53BB;&#x505A;&#x5176;&#x4ED6;&#x65B0;&#x9879;&#x76EE;&#xFF0C;&#x4E00;&#x76F4;&#x95EE;&#x4ED6;&#x4EEC;&#x4E5F;&#x4E0D;&#x597D;&#x610F;&#x601D;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x90FD;&#x53EA;&#x80FD;&#x786C;&#x7740;&#x5934;&#x76AE;&#xFF0C;&#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x4EE3;&#x7801;&#x53CD;&#x63A8;&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x6A21;&#x5757;&#x5212;&#x5206;&#x6E05;&#x6670;&#xFF0C;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF0C;&#x90A3;&#x901A;&#x8FC7;&#x8BFB;&#x4EE3;&#x7801;&#x53CD;&#x63A8;&#x4E1A;&#x52A1;&#xFF0C;&#x4E5F;&#x5E76;&#x975E;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x4F46;&#x771F;&#x5B9E;&#x7684;&#x60C5;&#x51B5;&#x5F80;&#x5F80;&#x4E8B;&#x4E0E;&#x613F;&#x8FDD;&#xFF0C;&#x5C31;&#x50CF;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;&#xFF0C;&#x4EE3;&#x7801;&#x4E2D;&#x5145;&#x65A5;&#x7740;&#x4E34;&#x65F6;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3001;&#x786C;&#x7F16;&#x7801;&#x3001;&#x9057;&#x7559;&#x4EE3;&#x7801;&#x7B49;&#x5404;&#x79CD;&#x5751;&#xFF0C;&#x8FD9;&#x5C31;&#x4F7F;&#x53CD;&#x63A8;&#x4E1A;&#x52A1;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x56F0;&#x96BE;&#x3002;&#x5BF9;&#x4E8E;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x8FD9;&#x4E9B;&#x5751;&#xFF0C;&#x5C3D;&#x7BA1;&#x6211;&#x4E0D;&#x60F3;&#x4E00;&#x76F4;&#x9EBB;&#x70E6;&#x540C;&#x4E8B;&#xFF0C;&#x4F46;&#x4E5F;&#x53EA;&#x6709;&#x591A;&#x95EE;&#x624D;&#x80FD;&#x6700;&#x5FEB;&#x901F;&#x5730;&#x89E3;&#x51B3;&#x3002;</p>
+<p>&#x5728;&#x8BFB;&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x975E;&#x5E38;&#x91CD;&#x89C6;&#x77E5;&#x8BC6;&#x7684;&#x6587;&#x6863;&#x5316;&#xFF0C;&#x6211;&#x4F1A;&#x628A;&#x8BFB;&#x61C2;&#x7684;&#x6BCF;&#x4E2A;&#x4E1A;&#x52A1;&#x90FD;&#x5199;&#x5230;&#x6587;&#x6863;&#x4E2D;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x5176;&#x4E2D;&#x4E5F;&#x5305;&#x62EC;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;&#x5404;&#x79CD;&#x5751;&#x3002;&#x5BF9;&#x4E8E;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x6D41;&#x7A0B;&#xFF0C;&#x6211;&#x8FD8;&#x4F1A;&#x753B;&#x4E00;&#x4E9B;&#x6D41;&#x7A0B;&#x56FE;&#x3002;&#x8BFB;&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x975E;&#x5E38;&#x75DB;&#x82E6;&#xFF0C;&#x82B1;&#x4E86;&#x597D;&#x51E0;&#x4E2A;&#x6708;&#xFF0C;&#x6211;&#x624D;&#x6709;&#x4FE1;&#x5FC3;&#x8BF4;&#xFF0C;&#x81EA;&#x5DF1;&#x51E0;&#x4E4E;&#x628A;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x90FD;&#x641E;&#x6E05;&#x695A;&#x4E86;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x6211;&#x4E5F;&#x505A;&#x4E86;&#x4E00;&#x4EF6;&#x8FC7;&#x53BB;&#x51E0;&#x5E74;&#x90FD;&#x6CA1;&#x6709;&#x4EBA;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x8865;&#x5145;&#x5B8C;&#x6574;&#x4E86;&#x6280;&#x672F;&#x6587;&#x6863;&#x548C;&#x4E1A;&#x52A1;&#x6587;&#x6863;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x6709;&#x65B0;&#x540C;&#x4E8B;&#x52A0;&#x5165;&#xFF0C;&#x770B;&#x4E86;&#x6211;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x4E86;&#x89E3;&#x4EE3;&#x7801;&#x3001;&#x4E86;&#x89E3;&#x4E1A;&#x52A1;&#xFF0C;&#x5F88;&#x5FEB;&#x5C31;&#x80FD;&#x4E0A;&#x624B;&#x5F00;&#x53D1;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x5373;&#x4FBF;&#x4EE3;&#x7801;&#x518D;&#x70C2;&#xFF0C;&#x53EA;&#x8981;&#x6709;&#x5B8C;&#x5584;&#x7684;&#x4E1A;&#x52A1;&#x6587;&#x6863;&#xFF0C;&#x5148;&#x7406;&#x89E3;&#x4E1A;&#x52A1;&#xFF0C;&#x518D;&#x53BB;&#x770B;&#x4EE3;&#x7801;&#xFF0C;&#x51E0;&#x4E4E;&#x5C31;&#x6CA1;&#x5565;&#x96BE;&#x5EA6;&#x4E86;&#x3002;&#x5BF9;&#x4E8E;&#x96F6;&#x6587;&#x6863;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x6765;&#x53CD;&#x63A8;&#x4E1A;&#x52A1;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5BF9;&#x4E8E;&#x6709;&#x4E9B;&#x5751;&#x6765;&#x8BF4;&#xFF0C;&#x5FC5;&#x8981;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x8981;&#x8BE2;&#x95EE;&#x524D;&#x8F88;&#x6765;&#x641E;&#x5B9A;&#x3002;&#x5728;&#x8BFB;&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5C06;&#x5F97;&#x5230;&#x7684;&#x77E5;&#x8BC6;&#x6587;&#x6863;&#x5316;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x5BF9;&#x516C;&#x53F8;&#x548C;&#x56E2;&#x961F;&#x6765;&#x8BF4;&#x6700;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x5728;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x6210;&#x957F;&#xFF1F;">&#x5982;&#x4F55;&#x5728;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x6210;&#x957F;&#xFF1F;</h2>
+<p>&#x6709;&#x4EBA;&#x4E00;&#x9047;&#x5230;&#x8FD9;&#x79CD;&#x70C2;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x89C9;&#x5F97;&#x5F88;&#x5FC3;&#x70E6;&#xFF0C;&#x6211;&#x53CD;&#x5012;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x6070;&#x6070;&#x76F8;&#x53CD;&#xFF0C;&#x76F8;&#x6BD4;&#x63A5;&#x624B;&#x597D;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x63A5;&#x624B;&#x70C2;&#x4EE3;&#x7801;&#xFF0C;&#x867D;&#x7136;&#x8FC7;&#x7A0B;&#x66F4;&#x52A0;&#x75DB;&#x82E6;&#xFF0C;&#x4F46;&#x540C;&#x65F6;&#x4E5F;&#x4F1A;&#x7ED9;&#x6211;&#x66F4;&#x591A;&#x65BD;&#x5C55;&#x624D;&#x534E;&#x7684;&#x7A7A;&#x95F4;&#x3001;&#x953B;&#x70BC;&#x6280;&#x672F;&#x7684;&#x673A;&#x4F1A;&#xFF0C;&#x6211;&#x7684;&#x6210;&#x957F;&#x4E5F;&#x4F1A;&#x66F4;&#x591A;&#x3002;</p>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x5F88;&#x591A;&#x4EBA;&#x89C9;&#x5F97;&#x505A;&#x504F;&#x5E95;&#x5C42;&#x7684;&#x5F00;&#x53D1;&#xFF08;&#x57FA;&#x7840;&#x67B6;&#x6784;&#x3001;&#x6846;&#x67B6;&#x3001;&#x4E2D;&#x95F4;&#x4EF6;&#x7B49;&#x5F00;&#x53D1;&#xFF09;&#x624D;&#x953B;&#x70BC;&#x6280;&#x672F;&#xFF0C;&#x505A;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;&#x6311;&#x6218;&#xFF0C;&#x6280;&#x672F;&#x4E0A;&#x6CA1;&#x6709;&#x6210;&#x957F;&#xFF0C;&#x5BF9;&#x6B64;&#x975E;&#x5E38;&#x82E6;&#x607C;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x8FD9;&#x79CD;&#x770B;&#x6CD5;&#x662F;&#x6BD4;&#x8F83;&#x7247;&#x9762;&#x7684;&#x3002;&#x505A;&#x4E1A;&#x52A1;&#x5F00;&#x53D1;&#x7684;&#x96BE;&#x5EA6;&#x4E0D;&#x4E9A;&#x4E8E;&#x5E95;&#x5C42;&#x5F00;&#x53D1;&#xFF0C;&#x505A;&#x597D;&#x4E5F;&#x4E0D;&#x662F;&#x4EF6;&#x5BB9;&#x6613;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x79EF;&#x7D2F;&#x6280;&#x672F;&#x3001;&#x953B;&#x70BC;&#x80FD;&#x529B;&#x3002;</p>
+<p>&#x504F;&#x5E95;&#x5C42;&#x7684;&#x5F00;&#x53D1;&#x66F4;&#x52A0;&#x8003;&#x9A8C;&#x7A0B;&#x5E8F;&#x5458;&#x5728;&#x67D0;&#x4E00;&#x7EC6;&#x5206;&#x9886;&#x57DF;&#x7684;&#x6280;&#x672F;&#x6DF1;&#x5EA6;&#xFF0C;&#x504F;&#x4E1A;&#x52A1;&#x7684;&#x5F00;&#x53D1;&#x66F4;&#x52A0;&#x8003;&#x9A8C;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x6BD4;&#x5982;&#x6C9F;&#x901A;&#x80FD;&#x529B;&#x3001;&#x5206;&#x6790;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x80FD;&#x529B;&#x3001;&#x6743;&#x8861;&#x53D6;&#x820D;&#x80FD;&#x529B;&#x3001;&#x67B6;&#x6784;&#x80FD;&#x529B;&#x7B49;&#xFF0C;&#x6BD5;&#x7ADF;&#x4E1A;&#x52A1;&#x591A;&#x79CD;&#x591A;&#x6837;&#xFF0C;&#x95EE;&#x9898;&#x5343;&#x5947;&#x767E;&#x602A;&#xFF0C;&#x5355;&#x4E00;&#x7EC6;&#x5206;&#x9886;&#x57DF;&#x7684;&#x7ECF;&#x9A8C;&#x5F88;&#x96BE;&#x5E94;&#x5BF9;&#x6240;&#x6709;&#x95EE;&#x9898;&#x3002;</p>
+<p><strong>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x7684;&#x5F00;&#x53D1;&#x96BE;&#x5EA6;&#x4E00;&#x822C;&#x6765;&#x81EA;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#xFF1A;&#x9AD8;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x548C;&#x4E1A;&#x52A1;&#x590D;&#x6742;&#x3002;</strong></p>
+<p>&#x89E3;&#x51B3;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5177;&#x5907;&#x4E00;&#x5B9A;&#x7684;&#x67B6;&#x6784;&#x80FD;&#x529B;&#xFF0C;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x6280;&#x672F;&#x5E7F;&#x5EA6;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x5404;&#x79CD;&#x57FA;&#x7840;&#x67B6;&#x6784;&#x3001;&#x6846;&#x67B6;&#x3001;&#x4E2D;&#x95F4;&#x4EF6;&#x90FD;&#x6709;&#x6240;&#x4E86;&#x89E3;&#x3002;&#x5149;&#x4E86;&#x89E3;&#x8FD8;&#x4E0D;&#x591F;&#xFF0C;&#x8FD8;&#x8981;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x6280;&#x672F;&#x6DF1;&#x5EA6;&#xFF0C;&#x6700;&#x597D;&#x80FD;&#x5BF9;&#x539F;&#x7406;&#x751A;&#x81F3;&#x662F;&#x6E90;&#x7801;&#x6709;&#x6240;&#x7814;&#x7A76;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x8981;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x4F7F;&#x7528;&#x7ECF;&#x9A8C;&#x3002;&#x5E7F;&#x5EA6;&#x3001;&#x6DF1;&#x5EA6;&#x3001;&#x7ECF;&#x9A8C;&#x4E09;&#x8005;&#x914D;&#x5408;&#xFF0C;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x505A;&#x5230;&#x6070;&#x5230;&#x597D;&#x5904;&#x7EC4;&#x5408;&#x8FD9;&#x4E9B;&#x6280;&#x672F;&#x642D;&#x5EFA;&#x67B6;&#x6784;&#xFF0C;&#x89E3;&#x51B3;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x5FEB;&#x901F;&#x5730;&#x89E3;&#x51B3;&#x3002;</p>
+<p>&#x5E94;&#x5BF9;&#x5927;&#x578B;&#x9879;&#x76EE;&#x7684;&#x4E1A;&#x52A1;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x8981;&#x60F3;&#x8BA9;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#x4E00;&#x76F4;&#x5728;&#x4F60;&#x7684;&#x638C;&#x63A7;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x6709;&#x5F88;&#x5F3A;&#x7684;&#x4E1A;&#x52A1;&#x5EFA;&#x6A21;&#x80FD;&#x529B;&#x3001;&#x590D;&#x6742;&#x903B;&#x8F91;&#x7684;&#x62BD;&#x8C61;&#x80FD;&#x529B;&#x3001;&#x4EE3;&#x7801;&#x7FFB;&#x8BD1;&#x80FD;&#x529B;&#x7B49;&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x4EBA;&#x7684;&#x57FA;&#x672C;&#x7D20;&#x8D28;&#x3001;&#x57FA;&#x7840;&#x80FD;&#x529B;&#x7684;&#x8981;&#x6C42;&#x8981;&#x66F4;&#x9AD8;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5BF9;&#x4E8E;&#x590D;&#x6742;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x6765;&#x8BF4;&#xFF0C;&#x5BF9;&#x4E1A;&#x52A1;&#x7684;&#x719F;&#x6089;&#x4E5F;&#x80FD;&#x6210;&#x4E3A;&#x4F60;&#x7684;&#x7ADE;&#x4E89;&#x58C1;&#x5792;&#xFF0C;&#x6210;&#x4E3A;&#x5347;&#x804C;&#x52A0;&#x85AA;&#x7684;&#x781D;&#x7801;&#x3002;&#x6211;&#x524D;&#x9762;&#x4E5F;&#x8BB2;&#x5230;&#xFF0C;&#x4F4E;&#x7EA7;&#x522B;&#x7684;&#x664B;&#x5347;&#x9760;&#x6280;&#x672F;&#xFF0C;&#x6BD4;&#x5982;&#x5347;&#x963F;&#x91CC;&#x7684;P7&#xFF0C;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x664B;&#x5347;&#x9760;&#x4E1A;&#x52A1;&#xFF0C;&#x6BD4;&#x5982;&#x5347;&#x963F;&#x91CC;&#x7684;P8&#x3001;P9&#xFF0C;&#x6216;&#x8005;&#x6362;&#x4E2A;&#x8BF4;&#x6CD5;&#xFF0C;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x664B;&#x5347;&#xFF0C;&#x9760;&#x4E1A;&#x52A1;&#x6BD4;&#x5355;&#x7EAF;&#x9760;&#x6280;&#x672F;&#xFF0C;&#x66F4;&#x5BB9;&#x6613;&#x4E00;&#x4E9B;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x53C2;&#x4E0E;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x9AD8;&#x3001;&#x4E1A;&#x52A1;&#x4E5F;&#x590D;&#x6742;&#xFF0C;&#x90A3;&#x606D;&#x559C;&#x4F60;&#xFF0C;&#x597D;&#x597D;&#x5E72;&#x5C31;&#x6210;&#x4E86;&#x3002;&#x5982;&#x679C;&#x4F60;&#x53C2;&#x4E0E;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x5728;&#x6027;&#x80FD;&#x548C;&#x590D;&#x6742;&#x5EA6;&#x4E0A;&#xFF0C;&#x53EA;&#x517C;&#x5177;&#x5176;&#x4E2D;&#x4E00;&#x70B9;&#xFF0C;&#x90A3;&#x4E5F;&#x4E0D;&#x9519;&#xFF0C;&#x503C;&#x5F97;&#x4E00;&#x505A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x53C2;&#x4E0E;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x65E2;&#x6CA1;&#x6709;&#x6027;&#x80FD;&#x538B;&#x529B;&#x3001;&#x4E1A;&#x52A1;&#x4E5F;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x90A3;&#x4E5F;&#x522B;&#x592A;&#x7740;&#x6025;&#xFF0C;&#x8D70;&#x7740;&#x77A7;&#xFF0C;&#x5B9E;&#x5728;&#x4E0D;&#x884C;&#x518D;&#x8DF3;&#x69FD;&#x3002;</p>
+<h2 id="&#x8BFE;&#x5802;&#x8BA8;&#x8BBA;">&#x8BFE;&#x5802;&#x8BA8;&#x8BBA;</h2>
+<p>&#x5728;&#x8FC7;&#x5F80;&#x7684;&#x9879;&#x76EE;&#x7ECF;&#x5386;&#x4E2D;&#xFF0C;&#x4F60;&#x6709;&#x6CA1;&#x6709;&#x50CF;&#x6211;&#x4E00;&#x6837;&#xFF0C;&#x63A5;&#x624B;&#x8FC7;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x6BD4;&#x8F83;&#x5DEE;&#x7684;&#x4EE3;&#x7801;&#xFF1F;&#x4F60;&#x53C8;&#x662F;&#x5982;&#x4F55;&#x987A;&#x5229;&#x63A5;&#x624B;&#x7684;&#x5462;&#xFF1F;</p>
+<p>&#x6B22;&#x8FCE;&#x7559;&#x8A00;&#x548C;&#x6211;&#x5206;&#x4EAB;&#x4F60;&#x7684;&#x60F3;&#x6CD5;&#x3002;&#x5982;&#x679C;&#x6709;&#x6536;&#x83B7;&#xFF0C;&#x4E5F;&#x6B22;&#x8FCE;&#x4F60;&#x628A;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x5206;&#x4EAB;&#x7ED9;&#x4F60;&#x7684;&#x670B;&#x53CB;&#x3002;</p>
+
+                        
+                    </section>
+                    
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+        <a href="258207.html" class="navigation navigation-prev " aria-label="Previous page: 加餐九 | 作为面试官或候选人，如何面试或回答设计模式问题？">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="260184.html" class="navigation navigation-next " aria-label="Next page: 结束语  | 聊一聊机遇、方向、能力、努力！">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"加餐十 | 如何接手一坨烂业务代码？如何在烂业务代码中成长？","level":"18.11","depth":1,"next":{"title":"结束语  | 聊一聊机遇、方向、能力、努力！","level":"19.1","depth":1,"path":"docs/260184.md","ref":"./docs/260184.md","articles":[]},"previous":{"title":"加餐九 | 作为面试官或候选人，如何面试或回答设计模式问题？","level":"18.10","depth":1,"path":"docs/258207.md","ref":"./docs/258207.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-d4t","hide-element","code","prism","prism-themes","-lunr","-search","-sharing","search-pro-fixed","-highlight","back-to-top-button","mermaid-gb3","expandable-chapters-small","toolbar","splitter"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"theme-d4t":{},"prism":{"css":["prism-themes/themes/prism-coldark-cold.css"]},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/README.assets/logo.svg","favicon":"/README.assets/favicon.ico"},"splitter":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".logo",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"back-to-top-button":{},"prism-themes":{},"expandable-chapters-small":{},"toolbar":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","author":"zzturn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"../book_10x_cheng_xu_yuan_gong_zuo_fa/","target":"_self","name":"10x程序员工作法"},{"url":"../book_ddd_shi_zhan_ke/","target":"_self","name":"DDD实战课"},{"url":"../book_da_chang_jin_sheng_zhi_nan/","target":"_self","name":"大厂晋升指南"},{"url":"https://github.com/auohh/","target":"_blank","name":"Github"}]}},"title":"设计模式之美","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"docs/259489.md","mtime":"2025-11-06T15:41:54.730Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-11-06T15:43:23.350Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-d4t/script.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
